@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    @font-face {
+        font-family:'Iran-Sans' ;
+        src: url(./Fonts/IRANSans.ttf);
+    }
+    @font-face {
+        font-family:'Pop-Medium' ;
+        src: url(./Fonts/Poppins/poppins.medium.ttf);
+    }
+
+    @font-face {
+        font-family: 'Dana-Regular';
+        src: url(./Fonts/Dana-family/Dana-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: 'Dana-Bold';
+        src: url(./Fonts/Dana-family/Dana-Bold.ttf);
+    } 
+
+    @font-face {
+        font-family: 'Dana-Medium';
+        src: url(./Fonts/Dana-family/Dana-Medium.ttf);
+    }
+}
