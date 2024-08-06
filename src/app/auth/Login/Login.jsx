@@ -1,7 +1,15 @@
+import TitleSection from "../../partials/TitleSection/titleSection"
+import Form_Wrapper from "../form/form_Wrapper"
 
 const Login = () => {
   return (
-    <div className="h-[555px] bg-zinc-400">Login</div>
+    <div className="">
+      <TitleSection title={'loginTitle'} />
+      <Form_Wrapper
+        title={'LoginCaption'}
+        description={'LoginDesc'}
+      />
+    </div>
   )
 }
 

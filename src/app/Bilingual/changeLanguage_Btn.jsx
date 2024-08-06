@@ -1,8 +1,9 @@
 import { LANGUAGES } from "./Languages"
 import { useTranslation } from "react-i18next";
 
-const Btn_Languages = () => {
+const Btn_Languages = () => {    
     const { i18n } = useTranslation();
+
     const onChangeLang = (e) => {
         const lang_code = e.target.value;
         i18n.changeLanguage(lang_code);

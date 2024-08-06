@@ -5,13 +5,15 @@
 @layer base {
 
     @font-face {
-        font-family:'Iran-Sans' ;
+        font-family: 'Iran-Sans';
         src: url(./Fonts/IRANSans.ttf);
     }
+
     @font-face {
-        font-family:'Pop-Medium' ;
+        font-family: 'Pop-Medium';
         src: url(./Fonts/Poppins/poppins.medium.ttf);
     }
+
 
     @font-face {
         font-family: 'Dana-Regular';
@@ -21,10 +23,29 @@
     @font-face {
         font-family: 'Dana-Bold';
         src: url(./Fonts/Dana-family/Dana-Bold.ttf);
-    } 
+    }
 
     @font-face {
         font-family: 'Dana-Medium';
         src: url(./Fonts/Dana-family/Dana-Medium.ttf);
+    }
+}
+
+@layer components {
+    .BoxShadow-BtnBlue {
+        box-shadow: 3px 5px 0px 0px #050071;
+    }
+
+    .BoxShadow-BtnBlue_Hover {
+        box-shadow: 1px 2px 0px 0px #050071;
+    }
+
+    .reverse-img {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
     }
 }

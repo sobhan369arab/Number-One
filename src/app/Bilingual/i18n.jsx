@@ -24,6 +24,22 @@ i18n.use(initReactI18next)
                     companyTitle: 'شرکت ما', company1: 'با ما تماس بگیرید', company2: 'معلم شوید',
                     company3: 'وبلاگ', company4: 'مربی', company5: 'مناسبت ها',
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
+                    // titlePages
+                    loginTitle: 'ورود به عنوان دانش آموز', login: "ورود",
+                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا",
+                    // LoginForm
+                    LoginCaption: "خوش برگشتی!",
+                    LoginDesc: " سلام! آماده ورود به سیستم هستید؟ فقط نام کاربری و رمز عبور خود را در زیر وارد کنید و شما در کمترین زمان به عمل خواهید رسید. بیا بریم!",
+                    RememberMe: "مرا به خاطر بسپار", ForgetPassword: "رمز عبور را فراموش کرده اید؟", loginBtn: "ورود",
+                    HaveAccount2: "حساب کاربری ندارید؟",
+                    // SignUpForm
+                    SignUpCaption: "حساب کاربری برای خود بسازید",
+                    SignUpDesc: "سلام! برای پیوستن به حزب آماده اید؟ برای دریافت فقط به چند جزئیات از شما نیاز داریم آغاز شده. بیا انجامش بدیم!",
+                    SignUpBtn: "ثبت نام", HaveAccount1: "از قبل حساب کاربری دارید؟",
+                    // ErrorPage
+                    error: "صفحه خطا", ErrorDesc: "متاسفم! این صفحه در دسترس نیست!",
+                    // Buttons
+                    GoHomePage: "به صفحه اصلی بروید",
 
 
 
@@ -39,12 +55,28 @@ i18n.use(initReactI18next)
                     // Footer
                     footerDescription: 'when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.',
                     // Links
-                    linksTitle: 'Useful Links', link1:'Our values', link2: 'Our advisory board', link3: 'Our partners',
+                    linksTitle: 'Useful Links', link1: 'Our values', link2: 'Our advisory board', link3: 'Our partners',
                     link4: 'Become a partner', link5: 'Work at Future Learn', link6: 'Quizlet Plus',
                     // Company
                     companyTitle: 'Our Company', company1: 'Contact Us', company2: 'Become Teacher',
                     company3: 'Blog', company4: 'Instructor', company5: 'Events',
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
+                    // titlePages
+                    loginTitle: 'Student Login', login: "Login",
+                    signUpTitle: 'Student SignUp', or: "or",
+                    // LoginForm
+                    LoginCaption: "Welcome back!",
+                    LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",
+                    RememberMe: "Remember me", ForgetPassword: "Forget Password?", loginBtn: "Sign In",
+                    HaveAccount2: "Don't have an account?",
+                    // SignUpForm
+                    SignUpCaption: "Create Your Account",
+                    SignUpDesc: "Hey there! Ready to join the party? We just need a few details from you to get started. Let's do this!",
+                    SignUpBtn: "Sign Up", HaveAccount1: "Already have an account?",
+                    // ErrorPage
+                    error: "Error Page", ErrorDesc: "Sorry! This Page is Not Available!",
+                    // Buttons
+                    GoHomePage: "Go To Home Page",
                 },
             },
         },
