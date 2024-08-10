@@ -26,7 +26,9 @@ i18n.use(initReactI18next)
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
                     // titlePages
                     loginTitle: 'ورود به عنوان دانش آموز', login: "ورود",
-                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا",
+                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها",
+                    // Buttons
+                    GoHomePage: "به صفحه اصلی بروید",
                     // LoginForm
                     LoginCaption: "خوش برگشتی!",
                     LoginDesc: " سلام! آماده ورود به سیستم هستید؟ فقط نام کاربری و رمز عبور خود را در زیر وارد کنید و شما در کمترین زمان به عمل خواهید رسید. بیا بریم!",
@@ -38,8 +40,11 @@ i18n.use(initReactI18next)
                     SignUpBtn: "ثبت نام", HaveAccount1: "از قبل حساب کاربری دارید؟",
                     // ErrorPage
                     error: "صفحه خطا", ErrorDesc: "متاسفم! این صفحه در دسترس نیست!",
-                    // Buttons
-                    GoHomePage: "به صفحه اصلی بروید",
+                    // EventsPage
+                    EventTitle1: "آموزش جاوا اسکریپت با خیال پردازی", EventDate: "14تیر، 1403", EventCity1: "توکیو",
+                    EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
+
+
 
 
 
@@ -63,7 +68,9 @@ i18n.use(initReactI18next)
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
                     // titlePages
                     loginTitle: 'Student Login', login: "Login",
-                    signUpTitle: 'Student SignUp', or: "or",
+                    signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events",
+                    // Buttons
+                    GoHomePage: "Go To Home Page",
                     // LoginForm
                     LoginCaption: "Welcome back!",
                     LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",
@@ -75,8 +82,11 @@ i18n.use(initReactI18next)
                     SignUpBtn: "Sign Up", HaveAccount1: "Already have an account?",
                     // ErrorPage
                     error: "Error Page", ErrorDesc: "Sorry! This Page is Not Available!",
-                    // Buttons
-                    GoHomePage: "Go To Home Page",
+                    // EventsPage
+                    EventTitle1: "Learning JavaScript With Imagination", EventDate: "25 June, 2024", EventCity1: "Tokyo",
+                    EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
+
+
                 },
             },
         },

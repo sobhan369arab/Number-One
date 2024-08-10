@@ -7,10 +7,10 @@ const SearchInput = () => {
         <>
             <div className="border border-Gray h-[42px] w-[70%] text-sm flex items-center rounded-3xl max-xl:hidden ">
                 {/* category Section */}
-                <div className={`px-3 bg-[url('./icons/BlackArrow.png')] bg-11 bg-no-repeat cursor-pointer
-            hover:text-Purple hover:bg-[url('./icons/PurpleArrow.png')] duration-200 
+                <div className={`px-3 bg-[url('../icons/BlackArrow.png')] bg-11 bg-no-repeat cursor-pointer
+            hover:text-Purple hover:bg-[url('../icons/PurpleArrow.png')] duration-200 
             ${i18n.language === 'fa' ? 'pl-2 bg-left' : 'pr-2 bg-right flex'}`}>
-                    <img src="./icons/category.png" alt="category Icon" className="inline" />
+                    <img src="../icons/category.png" alt="category Icon" className="inline" />
                     <span className="mx-3">{t('category')}</span>
                 </div>
                 {/* Search Input */}

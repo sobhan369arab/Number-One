@@ -16,6 +16,7 @@ export default {
         BlueGray:"#F7F7FA",
         TextGray1: "#B2BBCC",
         TextGray2: "#8C9AB4",
+        GrayBorder:"#B5B5C3",
         White: "#F2F2F2",
       },
       // screens: {

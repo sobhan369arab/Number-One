@@ -1,3 +1,4 @@
+import LogoGroup from "../../components/common/LogoGroup"
 import BasketItems from "./basketItems"
 import { baskets, menuItem } from "./headerData"
 import MenuHeader from "./menuHeader"
@@ -5,15 +6,15 @@ import SearchInput from "./searchInput"
 import { useTranslation } from "react-i18next"
 
 const Header = () => {
-  const {t,i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="flex items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-4 relative">
       {/* Right Part */}
       <div className="flex items-center">
-        <img src="../icons/logo1.png" alt="Logo" className="h-8" />
-        <div className={`flex gap-1.5 ${i18n.language === 'fa'? 'mr-6': 'ml-11 mt-2'}`}>
-          <img src="./icons/list.svg" alt="hamberger Icon" className="h-9 lg:hidden cursor-pointer" />
+        <LogoGroup color={'text-Purple'}/>
+        <div className={`flex gap-1.5 ${i18n.language === 'fa' ? 'mr-6' : 'ml-11 mt-2'}`}>
+          <img src="../icons/list.svg" alt="hamberger Icon" className="h-9 lg:hidden cursor-pointer" />
           {/* Making any of the Menu Items */}
           {menuItem.map((item, index) => {
             return (
