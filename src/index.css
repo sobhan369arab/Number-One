@@ -6,29 +6,29 @@
 
     @font-face {
         font-family: 'Iran-Sans';
-        src: url(./Fonts/IRANSans.ttf);
+        src: url(./assets/fonts/IRANSans.ttf);
     }
 
     @font-face {
         font-family: 'Pop-Medium';
-        src: url(./Fonts/Poppins/poppins.medium.ttf);
+        src: url(./assets/fonts/Poppins/poppins.medium.ttf);
     }
 
 
     @font-face {
         font-family: 'Dana-Regular';
-        src: url(./Fonts/Dana-family/Dana-Regular.ttf);
+        src: url(./assets/fonts/Dana-family/Dana-Regular.ttf);
     }
 
     @font-face {
         font-family: 'Dana-Bold';
-        src: url(./Fonts/Dana-family/Dana-Bold.ttf);
+        src: url(./assets/fonts/Dana-family/Dana-Bold.ttf);
     }
 
     @font-face {
         font-family: 'Dana-Medium';
-        src: url(./Fonts/Dana-family/Dana-Medium.ttf);
-    }
+        src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
+    } 
 }
 
 @layer components {
@@ -43,6 +43,14 @@
     .BoxShadow-BtnOrange {
         box-shadow: 3px 4px 0px 0px #161439;
         border: 1px solid #161439;
+    }
+
+    .Box-shadow1 {
+        box-shadow: 0px 0px 7px 1px #bbcbcf70;
+    }
+
+    .Box-shadow2 {
+        box-shadow: 0px 0px 10px 2px #8f9ea1;
     }
 
     .reverse-img {
