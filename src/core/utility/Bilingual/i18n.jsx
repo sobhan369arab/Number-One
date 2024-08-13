@@ -30,9 +30,9 @@ i18n.use(initReactI18next)
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
                     // titlePages
                     loginTitle: 'ورود به عنوان دانش آموز', login: "ورود",
-                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها",
+                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
-                    GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید',
+                    GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
                     // LoginForm
                     LoginCaption: "خوش برگشتی!",
                     LoginDesc: " سلام! آماده ورود به سیستم هستید؟ فقط نام کاربری و رمز عبور خود را در زیر وارد کنید و شما در کمترین زمان به عمل خواهید رسید. بیا بریم!",
@@ -49,9 +49,9 @@ i18n.use(initReactI18next)
                     EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
                     EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع',
                     EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها',
-                    EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:'
-
-
+                    EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
+                    // Contact us page
+                    contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
 
 
 
@@ -79,9 +79,9 @@ i18n.use(initReactI18next)
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
                     // titlePages
                     loginTitle: 'Student Login', login: "Login",
-                    signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events",
+                    signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
-                    GoHomePage: "Go To Home Page", Join: 'Join This Event',
+                    GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
                     // LoginForm
                     LoginCaption: "Welcome back!",
                     LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",
@@ -98,8 +98,9 @@ i18n.use(initReactI18next)
                     EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
                     EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time',
                     EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications',
-                    EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:'
-
+                    EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
+                    // Contact us page
+                    contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
 
                 },
             },
