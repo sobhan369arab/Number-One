@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom"
-import Header from "../common/partials/Header/Header"
-import Footer from "../common/partials/Footer/Footer"
 import Btn_Languages from "../../core/utility/Bilingual/changeLanguage_Btn"
 import { useTranslation } from "react-i18next"
+import Header from "../partials/Header/Header";
+import Footer from "../partials/Footer/Footer";
 
 const MainLayouts = () => {
   const { i18n } = useTranslation();
   return (
-    <div dir={i18n.language === 'fa' ? 'rtl' : 'ltr'} className={`${i18n.language==='fa'? 'font-[Iran-Sans]':'font-[Pop-Medium]'}`}>
+    <div dir={i18n.language === 'fa' ? 'rtl' : 'ltr'} className={`${i18n.language==='fa'? 'font-IranSans':'font-Pop_Med'}`}>
       <div className="fixed left-4 bottom-20 z-50">
         <Btn_Languages />
       </div>
@@ -15,7 +15,7 @@ const MainLayouts = () => {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <Footer/>
     </div>
 
   )

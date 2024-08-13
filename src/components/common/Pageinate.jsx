@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useTranslation } from 'react-i18next';
-import { Event } from '../pages/Event';
+import { Event } from '../pages/event';
 
 function Items({ currentItems }) {
     return (
@@ -45,7 +45,7 @@ export function PaginatedItems({ itemsPerPage, Data }) {
                 previousLabel=""
                 pageCount={pageCount}
                 renderOnZeroPageCount={null}
-                activeClassName='!bg-Purple text-white'
+                activeClassName='!bg-purpleCustom text-white'
                 pageClassName="bg-slate-300  sm:!w-12 !w-10 sm:!py-2.5 !py-1.5 rounded-full text-center text-lg"
             />
         </>

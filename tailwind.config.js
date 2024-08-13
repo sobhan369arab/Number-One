@@ -3,21 +3,26 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+
       backgroundSize: {
         11: "11px",
         70: "70%",
       },
       colors: {
-        VeryDarkPurple: "#06042E",
-        DarkPurple: "#1c1A4A",
-        Purple: "#5751E1",
-        Orange: "#FFC224",
-        Gray: "#D3D2DF",
-        BlueGray:"#F7F7FA",
-        TextGray1: "#B2BBCC",
-        TextGray2: "#8C9AB4",
-        GrayBorder:"#B5B5C3",
-        White: "#F2F2F2",
+        veryDarkPurple: "#06042E",
+        darkPurple: "#1c1A4A",
+        purpleCustom: "#5751E1",
+        orange: "#FFC224",
+        grayCustom: "#D3D2DF",
+        blueGray: "#F7F7FA",
+        textGray1: "#B2BBCC",
+        textGray2: "#8C9AB4",
+        grayBorder: "#B5B5C3",
+        white2: "#F2F2F2",
+      },
+      fontFamily: {
+        IranSans: ["Iran-Sans"],
+        Pop_Med: ["Pop-Medium"],
       },
       // screens: {
       //   tablet: "640px",
@@ -28,5 +33,13 @@ export default {
       // },
     },
   },
-  plugins: [],
+  plugins: [
+    // plugin(function ({ addBase, theme }) {
+    //   addBase({
+    //     h1: { fontSize: theme("fontSize.2xl") },
+    //     h2: { fontSize: theme("fontSize.xl") },
+    //     h3: { fontSize: theme("fontSize.lg") },
+    //   });
+    // }),
+  ],
 };

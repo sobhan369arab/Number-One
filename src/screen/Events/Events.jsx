@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive"
 import { EventData } from "../../core/constants/Events/EventData"
-import TitleSection from "../../components/common/partials/TitleSection/titleSection"
 import { PaginatedItems } from "../../components/common"
+import TitleSection from "../../components/partials/TitleSection/titleSection"
 
 const EventList = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 530px)' })
