@@ -1,12 +1,14 @@
+import { useTranslation } from "react-i18next";
 import TitleSection from "../../components/common/partials/TitleSection/titleSection"
 import { Main, Map, Sidebar } from "../../components/pages/ContactUs"
 
 const ContactUs = () => {
+  const {t} = useTranslation();
   return (
     <>
-      <TitleSection title="تماس با ما" />
-      <div className="sm:px-44 px-16 w-full flex flex-wrap gap-y-16 my-20">
-        <div className="w-full flex justify-between gap-x-6">
+      <TitleSection title={t("contactUsTitle")} />
+      <div className="lg:px-44 sm:px-16 px-8 w-full flex flex-wrap gap-y-16 my-20">
+        <div className="w-full h-fit xl:h-auto flex flex-wrap xl:flex-nowrap justify-between gap-y-4 xl:gap-x-6">
           <Sidebar />
           <Main />
         </div>
