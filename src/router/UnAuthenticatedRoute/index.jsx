@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom"
 import Layouts from "../../components/Layouts/MainLayouts"
-import Error404 from "../../screen/ErrorPage/Error404"
-import EventList from "../../screen/Events/Events"
-import EventDetails from "../../screen/EventsDetail/EventDetails"
-import ContactUs from "../../screen/ContactUs/contactUs"
+import { ContactUs, Error404, EventDetails, EventList } from "../../screen"
+// import Error404 from "../../screen/ErrorPage/Error404"
+// import EventList from "../../screen/Events/Events"
+// import EventDetails from "../../screen/EventsDetail/EventDetails"
+// import ContactUs from "../../screen/ContactUs/contactUs"
 
 const routerPublic = createBrowserRouter([
     {

@@ -13,7 +13,8 @@ i18n.use(initReactI18next)
                     // name Group
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
-                    yes: 'بله', no: 'خیر',
+                    yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط',map:'نقشه',
+                    test:'این یک پیام تستی است',
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', PagesSection: 'صفحات', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
                     // Search Input in the Header
@@ -55,6 +56,11 @@ i18n.use(initReactI18next)
 
 
 
+                    EventOverview: 'نمای کلی رویداد', LearnEvent: 'در این رویداد چه خواهید آموخت؟',
+                    EventElements: 'چهار عنصر اصلی که ما ارائه می دهیم برای این رویداد',
+                    EventElement1: 'با رنگ و گرادیان و شبکه کار کنید', EventElement2: 'تمام میانبرهای مفید',
+                    EventElement3: 'قادر به ایجاد بروشور، بروشور، تبلیغات باشید',
+                    EventElement4: 'نحوه کار با تصاویر و متن',
                 },
             },
             en: {
@@ -62,7 +68,8 @@ i18n.use(initReactI18next)
                     // name Group
                     nameGroup: 'Number One', teamSlogan: 'ALWAYS THE BEST',
                     // Others
-                    yes: 'Yes', no: 'No',
+                    yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By',map:'Map',
+                    test:'This is a test message',
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', PagesSection: 'Pages', ShopSection: 'Shop', BlogSection: 'Blog',
                     // Search Input in the Header
@@ -102,6 +109,11 @@ i18n.use(initReactI18next)
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
 
+                    EventOverview: 'Event Overview', LearnEvent: 'What youll learn in this event?',
+                    EventElements: 'Four major elements that we offer for this event',
+                    EventElement1: 'Work with color & Gradients & Grids', EventElement2: 'All the useful shortcuts',
+                    EventElement3: 'Be able to create Flyers, Brochures, Advertisements',
+                    EventElement4: 'How to work with Images & Text',
                 },
             },
         },

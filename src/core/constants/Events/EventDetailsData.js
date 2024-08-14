@@ -6,3 +6,4 @@ export const EventDetails = [
     { titleDetail: "EventCertifications", countDetail: level, iconDetail: "level.png" },
     { titleDetail: "EventTotalSeat", countDetail: level, iconDetail: "level.png" }
 ];
+

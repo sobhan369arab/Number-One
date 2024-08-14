@@ -15,6 +15,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "2",
@@ -32,6 +40,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "3",
@@ -49,6 +65,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "4",
@@ -66,6 +90,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "5",
@@ -83,6 +115,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "6",
@@ -101,6 +141,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "7",
@@ -118,6 +166,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "8",
@@ -135,6 +191,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "9",
@@ -152,6 +216,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "10",
@@ -169,6 +241,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "11",
@@ -186,6 +266,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "12",
@@ -203,6 +291,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "13",
@@ -220,6 +316,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "14",
@@ -237,6 +341,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "15",
@@ -254,6 +366,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "16",
@@ -271,6 +391,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "17",
@@ -288,6 +416,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "18",
@@ -305,6 +441,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "19",
@@ -322,6 +466,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "20",
@@ -339,6 +491,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "21",
@@ -356,6 +516,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "22",
@@ -373,6 +541,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "23",
@@ -390,6 +566,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "24",
@@ -407,6 +591,14 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "25",
@@ -424,6 +616,14 @@ export const EventData = [
     score: 4.8,
     students: 2500,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
   {
     id: "26",
@@ -441,5 +641,13 @@ export const EventData = [
     score: 3.8,
     students: 2000,
     createBy: "David Millar",
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
+    overView: "test",
+    training: "test",
   },
 ];

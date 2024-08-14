@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import TitleSection from "../../components/common/partials/TitleSection/titleSection"
 import { Main, Map, Sidebar } from "../../components/pages/ContactUs"
+import TitleSection from "../../components/partials/TitleSection/titleSection";
 
 const ContactUs = () => {
   const {t} = useTranslation();
