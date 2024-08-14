@@ -5,4 +5,4 @@ import EventOverView from "./EventOverView";
 import EventElements from "./EventElements";
 import { Map } from "./map";
 
-export {DetailsBox,EventImage,EventTitle,EventOverView,EventElements,Map};
+export {DetailsBox,EventImage,EventTitle,EventOverView,EventElements,Map};4

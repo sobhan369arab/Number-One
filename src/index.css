@@ -57,6 +57,9 @@
     .description-text{
         @apply text-sm text-gray-500;
     }
+    .main-container{
+        @apply sm:my-20 my-12  xl:w-[800px] w-11/12 flex gap-3 m-auto
+    }
     
 
     .reverse-img {

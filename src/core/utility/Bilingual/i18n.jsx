@@ -13,8 +13,8 @@ i18n.use(initReactI18next)
                     // name Group
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
-                    yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط',map:'نقشه',
-                    test:'این یک پیام تستی است',
+                    yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه',
+                    test: 'این یک پیام تستی است',
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', PagesSection: 'صفحات', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
                     // Search Input in the Header
@@ -30,7 +30,7 @@ i18n.use(initReactI18next)
                     company3: 'وبلاگ', company4: 'مربی', company5: 'مناسبت ها',
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
                     // titlePages
-                    loginTitle: 'ورود به عنوان دانش آموز', login: "ورود",
+                    loginTitle: 'ورود به عنوان دانش آموز', login: "ورود",CoursesTitle:'همه دوره ها',
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
@@ -51,16 +51,14 @@ i18n.use(initReactI18next)
                     EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع',
                     EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها',
                     EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
-                    // Contact us page
-                    contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
-
-
-
                     EventOverview: 'نمای کلی رویداد', LearnEvent: 'در این رویداد چه خواهید آموخت؟',
                     EventElements: 'چهار عنصر اصلی که ما ارائه می دهیم برای این رویداد',
                     EventElement1: 'با رنگ و گرادیان و شبکه کار کنید', EventElement2: 'تمام میانبرهای مفید',
                     EventElement3: 'قادر به ایجاد بروشور، بروشور، تبلیغات باشید',
                     EventElement4: 'نحوه کار با تصاویر و متن',
+                    // Contact us page
+                    contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
+
                 },
             },
             en: {
@@ -68,8 +66,8 @@ i18n.use(initReactI18next)
                     // name Group
                     nameGroup: 'Number One', teamSlogan: 'ALWAYS THE BEST',
                     // Others
-                    yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By',map:'Map',
-                    test:'This is a test message',
+                    yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
+                    test: 'This is a test message',
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', PagesSection: 'Pages', ShopSection: 'Shop', BlogSection: 'Blog',
                     // Search Input in the Header
@@ -85,7 +83,7 @@ i18n.use(initReactI18next)
                     company3: 'Blog', company4: 'Instructor', company5: 'Events',
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
                     // titlePages
-                    loginTitle: 'Student Login', login: "Login",
+                    loginTitle: 'Student Login', login: "Login",CoursesTitle:'All Courses',
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
@@ -106,14 +104,13 @@ i18n.use(initReactI18next)
                     EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time',
                     EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications',
                     EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
-                    // Contact us page
-                    contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
-
                     EventOverview: 'Event Overview', LearnEvent: 'What youll learn in this event?',
                     EventElements: 'Four major elements that we offer for this event',
                     EventElement1: 'Work with color & Gradients & Grids', EventElement2: 'All the useful shortcuts',
                     EventElement3: 'Be able to create Flyers, Brochures, Advertisements',
                     EventElement4: 'How to work with Images & Text',
+                    // Contact us page
+                    contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                 },
             },
         },
