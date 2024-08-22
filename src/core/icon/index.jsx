@@ -221,21 +221,6 @@ export function AppleIcon(props) {
     )
 }
 
-export function ArrowButtonIcon(props) {
-    return (
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-            <g clip-path="url(#clip0_36_124)">
-                <path d="M14.0625 7.45H0.9375M0.9375 7.45L6.5625 1.825M0.9375 7.45L6.5625 13.075" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round" />
-            </g>
-            <defs>
-                <clipPath id="clip0_36_124">
-                    <rect width="15" height="14" fill="none" transform="matrix(-1 0 0 1 15 0.449997)" />
-                </clipPath>
-            </defs>
-        </svg>
-    )
-}
-
 export function GoogleIcon(props) {
     return (
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -381,7 +366,31 @@ export function StarIcon(props) {
 export function ArrowLeftIcon(props) {
     return (
         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-            <path d="M14.7227 7.84003H1.59766M1.59766 7.84003L7.22266 2.21503M1.59766 7.84003L7.22266 13.465" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round" {...props}/>
+            <path d="M14.7227 7.84003H1.59766M1.59766 7.84003L7.22266 2.21503M1.59766 7.84003L7.22266 13.465" stroke="white" strokeWidth="1.875" strokeLinecap="round" strokeLinejoin="round" {...props} />
+        </svg>
+    )
+}
+
+export function OptionIcon(props) {
+    return (
+        <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M5.30667 10.5C5.44889 10.5 5.58222 10.4667 5.70667 10.4C5.83111 10.3333 5.91111 10.2417 5.94667 10.125C5.98222 10.0083 5.99111 9.88333 5.97333 9.75C5.95556 9.61667 5.89333 9.51667 5.78667 9.45L1.62667 5.5L5.78667 1.55C5.92889 1.45 6 1.30833 6 1.125C6 0.941667 5.93778 0.791667 5.81333 0.675C5.68889 0.558333 5.52889 0.5 5.33333 0.5C5.13778 0.5 4.98667 0.566667 4.88 0.7L0.186666 5.05C0.0799999 5.18333 0.0266666 5.33333 0.0266666 5.5C0.0266666 5.66667 0.0799999 5.81667 0.186666 5.95L4.88 10.3C4.98667 10.4333 5.14667 10.5 5.36 10.5H5.30667Z" fill="#161439" {...props} />
+        </svg>
+    )
+}
+
+export function PlayIcon(props) {
+    return (
+        <svg width="76" height="81" viewBox="0 0 76 81" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <rect width="76" height="80.042" rx="38" transform="matrix(-1 0 0 1 76 0)" fill="white" />
+            <g clip-path="url(#clip0_473_2017)">
+                <path d="M48.8086 52.3132V27.6942C48.8087 27.406 48.7537 27.1226 48.6488 26.8707C48.5438 26.6188 48.3923 26.4068 48.2088 26.2548C48.0252 26.1027 47.8155 26.0157 47.5997 26.0019C47.3838 25.9882 47.1689 26.0481 46.9752 26.176L28.5134 38.3292C28.3017 38.4694 28.1236 38.6856 27.9991 38.9535C27.8745 39.2214 27.8086 39.5304 27.8086 39.8456C27.8086 40.1608 27.8745 40.4697 27.9991 40.7376C28.1236 41.0055 28.3017 41.2217 28.5134 41.3619L46.9752 53.824C47.1685 53.9517 47.3829 54.0116 47.5983 53.9981C47.8137 53.9847 48.023 53.8983 48.2064 53.7472C48.3898 53.596 48.5414 53.385 48.6467 53.1342C48.7521 52.8833 48.8078 52.6008 48.8086 52.3132Z" fill="#E11B24" />
+            </g>
+            <defs>
+                <clipPath id="clip0_473_2017">
+                    <rect width="22" height="28" fill="white" transform="matrix(-1 0 0 1 49 26)" />
+                </clipPath>
+            </defs>
         </svg>
     )
 }
