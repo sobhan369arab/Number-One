@@ -1,5 +1,4 @@
-import BlueButton from "../../common/BlueButton"
-import TeacherCard from "../../common/teacherCard"
+import { BlueButton, TeacherCard } from "../../common"
 
 const SkilledTeachers = () => {
     return (
