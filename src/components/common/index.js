@@ -1,4 +1,4 @@
-import BlueButton from "./BlueButton";
+import Button from "./Button";
 import LogoGroup from "./LogoGroup";
 import { PaginatedItems } from "./Pageinate";
-export { BlueButton, LogoGroup, PaginatedItems };
+export { Button, LogoGroup, PaginatedItems };
