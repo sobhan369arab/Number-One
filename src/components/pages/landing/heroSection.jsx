@@ -1,5 +1,4 @@
-import BlueButton from "../../common/BlueButton"
-import ImportantWord from "../../common/importantWord"
+import { BlueButton, ImportantWord } from "../../common"
 import Typewriter from 'typewriter-effect';
 
 const HeroSection = () => {
