@@ -1,6 +1,6 @@
 import mannequin from "../../../assets/images/mannequin-faqPoster.png"
 import { Accordion } from "react-accessible-accordion"
-import { CreateAccordionItem } from "../../common/index"
+import { CreateAccordionItem } from "../../common"
 
 const Faq = () => {
   const options = [
