@@ -1,10 +1,7 @@
 import aboutUs_poster from "../../../assets/images/aboutus_landing.png"
 import liveClass_icon from "../../../assets/images/liveClass.png"
-import OptionParts from "../../common/optionParts"
-import ImportantWord from "../../common/importantWord"
-import BlueButton from "../../common/BlueButton"
+import { BlueButton, ImportantWord, OptionParts } from "../../common"
 import { PlayIcon } from "../../../core/icon"
-import CreateAvatar from "./createAvatar"
 
 const AboutUs = () => {
   const options = ["بهترین مربیان", "از هر کجا به کلاس خود دسترسی داشته باشید", "برنامه دوره ای انعطاف پذیر"]
@@ -19,9 +16,9 @@ const AboutUs = () => {
         <div className="w-44 p-2 h-24 rounded-lg bg-white absolute -bottom-14 -right-20 border-2 border-neutral-300 drop-shadow-xl">
           <h1 className="text-center text-[#161439] text-sm">بیش از 36 هزار دانشجوی ثبت نام شده</h1>
           <ul className="w-full h-1/2 flex justify-center items-end">
-            Is Finished
+            <li className={`bg-yellow-100 min-w-9 h-9 rounded-full -mr-4`}></li>
           </ul>
-        </div> 
+        </div>
       </div>
       <div className="w-2/5 h-fit flex flex-wrap gap-y-3">
         <span className="tag">درباره ما بیشتر بدانید</span>
