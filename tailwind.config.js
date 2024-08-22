@@ -3,7 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-
+      backgroundImage: {
+        'heroSection': "url('./src/assets/images/hero_section_landing.jpg')",
+        'importantWord': "url('./src/assets/images/importantWord.png')",
+        'informedPoster': "url('./src/assets/images/informedPoster.jpg')",
+        'gradientBackground': "url('./src/assets/images/gradientBackground.jpg')",
+      },
       backgroundSize: {
         11: "11px",
         70: "70%",
