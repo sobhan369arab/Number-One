@@ -3,10 +3,8 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-
-      backgroundSize: {
-        11: "11px",
-        70: "70%",
+      backgroundImage: {
+        'titleSectionGradient': "url('./src/assets/images/titleSectionGradient.jpg')"
       },
       colors: {
         footerColor: "#06042E",
@@ -18,22 +16,10 @@ export default {
         IranSans: ["Iran-Sans"],
         Pop_Med: ["Pop-Medium"],
       },
-      // screens: {
-      //   tablet: "640px",
-
-      //   laptop: "1024px",
-
-      //   desktop: "1280px",
-      // },
+      screens: {
+        'mobile': {'max': '690px'}
+      },
     },
   },
-  plugins: [
-    // plugin(function ({ addBase, theme }) {
-    //   addBase({
-    //     h1: { fontSize: theme("fontSize.2xl") },
-    //     h2: { fontSize: theme("fontSize.xl") },
-    //     h3: { fontSize: theme("fontSize.lg") },
-    //   });
-    // }),
-  ],
+  plugins: [],
 };
