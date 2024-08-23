@@ -16,10 +16,10 @@ i18n.use(initReactI18next)
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط',map:'نقشه',
                     test:'این یک پیام تستی است',
                     // Menu Items in the Header
-                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', PagesSection: 'صفحات', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
+                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
                     // Search Input in the Header
                     category: 'دسته بندی ها', PlaceHolder: 'جستجو برای دوره ..',
-                    Login: 'ورود',
+                    Login: 'حساب کاربری',
                     // data in the Footer
                     footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',
                     // Links
@@ -71,10 +71,10 @@ i18n.use(initReactI18next)
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By',map:'Map',
                     test:'This is a test message',
                     // Menu Items in the Header
-                    HomeSection: 'Home', CoursesSection: 'Courses', PagesSection: 'Pages', ShopSection: 'Shop', BlogSection: 'Blog',
+                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog',
                     // Search Input in the Header
                     category: 'Categories', PlaceHolder: 'Search For Course ...',
-                    Login: 'Login',
+                    Login: 'User Account',
                     // Footer
                     footerDescription: 'when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.',
                     // Links
