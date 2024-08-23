@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
-import Layouts from "../../components/Layouts/MainLayouts"
+import Layouts from "../../components/layouts/MainLayouts"
 import { ContactUs, Error404, EventDetails, EventList } from "../../screen"
 // import Error404 from "../../screen/ErrorPage/Error404"
 // import EventList from "../../screen/Events/Events"
