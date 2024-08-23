@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ContactMain, ContactSidebar } from "../../components/pages/contact-us"
-import TitleSection from "../../components/partials/title-section/";
+import TitleSection from "../../components/partials/title-section/TitleSection";
 import { CustomMap } from "../../components/common";
 
 const ContactUs = () => {
