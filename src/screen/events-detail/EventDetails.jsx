@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { DetailsBox, EventElements, EventImage, EventOverView, EventTitle, Map } from "../../components/pages/event-details";
-import TitleSection from "../../components/partials/TitleSection/titleSection";
+import TitleSection from "../../components/partials/title-section/TitleSection";
 import { EventData } from "../../core/constants/Events/EventData";
 const EventDetails = () => {
   const { id } = useParams();
