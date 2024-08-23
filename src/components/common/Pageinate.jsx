@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useTranslation } from 'react-i18next';
-import { Event } from '../pages/Event';
+import Event from '../pages/event/Event';
 
 function Items({ currentItems }) {
     return (
