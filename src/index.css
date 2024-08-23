@@ -3,68 +3,72 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Iran-Sans";
+    src: url(./assets/fonts/IRANSans.ttf);
+  }
 
-    @font-face {
-        font-family: 'Iran-Sans';
-        src: url(./assets/fonts/IRANSans.ttf);
-    }
+  @font-face {
+    font-family: "Pop-Medium";
+    src: url(./assets/fonts/Poppins/poppins.medium.ttf);
+  }
 
-    @font-face {
-        font-family: 'Pop-Medium';
-        src: url(./assets/fonts/Poppins/poppins.medium.ttf);
-    }
+  @font-face {
+    font-family: "Dana-Regular";
+    src: url(./assets/fonts/Dana-family/Dana-Regular.ttf);
+  }
 
-    @font-face {
-        font-family: 'Dana-Regular';
-        src: url(./assets/fonts/Dana-family/Dana-Regular.ttf);
-    }
+  @font-face {
+    font-family: "Dana-Bold";
+    src: url(./assets/fonts/Dana-family/Dana-Bold.ttf);
+  }
 
-    @font-face {
-        font-family: 'Dana-Bold';
-        src: url(./assets/fonts/Dana-family/Dana-Bold.ttf);
-    }
-
-    @font-face {
-        font-family: 'Dana-Medium';
-        src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
-    } 
+  @font-face {
+    font-family: "Dana-Medium";
+    src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
+  }
 }
 
 @layer components {
-    .BoxShadow-BtnBlue {
-        box-shadow: 3px 5px 0px 0px #050071;
-    }
-
-    .BoxShadow-BtnBlue_Hover {
-        box-shadow: 1px 2px 0px 0px #050071;
-    }
-
-    .BoxShadow-BtnOrange {
-        box-shadow: 3px 4px 0px 0px #161439;
-        border: 1px solid #161439;
-    }
-
-    .Box-shadow1 {
-        box-shadow: 0px 0px 7px 1px #bbcbcf70;
-    }
-
-    .Box-shadow2 {
-        box-shadow: 0px 0px 10px 2px #8f9ea1;
-    }
-    .title-text{
-        @apply text-lg md:text-xl font-semibold;
-    }
-    .description-text{
-        @apply text-sm text-gray-500;
-    }
-    
-
-    .reverse-img {
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-    }
+  .buttonPurple_shadow {
+    box-shadow: 3px 5px 0px 0px #050071;
+  }
+  .buttonPurple_shadow:hover {
+    box-shadow: 1px 2px 0px 0px #050071;
+  }
+  .buttonYellow_shadow {
+    box-shadow: 3px 5px 0px 0px #3d3d3d;
+  }
+  .buttonYellow_shadow:hover {
+    box-shadow: 1px 2px 0px 0px #3d3d3d;
+  }
+  .Box-shadow1 {
+    box-shadow: 0px 0px 7px 1px #bbcbcf70;
+  }
+  .Box-shadow2 {
+    box-shadow: 0px 0px 10px 2px #8f9ea1;
+  }
+  .boldStyle_text {
+    @apply text-lg md:text-xl font-semibold text-titleColor;
+  }
+  .mediumStyle_text {
+    @apply text-sm text-gray-500;
+  }
+  .bgGradient_menu {
+    background: linear-gradient(
+      90deg,
+      rgba(87, 81, 225, 0) 0%,
+      rgba(67, 63, 174, 0.5) 53.1%,
+      rgba(48, 44, 123, 0) 100%
+    );
+    border-radius: 2px;
+  }
+  .reverse-img {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
 }

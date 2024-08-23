@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+<<<<<<< HEAD
         'heroSection': "url('./src/assets/images/hero_section_landing.jpg')",
         'importantWord': "url('./src/assets/images/importantWord.png')",
         'informedPoster': "url('./src/assets/images/informedPoster.jpg')",
@@ -12,39 +13,24 @@ export default {
       backgroundSize: {
         11: "11px",
         70: "70%",
+=======
+        'titleSectionGradient': "url('./src/assets/images/titleSectionGradient.jpg')"
+>>>>>>> 2c23e377654e3d1626e00dccf231f84aa45aa792
       },
       colors: {
-        veryDarkPurple: "#06042E",
-        darkPurple: "#1c1A4A",
+        footerColor: "#06042E",
+        titleColor: "#161439",
         purpleCustom: "#5751E1",
-        orange: "#FFC224",
-        grayCustom: "#D3D2DF",
-        blueGray: "#F7F7FA",
-        textGray1: "#B2BBCC",
-        textGray2: "#8C9AB4",
-        grayBorder: "#B5B5C3",
-        white2: "#F2F2F2",
+        yellowCustom: "#FFC224",
       },
       fontFamily: {
         IranSans: ["Iran-Sans"],
         Pop_Med: ["Pop-Medium"],
       },
-      // screens: {
-      //   tablet: "640px",
-
-      //   laptop: "1024px",
-
-      //   desktop: "1280px",
-      // },
+      screens: {
+        'mobile': {'max': '690px'}
+      },
     },
   },
-  plugins: [
-    // plugin(function ({ addBase, theme }) {
-    //   addBase({
-    //     h1: { fontSize: theme("fontSize.2xl") },
-    //     h2: { fontSize: theme("fontSize.xl") },
-    //     h3: { fontSize: theme("fontSize.lg") },
-    //   });
-    // }),
-  ],
+  plugins: [],
 };
