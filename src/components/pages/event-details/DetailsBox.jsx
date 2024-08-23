@@ -12,7 +12,7 @@ import {
   WhatsAppIcon,
   YouTubeIcon
 } from "../../../core/icon";
-import { BlueButton } from "../../common";
+import { Button } from "../../common";
 
 const DetailsBox = ({
   price,
@@ -38,7 +38,7 @@ const DetailsBox = ({
   ]
 
   return (
-    <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute top-96 Box-shadow1 p-5 bg-white rounded-lg border border-grayCustom`}>
+    <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute top-96 Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300`}>
       {/* price Info */}
       <div className="bg-purpleCustom px-4 py-3 w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg">
         <h1 className="text-xs">{t('EventPrice')}</h1>
@@ -69,12 +69,11 @@ const DetailsBox = ({
           <div>
             {AppIcons.map((item, index) => (
               <div className="inline-flex mx-1 mt-2 bg-slate-200 p-1.5 rounded-full hover:scale-125 duration-200 cursor-pointer">{item.icon}</div>
-
             ))}
           </div>
         </div>
       </div>
-      <BlueButton ArrowColor={"white"} text={'Join'} Class={'w-44 bg-purpleCustom mb-3 mt-5 text-white m-auto'} />
+      <Button arrowColor={"#fff"} variant="purple" text={'Join'} style="mt-4" />
     </div>
   )
 }
