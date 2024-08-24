@@ -27,7 +27,12 @@
     @font-face {
         font-family: 'Dana-Medium';
         src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
-    } 
+    }
+
+    .scrollBehavior {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
 }
 
 @layer components {
@@ -51,16 +56,22 @@
     .Box-shadow2 {
         box-shadow: 0px 0px 10px 2px #8f9ea1;
     }
-    .title-text{
+    .med_box-shadow{
+        box-shadow: 0px 3px 10px 1px #8f9ea1c4;
+    }
+
+    .title-text {
         @apply text-lg md:text-xl font-semibold;
     }
-    .description-text{
+
+    .description-text {
         @apply text-sm text-gray-500;
     }
-    .main-container{
-        @apply sm:my-20 my-12  xl:w-[800px] w-11/12 flex gap-3 m-auto
+
+    .main-container {
+        @apply sm:my-20 my-12 xl:w-[1150px] w-11/12 flex gap-6 m-auto
     }
-    
+
 
     .reverse-img {
         -moz-transform: scaleX(-1);

@@ -7,7 +7,7 @@ const CourseTopBody = ({
 }) => {
   return (
     <div>
-      <h1 className='text-sm font-semibold line-clamp-1'>{title}</h1>
+      <h1 className='text-sm font-semibold line-clamp-1 mt-1'>{title}</h1>
       <div className='flex justify-between my-2 '>
         <div className={`flex gap-1 w-40  ${category.length > 2 ? "scrollBehavior" : ""}`}>
           {category.map((categoryBox, index) => (

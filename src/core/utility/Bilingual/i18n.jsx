@@ -14,7 +14,7 @@ i18n.use(initReactI18next)
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه',
-                    test: 'این یک پیام تستی است',
+                    test: 'این یک پیام تستی است',priceCount:'تومان',show:'نمایش',result:'نتیجه از',sortBy:'مرتب سازی بر اساس:',
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', PagesSection: 'صفحات', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
                     // Search Input in the Header
@@ -30,7 +30,7 @@ i18n.use(initReactI18next)
                     company3: 'وبلاگ', company4: 'مربی', company5: 'مناسبت ها',
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
                     // titlePages
-                    loginTitle: 'ورود به عنوان دانش آموز', login: "ورود",CoursesTitle:'همه دوره ها',
+                    loginTitle: 'ورود به عنوان دانش آموز', login: "ورود", CoursesTitle: 'همه دوره ها',
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
@@ -58,6 +58,8 @@ i18n.use(initReactI18next)
                     EventElement4: 'نحوه کار با تصاویر و متن',
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
+                    // Filters Name
+                    price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها'
 
                 },
             },
@@ -67,7 +69,7 @@ i18n.use(initReactI18next)
                     nameGroup: 'Number One', teamSlogan: 'ALWAYS THE BEST',
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
-                    test: 'This is a test message',
+                    test: 'This is a test message',priceCount:'$',show:'Showing',result:'Result of',sortBy:'Sort By:',
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', PagesSection: 'Pages', ShopSection: 'Shop', BlogSection: 'Blog',
                     // Search Input in the Header
@@ -83,7 +85,7 @@ i18n.use(initReactI18next)
                     company3: 'Blog', company4: 'Instructor', company5: 'Events',
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
                     // titlePages
-                    loginTitle: 'Student Login', login: "Login",CoursesTitle:'All Courses',
+                    loginTitle: 'Student Login', login: "Login", CoursesTitle: 'All Courses',
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
@@ -111,6 +113,8 @@ i18n.use(initReactI18next)
                     EventElement4: 'How to work with Images & Text',
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
+                    // Filters Name
+                    price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings'
                 },
             },
         },
