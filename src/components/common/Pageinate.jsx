@@ -2,20 +2,41 @@ import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useTranslation } from 'react-i18next';
 import { Event } from '../pages/event';
+import { useLocation } from 'react-router-dom';
+import Course from '../pages/course/Course';
 
 function Items({ currentItems }) {
+    const location = useLocation();
+    console.log(location.pathname)
     return (
         <>
             {currentItems &&
                 currentItems.map((item, index) => (
-                    <Event
-                        key={index}
-                        id={item.id}
-                        title={item.title}
-                        date={item.date}
-                        location={item.city}
-                        images={item.img}
-                    />
+                    location.pathname === '/Events' ||  location.pathname === '/events' ?
+                        <Event
+                            key={index}
+                            id={item.id}
+                            title={item.title}
+                            date={item.date}
+                            location={item.city}
+                            images={item.img}
+                        /> 
+                        : location.pathname == '/Courses' || location.pathname == '/courses' ?
+                        <Course
+                            key={index}
+                            id={item.id}
+                            title={item.title}
+                            images={item.img}
+                            instructor={item.instructor}
+                            score={item.score}
+                            category={item.category}
+                            level={item.level}
+                            price={item.price}
+                            date={item.date}
+                            studentsNumber={item.students}
+                            like={item.like}
+                            disLike={item.disLike}
+                        /> : ""
                 ))}
         </>
     );
@@ -37,7 +58,7 @@ export function PaginatedItems({ itemsPerPage, Data }) {
     };
     return (
         <>
-            <div dir={i18n.language === "fa" ? 'rtl' : 'ltr'} className='flex flex-wrap gap-x-2 justify-around gap-y-8 w-full'> <Items currentItems={currentItems} /></div>
+            <div dir={i18n.language === "fa" ? 'rtl' : 'ltr'} className='flex flex-wrap gap-x-2 justify-around gap-y-3 w-full my-2'> <Items currentItems={currentItems} /></div>
             <ReactPaginate className="flex flex-wrap  gap-3 justify-center items-center SM:my-10 my-6 "
                 breakLabel="..."
                 onPageChange={handlePageClick}
