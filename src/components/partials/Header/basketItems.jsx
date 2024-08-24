@@ -1,9 +1,8 @@
-
-const BasketItems = ({ icon, number }) => {
+const BasketItems = ({ Icon, number }) => {
     return (
-        <div className="relative w-11 h-12 ">
-            <img src={`../icons/${icon}`} alt="Icon Basket" className="m-auto my-2 h-8" />
-            <div className="bg-orange absolute rounded-full text-center px-1.5 text-sm top-0 right-0">{number}</div>
+        <div className="relative cursor-pointer">
+            <Icon width="35px" />
+            <div className="bg-yellowCustom/80 absolute rounded-full text-center px-1.5 text-sm -top-1.5 -right-1">{number}</div>
         </div>
     )
 }

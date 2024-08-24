@@ -1,7 +1,7 @@
 
 const BreadCrumb = () => {
   return (
-    <div>breadCrumb</div>
+    <div className="w-full h-fit text-center">breadCrumb</div>
   )
 }
 

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Btn_Languages from "../../core/utility/Bilingual/changeLanguage_Btn"
 import { useTranslation } from "react-i18next"
-import Header from "../partials/Header/Header";
+import Header from "../partials/header/Header";
 import Footer from "../partials/Footer/Footer";
 
 const MainLayouts = () => {
