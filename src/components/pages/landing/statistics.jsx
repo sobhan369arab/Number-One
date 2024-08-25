@@ -1,16 +1,13 @@
+import { useTranslation } from "react-i18next"
 import CreateStatisticsItem from "./createStatisticsItem"
+import { statisticsItem } from "../../../core/constants/landing/Statistics"
 
 const Statistics = () => {
-    const statisticsItem = [
-        { id: 1, name: "جایزه به دست آمده", statistics: "42 K", isBorder: true },
-        { id: 2, name: "بهترین اساتید", statistics: "156 K", isBorder: true },
-        { id: 3, name: "دروس دانشکده", statistics: "89 K", isBorder: true },
-        { id: 4, name: "دانشجو های فعال", statistics: "45 K+", isBorder: false },
-    ]
+    const { i18n } = useTranslation()
     return (
         <div className="w-full lg:px-44 sm:px-16 px-8 pb-28">
-            <div className="w-full bg-[#282568] rounded-[40px] py-20 px-24 flex Statistics_shadow">
-                {statisticsItem.map(item => (<CreateStatisticsItem key={item.id} Statistics={item.statistics} name={item.name} isBorder={item.isBorder} />))}
+            <div className="w-full py-16 lg:py-20 xl:px-24 flex gap-y-16 flex-wrap md:flex-nowrap statistics_holder">
+                {statisticsItem.map(item => (<CreateStatisticsItem key={item.id} Statistics={item.statistics} name={i18n.language === "en" ? item.name[1] : item.name[0]} isBorder={item.isBorder} />))}
             </div>
         </div>
     )
