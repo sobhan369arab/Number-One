@@ -1,25 +1,27 @@
 import Button from "./Button";
 import LogoGroup from "./LogoGroup";
 import { PaginatedItems } from "./Pageinate";
-<<<<<<< HEAD
 import CreateAccordionItem from "./createAccordionItem";
 import ImportantWord from "./importantWord";
 import InformedPoster from "./informedPoster";
 import OptionParts from "./optionParts";
 import TeacherCard from "./teacherCard";
+import CustomMap from "./CustomMap";
+import Label from "./Label";
+import ButtonSlider from "./ButtonSlider";
+import SwiperSlider from "./SwiperSlider";
 
 export {
-  BlueButton,
+  Button,
   LogoGroup,
   PaginatedItems,
+  CustomMap,
   CreateAccordionItem,
   ImportantWord,
   InformedPoster,
   OptionParts,
   TeacherCard,
+  Label,
+  ButtonSlider,
+  SwiperSlider
 };
-=======
-import CustomMap from "./CustomMap";
-
-export { Button, LogoGroup, PaginatedItems, CustomMap };
->>>>>>> 2c23e377654e3d1626e00dccf231f84aa45aa792
