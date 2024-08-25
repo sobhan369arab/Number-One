@@ -4,18 +4,11 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-<<<<<<< HEAD
         'heroSection': "url('./src/assets/images/hero_section_landing.jpg')",
         'importantWord': "url('./src/assets/images/importantWord.png')",
         'informedPoster': "url('./src/assets/images/informedPoster.jpg')",
         'gradientBackground': "url('./src/assets/images/gradientBackground.jpg')",
-      },
-      backgroundSize: {
-        11: "11px",
-        70: "70%",
-=======
         'titleSectionGradient': "url('./src/assets/images/titleSectionGradient.jpg')"
->>>>>>> 2c23e377654e3d1626e00dccf231f84aa45aa792
       },
       colors: {
         footerColor: "#06042E",
@@ -26,6 +19,7 @@ export default {
       fontFamily: {
         IranSans: ["Iran-Sans"],
         Pop_Med: ["Pop-Medium"],
+        Sahel: ['"Pop-Medium"', '"Sahel"']
       },
       screens: {
         'mobile': {'max': '690px'}
