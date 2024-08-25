@@ -1,43 +1,40 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-const CategoryItem = ({ title, amount }) => {
-    return (
-        <div className="w-32 flex flex-wrap gap-y-3 justify-center">
-            <div className="w-full h-32 rounded-full border border-neutral-300 bg-gradient-to-t from-neutral-300 to-neutral-50"></div>
-            <div className="w-full flex flex-wrap justify-center gap-y-1">
-                <h2 className="w-full text-center text-lg">{title}</h2>
-                <span className="text-sm text-neutral-400">({amount})</span>
-            </div>
-        </div>
-    )
-}
-
+import { SwiperSlide } from "swiper/react"
+import { Label } from "../../common/index"
+import SwiperSlider from "../../common/SwiperSlider"
+import { useTranslation } from "react-i18next"
+import { categoryItems } from "../../../core/constants/landing/category"
+import CategoryItem from "./CreateCategoryItem"
 
 const Categories = () => {
+    const { t, i18n } = useTranslation()
+    const Breakpoints = {
+        1280: { spaceBetween: 20, slidesPerView: 6 },
+        1180: { spaceBetween: 60, slidesPerView: 4 },
+        870: { spaceBetween: 20, slidesPerView: 4 },
+        600: { spaceBetween: 20, slidesPerView: 3 },
+        500: { spaceBetween: 50, slidesPerView: 2 },
+        445: { spaceBetween: 20, slidesPerView: 2 },
+        400: { spaceBetween: 10, slidesPerView: 2 },
+        300: { spaceBetween: 0, slidesPerView: 1 },
+    }
     return (
         <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 lg:px-44 sm:px-16 px-8">
-            <span className="tag">دسته بندی های پرطرفدار</span>
-            <h1 className="title-text text-center">دسته بندی های برتر</h1>
-            <p className="text-neutral-400">امروزه به دلیل آن که ارتباطات فضای مجازی رونق زیادی یافته است</p>
-            <div className="w-full bg-neutral-200/50 mt-5 flex justify-around items-center px-28 py-8 rounded-full">
-                <Swiper
-                    modules={[Pagination]}
-                    spaceBetween={30}
-                    slidesPerView={6}
-                    pagination={{ clickable: true }}
+            <Label text={t("categoryLabel")} variant="section" />
+            <h1 className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
+            <p className="mediumStyle_text text-center">{t("categoryDescription")}</p>
+            <div className="w-full relative bg-neutral-200/50 mt-5 flex justify-center items-center px-20 xl:px-28 py-8 rounded-full">
+                <SwiperSlider
+                    perView={6}
+                    Breakpoints={Breakpoints}
+                    arrowColor="#000"
+                    buttonSideLeft="top-[100px] xl:left-[40px] left-[20px]"
+                    buttonSideRight="top-[100px] xl:right-[40px] right-[20px]"
+                    buttonColor="bg-yellowCustom"
                 >
-                    <SwiperSlide><CategoryItem title="مدیریت" amount={18} /></SwiperSlide>
-                    <SwiperSlide><CategoryItem title="مدیریت" amount={18} /></SwiperSlide>
-                    <SwiperSlide><CategoryItem title="مدیریت" amount={18} /></SwiperSlide>
-                    <SwiperSlide><CategoryItem title="مدیریت" amount={18} /></SwiperSlide>
-                    <SwiperSlide><CategoryItem title="مدیریت" amount={18} /></SwiperSlide>
-                    <SwiperSlide><CategoryItem title="مدیریت" amount={18} /></SwiperSlide>
-                </Swiper>
+                    {categoryItems.map((item, index) => (<SwiperSlide key={index}><CategoryItem amount={item.count} title={i18n.language === "en" ? item.name[1] : item.name[0]} /></SwiperSlide>))}
+                </SwiperSlider>
             </div>
-        </div>
+        </div >
     )
 }
 
