@@ -12,7 +12,7 @@ const TeacherCard = ({ name, skill, picture }) => {
     ]
     return (
         <div className="flex gap-x-4 items-center">
-            <div className="w-[140px] h-[150px] rounded-full bg-yellow-500"></div>
+            <div className="w-28 md:w-[140px] h-28 md:h-[150px] rounded-full bg-yellow-500"></div>
             <div className="h-fit ">
                 <h1>اولیویا میا</h1>
                 <span>طراحی وب سایت</span>
