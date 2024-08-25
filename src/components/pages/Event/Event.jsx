@@ -11,9 +11,9 @@ const Event = ({ id, title, date, location, images }) => {
                 <h1 className="mt-6 mb-2 w-48 font-semibold">{t(title)}</h1>
                 <div className="flex gap-1">
                     <LocationIcon height={20} width={20} />
-                    <span className="description-text">{t(location)}</span>
+                    <span className="mediumStyle_text">{t(location)}</span>
                 </div>
-                <div className={`bg-orange w-28 pt-1 pb-0.5 BoxShadow-BtnOrange text-center rounded-3xl text-sm 
+                <div className={`bg-yellowCustom buttonYellow_shadow duration-200 w-28 pt-1 pb-0.5 text-center rounded-3xl text-sm 
             font-semibold absolute top-40 ${i18n.language === 'fa' ? 'right-4' : 'left-4'}`}>{t(date)}</div>
             </div>
         </Link>

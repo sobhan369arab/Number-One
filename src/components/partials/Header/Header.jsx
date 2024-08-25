@@ -1,54 +1,39 @@
-import BasketItems from "./basketItems"
+import BasketItems from "./BasketItems"
 import { baskets, menuItem } from "../../../../src/core/constants/Header/headerData"
-import MenuHeader from "./menuHeader"
-import SearchInput from "./searchInput"
+import MenuHeader from "./MenuHeader"
+import SearchInput from "./SearchInput"
 import { useTranslation } from "react-i18next"
 import { LogoGroup } from "../../common"
+import { MenuIcon } from "../../../core/icon"
+import MediaQuery from "react-responsive"
 
 const Header = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="flex items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-4 relative">
+    <div className="flex gap-x-10 items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-4 relative">
       {/* Right Part */}
-      <div className="flex items-center">
-        <LogoGroup color={'text-purpleCustom'}/>
-        <div className={`flex gap-1.5 ${i18n.language === 'fa' ? 'mr-6' : 'ml-11 mt-2'}`}>
-          <img src="../icons/list.svg" alt="hamberger Icon" className="h-9 lg:hidden cursor-pointer" />
-          {/* Making any of the Menu Items */}
-          {menuItem.map((item, index) => {
-            return (
-              <MenuHeader
-                key={index}
-                title={item.title}
-              />
-            )
-          })}
-        </div>
+      <div className="flex gap-x-4 items-center">
+        <LogoGroup color={'text-purpleCustom'} />
+        <MediaQuery maxWidth={"1024px"}>
+          <MenuIcon height="35px" width="35px" />
+        </MediaQuery>
+        {/* Making any of the Menu Items */}
+        <MediaQuery minWidth={"1024px"}>
+          <ul className="flex gap-x-4">
+            {menuItem.map((item, index) => <MenuHeader key={index} href={item.href} title={item.title} />)}
+          </ul>
+        </MediaQuery>
       </div>
       {/* Left Part */}
-      <div className="flex xl:w-[45%] items-center  gap-4">
+      <div className="h-[42px] flex gap-x-3 justify-end items-center">
         <SearchInput />
-        <div className="flex sm:gap-3 items-center">
-          <div className="flex max-sm:hidden">
-            {/* Making any of the Basket Items */}
-            {baskets.map((item, index) => {
-              return (
-                <BasketItems
-                  key={index}
-                  icon={item.icon}
-                  number={item.number}
-                />
-              )
-            })}
-          </div>
-          {/* Login Button */}
-          <button className="bg-orange border border-yellow-500 h-9 px-7 rounded-3xl inline-block">{t('Login')}</button>
-
-        </div>
-
-
-
+        {/* Making any of the Basket Items */}
+        <MediaQuery minWidth={"500px"}>
+          {baskets.map((item, index) => <BasketItems key={index} Icon={item.icon} number={item.number} />)}
+        </MediaQuery>
+        {/* Login Button */}
+        <button className="bg-yellowCustom border-yellowCustom text-sm border rounded-full text-nowrap py-2 px-4">{t('Login')}</button>
       </div>
     </div>
   )

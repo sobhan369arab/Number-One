@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useTranslation } from 'react-i18next';
-import { Event } from '../pages/event';
-import { useLocation } from 'react-router-dom';
-import Course from '../pages/course/Course';
+import Event from '../pages/event/Event';
 
 function Items({ currentItems }) {
     const location = useLocation();

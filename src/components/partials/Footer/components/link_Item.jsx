@@ -7,8 +7,8 @@ const Link_Item = ({ title, links }) => {
             <h1 className="text-white sm:text-xl text-lg" >{t(title)}</h1>
             <div className="border-b-4 border-purpleCustom my-3 w-[12%] rounded-xl"></div>
             {links.map((item, index) => (
-                <h1 key={index} className="w-fit text-textGray1 max-sm:text-[14px] leading-8 duration-100">
-                    <span className="hover:text-white2 cursor-pointer">{t(item)}</span>
+                <h1 key={index} className="w-fit text-neutral-400 max-sm:text-[14px] leading-8 duration-100">
+                    <span className="hover:text-white cursor-pointer">{t(item)}</span>
                 </h1>
             ))}
         </div>

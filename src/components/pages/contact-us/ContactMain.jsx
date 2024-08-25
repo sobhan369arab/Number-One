@@ -1,13 +1,8 @@
 import { useTranslation } from "react-i18next"
-import BlueButton from "../../common/BlueButton"
+import { Button } from "../../common"
+import ContactField from "./ContactField"
 
-const Field = ({ placeholder }) => {
-    return (
-        <input className="w-full sm:w-1/3 h-12 border-2 border-neutral-200 outline-none rounded-md px-4" placeholder={placeholder} type="text" name="field" />
-    )
-}
-
-export const Main = () => {
+const ContactMain = () => {
     const { t, i18n } = useTranslation()
     const fields = [
         { id: 1, name: ["نام *", "Name *"] },
@@ -24,14 +19,16 @@ export const Main = () => {
                 <div className="w-full flex flex-wrap sm:flex-nowrap gap-4">
                     {fields.map(obj => {
                         if (i18n.language === "fa") {
-                            return (<Field key={obj.id} placeholder={obj.name[0]} />)
+                            return (<ContactField key={obj.id} placeholder={obj.name[0]} />)
                         } else {
-                            return (<Field key={obj.id} placeholder={obj.name[1]} />)
+                            return (<ContactField key={obj.id} placeholder={obj.name[1]} />)
                         }
                     })}
                 </div>
-                <BlueButton ArrowColor={"black"} Class={"w-40 border-2 border-black bg-orange text-black font-bold"} text={t("submit")} />
+                <Button arrowColor="#000" variant="yellow" text={t("submit")} />
             </div>
         </div>
     )
 }
+
+export default ContactMain
