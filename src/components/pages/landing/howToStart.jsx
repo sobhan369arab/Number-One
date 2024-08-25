@@ -1,29 +1,55 @@
-import mannequin_coach from "../../../assets/images/mannequin-coach.png"
-import mannequin_student from "../../../assets/images/mannequin-student.png"
+import { Label, SwiperSlider } from "../../common"
 import CreateRequestCard from "./createRequestCard"
 import Encouragement from "./encouragementList"
+import { SwiperSlide } from 'swiper/react';
+import MediaQuery from "react-responsive";
+import { useTranslation } from "react-i18next"
+import { requestCards, encouragementItems } from "../../../core/constants/landing/howToStart";
 
 const HowToStart = () => {
-    const requestCards = [
-        { title: "مربی شوید", paragraph: "برای مثال بی اهمیت، کدام یک از ما متعهد می شویم ورزش بدنی بله این اتفاق در اینجا می افتد.", buttonValue: "درخواست", picture: mannequin_coach },
-        { title: "دانشجو شوید", paragraph: "به میلیون ها نفر از سراسر جهان بپیوندید با هم یاد می گیرند یادگیری آنلاین.", buttonValue: "درخواست", picture: mannequin_student },
-    ]
-    const encouragementItems = [
-        { title: "با کارشناسان بیاموزید", description: "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما", icon: "" },
-        { title: "هر چیزی یاد بگیر", description: "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما", icon: "" },
-        { title: "دریافت گواهی آنلاین", description: "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما", icon: "" },
-        { title: "بازاریابی ایمیلی", description: "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما", icon: "" },
-    ]
+    const { t, i18n } = useTranslation()
+
     return (
         <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 bg-[#282568] lg:px-44 sm:px-16 px-8">
-            <span className="tag bg-purpleCustom text-white">چگونه سفر را شروع می کنیم</span>
-            <h1 className="title-text text-center text-white">سفر یادگیری خود را از همین امروز شروع کنید!</h1>
-            <p className="description-text w-1/3 text-center">اعضای شهودی Groove make team ورودی را با هم به تقسیم سازماندهی، اولویت بندی و.در این قسمت.</p>
-            <ul className="w-full flex mt-10">
-                {encouragementItems.map((obj, index) => <Encouragement key={index} icon={obj.icon} title={obj.title} description={obj.description} />)}
+            <Label text={t("howToStartLabel")} variant="section" style="bg-purpleCustom text-white" />
+            <h1 className="boldStyle_text w-full text-center text-white">{t("howToStartTitle")}</h1>
+            <p className="mediumStyle_text md:w-1/2 lg:w-1/3 text-center">{t("howToStartDesc")}</p>
+            <ul className="w-full flex flex-wrap xl:flex-nowrap relative mt-10">
+                <MediaQuery minWidth={"648px"}>
+                    {encouragementItems.map((obj, index) => {
+                        if (i18n.language === "en") {
+                            return <Encouragement key={index} icon={obj.icon} title={obj.title[1]} description={obj.description[1]} />
+                        } else {
+                            return <Encouragement key={index} icon={obj.icon} title={obj.title[0]} description={obj.description[0]} />
+                        }
+                    })}
+                </MediaQuery>
+                <MediaQuery maxWidth={"648px"}>
+                    <SwiperSlider
+                        perView={1}
+                        arrowColor="#fff"
+                        buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] z-50"
+                        buttonSideRight="top-[100px] xl:right-[40px] right-[20px] z-50"
+                        buttonColor="bg-purpleCustom"
+                    >
+                        {encouragementItems.map((obj, index) => {
+                            if (i18n.language === "en") {
+                                return <SwiperSlide key={index} className="justify-center flex"><Encouragement icon={obj.icon} title={obj.title[1]} description={obj.description[1]} /></SwiperSlide>
+                            } else {
+                                return <SwiperSlide key={index} className="justify-center flex"><Encouragement icon={obj.icon} title={obj.title[0]} description={obj.description[0]} /></SwiperSlide>
+                            }
+                        })}
+                    </SwiperSlider>
+                </MediaQuery>
             </ul>
-            <div className="w-full flex gap-x-5 mt-20">
-                {requestCards.map((item, index) => <CreateRequestCard key={index} buttonValue={item.buttonValue} paragraph={item.paragraph} picture={item.picture} title={item.title} />)}
+            <div className="w-full flex mobile:flex-wrap gap-5 mt-20">
+                {requestCards.map((item, index) => {
+                    if (i18n.language === "en") {
+                        return <CreateRequestCard key={index} buttonValue={item.buttonValue[1]} paragraph={item.paragraph[1]} picture={item.picture} title={item.title[1]} />
+                    } else {
+                        return <CreateRequestCard key={index} buttonValue={item.buttonValue[0]} paragraph={item.paragraph[0]} picture={item.picture} title={item.title[0]} />
+                    }
+                })}
             </div>
         </div>
     )
