@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { Label } from "../../common"
-import Tab from "./Tab"
+import Tab from "./tab"
 import { tabOptions } from "../../../core/constants/landing/TopCoursesTab"
 
 const TopCourses = () => {
