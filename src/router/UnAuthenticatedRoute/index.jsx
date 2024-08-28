@@ -1,15 +1,23 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import Layouts from "../../components/layouts/MainLayouts"
-import { ContactUs, Error404, EventDetails, EventList } from "../../screen"
-import Landing from "../../screen/landing/landing"
-// import Error404 from "../../screen/ErrorPage/Error404"
-// import EventList from "../../screen/Events/Events"
-// import EventDetails from "../../screen/EventsDetail/EventDetails"
-// import ContactUs from "../../screen/ContactUs/contactUs"
+import { MainLayouts, UserPanelLayout } from "../../components/layouts"
+import {
+    ContactUs,
+    Error404,
+    EventDetails,
+    EventList,
+    Landing,
+    Dashboard,
+    Favorites,
+    Information,
+    MyCourses,
+    MyViews,
+    Reserved,
+    Security
+} from "../../screen"
 
 const routerPublic = createBrowserRouter([
     {
-        element: <Layouts />,
+        element: <MainLayouts />,
         children: [
             { path: '/', element: <Landing /> },
             { path: '/home', element: <Navigate to={"/"} /> },
@@ -22,6 +30,18 @@ const routerPublic = createBrowserRouter([
             },
             { path: '/*', element: <Error404 /> },
 
+        ]
+    },
+    {
+        element: <UserPanelLayout />,
+        children: [
+            { path: "/userPanel", element: <Dashboard /> },
+            { path: "/userPanel/information", element: <Information /> },
+            { path: "/userPanel/myCourses", element: <MyCourses /> },
+            { path: "/userPanel/reserved", element: <Reserved /> },
+            { path: "/userPanel/myViews", element: <MyViews /> },
+            { path: "/userPanel/favorites", element: <Favorites /> },
+            { path: "/userPanel/security", element: <Security /> },
         ]
     }
 ])
