@@ -2,10 +2,10 @@ import React from 'react'
 
 const CreateCourse = ({nameCourse, date, teacher}) => {
     return (
-        <div className='w-full h-20 rounded-xl p-2 flex gap-x-2'>
+        <div className='w-full h-20 rounded-xl p-2 flex gap-x-2 bg-[#F9F9F9]'>
             <div className='w-full flex flex-wrap'>
                 <span className='boldStyle_text font-IranSans text-base'>{nameCourse}</span>
-                <div className='w-full flex justify-between text-sm text-purpleCustom'>
+                <div className='w-full flex justify-between items-end text-sm text-purpleCustom'>
                     <span>{teacher}</span>
                     <span className='text-yellowCustom'>{date}</span>
                 </div>
