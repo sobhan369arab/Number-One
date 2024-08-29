@@ -6,7 +6,7 @@ import { HomeBtnPanelIcon } from '../../core/icon'
 
 const UserPanelLayout = () => {
     return (
-        <div dir='rtl' className='p-20 px-44 flex flex-wrap gap-y-10 font-IranSans'>
+        <div dir='rtl' className='p-20 flex flex-wrap gap-y-10 font-IranSans lg:px-44 sm:px-16 mobile:px-8'>
             <UserPanelHeader />
             <div className='w-full h-[813px] flex rounded-2xl overflow-hidden userPanel_holder_shadow'>
                 <SidebarUserPanel />
