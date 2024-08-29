@@ -4,6 +4,7 @@ import UserCourseStatus from "./dashboard/UserCourseStatus";
 import LatestBlogs from "./dashboard/LatestBlogs";
 import UserCoursesSection from "./dashboard/UserCoursesSection";
 import CreateCourse from "./dashboard/CreateCourse";
+import InformationSection from "./information/InformationSection";
 
 export {
   SidebarUserPanel,
@@ -11,5 +12,6 @@ export {
   UserCourseStatus,
   LatestBlogs,
   UserCoursesSection,
-  CreateCourse
+  CreateCourse,
+  InformationSection
 };
