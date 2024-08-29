@@ -15,7 +15,7 @@ const UserPanelLayout = () => {
                         <DarkModeBtn />
                         <Link to="/" className='cursor-pointer'><HomeBtnPanelIcon width="30" height="30" fill="#5751E1" /></Link>
                     </div>
-                    <div className='w-full h-full py-14'>
+                    <div className='w-full h-full py-14 flex justify-center'>
                         <Outlet />
                     </div>
                 </div>
