@@ -6,13 +6,13 @@ export const variantButton = {
     "yellow": "bg-yellowCustom text-black buttonYellow_shadow",
 }
 
-const Button = ({ text, arrowColor, variant, style }) => {
+const Button = ({ text, arrowColor, variant, style, Icon }) => {
     const { t, i18n } = useTranslation();
     return (
         <button className={`rounded-3xl pb-3 pt-1.5 px-5 flex items-center gap-x-2 duration-200 ${variantButton?.[variant]} ${style}`}>
             <span className="text-sm">{t(text)}</span>
             <div className={i18n.language === "en" ? "reverse-img" : ""}>
-                <ArrowLeftIcon stroke={arrowColor} height="12px" />
+                {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
             </div>
         </button>
     )
