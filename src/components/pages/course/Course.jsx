@@ -1,3 +1,6 @@
+import { ComparisonIcon } from "../../../core/icon"
+import ComparisonBtn from "../../common/ComparisonBtn"
+import FavoriteBtn from "../../common/FavoriteBtn"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseHeader from "./CourseHeader"
@@ -19,10 +22,11 @@ const Course = ({
 
 }) => {
     return (
-        <div className="border border-grayBorder p-4 pb-3 w-[288px] rounded-lg hover:shadow-lg duration-200 cursor-pointer">
-
+        <div className="border border-grayBorder p-4 pb-3 w-[288px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
+            <ComparisonBtn/>
+            <FavoriteBtn/>
             <CourseHeader images={images} />
-            <div className="py-2">
+            <div className="py-2 ">
                 <CourseTopBody
                     title={title}
                     score={score}
