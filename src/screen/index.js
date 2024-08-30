@@ -9,6 +9,7 @@ import MyCourses from "./user-panel/MyCourses";
 import MyViews from "./user-panel/MyViews";
 import Reserved from "./user-panel/Reserved";
 import Security from "./user-panel/Security";
+import EditInformation from "./user-panel/EditInformation";
 import Landing from "./landing/landing";
 
 export {
@@ -24,4 +25,5 @@ export {
   MyViews,
   Reserved,
   Security,
+  EditInformation
 };

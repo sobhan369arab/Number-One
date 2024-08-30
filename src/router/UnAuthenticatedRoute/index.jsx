@@ -12,7 +12,8 @@ import {
     MyCourses,
     MyViews,
     Reserved,
-    Security
+    Security,
+    EditInformation
 } from "../../screen"
 
 const routerPublic = createBrowserRouter([
@@ -37,6 +38,7 @@ const routerPublic = createBrowserRouter([
         children: [
             { path: "/userPanel", element: <Dashboard /> },
             { path: "/userPanel/information", element: <Information /> },
+            { path: "/userPanel/editInformation", element: <EditInformation /> },
             { path: "/userPanel/myCourses", element: <MyCourses /> },
             { path: "/userPanel/reserved", element: <Reserved /> },
             { path: "/userPanel/myViews", element: <MyViews /> },
