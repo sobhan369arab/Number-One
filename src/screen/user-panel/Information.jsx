@@ -25,7 +25,7 @@ const Information = () => {
       </div>
       <InformationSection section={"sectionRight"} state={userState} styleSection="border-l border-neutral-300" />
       <InformationSection section={"sectionLeft"} state={userState} map />
-      <Button Icon={EditIcon} text="ویرایش" variant="yellow" style="mt-10 w-32 justify-center" />
+      <Button Icon={EditIcon} href="/userPanel/editInformation" text="ویرایش" variant="yellow" style="mt-10 w-32 justify-center" />
     </div>
   )
 }
