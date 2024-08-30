@@ -16,7 +16,7 @@ i18n.use(initReactI18next)
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه',
                     test: 'این یک پیام تستی است',
                     // Menu Items in the Header
-                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
+                    HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
                     // Search Input in the Header
                     category: 'دسته بندی ها', PlaceHolder: 'جستجو برای دوره ..',
                     Login: 'حساب کاربری',
@@ -95,7 +95,7 @@ i18n.use(initReactI18next)
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message',
                     // Menu Items in the Header
-                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog',
+                    HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
                     category: 'Categories', PlaceHolder: 'Search For Course ...',
                     Login: 'User Account',
