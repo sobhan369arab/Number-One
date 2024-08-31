@@ -11,7 +11,7 @@ const ContactMain = () => {
     ]
 
     return (
-        <div className="w-full xl:w-4/6 xl:h-full flex items-center bg-blueGray border-2 border-grayBorder rounded-lg p-4 xl:p-8">
+        <div className="w-full xl:w-4/6 xl:h-full flex items-center bg-grayCustom border-2 border-grayBorder rounded-lg p-4 xl:p-8">
             <div className="w-full h-fit flex flex-wrap gap-y-4">
                 <h1 className="w-full text-3xl font-bold">{t("contactUsCaption")}</h1>
                 <p className="w-full text-sm text-neutral-500">{t("contactUsDescription")}</p>

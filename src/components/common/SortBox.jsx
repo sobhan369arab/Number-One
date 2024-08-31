@@ -26,7 +26,7 @@ const SortBox = ({
   }
 
   return (
-    <div className="w-[88%] flex items-center justify-between mb-5">
+    <div className="w-[87%] flex items-center justify-between mr-2">
       <h1 className="text-gray-600">{t('show')} <span className="text-blue-600">{data.length}</span>  {t('result')} {allDataNumber}</h1>
       <div className="flex gap-3 items-center">
         <h1 className="text-gray-600 text-sm">{t('sortBy')}</h1>
@@ -36,7 +36,7 @@ const SortBox = ({
             onChange={TypehandleChange}
             options={sortType}
             placeholder={"محبوبیت"}
-            className="text-sm w-36 "
+            className="text-sm w-32 "
           />
         </div>
         <Select
@@ -44,7 +44,7 @@ const SortBox = ({
           onChange={CalhandleChange}
           options={sortCal}
           placeholder={"نزولی"}
-          className="text-sm   w-28"
+          className="text-sm   w-24"
         />
 
       </div>

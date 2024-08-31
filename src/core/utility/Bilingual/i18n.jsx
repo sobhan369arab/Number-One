@@ -59,8 +59,8 @@ i18n.use(initReactI18next)
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
                     // Filters Name
-                    price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها'
-
+                    price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها',type:'نحوه برگذاری',
+                    removeFilters:'حذف فیلترها',
                 },
             },
             en: {
@@ -114,7 +114,8 @@ i18n.use(initReactI18next)
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     // Filters Name
-                    price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings'
+                    price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings',type:'How to put',
+                    removeFilters:'Remove Filters',
                 },
             },
         },

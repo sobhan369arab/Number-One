@@ -1,4 +1,5 @@
 import FilterCheckBox from "./FilterCheckBox";
 import FilterRadio from "./FilterRadio";
 import FilterRange from "./FilterRange";
-export {FilterCheckBox,FilterRadio,FilterRange}
+import FilterStars from "./FilterStars";
+export {FilterCheckBox,FilterRadio,FilterRange,FilterStars}

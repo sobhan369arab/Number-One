@@ -27,6 +27,10 @@
     font-family: "Dana-Medium";
     src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
   }
+  .scrollBehavior{
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
 }
 
 @layer components {
@@ -70,5 +74,15 @@
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
+  }
+  .main-container{
+    @apply w-4/5 m-auto my-8 ;
+  }
+
+  #view1:checked ~  .check1{
+    @apply bg-purpleCustom
+  }
+  #view2:checked ~  .check2{
+    @apply bg-purpleCustom
   }
 }

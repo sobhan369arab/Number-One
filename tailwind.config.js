@@ -1,6 +1,8 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -11,6 +13,7 @@ export default {
         titleColor: "#161439",
         purpleCustom: "#5751E1",
         yellowCustom: "#FFC224",
+        grayCustom:"rgba(244, 243, 248, 1)",
       },
       fontFamily: {
         IranSans: ["Iran-Sans"],

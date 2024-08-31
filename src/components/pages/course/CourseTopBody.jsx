@@ -11,7 +11,7 @@ const CourseTopBody = ({
       <div className='flex justify-between my-2 '>
         <div className={`flex gap-1 w-40  ${category.length > 2 ? "scrollBehavior" : ""}`}>
           {category.map((categoryBox, index) => (
-            <div key={index} className='px-4 py-1 bg-gray-200 text-xs rounded-2xl whitespace-nowrap cursor-default'>{categoryBox}</div>
+            <div key={index} className='px-4 py-1 bg-grayCustom text-xs rounded-2xl whitespace-nowrap cursor-default'>{categoryBox}</div>
           ))}
         </div>
         <div className="flex gap-1 items-baseline">

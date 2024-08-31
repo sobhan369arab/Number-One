@@ -1,11 +1,11 @@
-import BasketItems from "./BasketItems"
-import { baskets, menuItem } from "../../../../src/core/constants/Header/headerData"
+import { baskets, menuItem } from "../../../core/constants/Header/headerData"
 import MenuHeader from "./MenuHeader"
 import SearchInput from "./SearchInput"
 import { useTranslation } from "react-i18next"
 import { LogoGroup } from "../../common"
 import { MenuIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
+import BasketItems from "./BasketItems"
 
 const Header = () => {
   const { t, i18n } = useTranslation();
