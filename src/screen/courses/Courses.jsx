@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import View2 from "../../components/pages/course-list/View2"
+import ChangeView from "../../components/pages/course-list/ChangeView"
 
 
 const Courses = () => {
@@ -19,7 +19,7 @@ const Courses = () => {
     const [rating, SetRating] = useState(0);
     const [priceDown, setPriceDown] = useState(0);
     const [priceUp, setPriceUp] = useState(1000000);
-
+    const [showGrid, setShowGrid] = useState(false);
     const filterObj = {
         SortingCol: sortCal,
         SortType: sortType,
@@ -58,9 +58,9 @@ const Courses = () => {
                 <div className="w-[87%]">
                     <div className="flex gap-5 items-center pb-2">
                         <SortBox setSortCal={setSortCal} setSortType={setSortType} allDataNumber={CoursesDataFa.length} data={AllData} />
-                        <View2 />
+                        <ChangeView setShowGrid={setShowGrid}/>
                     </div>
-                    {AllData.length !== 0 ? <PaginatedItems itemsPerPage={isTabletOrMobile ? 6 : 12} Data={AllData} /> : null}
+                    {AllData.length !== 0 ? <PaginatedItems showGrid={showGrid} itemsPerPage={isTabletOrMobile ? 6 : 12} Data={AllData} /> : null}
                 </div>
             </div>
         </>

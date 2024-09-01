@@ -2,7 +2,7 @@ import { ComparisonIcon } from "../../core/icon"
 
 const ComparisonBtn = () => {
   return (
-    <div className="p-1 absolute bg-white rounded-xl right-5 top-5"> 
+    <div className={`${location.search === '?V=1'? "absolute":""} p-1  bg-white rounded-xl top-5 right-5  comparison-btn`}> 
         <ComparisonIcon  className={"h-8"}/>
     </div>
   )
