@@ -1,6 +1,6 @@
 const PercentageSkills = ({skillName, percentage}) => {
     return (
-        <div className='w-1/2 px-2 flex flex-wrap'>
+        <div className='w-full sm:w-1/2 px-2 flex flex-wrap'>
             <div className='w-full flex justify-between px-1 mb-1'>
                 <span>{skillName}</span>
                 <span>{percentage}</span>
