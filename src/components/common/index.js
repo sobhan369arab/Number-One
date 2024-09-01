@@ -10,6 +10,7 @@ import CustomMap from "./CustomMap";
 import Label from "./Label";
 import ButtonSlider from "./ButtonSlider";
 import SwiperSlider from "./SwiperSlider";
+import CreateSocialMediaItems from "./CreateSocialMediaItems";
 
 export {
   Button,
@@ -23,5 +24,6 @@ export {
   TeacherCard,
   Label,
   ButtonSlider,
-  SwiperSlider
+  SwiperSlider,
+  CreateSocialMediaItems
 };
