@@ -4,6 +4,10 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        'heroSection': "url('./src/assets/images/hero_section_landing.jpg')",
+        'importantWord': "url('./src/assets/images/importantWord.png')",
+        'informedPoster': "url('./src/assets/images/informedPoster.jpg')",
+        'gradientBackground': "url('./src/assets/images/gradientBackground.jpg')",
         'titleSectionGradient': "url('./src/assets/images/titleSectionGradient.jpg')"
       },
       colors: {
@@ -15,6 +19,7 @@ export default {
       fontFamily: {
         IranSans: ["Iran-Sans"],
         Pop_Med: ["Pop-Medium"],
+        Sahel: ['"Pop-Medium"', '"Sahel"']
       },
       screens: {
         'mobile': {'max': '690px'}
