@@ -1,6 +1,8 @@
 import Button from "./Button";
 import LogoGroup from "./LogoGroup";
-import { PaginatedItems } from "./Pageinate";
+import PaginatedItems from "./Paginate/Pageinate";
+import PaginateHolderItems from "./Paginate/PaginateHolderItems";
+import {handlePageClick, calculatePageCount} from "./Paginate/PaginateFunctions";
 import CreateAccordionItem from "./createAccordionItem";
 import ImportantWord from "./importantWord";
 import InformedPoster from "./informedPoster";
@@ -23,5 +25,8 @@ export {
   TeacherCard,
   Label,
   ButtonSlider,
-  SwiperSlider
+  SwiperSlider,
+  PaginateHolderItems,
+  handlePageClick,
+  calculatePageCount
 };
