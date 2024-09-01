@@ -1,7 +1,7 @@
 import { Field, Formik } from "formik"
 import { UserIcon } from "../../core/icon"
 import { Form } from "react-router-dom"
-import { CreateField } from "../../components/pages/user-panel"
+import { CreateField, Profile } from "../../components/pages/user-panel"
 import { Button } from "../../components/common"
 import { informationFields } from "../../core/constants/user-panel/information"
 
@@ -23,7 +23,7 @@ const EditInformation = () => {
                         {informationFields.sectionRight.map(obj => <CreateField key={obj.id} certificate={obj.certificate} dir={obj.dir} fullSize={obj.fullSize} options={obj.options} type={obj.type} sectionName={obj.sectionName} typical={obj.typical} />)}
                     </div>
                     <div className="w-2/5 h-fit flex gap-y-3 flex-wrap justify-center px-6">
-                        <div className="w-36 h-36 rounded-full bg-yellowCustom"></div>
+                        <Profile />
                         {informationFields.sectionLeft.map(obj => <CreateField key={obj.id} certificate={obj.certificate} dir={obj.dir} fullSize={obj.fullSize} options={obj.options} type={obj.type} sectionName={obj.sectionName} typical={obj.typical} />)}
                     </div>
                     <div className="w-full h-fit mt-5 border-t border-neutral-300 flex py-5">
