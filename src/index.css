@@ -7,22 +7,22 @@
     font-family: "Iran-Sans";
     src: url(./assets/fonts/IRANSans.ttf);
   }
-
+  @font-face {
+    font-family: "Sahel";
+    src: url(./assets/fonts/Sahel.ttf);
+  }
   @font-face {
     font-family: "Pop-Medium";
     src: url(./assets/fonts/Poppins/poppins.medium.ttf);
   }
-
   @font-face {
     font-family: "Dana-Regular";
     src: url(./assets/fonts/Dana-family/Dana-Regular.ttf);
   }
-
   @font-face {
     font-family: "Dana-Bold";
     src: url(./assets/fonts/Dana-family/Dana-Bold.ttf);
   }
-
   @font-face {
     font-family: "Dana-Medium";
     src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
@@ -58,13 +58,24 @@
   .Box-shadow2 {
     box-shadow: 0px 0px 10px 2px #8f9ea1;
   }
-
+  .statistics_holder {
+    background: #282568;
+    box-shadow: 0px 25px 70px rgba(40, 37, 104, 0.4);
+    border-radius: 40px;
+  }
   .boldStyle_text {
-    @apply text-lg md:text-xl font-semibold text-titleColor;
+    @apply text-titleColor font-Sahel text-2xl sm:text-3xl;
   }
 
   .mediumStyle_text {
-    @apply text-sm text-gray-500;
+    @apply text-gray-500 text-base;
+  }
+  .faqMannequin_shadow {
+    box-shadow: 9px 8px 0px #171717;
+    transition: 0.3s;
+  }
+  .faqMannequin_shadow:hover {
+    box-shadow: 5px 4px 0px #171717;
   }
 
   .bgGradient_menu {
@@ -74,7 +85,19 @@
         rgba(48, 44, 123, 0) 100%);
     border-radius: 2px;
   }
-
+  .specialRadius {
+    border-radius: 40% 60% 36% 64% / 39% 67% 33% 61%;
+  }
+  .buttonSwiper_shadow {
+    box-shadow: 2px 4px 0px #382900;
+    transition: 0.2s;
+  }
+  .buttonSwiper_shadow:hover {
+    box-shadow: 1px 2px 0px #382900;
+  }
+  .heroSection_box_shadow {
+    box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.2);
+  }
   .reverse-img {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
