@@ -6,6 +6,9 @@ import UserCoursesSection from "./dashboard/UserCoursesSection";
 import CreateCourse from "./dashboard/CreateCourse";
 import InformationSection from "./information/InformationSection";
 import CreateField from "./information/CreateFields";
+import Table from "./Table";
+import TableItem from "./TableItem";
+import Profile from "./information/Profile";
 
 export {
   SidebarUserPanel,
@@ -15,5 +18,8 @@ export {
   UserCoursesSection,
   CreateCourse,
   InformationSection,
-  CreateField
+  CreateField,
+  Table,
+  TableItem,
+  Profile
 };
