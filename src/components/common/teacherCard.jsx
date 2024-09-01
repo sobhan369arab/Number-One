@@ -3,13 +3,14 @@ import {FacebookIcon} from "../../core/icon/index"
 import {TwitterIcon} from "../../core/icon/index"
 import {WhatsAppIcon} from "../../core/icon/index"
 import {InstagramIcon} from "../../core/icon/index"
+import CreateSocialMediaItems from "./CreateSocialMediaItems"
 
 const TeacherCard = ({ name, skill, picture, href }) => {
     const socialMedia = [
-        { id: 1, icon: <InstagramIcon /> },
-        { id: 2, icon: <WhatsAppIcon /> },
-        { id: 3, icon: <TwitterIcon /> },
-        { id: 4, icon: <FacebookIcon /> },
+        { icon: <InstagramIcon /> },
+        { icon: <WhatsAppIcon /> },
+        { icon: <TwitterIcon /> },
+        { icon: <FacebookIcon /> },
     ]
     return (
         <div className="flex gap-x-4 items-center">
@@ -20,11 +21,7 @@ const TeacherCard = ({ name, skill, picture, href }) => {
                 <h1 className="text-lg text-titleColor">{name}</h1>
                 <span className="text-sm text-purpleCustom">{skill}</span>
                 <div className="w-full flex gap-x-2">
-                    {socialMedia.map(item => (
-                        <div key={item.id} className="mt-2 w-8 h-8 rounded-full border border-neutral-500 flex justify-center items-center">
-                            {item.icon}
-                        </div>
-                    ))}
+                    {socialMedia.map((item, index) => <CreateSocialMediaItems key={index} Icon={item.icon} />)}
                 </div>
             </Link>
         </div>
