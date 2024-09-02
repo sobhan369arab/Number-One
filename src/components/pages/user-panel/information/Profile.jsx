@@ -4,6 +4,7 @@ import { useDisclosure } from "@nextui-org/react"
 import { useEffect, useState } from "react"
 import CreateModal from "../CreateModal"
 import CreateUserPicture from "../CreateUserPicture"
+import CropProfile from "./CropProfile"
 
 const Profile = () => {
     const [files, setFiles] = useState()
@@ -20,6 +21,7 @@ const Profile = () => {
     useEffect(() => {
         if (!previews) return
         let existed = userPictures.find(image => image.src === previews)
+        console.log(userPictures)
         if (!existed) {
             setUserPictures([...userPictures, { src: previews }])
         }
@@ -35,8 +37,15 @@ const Profile = () => {
                 <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-0 right-0">
                     <CloseIcon />
                 </div>
-                <div className="w-80 h-80 rounded-2xl overflow-hidden border shadow-lg flex justify-center items-center">
-                    <img src={previews ? previews : ""} alt="No Image" />
+                <div className="relative w-80 h-80 rounded-2xl overflow-hidden border shadow-lg flex justify-center items-center">
+                    {previews ?
+                        (
+                            <>
+                                <img src={previews} alt="No Image" />
+                                <CropProfile previews={previews} setPreviews={setPreviews} />
+                            </>
+                        )
+                        : null}
                 </div>
                 <div className="w-full h-28 flex gap-x-8 items-center">
                     {userPictures ? userPictures.map((item, index) => <CreateUserPicture key={index} setUserPictures={setUserPictures} userPictures={userPictures} previews={previews} setPreviews={setPreviews} src={item.src} />) : null}
