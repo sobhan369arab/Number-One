@@ -6,14 +6,11 @@ const FilterRange = ({
   title,
   setPriceDown,
   setPriceUp,
-  // minValue,
-  // maxValue
 
 }) => {
   const { t } = useTranslation();
   const [minValue, set_minValue] = useState(0);
   const [maxValue, set_maxValue] = useState(1000000);
-  console.log(maxValue)
   const handleInput = () => {
     setPriceDown(minValue)
     setPriceUp(maxValue);
@@ -29,6 +26,7 @@ const FilterRange = ({
           minValue={minValue}
           maxValue={maxValue}
           ruler={false}
+          label={false}
           barInnerColor="#5751E1"
           thumbLeftColor="#5751E1"
           thumbRightColor="#5751E1"
@@ -40,9 +38,10 @@ const FilterRange = ({
           }}
         />
       </div>
-      <div className="absolute bottom-9 right-5 text-gray-600">
-        <h1>از:</h1>
-        <h1>تا:</h1>
+      {/* price information */}
+      <div className=" bottom-9 right-5 text-gray-600">
+        <h1 className="text-gray-500">{t('from')} :<span className="text-purpleCustom mx-2">{minValue} {t('priceCount')}</span></h1>     
+        <h1 className="text-gray-500 mt-2">{t('upTo')} :<span className="text-purpleCustom mx-2">{maxValue} {t('priceCount')}</span></h1>
       </div>
     </div>
   )

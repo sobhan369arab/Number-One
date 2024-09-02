@@ -1,5 +1,5 @@
 import { CategoryFilter, InstructorFilter, LevelFilter, TypeFilter } from "../../core/constants/Filters/Filters"
-import { FilterCheckBox, FilterRadio, FilterRange, FilterStars } from "./filter-box"
+import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch, FilterStars } from "./filter-box"
 
 const FilterSide = ({
   coursesData,
@@ -11,11 +11,12 @@ const FilterSide = ({
   SetRating,
   setPriceDown,
   setPriceUp,
- 
+  setQuery
 }) => {
 
   return (
-    <div className=" w-72 ">
+    <div className="w-72 h-fit sticky top-4 ">
+      <FilterSearch variant="Courses" setQuery={setQuery}/>
       <FilterCheckBox
         data={coursesData}
         setData={SetCoursesData}

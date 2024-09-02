@@ -12,6 +12,7 @@ import FilterSide from "./FilterSide";
 import Label from "./Label";
 import ButtonSlider from "./ButtonSlider";
 import SwiperSlider from "./SwiperSlider";
+import SearchInput from "./filter-box/FilterSearch.jsx";
 
 export {
   Button,
@@ -27,5 +28,6 @@ export {
   ButtonSlider,
   SwiperSlider,
   SortBox,
-  FilterSide
+  FilterSide,
+  SearchInput
 };
