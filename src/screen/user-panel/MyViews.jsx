@@ -1,4 +1,4 @@
-import { Table, TableItem } from "../../components/pages/user-panel"
+import { SearchSection, Table, TableItem } from "../../components/pages/user-panel"
 import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount } from "../../components/common"
 import { useState } from "react"
 
@@ -14,8 +14,9 @@ const MyViews = () => {
     const currentItems = data.slice(itemOffset, endOffset);
     return (
         <div className="w-full flex flex-wrap h-fit -mt-8">
+            <SearchSection />
             <Table sectionHeader={headerTable} style="border-t mt-3 pt-5">
-                <PaginateHolderItems style="justify-center h-[633px]">
+                <PaginateHolderItems style="justify-center h-[590px]">
                     <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
                         <div className='itemsTable_userPanel_holder'>
                             {currentItems.map((item, index) => <TableItem key={index} object={item} variant="myViews" />)}
