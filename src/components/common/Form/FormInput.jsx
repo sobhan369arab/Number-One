@@ -26,7 +26,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
         )
     }
     return (
-        <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : "w-[45%]"} ${style}`}>
+        <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-[45%]"}`}>
             <label htmlFor={certificate} className="w-full pr-3 text-neutral-400">{sectionName}</label>
             {fieldVariants?.[variants]}
         </div>

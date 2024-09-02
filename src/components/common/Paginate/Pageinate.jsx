@@ -10,7 +10,7 @@ function PaginatedItems({ handlePageClick, children, pageCount }) {
                 onPageChange={handlePageClick}
                 nextLabel=""
                 previousLabel=""
-                pageCount={pageCount}
+                pageCount={pageCount != undefined ? pageCount : 0}
                 renderOnZeroPageCount={null}
                 activeLinkClassName='!bg-purpleCustom text-white'
                 pageLinkClassName="bg-slate-300 sm:!px-5 sm:!py-2.5 !py-1.5 rounded-full bg-red-500 text-center text-lg"
