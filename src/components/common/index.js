@@ -12,6 +12,9 @@ import CustomMap from "./CustomMap";
 import Label from "./Label";
 import ButtonSlider from "./ButtonSlider";
 import SwiperSlider from "./SwiperSlider";
+import SearchInput from "./SearchInput";
+import FormHolder from "./Form/FormHolder";
+import FormInput from "./Form/FormInput";
 
 export {
   Button,
@@ -28,5 +31,8 @@ export {
   SwiperSlider,
   PaginateHolderItems,
   handlePageClick,
-  calculatePageCount
+  calculatePageCount,
+  SearchInput,
+  FormHolder,
+  FormInput
 };
