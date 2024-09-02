@@ -1,9 +1,8 @@
 import BasketItems from "./BasketItems"
 import { baskets, menuItem } from "../../../../src/core/constants/Header/headerData"
 import MenuHeader from "./MenuHeader"
-import SearchInput from "./SearchInput"
 import { useTranslation } from "react-i18next"
-import { LogoGroup } from "../../common"
+import { LogoGroup, SearchInput } from "../../common"
 import { MenuIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 
@@ -27,7 +26,7 @@ const Header = () => {
       </div>
       {/* Left Part */}
       <div className="h-[42px] flex gap-x-3 justify-end items-center">
-        <SearchInput />
+        <SearchInput maxResponsiveValue="1279px" minResponsiveValue="1280px"  />
         {/* Making any of the Basket Items */}
         <MediaQuery minWidth={"500px"}>
           {baskets.map((item, index) => <BasketItems key={index} Icon={item.icon} number={item.number} />)}
