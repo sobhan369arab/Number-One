@@ -5,10 +5,14 @@ import LatestBlogs from "./dashboard/LatestBlogs";
 import UserCoursesSection from "./dashboard/UserCoursesSection";
 import CreateCourse from "./dashboard/CreateCourse";
 import InformationSection from "./information/InformationSection";
-import CreateField from "./information/CreateFields";
 import Table from "./Table";
 import TableItem from "./TableItem";
 import Profile from "./information/Profile";
+import SearchSection from "./SearchSection";
+import TitleSectionPanel from "./TitleSectionPanel";
+import ChangePassword from "./security/ChangePassword";
+import TwoStep from "./security/TwoStep";
+import EmailRecovery from "./security/EmailRecovery";
 
 export {
   SidebarUserPanel,
@@ -18,8 +22,12 @@ export {
   UserCoursesSection,
   CreateCourse,
   InformationSection,
-  CreateField,
   Table,
   TableItem,
-  Profile
+  Profile,
+  SearchSection,
+  TitleSectionPanel,
+  ChangePassword,
+  TwoStep,
+  EmailRecovery,
 };
