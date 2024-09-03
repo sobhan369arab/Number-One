@@ -3,7 +3,12 @@ import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCoun
 import { useState } from "react"
 
 const MyViews = () => {
-    const headerTable = ["دیدگاه در", "دسته بندی", "وضعیت", "زمان"]
+    const headerTable = [
+        { text: ["دیدگاه در", "View in"] },
+        { text: ["دسته بندی", "Category"] },
+        { text: ["زمان", "Date"] },
+        { text: ["وضعیت", "Status"] },
+    ]
     const data = [
         { id: 1, courseName: "آموزش Tailwind css", category: "دوره آموزشی", date: "۱۴۰۴/۰۳/۰۲ , ۱۶:۲۷", status: false },
         { id: 2, courseName: "آموزش کامل کار با Figma", category: "اخبار و مقالات", date: "۱۴۰۴/۰۲/۰۸ , ۱۵:۲۸", status: true },

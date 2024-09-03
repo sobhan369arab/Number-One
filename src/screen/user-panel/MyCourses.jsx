@@ -3,7 +3,12 @@ import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCoun
 import { useState } from 'react'
 
 const MyCourses = () => {
-    const headerTable = ["نام دوره", "مدرس دوره", "تاریخ شروع", "قیمت"]
+    const headerTable = [
+        {text: ["نام دوره", "Course Name"]},
+        {text: ["مدرس دوره", "Teacher"]},
+        {text: ["تاریخ شروع", "Date"]},
+        {text: ["قیمت", "Price"]},
+    ]
     const data = [
         { id: 1, profile: "", courseName: "آموزش Tailwind css", teacher: "دکتر محمدحسین بحر العلومی", date: "۱۴۰۴ / ۰۳ / ۱۸", price: "۵۰۰,۰۰۰" },
         { id: 2, profile: "", courseName: "آموزش کامل کار با Figma", teacher: "دکتر محمدحسین بحر العلومی", date: "۱۴۰۴ / ۰۳ / ۱۸", price: "۵۰۰,۰۰۰" },

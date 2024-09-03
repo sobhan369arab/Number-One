@@ -3,7 +3,12 @@ import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCoun
 import { useState } from "react"
 
 const Favorites = () => {
-    const headerTable = ["عنوان", "دسته بندی", "زمان انتشار", "نویسنده"]
+    const headerTable = [
+        { text: ["عنوان", "Title"] },
+        { text: ["دسته بندی", "Category"] },
+        { text: ["زمان انتشار", "Date"] },
+        { text: ["نویسنده", "Author"] },
+    ]
     const data = [
         { id: 1, courseName: "آموزش Tailwind css", category: "دوره آموزشی", date: "۱۴۰۴/۰۳/۰۲ , ۱۶:۲۷", author: "دکتر محمدحسین بحر العلومی" },
         { id: 2, courseName: "آموزش کامل کار با Figma", category: "اخبار و مقالات", date: "۱۴۰۴/۰۲/۰۸ , ۱۵:۲۸", author: "محمد رضا ساداتی" },

@@ -1,33 +1,50 @@
 import { useState } from "react"
 import { Field } from "formik"
 import { UnEyeIcon, EyeIcon } from "../../../core/icon"
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
+import DatePicker from "react-multi-date-picker"
+import InputIcon from "react-multi-date-picker/components/input_icon"
+import "./FormDate.css"
+import { useTranslation } from "react-i18next"
 
 const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, style, variants }) => {
     const [visible, setVisible] = useState(false)
+    const { i18n } = useTranslation()
     const fieldVariants = {
         password: (
             <div className="relative">
-                <Field dir={dir} type={visible ? "text" : "password"} name={certificate} id={certificate} className="w-full h-10 bg-neutral-50 text-purpleCustom outline-none border-2 focus:border-yellowCustom shadow-inner py-1.5 px-3 rounded-md" />
+                <Field dir={dir} type={visible ? "text" : "password"} name={certificate} id={certificate} className="fieldsStyle" />
                 <div onClick={() => { setVisible(!visible) }} className="w-6 h-4 absolute bottom-3 right-4">
                     {visible ? <EyeIcon /> : <UnEyeIcon width="20" />}
                 </div>
             </div>
         ),
         simple: (
-            <Field dir={dir} type={type} name={certificate} id={certificate} className="w-full h-10 bg-neutral-50 text-purpleCustom outline-none border-2 focus:border-yellowCustom shadow-inner py-1.5 px-3 rounded-md" />
+            <Field dir={dir} type={type} name={certificate} id={certificate} className="fieldsStyle" />
         ),
         select: (
-            <Field as="select" name={certificate} id={certificate} className="w-full min-h-10 max-h-40 bg-neutral-50 text-purpleCustom outline-none border-2 focus:border-yellowCustom shadow-inner py-1.5 px-3 rounded-md">
+            <Field as="select" name={certificate} id={certificate} className="fieldsStyle w-full min-h-10 max-h-40">
                 {options != undefined ? options.map((item, index) => (<option key={index} value={item}>{item}</option>)) : null}
             </Field>
         ),
         area: (
-            <Field as="textarea" name={certificate} id={certificate} className="w-full min-h-10 max-h-40 bg-neutral-50 text-purpleCustom outline-none border-2 focus:border-yellowCustom shadow-inner py-1.5 px-3 rounded-md" />
+            <Field as="textarea" name={certificate} id={certificate} className="fieldsStyle w-full min-h-10 max-h-40 h-40" />
+        ),
+        date: (
+            <DatePicker
+                inputClass=""
+                render={<InputIcon />}
+                calendar={persian}
+                locale={persian_fa}
+                calendarPosition="bottom-right"
+                containerStyle={{ width: "100%", direction: i18n.language == "en" ? "ltr" : "ltr" }}
+            />
         )
     }
     return (
         <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-[45%]"}`}>
-            <label htmlFor={certificate} className="w-full pr-3 text-neutral-400">{sectionName}</label>
+            <label htmlFor={certificate} className="w-full px-3 text-neutral-400">{sectionName}</label>
             {fieldVariants?.[variants]}
         </div>
     )
