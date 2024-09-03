@@ -13,13 +13,16 @@ i18n.use(initReactI18next)
                     // name Group
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
-                    yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه',
-                    test: 'این یک پیام تستی است',
+                    yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
+                    test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
                     // Search Input in the Header
-                    category: 'دسته بندی ها', PlaceHolder: 'جستجو برای دوره ..',
+                    category: 'دسته بندی ها',
                     Login: 'حساب کاربری',
+                    // PlaceHolder in search input Pages
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
+                    PlaceHolder_Shop: 'جستجو برای محصول ...',
                     // data in the Footer
                     footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',
                     // Links
@@ -55,6 +58,7 @@ i18n.use(initReactI18next)
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
                     // titlePages
                     loginTitle: 'ورود به عنوان دانش آموز', login: "ورود", instructorsTitle: "همه مربیان",
+                    CoursesTitle: 'همه دوره ها',
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
@@ -86,6 +90,11 @@ i18n.use(initReactI18next)
                     EventElement1: 'با رنگ و گرادیان و شبکه کار کنید', EventElement2: 'تمام میانبرهای مفید',
                     EventElement3: 'قادر به ایجاد بروشور، بروشور، تبلیغات باشید',
                     EventElement4: 'نحوه کار با تصاویر و متن',
+                    // Contact us page
+                    contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
+                    // Filters Name
+                    price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها', type: 'نحوه برگذاری',
+                    removeFilters: 'حذف فیلترها',openFilter:'فیلتر ها',filters:'فیلتر ها',
                 },
             },
             en: {
@@ -94,12 +103,16 @@ i18n.use(initReactI18next)
                     nameGroup: 'Number One', teamSlogan: 'ALWAYS THE BEST',
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
-                    test: 'This is a test message',
+                    test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
+
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
-                    category: 'Categories', PlaceHolder: 'Search For Course ...',
+                    category: 'Categories',
                     Login: 'User Account',
+                    // PalceHolder in search input Pages
+                    PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...',
+                    PlaceHolder_Shop: 'Search For Product ...',
                     // Footer
                     footerDescription: 'when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.',
                     // Links
@@ -135,6 +148,7 @@ i18n.use(initReactI18next)
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
                     // titlePages
                     loginTitle: 'Student Login', login: "Login", instructorsTitle: "All Instructors",
+                    CoursesTitle: 'All Courses',
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
@@ -165,6 +179,11 @@ i18n.use(initReactI18next)
                     EventElement1: 'Work with color & Gradients & Grids', EventElement2: 'All the useful shortcuts',
                     EventElement3: 'Be able to create Flyers, Brochures, Advertisements',
                     EventElement4: 'How to work with Images & Text',
+                    // Contact us page
+                    contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
+                    // Filters Name
+                    price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings', type: 'How to put',
+                    removeFilters: 'Remove Filters',openFilter:'Open Filters',filters:'Filters',
                 },
             },
         },

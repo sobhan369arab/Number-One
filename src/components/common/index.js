@@ -7,10 +7,14 @@ import InformedPoster from "./informedPoster";
 import OptionParts from "./optionParts";
 import TeacherCard from "./teacherCard";
 import CustomMap from "./CustomMap";
+import SortBox from './SortBox.jsx'
+import FilterSide from "./FilterSide";
 import Label from "./Label";
 import ButtonSlider from "./ButtonSlider";
 import SwiperSlider from "./SwiperSlider";
 import CreateSocialMediaItems from "./CreateSocialMediaItems";
+import SearchInput from "./filter-box/FilterSearch.jsx";
+import ModalFilter from "./Modal.jsx";
 
 export {
   Button,
@@ -25,5 +29,9 @@ export {
   Label,
   ButtonSlider,
   SwiperSlider,
-  CreateSocialMediaItems
+  CreateSocialMediaItems,
+  SortBox,
+  FilterSide,
+  SearchInput,
+  ModalFilter,
 };

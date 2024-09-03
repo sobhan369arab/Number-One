@@ -14,30 +14,14 @@ export function ApplicationIcon(props) {
                 <circle cx="184" cy="180" r="180" fill="url(#paint0_linear_5_4)" />
             </g>
             <path d="M161 257.2L117.2 163.4V254.8L91 256V107.2L121.6 106L160.4 195.2V108.4L185.2 106V254.8L161 257.2ZM214.666 256V231.4H233.866V142.6L213.266 147V126L247.466 106H261.866V231.4H281.466L280.266 256H214.666Z" fill="white" />
-            <defs>
-                <filter id="filter0_d_5_4" x="0" y="0" width="368" height="368" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                    <feOffset dy="4" />
-                    <feGaussianBlur stdDeviation="2" />
-                    <feComposite in2="hardAlpha" operator="out" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5_4" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5_4" result="shape" />
-                </filter>
-                <linearGradient id="paint0_linear_5_4" x1="184" y1="0" x2="184" y2="360" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#5751E1" />
-                    <stop offset="1" stop-color="#7572AB" />
-                </linearGradient>
-            </defs>
         </svg>
     )
 }
 
 export function MenuIcon(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-list" viewBox="0 0 16 16" {...props}>
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" className="bi bi-list" viewBox="0 0 16 16" {...props}>
+            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
         </svg>
     )
 }
@@ -166,6 +150,14 @@ export function SearchIcon(props) {
         </svg>
     )
 }
+export function Search_TwoIcon(props) {
+    return (
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M4.32667 18.7733L7.84667 15.2533C7.26 14.52 6.79556 13.7133 6.45333 12.8333C6.11111 11.9533 5.94 11.0244 5.94 10.0467C5.94 8.62888 6.30667 7.30888 7.04 6.08666C7.77333 4.86443 8.75111 3.88666 9.97333 3.15332C11.1956 2.41999 12.5278 2.05332 13.97 2.05332C15.4122 2.05332 16.7444 2.41999 17.9667 3.15332C19.1889 3.88666 20.1667 4.86443 20.9 6.08666C21.6333 7.30888 22 8.6411 22 10.0833C22 11.5255 21.6333 12.8578 20.9 14.08C20.1667 15.3022 19.1889 16.28 17.9667 17.0133C16.7444 17.7467 15.4 18.1133 13.9333 18.1133C13.0044 18.1133 12.1 17.9422 11.22 17.6C10.34 17.2578 9.53333 16.7933 8.8 16.2067L5.28 19.7267C5.13333 19.8733 4.97445 19.9467 4.80333 19.9467C4.63222 19.9467 4.47333 19.8733 4.32667 19.7267C4.18 19.58 4.10667 19.4211 4.10667 19.25C4.10667 19.0789 4.18 18.92 4.32667 18.7733ZM13.9333 16.72C15.1556 16.72 16.28 16.4267 17.3067 15.84C18.3333 15.2533 19.14 14.4467 19.7267 13.42C20.3133 12.3933 20.6067 11.2811 20.6067 10.0833C20.6067 8.88554 20.3133 7.77332 19.7267 6.74666C19.14 5.71999 18.3333 4.91332 17.3067 4.32666C16.28 3.73999 15.1678 3.44666 13.97 3.44666C12.7722 3.44666 11.66 3.73999 10.6333 4.32666C9.60667 4.91332 8.8 5.71999 8.21333 6.74666C7.62667 7.77332 7.33333 8.88554 7.33333 10.0833C7.33333 11.2811 7.62667 12.3933 8.21333 13.42C8.8 14.4467 9.60667 15.2533 10.6333 15.84C11.66 16.4267 12.76 16.72 13.9333 16.72Z" fill="#5751E1" />
+        </svg>
+
+    )
+}
 
 export function Error404Icon(props) {
     return (
@@ -211,6 +203,13 @@ export function AppleIcon(props) {
     return (
         <svg width="22" height="27" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path d="M20.1289 22.8485C19.0035 24.4604 17.8103 26.0333 15.9934 26.0593C14.1766 26.0983 13.5935 25.0323 11.5326 25.0323C9.45809 25.0323 8.82079 26.0333 7.09879 26.0983C5.32259 26.1633 3.98029 24.3824 2.84139 22.8095C0.52279 19.5987 -1.2534 13.6841 1.13299 9.70641C2.31259 7.73051 4.42779 6.48261 6.71919 6.44361C8.45469 6.41761 10.1089 7.57451 11.1801 7.57451C12.2376 7.57451 14.2444 6.18361 16.346 6.39161C17.2273 6.43061 19.695 6.72961 21.2814 8.96541C21.1594 9.04341 18.3391 10.6293 18.3662 13.9181C18.4069 17.8438 21.9593 19.1567 22 19.1697C21.9593 19.2607 21.4305 21.0416 20.1289 22.8485ZM12.3868 2.04991C13.3766 0.970906 15.0172 0.152006 16.3731 0.100006C16.5494 1.62091 15.9121 3.15481 14.963 4.24671C14.0274 5.35171 12.4817 6.20961 10.9631 6.09261C10.7597 4.59771 11.519 3.03781 12.3868 2.04991Z" fill="white" />
+        </svg>
+    )
+}
+
+export function ArrowButtonIcon(props) {
+    return (
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
         </svg>
     )
 }
@@ -401,5 +400,67 @@ export function EmailIcon(props) {
         <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path d="M2.25 0.949997H25.75C26.8546 0.949997 27.75 1.90513 27.75 3.08333V18.8167C27.75 19.9949 26.8546 20.95 25.75 20.95H2.25C1.1454 20.95 0.25 19.9949 0.25 18.8167V3.08333C0.25 1.90513 1.1454 0.949997 2.25 0.949997ZM14 12.7417L25.535 2.28333H2.465L14 12.7417ZM26.5 3.15833L18.9692 9.9862L26.5 18.6369V3.15833ZM18.0159 10.8506L14.4048 14.1246C14.2881 14.2304 14.1441 14.2833 14 14.2833C13.8559 14.2833 13.7119 14.2304 13.5952 14.1246L9.9841 10.8506L2.3529 19.6167H25.6471L18.0159 10.8506ZM9.0308 9.9862L1.5 3.15833V18.6369L9.0308 9.9862Z" fill="white" />
         </svg>
+    )
+}
+export function TeacherIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+        </svg>
+
+    )
+}
+export function StudentIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+        </svg>
+
+
+    )
+}
+export function LevelIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+        </svg>
+
+    )
+}
+export function ComparisonIcon(props) {
+    return (
+        <svg width="32" height="37" viewBox="0 0 32 37" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M15.9994 18.5C16.0403 18.7388 16.0845 18.9765 16.132 19.2131C16.8437 22.7673 18.2251 25.7251 19.8851 27.6446C21.5788 29.6022 23.5611 30.4813 25.4259 29.8153C29.1186 28.4922 30.9482 21.6013 29.5081 14.4255C29.084 12.2651 28.3684 10.2263 27.3965 8.40909M6.24722 31.0127C4.58549 29.091 3.20575 26.1332 2.49238 22.579C1.05222 15.4032 2.87844 8.51 6.57285 7.18921C8.0298 6.66673 9.55893 7.09054 10.9655 8.23194M15.9994 37V0" stroke="#555555" strokeWidth="4" />
+        </svg>
+    )
+}
+export function HeartIcon(props) {
+    return (
+        <svg height={28} width={28} viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+    )
+}
+export function View1Icon(props) {
+    return (
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_227_211)">
+                <path d="M12 1H16C16.5523 1 17 1.44772 17 2V6C17 6.55228 16.5523 7 16 7H12C11.4477 7 11 6.55228 11 6V2C11 1.44772 11.4477 1 12 1Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+                <path d="M2 1H6C6.5523 1 7 1.44772 7 2V6C7 6.55228 6.5523 7 6 7H2C1.4477 7 1 6.55228 1 6V2C1 1.44772 1.4477 1 2 1Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+                <path d="M12 11H16C16.5523 11 17 11.4477 17 12V16C17 16.5523 16.5523 17 16 17H12C11.4477 17 11 16.5523 11 16V12C11 11.4477 11.4477 11 12 11Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+                <path d="M2 11H6C6.5523 11 7 11.4477 7 12V16C7 16.5523 6.5523 17 6 17H2C1.4477 17 1 16.5523 1 16V12C1 11.4477 1.4477 11 2 11Z" stroke="#5751E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} />
+            </g>
+
+        </svg>
+    )
+}
+export function View2Icon(props) {
+    return (
+        <svg width="20" height="16" viewBox="0 0 20 16" stroke="none" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <g clipPath="url(#clip0_227_217)">
+                <path d="M18 6.5C18.83 6.5 19.5 7.17 19.5 8C19.5 8.83 18.83 9.5 18 9.5C17.17 9.5 16.5 8.83 16.5 8C16.5 7.17 17.17 6.5 18 6.5ZM18 0.5C18.83 0.5 19.5 1.17 19.5 2C19.5 2.83 18.83 3.5 18 3.5C17.17 3.5 16.5 2.83 16.5 2C16.5 1.17 17.17 0.5 18 0.5ZM18 12.5C18.83 12.5 19.5 13.18 19.5 14C19.5 14.82 18.82 15.5 18 15.5C17.18 15.5 16.5 14.82 16.5 14C16.5 13.18 17.17 12.5 18 12.5ZM14 15H2C1.45 15 1 14.55 1 14C1 13.45 1.45 13 2 13H14C14.55 13 15 13.45 15 14C15 14.55 14.55 15 14 15ZM14 9H2C1.45 9 1 8.55 1 8C1 7.45 1.45 7 2 7H14C14.55 7 15 7.45 15 8C15 8.55 14.55 9 14 9ZM15 2C15 2.55 14.55 3 14 3H2C1.45 3 1 2.55 1 2C1 1.45 1.45 1 2 1H14C14.55 1 15 1.45 15 2Z" fill="white" />
+            </g>
+        </svg>
+
     )
 }

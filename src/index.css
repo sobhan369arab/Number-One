@@ -27,24 +27,34 @@
     font-family: "Dana-Medium";
     src: url(./assets/fonts/Dana-family/Dana-Medium.ttf);
   }
+
+  .scrollBehavior {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
 }
 
 @layer components {
   .buttonPurple_shadow {
     box-shadow: 3px 5px 0px 0px #050071;
   }
+
   .buttonPurple_shadow:hover {
     box-shadow: 1px 2px 0px 0px #050071;
   }
+
   .buttonYellow_shadow {
     box-shadow: 3px 5px 0px 0px #3d3d3d;
   }
+
   .buttonYellow_shadow:hover {
     box-shadow: 1px 2px 0px 0px #3d3d3d;
   }
+
   .Box-shadow1 {
     box-shadow: 0px 0px 7px 1px #bbcbcf70;
   }
+
   .Box-shadow2 {
     box-shadow: 0px 0px 10px 2px #8f9ea1;
   }
@@ -56,6 +66,7 @@
   .boldStyle_text {
     @apply text-titleColor font-Sahel text-2xl sm:text-3xl;
   }
+
   .mediumStyle_text {
     @apply text-gray-500 text-base;
   }
@@ -66,13 +77,12 @@
   .faqMannequin_shadow:hover {
     box-shadow: 5px 4px 0px #171717;
   }
+
   .bgGradient_menu {
-    background: linear-gradient(
-      90deg,
-      rgba(87, 81, 225, 0) 0%,
-      rgba(67, 63, 174, 0.5) 53.1%,
-      rgba(48, 44, 123, 0) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(87, 81, 225, 0) 0%,
+        rgba(67, 63, 174, 0.5) 53.1%,
+        rgba(48, 44, 123, 0) 100%);
     border-radius: 2px;
   }
   .specialRadius {
@@ -99,4 +109,40 @@
   .holder_instructor_style {
     @apply w-full px-6 py-8 shadow-lg border border-neutral-300 rounded-xl flex flex-wrap gap-y-4;
   }
+}
+
+  .main-container {
+    @apply xl:w-4/5 sm:w-11/12  mobile:w-[98%] m-auto my-8;
+  }
+
+  .grid-list {
+    @apply md:block;
+
+    .course-item {
+      @apply w-full flex gap-4;
+
+      .comparison-btn{
+        @apply  bg-grayCustom
+      }
+      .favorite-btn{
+        @apply bg-grayCustom  p-1 rounded-xl  
+      }
+
+      .course-body{
+        @apply w-4/5 ;
+        
+        .course-centerBody{
+          @apply grid-cols-4   
+        }
+        .course-flexBody{
+          @apply flex justify-between 
+        }
+        .course-bio{
+          @apply block line-clamp-1
+        }
+      }
+    }
+  }
+
+
 }

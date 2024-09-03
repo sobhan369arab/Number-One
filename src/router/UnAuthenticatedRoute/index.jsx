@@ -1,19 +1,16 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import Layouts from "../../components/layouts/MainLayouts"
-import { ContactUs, Error404, EventDetails, EventList, Instructors, InstructorDetail } from "../../screen"
+import { ContactUs, Error404, EventDetails, EventList, Instructors, InstructorDetail, Courses } from "../../screen"
 import Landing from "../../screen/landing/landing"
-// import Error404 from "../../screen/ErrorPage/Error404"
-// import EventList from "../../screen/Events/Events"
-// import EventDetails from "../../screen/EventsDetail/EventDetails"
-// import ContactUs from "../../screen/ContactUs/contactUs"
+import MainLayouts from "../../components/Layouts/MainLayouts"
 
 const routerPublic = createBrowserRouter([
     {
-        element: <Layouts />,
+        element: <MainLayouts/>,
         children: [
             { path: '/', element: <Landing /> },
             { path: '/home', element: <Navigate to={"/"} /> },
             { path: '/ContactUs', element: <ContactUs /> },
+            { path: '/Courses', element: <Courses/> },
             { path: '/Events', element: <EventList /> },
             {
                 path: '/EventDetails',
@@ -27,7 +24,6 @@ const routerPublic = createBrowserRouter([
                 children: [{ path: '/instructorsDetails/:id', element: <InstructorDetail /> }]
             },
             { path: '/*', element: <Error404 /> },
-
         ]
     }
 ])
