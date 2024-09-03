@@ -4,6 +4,7 @@ export const menuItem = [
   { title: "Events", href: "/Events" },
   { title: "ShopSection", href: "/shop" },
   { title: "BlogSection", href: "/blog" },
+  { title: "InstructorsSection", href: "/instructors" },
 ];
 
 import { CartIcon, FavoriteIcon } from "../../icon";

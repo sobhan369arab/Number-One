@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import CreateStatisticsItem from "./CreateStatisticsItem"
+import CreateStatisticsItem from "./createStatisticsItem"
 import { statisticsItem } from "../../../core/constants/landing/Statistics"
 
 const Statistics = () => {
