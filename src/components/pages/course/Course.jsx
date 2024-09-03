@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom"
-import { ComparisonIcon } from "../../../core/icon"
 import ComparisonBtn from "../../common/ComparisonBtn"
 import FavoriteBtn from "../../common/FavoriteBtn"
 import CourseCenterBody from "./CourseCenterBody"
@@ -29,8 +27,8 @@ const Course = ({
             <div className="bg-slate-300 h-44 w-64">
                 <CourseHeader images={images} />
                 <div className="flex justify-center gap-8 my-3">
-                    <ComparisonBtn location={location} />
-                    <FavoriteBtn location={location} />
+                    <ComparisonBtn CourseId={id}/>
+                    <FavoriteBtn/>
                 </div>
             </div>
             <div className="py-2 course-body">

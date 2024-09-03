@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import { ContactUs, Error404, EventDetails, EventList, Instructors, InstructorDetail, Courses } from "../../screen"
+import { ContactUs, Error404, EventDetails, EventList, Instructors, InstructorDetail, Courses, Comparison } from "../../screen"
 import Landing from "../../screen/landing/landing"
 import MainLayouts from "../../components/Layouts/MainLayouts"
 
@@ -23,6 +23,7 @@ const routerPublic = createBrowserRouter([
                 element: <InstructorDetail />,
                 children: [{ path: '/instructorsDetails/:id', element: <InstructorDetail /> }]
             },
+            { path: '/Comparison', element: <Comparison/> },
             { path: '/*', element: <Error404 /> },
         ]
     }

@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive"
 import { ComparisonIcon } from "../../core/icon"
 
-const ComparisonBtn = () => {
+const ComparisonBtn = ({CourseId}) => {
   const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
 
   return (
