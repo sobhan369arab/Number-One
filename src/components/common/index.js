@@ -13,6 +13,7 @@ import Label from "./Label";
 import ButtonSlider from "./ButtonSlider";
 import SwiperSlider from "./SwiperSlider";
 import SearchInput from "./filter-box/FilterSearch.jsx";
+import ModalFilter from "./Modal.jsx";
 
 export {
   Button,
@@ -29,5 +30,6 @@ export {
   SwiperSlider,
   SortBox,
   FilterSide,
-  SearchInput
+  SearchInput,
+  ModalFilter,
 };

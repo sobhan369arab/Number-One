@@ -46,7 +46,7 @@ const FilterCheckBox = ({
 
 
   return (
-    <div className="p-5 bg-grayCustom rounded-lg mb-7">
+    <div className="p-5 bg-grayCustom rounded-lg mb-7 max-l">
       <div className="flex justify-between">
         <h1 className="font-semibold pb-2">{t(title)}</h1>
         {/* Remove Filter Button */}

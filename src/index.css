@@ -108,11 +108,11 @@
   }
 
   .main-container {
-    @apply w-4/5 m-auto my-8;
+    @apply xl:w-4/5 sm:w-11/12  mobile:w-[98%] m-auto my-8;
   }
 
   .grid-list {
-    @apply block;
+    @apply md:block;
 
     .course-item {
       @apply w-full flex gap-4;

@@ -24,8 +24,7 @@ const SortBox = ({
   }
 
   return (
-    <div className="flex items-center justify-between mr-2">
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 items-center mx-auto ">
         <h1 className="text-gray-600 text-sm">{t('sortBy')}</h1>
         <div >
           <Select
@@ -45,7 +44,6 @@ const SortBox = ({
         />
 
       </div>
-    </div>
   )
 }
 

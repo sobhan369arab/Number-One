@@ -1,5 +1,5 @@
-import { FilterSide, PaginatedItems} from "../../components/common"
-import { useMediaQuery } from "react-responsive"
+import { FilterSide, ModalFilter, PaginatedItems } from "../../components/common"
+import MediaQuery, { useMediaQuery } from "react-responsive"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
@@ -9,7 +9,8 @@ import SectionTop from "../../components/pages/course-list/SectionTop"
 
 const Courses = () => {
     const { t } = useTranslation();
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 530px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' })
+
 
     const [AllData, SetAllData] = useState([]);
     const [sortCal, setSortCal] = useState("DESC");
@@ -47,27 +48,43 @@ const Courses = () => {
         <>
             <TitleSection title={'CoursesTitle'} />
             <div className="main-container flex gap-7 relative">
-                <FilterSide
-                    coursesData={AllData}
-                    SetCoursesData={SetAllData}
-                    SetCategoryData={SetCategoryData}
-                    SetInstructorData={SetInstructorData}
-                    SetLevelId={SetLevelId}
-                    SetTypeId={SetTypeId}
-                    SetRating={SetRating}
-                    setPriceDown={setPriceDown}
-                    setPriceUp={setPriceUp}
-                    setQuery={setQuery}
-                />
-
-                <div className="w-[87%]">
+               
+                <MediaQuery minWidth={"1024px"}>
+                    <FilterSide
+                        coursesData={AllData}
+                        SetCoursesData={SetAllData}
+                        SetCategoryData={SetCategoryData}
+                        SetInstructorData={SetInstructorData}
+                        SetLevelId={SetLevelId}
+                        SetTypeId={SetTypeId}
+                        SetRating={SetRating}
+                        setPriceDown={setPriceDown}
+                        setPriceUp={setPriceUp}
+                        setQuery={setQuery}
+                    />
+                </MediaQuery>
+                <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
+                <MediaQuery maxWidth={"1024px"}>
+                    <ModalFilter
+                        coursesData={AllData}
+                        SetCoursesData={SetAllData}
+                        SetCategoryData={SetCategoryData}
+                        SetInstructorData={SetInstructorData}
+                        SetLevelId={SetLevelId}
+                        SetTypeId={SetTypeId}
+                        SetRating={SetRating}
+                        setPriceDown={setPriceDown}
+                        setPriceUp={setPriceUp}
+                        setQuery={setQuery}
+                    />
+                </MediaQuery>
                     <SectionTop
-                    CourseData={CoursesDataFa}
-                    FilteredData={AllData}
-                    setSortCal={setSortCal}
-                    setSortType={setSortType}
-                    setShowGrid={setShowGrid}
-                    
+                        CourseData={CoursesDataFa}
+                        FilteredData={AllData}
+                        setSortCal={setSortCal}
+                        setSortType={setSortType}
+                        setShowGrid={setShowGrid}
+
                     />
                     {AllData.length !== 0 ? <PaginatedItems showGrid={showGrid} itemsPerPage={isTabletOrMobile ? 6 : 12} Data={AllData} /> : null}
                 </div>

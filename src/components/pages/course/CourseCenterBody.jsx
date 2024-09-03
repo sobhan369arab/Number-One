@@ -18,10 +18,10 @@ const CourseCenterBody = ({
     return (
         <div className="grid grid-cols-2 course-centerBody gap-y-5 place-content-between justify-between">
             {Data.map((item, index) => (
-                <div className="course-flexBody">
-                    <div key={index} className={`flex items-center gap-1 ${item.justify}`}>
+                <div key={index} className="course-flexBody">
+                    <div  className={`flex items-center gap-1 ${item.justify}`}>
                         {item.icon}
-                        <h1 className="line-clamp-1  text-gray-500">{item.title}</h1>
+                        <p className="line-clamp-1 text-gray-500">{item.title}</p>
                     </div>
                 </div>
             ))}

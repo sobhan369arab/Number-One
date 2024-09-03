@@ -15,7 +15,7 @@ const FilterSide = ({
 }) => {
 
   return (
-    <div className="w-72 h-fit sticky top-4 ">
+    <div className="h-fit lg:sticky top-4 mobile:block">
       <FilterSearch variant="Courses" setQuery={setQuery}/>
       <FilterCheckBox
         data={coursesData}

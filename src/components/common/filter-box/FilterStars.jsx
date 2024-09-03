@@ -17,7 +17,7 @@ const FilterStars = ({
                 onChange={ratingChanged}
                 size={24}
                 activeColor="#ffd700"
-                color="#ccc"
+                color={"#ccc"}
             />
         </div>
     )
