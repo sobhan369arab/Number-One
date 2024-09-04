@@ -1,4 +1,4 @@
-import DetailsBox from "./DetailsBox";
+import DetailsBox from "../../common/DetailsBox";
 import EventImage from "./EventImage";
 import EventTitle from "./EventTitle";
 import EventOverView from "./EventOverView";

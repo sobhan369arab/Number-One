@@ -1,12 +1,21 @@
 import { useParams } from "react-router-dom"
-import { DetailsBox, EventElements, EventImage, EventOverView, EventTitle} from "../../components/pages/event-details";
+import { DetailsBox, EventElements, EventImage, EventOverView, EventTitle } from "../../components/pages/event-details";
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { EventData } from "../../core/constants/Events/EventData";
 import { CustomMap } from "../../components/common";
+import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 const EventDetails = () => {
   const { id } = useParams();
   // Find the details of the selected event
   const SelectedEvents = EventData.find(item => item.id == id);
+  const DetailsEvent = [
+    { titleDetail: "eventDate", countDetail: SelectedEvents.date2, iconDetail: DateIcon },
+    { titleDetail: "StartTime", countDetail: SelectedEvents.startTime, iconDetail: TimeIcon },
+    { titleDetail: "EventTopics", countDetail: SelectedEvents.topics, iconDetail: TopicsIcon },
+    { titleDetail: "EventQuizzes", countDetail: SelectedEvents.quizzes, iconDetail: QuizzesIcon },
+    { titleDetail: "EventCertifications", countDetail: SelectedEvents.certifications, iconDetail: CertificationsIcon },
+    { titleDetail: "EventTotalSeat", countDetail: SelectedEvents.totalSeat, iconDetail: TotalIcon }
+  ]
 
   return (
     <>
@@ -21,13 +30,9 @@ const EventDetails = () => {
           Score={SelectedEvents.score}
         />
         <DetailsBox
+          variant="event-detail"
           price={SelectedEvents.price}
-          date2={SelectedEvents.date2}
-          startTime={SelectedEvents.startTime}
-          topics={SelectedEvents.topics}
-          quizzes={SelectedEvents.quizzes}
-          certifications={SelectedEvents.certifications}
-          totalSeat={SelectedEvents.totalSeat}
+          Detail={DetailsEvent}
         />
         <EventOverView
           overView={SelectedEvents.overView}
@@ -37,7 +42,7 @@ const EventDetails = () => {
           MajorElements={SelectedEvents.MajorElements}
           training={SelectedEvents.training}
         />
-        <CustomMap/>
+        <CustomMap />
 
       </div>
     </>

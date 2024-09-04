@@ -15,6 +15,7 @@ import SwiperSlider from "./SwiperSlider";
 import CreateSocialMediaItems from "./CreateSocialMediaItems";
 import SearchInput from "./filter-box/FilterSearch.jsx";
 import ModalFilter from "./Modal.jsx";
+import DetailsBox from "./DetailsBox.jsx";
 
 export {
   Button,
@@ -34,4 +35,5 @@ export {
   FilterSide,
   SearchInput,
   ModalFilter,
+  DetailsBox,
 };

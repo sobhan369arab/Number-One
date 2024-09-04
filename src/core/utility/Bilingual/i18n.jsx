@@ -76,8 +76,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "آموزش جاوا اسکریپت با خیال پردازی", EventDate: "14تیر، 1403", EventCity1: "توکیو",
                     EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
-                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع',
-                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها',
+                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع',graduation:'فارغ التحصیلی',
+                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها',duration:'مدت زمان',lessons:'درس ها',
                     EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
@@ -166,8 +166,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "Learning JavaScript With Imagination", EventDate: "25 June, 2024", EventCity1: "Tokyo",
                     EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
-                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time',
-                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications',
+                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time',graduation:'graduation',
+                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications',duration:'duration',lessons:'lessons',
                     EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",

@@ -1,44 +1,30 @@
 import { useTranslation } from "react-i18next";
 import {
-  CertificationsIcon,
-  DateIcon,
   FacebookIcon,
   InstagramIcon,
-  QuizzesIcon,
-  TimeIcon,
-  TopicsIcon,
-  TotalIcon,
   TwitterIcon,
   WhatsAppIcon,
   YouTubeIcon
-} from "../../../core/icon";
-import { Button } from "../../common";
+} from "../../core/icon";
+import { Button } from ".";
+
+export const detailVariant = {
+  "event-detail": "md:absolute top-96",
+  "course-detail": "",
+}
 
 const DetailsBox = ({
+  variant,
   price,
-  date2,
-  startTime,
-  topics,
-  quizzes,
-  certifications,
-  totalSeat
+  Detail,
 }) => {
   const { t, i18n } = useTranslation();
-  // Data details
-  const Details = [
-    { titleDetail: "eventDate", countDetail: date2, iconDetail: <DateIcon height={17} width={17} /> },
-    { titleDetail: "StartTime", countDetail: startTime, iconDetail: <TimeIcon height={17} width={17} /> },
-    { titleDetail: "EventTopics", countDetail: topics, iconDetail: <TopicsIcon height={17} width={17} /> },
-    { titleDetail: "EventQuizzes", countDetail: quizzes, iconDetail: <QuizzesIcon height={17} width={17} /> },
-    { titleDetail: "EventCertifications", countDetail: certifications, iconDetail: <CertificationsIcon height={17} width={17} /> },
-    { titleDetail: "EventTotalSeat", countDetail: totalSeat, iconDetail: <TotalIcon height={17} width={17} /> }
-  ]
   const AppIcons = [
     { icon: <FacebookIcon width={18} /> }, { icon: <TwitterIcon /> }, { icon: <WhatsAppIcon /> }, { icon: <InstagramIcon /> }, { icon: <YouTubeIcon /> },
   ]
 
   return (
-    <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute top-96 Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300`}>
+    <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'}  Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300 ${detailVariant?.[variant]}`}>
       {/* price Info */}
       <div className="bg-purpleCustom px-4 py-3 w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg">
         <h1 className="text-xs">{t('EventPrice')}</h1>
@@ -47,9 +33,9 @@ const DetailsBox = ({
       {/* details Information*/}
       <div className="my-2">
         <h1 >{t('EventInfo')}:</h1>
-        {Details.map((item, index) => (
+        {Detail.map((item, index) => (
           <div key={index} className="w-full py-2 flex items-center border-b">
-            {item.iconDetail}
+            <item.iconDetail width={17} height={17}/>
             <div className="w-full text-sm">
               <span className="float-start mx-3 text-gray-700 ">{t(item.titleDetail)}</span>
               <span className="float-end text-textGray2">{item.countDetail}</span>
