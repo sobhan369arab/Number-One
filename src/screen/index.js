@@ -5,6 +5,7 @@ import ContactUs from "./contact-us/ContactUs";
 import Instructors from "./instructors/Instructors";
 import InstructorDetail from "./instructors-detail/InstructorDetail";
 import Courses from "./courses/Courses";
+import CourseDetail from "./course-detail/CourseDetail";
 
 export {
   Error404,
@@ -14,4 +15,5 @@ export {
   Instructors,
   InstructorDetail,
   Courses,
+  CourseDetail
 };

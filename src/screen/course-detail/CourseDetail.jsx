@@ -1,7 +1,9 @@
 
 const CourseDetail = () => {
   return (
-    <div>CourseDetail</div>
+    <div>
+        
+    </div>
   )
 }
 
