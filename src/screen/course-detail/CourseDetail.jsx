@@ -26,6 +26,8 @@ const CourseDetail = () => {
                     variant="course-detail"
                     price={courseSelected.price}
                     Detail={DetailsCourse}
+                    arrowColor={"#000"}
+                    colorButton={"yellow"}
                 />
                 <div></div>
             </div>

@@ -33,6 +33,8 @@ const EventDetails = () => {
           variant="event-detail"
           price={SelectedEvents.price}
           Detail={DetailsEvent}
+          arrowColor={"#fff"}
+          colorButton={"purple"}
         />
         <EventOverView
           overView={SelectedEvents.overView}

@@ -10,13 +10,15 @@ import { Button } from ".";
 
 export const detailVariant = {
   "event-detail": "md:absolute top-96",
-  "course-detail": "",
+  "course-detail": "w-64",
 }
 
 const DetailsBox = ({
   variant,
   price,
   Detail,
+  arrowColor,
+  colorButton,
 }) => {
   const { t, i18n } = useTranslation();
   const AppIcons = [
@@ -59,7 +61,7 @@ const DetailsBox = ({
           </div>
         </div>
       </div>
-      <Button arrowColor={"#fff"} variant="purple" text={'Join'} style="mt-4" />
+      <Button arrowColor={arrowColor} variant={colorButton} text={'Join'} style="mt-4" />
     </div>
   )
 }
