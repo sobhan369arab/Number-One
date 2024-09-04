@@ -5,38 +5,37 @@ import { EventData } from "../../core/constants/Events/EventData";
 import { CustomMap } from "../../components/common";
 const EventDetails = () => {
   const { id } = useParams();
-  // Find the details of the selected course
-  const SelectedCourse = EventData.find(item => item.id == id);
-  // console.log(SelectedCourse)
+  // Find the details of the selected event
+  const SelectedEvents = EventData.find(item => item.id == id);
 
   return (
     <>
-      <TitleSection title={SelectedCourse.title} />
+      <TitleSection title={SelectedEvents.title} />
       <div className="xl:w-9/12 w-[88%]  mx-auto my-20 relative lg:h-[1290px] cursor-default">
-        <EventImage picture={SelectedCourse.img} />
+        <EventImage picture={SelectedEvents.img} />
         <EventTitle
-          title={SelectedCourse.title}
-          location={SelectedCourse.city}
-          NumberStudents={SelectedCourse.students}
-          creator={SelectedCourse.createBy}
-          Score={SelectedCourse.score}
+          title={SelectedEvents.title}
+          location={SelectedEvents.city}
+          NumberStudents={SelectedEvents.students}
+          creator={SelectedEvents.createBy}
+          Score={SelectedEvents.score}
         />
         <DetailsBox
-          price={SelectedCourse.price}
-          date2={SelectedCourse.date2}
-          startTime={SelectedCourse.startTime}
-          topics={SelectedCourse.topics}
-          quizzes={SelectedCourse.quizzes}
-          certifications={SelectedCourse.certifications}
-          totalSeat={SelectedCourse.totalSeat}
+          price={SelectedEvents.price}
+          date2={SelectedEvents.date2}
+          startTime={SelectedEvents.startTime}
+          topics={SelectedEvents.topics}
+          quizzes={SelectedEvents.quizzes}
+          certifications={SelectedEvents.certifications}
+          totalSeat={SelectedEvents.totalSeat}
         />
         <EventOverView
-          overView={SelectedCourse.overView}
-          training={SelectedCourse.training}
+          overView={SelectedEvents.overView}
+          training={SelectedEvents.training}
         />
         <EventElements
-          MajorElements={SelectedCourse.MajorElements}
-          training={SelectedCourse.training}
+          MajorElements={SelectedEvents.MajorElements}
+          training={SelectedEvents.training}
         />
         <CustomMap/>
 
