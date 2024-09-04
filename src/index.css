@@ -109,7 +109,6 @@
   .holder_instructor_style {
     @apply w-full px-6 py-8 shadow-lg border border-neutral-300 rounded-xl flex flex-wrap gap-y-4;
   }
-}
 
   .main-container {
     @apply xl:w-4/5 sm:w-11/12  mobile:w-[98%] m-auto my-8;
