@@ -26,7 +26,7 @@ const HeroSection = () => {
                 </div>
                 <h1 className='boldStyle_text md:text-start text-center'>{t("heroSectionTitle2")}</h1>
                 <p className='mediumStyle_text md:text-start text-center'>{t("heroSectionDescription")}</p>
-                <Button text={t("heroSectionBtn")} style="mt-5" variant={"purple"} arrowColor="#fff" />
+                <Button text={t("heroSectionBtn")} style="mt-5" vStyle={"purple"} vType="link" arrowColor="#fff" />
             </div>
             <div className="w-[450px] h-full hidden md:flex justify-center items-end relative">
                 <div className={`${i18n.language === "en" ? "left-[-0px]" : "right-[-0px]"} w-44 h-24 flex flex-wrap rounded-lg top-[60px] p-4 heroSection_box_shadow bg-white absolute`}>

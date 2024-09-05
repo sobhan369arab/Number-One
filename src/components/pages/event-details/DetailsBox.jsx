@@ -73,7 +73,7 @@ const DetailsBox = ({
           </div>
         </div>
       </div>
-      <Button arrowColor={"#fff"} variant="purple" text={'Join'} style="mt-4" />
+      <Button arrowColor={"#fff"} vStyle="purple" vType="link" text='Join' style="mt-4 justify-center" />
     </div>
   )
 }

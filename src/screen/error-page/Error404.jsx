@@ -12,7 +12,7 @@ const Error404 = () => {
                 <Error404Icon className="sm:w-[420px] w-80" />
                 <h1 className="w-full sm:text-3xl text-xl text-center">{t('error')}!</h1>
                 <h1 className="w-full sm:text-3xl text-xl text-center">{t('ErrorDesc')}</h1>
-                <Button arrowColor={"#fff"} variant="purple" text={'GoHomePage'} />
+                <Button arrowColor={"#fff"} vStyle="purple" vType="link" text='GoHomePage' href="/" />
             </div>
         </>
     )

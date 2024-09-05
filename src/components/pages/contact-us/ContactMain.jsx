@@ -25,7 +25,7 @@ const ContactMain = () => {
                         }
                     })}
                 </div>
-                <Button arrowColor="#000" variant="yellow" text={t("submit")} />
+                <Button arrowColor="#000" vStyle="yellow" vType="button" text="submit" />
             </div>
         </div>
     )

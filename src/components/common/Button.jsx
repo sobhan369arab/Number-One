@@ -20,7 +20,7 @@ const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick })
         button: (
             <button onClick={isClick} type='submit' className={`pb-3 pt-1.5 px-5 flex items-center gap-x-2 rounded-full duration-200 ${variantStyle?.[vStyle]} ${style}`}>
                 {t(text)}
-                <Icon />
+                {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}
             </button>
         )
     }
