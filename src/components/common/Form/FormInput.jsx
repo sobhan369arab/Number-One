@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Field } from "formik"
+import { ErrorMessage, Field } from "formik"
 import { UnEyeIcon, EyeIcon } from "../../../core/icon"
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
@@ -40,7 +40,12 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
     }
     return (
         <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-full sm:w-[45%]"}`}>
-            <label htmlFor={certificate} className="w-full px-3 text-neutral-400">{sectionName}</label>
+            <div className="relative w-full text-nowrap px-3 flex items-end gap-x-2 justify-between text-sm text-red-600">
+                <label htmlFor={certificate} className="text-base text-neutral-400">{sectionName}</label>
+                <span className="w-full bg-white absolute top-1 right-3">
+                    <ErrorMessage name={certificate} />
+                </span>
+            </div>
             {fieldVariants?.[variants]}
         </div>
     )
