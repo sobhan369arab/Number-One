@@ -6,14 +6,13 @@ const DarkModeBtn = () => {
     return (
         <Switch
             onValueChange={(event) => {console.log(event)}}
-            defaultSelected
             size="md"
             color="primary"
             thumbIcon={({ isSelected }) =>
                 isSelected ? (
-                    <SunIcon />
-                ) : (
                     <MoonIcon />
+                ) : (
+                    <SunIcon />
                 )
             }
         />
