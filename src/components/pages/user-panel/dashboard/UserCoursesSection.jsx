@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next'
 const UserCoursesSection = ({ sectionName, children }) => {
     const { t, i18n } = useTranslation()
     return (
-        <div className='w-1/2 flex flex-wrap justify-center'>
-            <h1 className='w-full text-xl text-neutral-400'>{sectionName}</h1>
-            <div className='w-full mt-6 flex flex-wrap gap-y-4'>
+        <div className='w-full lg:w-1/2 flex flex-wrap justify-center'>
+            <h1 className='w-full text-xl text-center lg:text-start text-neutral-400'>{sectionName}</h1>
+            <div className='w-full mt-6 flex justify-center lg:justify-start flex-wrap gap-4'>
                 {children}
             </div>
             <Link className='text-neutral-400 text-sm flex gap-x-4 mt-2'>

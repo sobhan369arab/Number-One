@@ -23,9 +23,9 @@ const InformationSection = ({ styleSection, state, section, map = false }) => {
     }
     const { i18n } = useTranslation()
     return (
-        <ul className={`w-1/2 px-12 py-5 flex flex-wrap gap-y-10 relative ${styleSection}`}>
+        <ul className={`w-full md:w-1/2 mobile:px-4 px-12 py-5 flex flex-wrap gap-y-5 lg:gap-y-10 relative ${styleSection}`}>
             {initialState?.[section].map((obj, index) => <FieldSection key={index} fieldTitle={i18n.language == "en" ? obj.title[1] : obj.title[0]} descriptionTitle={obj.description} />)}
-            {map ? <div className={`w-28 h-28 bg-yellowCustom rounded-full absolute bottom-2 ${i18n.language != "en" ? "left-12" : "right-12"}`}></div> : null}
+            {map ? <div className={`hidden lg:block w-28 h-28 bg-yellowCustom rounded-full absolute bottom-2 ${i18n.language != "en" ? "left-12" : "right-12"}`}></div> : null}
         </ul>
     )
 }

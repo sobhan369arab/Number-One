@@ -28,7 +28,7 @@ const Profile = () => {
     }, [previews])
 
     return (
-        <div className="w-36 h-36 rounded-full overflow-hidden relative shadow-lg">
+        <div className="w-56 h-56 lg:w-36 lg:h-36 rounded-full overflow-hidden relative shadow-lg">
             <img src={previews ? previews : profile} alt="" />
             <div onClick={() => { onOpen() }} className="w-full h-9 cursor-pointer bg-black/30 z-10 absolute bottom-0 left-0 flex justify-center items-center">
                 <Camera />

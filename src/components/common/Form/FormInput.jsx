@@ -13,7 +13,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
     const { i18n } = useTranslation()
     const fieldVariants = {
         password: (
-            <div className="relative">
+            <div className="w-full relative">
                 <Field dir={dir} type={visible ? "text" : "password"} name={certificate} id={certificate} className="fieldsStyle" />
                 <div onClick={() => { setVisible(!visible) }} className="w-6 h-4 absolute bottom-3 right-4">
                     {visible ? <EyeIcon /> : <UnEyeIcon width="20" />}
@@ -37,13 +37,12 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
                 render={<InputIcon />}
                 calendar={persian}
                 locale={persian_fa}
-                calendarPosition="bottom-right"
                 containerStyle={{ width: "100%", direction: i18n.language == "en" ? "ltr" : "ltr" }}
             />
         )
     }
     return (
-        <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-[45%]"}`}>
+        <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-[48%] sm:w-[45%]"}`}>
             <label htmlFor={certificate} className="w-full px-3 text-neutral-400">{sectionName}</label>
             {fieldVariants?.[variants]}
         </div>

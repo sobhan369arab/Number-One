@@ -21,13 +21,13 @@ const Information = () => {
     latitude: ""
   }
   return (
-    <div className='w-[95%] h-fit flex flex-wrap justify-center pt-5 pb-10 bg-[#C8C1ED]/30 border border-[#C8C1ED]/50 shadow-md rounded-xl relative'>
-      <div className={`userPanel_icons -top-6 ${i18n.language != "en" ? "right-12" : "left-12"}`}>
+    <div className='mobile:w-full w-[95%] h-fit flex flex-wrap justify-center pt-5 pb-10 bg-[#C8C1ED]/30 border border-[#C8C1ED]/50 shadow-md rounded-xl relative'>
+      <div className={`userPanel_icons -top-6 left-[50%] translate-x-[-50%] ${i18n.language != "en" ? "md:right-12" : "md:left-12"}`}>
         <UserIcon />
       </div>
       <InformationSection section={"sectionRight"} state={userState} styleSection="border-l border-neutral-300" />
       <InformationSection section={"sectionLeft"} state={userState} map />
-      <Button Icon={EditIcon} href="/userPanel/editInformation" text={t("edit")} variant="yellow" style="mt-10 w-32 justify-center" />
+      <Button Icon={EditIcon} href="/userPanel/editInformation" text={t("edit")} vStyle="yellow" vType={"link"} style="mt-10 w-32 justify-center" />
     </div>
   )
 }

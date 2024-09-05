@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { SaveIcon } from '../../../../core/icon'
-import { FormInput, FormHolder } from '../../../common'
+import { FormInput, FormHolder, Button } from '../../../common'
 
 const ChangePassword = () => {
     const { t, i18n } = useTranslation()
@@ -16,21 +16,20 @@ const ChangePassword = () => {
             initialValues={initialValues}
             onSubmit={(event) => { console.log(event) }}
         >
-            {fields.map(item =>
-                <FormInput
-                    key={item.id}
-                    certificate={item.certificate}
-                    sectionName={i18n.language != "en" ? item.sectionName[0] : item.sectionName[1]}
-                    dir={item.dir}
-                    style="w-[260px]"
-                    variants="password"
-                />
-            )}
+            <div className='w-full flex gap-x-20 gap-y-8 lg:gap-x-10 justify-center flex-wrap lg:flex-nowrap'>
+                {fields.map(item =>
+                    <FormInput
+                        key={item.id}
+                        certificate={item.certificate}
+                        sectionName={i18n.language != "en" ? item.sectionName[0] : item.sectionName[1]}
+                        dir={item.dir}
+                        style="w-[340px] lg:w-[28%]"
+                        variants="password"
+                    />
+                )}
+            </div>
             <div className='w-full flex justify-center mt-16'>
-                <button type='submit' className='px-4 py-2 flex items-center gap-x-2 rounded-full bg-yellowCustom duration-200 buttonYellow_shadow'>
-                    {t("saveChanges")}
-                    <SaveIcon />
-                </button>
+                <Button Icon={SaveIcon} vStyle="yellow" vType="button" text="saveChanges" />
             </div>
         </FormHolder>
     )

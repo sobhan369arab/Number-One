@@ -649,3 +649,20 @@ export function UnEyeIcon(props) {
         </svg>
     )
 }
+
+export function CancelIcon(props) {
+    return (
+        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <g clip-path="url(#clip0_502_238)">
+                <path d="M14.3528 11.25L9.19012 6.75M9.19068 11.25L14.3533 6.75" stroke="#161439" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20.377 9C20.377 4.85786 16.5242 1.5 11.7717 1.5C7.01915 1.5 3.16644 4.85786 3.16644 9C3.16644 13.1421 7.01915 16.5 11.7717 16.5C16.5242 16.5 20.377 13.1421 20.377 9Z" stroke="#161439" stroke-width="1.5" />
+            </g>
+            <defs>
+                <clipPath id="clip0_502_238">
+                    <rect width="20.6526" height="18" fill="white" transform="translate(0.799988)" />
+                </clipPath>
+            </defs>
+        </svg>
+
+    )
+}
