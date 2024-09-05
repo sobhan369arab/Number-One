@@ -1,10 +1,10 @@
 import { baskets, menuItem } from "../../../core/constants/Header/headerData"
-import MenuHeader from "./MenuHeader"
+import MenuHeader from "./menuHeader"
 import { useTranslation } from "react-i18next"
 import { LogoGroup } from "../../common"
 import { MenuIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
-import BasketItems from "./BasketItems"
+import BasketItems from "./basketItems"
 import SearchBoxHeader from "./SearchBoxHeader"
 
 const Header = () => {

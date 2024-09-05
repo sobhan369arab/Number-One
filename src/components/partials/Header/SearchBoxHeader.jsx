@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import SearchBtn from "./SearchBtn";
+import SearchBtn from "./searchBtn";
 import MediaQuery from "react-responsive";
 import { ArrowIcon, CategoryIcon } from "../../../core/icon";
 
