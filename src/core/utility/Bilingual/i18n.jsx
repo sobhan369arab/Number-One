@@ -14,7 +14,7 @@ i18n.use(initReactI18next)
                     nameGroup: 'نامبر وان', teamSlogan: 'همیشه بهترین',
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه',
-                    test: 'این یک پیام تستی است', course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش",
+                    test: 'این یک پیام تستی است', course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو",
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ',
                     // Search Input in the Header
@@ -95,7 +95,7 @@ i18n.use(initReactI18next)
                     nameGroup: 'Number One', teamSlogan: 'ALWAYS THE BEST',
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
-                    test: 'This is a test message', course: "Course", viewAll: "view all", edit: "Edit",
+                    test: 'This is a test message', course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel",
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog',
                     // Search Input in the Header
