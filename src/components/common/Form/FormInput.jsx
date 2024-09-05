@@ -25,7 +25,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
         ),
         select: (
             <Field as="select" name={certificate} id={certificate} className="fieldsStyle w-full min-h-10 max-h-40">
-                {options != undefined ? options.map((item, index) => (<option key={index} value={item}>{item}</option>)) : null}
+                {options != undefined ? i18n.language == "en" ? options[1].map((item, index) => (<option key={index} value={item}>{item}</option>)) : options[0].map((item, index) => (<option key={index} value={item}>{item}</option>)) : null}
             </Field>
         ),
         area: (
@@ -42,7 +42,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
         )
     }
     return (
-        <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-[48%] sm:w-[45%]"}`}>
+        <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-full sm:w-[45%]"}`}>
             <label htmlFor={certificate} className="w-full px-3 text-neutral-400">{sectionName}</label>
             {fieldVariants?.[variants]}
         </div>

@@ -7,7 +7,7 @@ const TitleSectionPanel = ({ name, Icon }) => {
       <div className='userPanel_icons static'>
         <Icon />
       </div>
-      <h1 className={`boldStyle_text text-2xl mb-1.5 ${i18n.language != "en" ? "pl-4" : "pr-4"}`}>{name}</h1>
+      <h1 className={`boldStyle_text text-lg sm:text-2xl mb-1.5 ${i18n.language != "en" ? "pl-4" : "pr-4"}`}>{name}</h1>
     </div>
   )
 }
