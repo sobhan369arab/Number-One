@@ -35,6 +35,7 @@ const EventDetails = () => {
           Detail={DetailsEvent}
           arrowColor={"#fff"}
           colorButton={"purple"}
+          btnText={"Join"}
         />
         <EventOverView
           overView={SelectedEvents.overView}

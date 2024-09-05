@@ -28,6 +28,7 @@ const CourseDetail = () => {
                     Detail={DetailsCourse}
                     arrowColor={"#000"}
                     colorButton={"yellow"}
+                    btnText={"signUpCourse"}
                 />
                 <div></div>
             </div>

@@ -62,6 +62,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
+                    signUpCourse:"ثبت نام در دوره",
                     // LoginForm
                     LoginCaption: "خوش برگشتی!",
                     LoginDesc: " سلام! آماده ورود به سیستم هستید؟ فقط نام کاربری و رمز عبور خود را در زیر وارد کنید و شما در کمترین زمان به عمل خواهید رسید. بیا بریم!",
@@ -152,6 +153,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
+                    signUpCourse:"Enroll in this course",
                     // LoginForm
                     LoginCaption: "Welcome back!",
                     LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",

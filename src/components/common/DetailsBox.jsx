@@ -19,6 +19,7 @@ const DetailsBox = ({
   Detail,
   arrowColor,
   colorButton,
+  btnText
 }) => {
   const { t, i18n } = useTranslation();
   const AppIcons = [
@@ -47,7 +48,7 @@ const DetailsBox = ({
       </div>
       <div className="max-md:flex max-sm:block justify-evenly mt-0">
         {/* Payment Box */}
-        <div className="border-b py-5 ">
+        <div className="border-b py-2 pb-4 ">
           <h1 className="text-sm">{t('Payment')}</h1>
           <img src="../images/payment.png" alt="Payment Icon" className="h-6 mt-2" />
         </div>
@@ -61,7 +62,7 @@ const DetailsBox = ({
           </div>
         </div>
       </div>
-      <Button arrowColor={arrowColor} variant={colorButton} text={'Join'} style="mt-4" />
+      <Button arrowColor={arrowColor} variant={colorButton} text={btnText} style="mt-4" />
     </div>
   )
 }
