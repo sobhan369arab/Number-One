@@ -4,7 +4,6 @@ import { UnEyeIcon, EyeIcon } from "../../../core/icon"
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import DatePicker from "react-multi-date-picker"
-import InputIcon from "react-multi-date-picker/components/input_icon"
 import "./FormDate.css"
 import { useTranslation } from "react-i18next"
 
@@ -33,8 +32,6 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
         ),
         date: (
             <DatePicker
-                inputClass=""
-                render={<InputIcon />}
                 calendar={persian}
                 locale={persian_fa}
                 containerStyle={{ width: "100%", direction: i18n.language == "en" ? "ltr" : "ltr" }}
