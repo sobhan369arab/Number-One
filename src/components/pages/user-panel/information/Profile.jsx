@@ -47,7 +47,7 @@ const Profile = () => {
                         )
                         : null}
                 </div>
-                <div className="w-full h-28 flex gap-x-8 items-center">
+                <div className="w-80 overflow-x-scroll overflow-y-visible sm:w-full h-28 flex gap-x-8 items-center">
                     {userPictures ? userPictures.map((item, index) => <CreateUserPicture key={index} setUserPictures={setUserPictures} userPictures={userPictures} previews={previews} setPreviews={setPreviews} src={item.src} />) : null}
                     <label htmlFor="choosePicture" className="cursor-pointer hover:scale-110">
                         <IncreaseIcon />

@@ -31,7 +31,7 @@ const CropProfile = ({ previews, setPreviews }) => {
 
     return (
         <>
-            <button onClick={() => { onOpen() }} className="absolute font-IranSans rounded-lg border-2 border-neutral-200 hover:bg-white/20 duration-200 text-neutral-200 px-6 py-2">برش</button>
+            <button onClick={() => { onOpen() }} className="absolute font-IranSans rounded-lg border-2 border-neutral-200 bg-black/50 duration-200 text-neutral-200 px-6 py-2">برش</button>
             <CreateModal isOpen={isOpen} onClose={onClose}>
                 <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-0 right-0">
                     <CloseIcon />

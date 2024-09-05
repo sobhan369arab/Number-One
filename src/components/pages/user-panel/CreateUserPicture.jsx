@@ -28,12 +28,12 @@ const CreateUserPicture = ({ src, setUserPictures, userPictures, previews, setPr
 
     return (
         <div className="relative">
-            <div onClick={() => { handleClick(src) }} className="w-28 h-full rounded-2xl">
-                <img className="rounded-2xl" src={src} alt="" />
+            <div onClick={() => { handleClick(src) }} className="w-28 h-28 rounded-2xl">
+                <img className="max-w28 max-h-28 w-28 h-28 rounded-2xl" src={src} alt="" />
             </div>
             {
                 active ?
-                    <div onClick={() => { handleDelete(src) }} className="closeButton_modal bg-neutral-100 -top-2 -left-2">
+                    <div onClick={() => { handleDelete(src) }} className="closeButton_modal bg-neutral-100 top-0 sm:-top-2 sm:-left-2">
                         <CloseIcon stroke="red" />
                     </div> : null
             }
