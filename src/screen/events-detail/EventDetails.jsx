@@ -4,7 +4,9 @@ import TitleSection from "../../components/partials/title-section/TitleSection";
 import { EventData } from "../../core/constants/Events/EventData";
 import { CustomMap } from "../../components/common";
 import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
+import { useTranslation } from "react-i18next";
 const EventDetails = () => {
+  const { i18n} = useTranslation();
   const { id } = useParams();
   // Find the details of the selected event
   const SelectedEvents = EventData.find(item => item.id == id);

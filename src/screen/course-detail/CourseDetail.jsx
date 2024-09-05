@@ -3,6 +3,7 @@ import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { DetailsBox } from "../../components/common";
 import { CertificationsIcon, LevelIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
+import { CoursePic } from "../../components/pages/course-detail";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -21,7 +22,7 @@ const CourseDetail = () => {
     return (
         <>
             <TitleSection title={courseSelected.title} />
-            <div className="main-container">
+            <div className="main-container flex gap-9">
                 <DetailsBox
                     variant="course-detail"
                     price={courseSelected.price}
@@ -30,7 +31,9 @@ const CourseDetail = () => {
                     colorButton={"yellow"}
                     btnText={"signUpCourse"}
                 />
-                <div></div>
+                <div className="w-full">
+                    <CoursePic image={courseSelected.img}/>
+                </div>
             </div>
 
         </>
