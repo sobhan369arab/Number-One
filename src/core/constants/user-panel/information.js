@@ -3,7 +3,7 @@ export const informationFields = {
         {id: 1, type: "text", certificate: "firstName", sectionName: ["نام", "First name"], dir: "rtl", variant: "simple"},
         {id: 2, type: "text", certificate: "lastName", sectionName: ["نام خانوادگی", "Last name"], dir: "rtl", variant: "simple"},
         {id: 3, type: "text", certificate: "nationalCode", sectionName: ["کد ملی", "National code"], dir: "ltr", variant: "simple"},
-        {id: 4, certificate: "gender", sectionName: ["جنسیت", "Gender"], dir: "rtl", options: ["مرد", "زن"], variant: "select"},
+        {id: 4, certificate: "gender", sectionName: ["جنسیت", "Gender"], dir: "rtl", options: [["مرد", "زن"], ["man", "women"]], variant: "select"},
         {id: 5, certificate: "birth", sectionName: ["تاریخ تولد", "Date of birth"], dir: "ltr", variant: "date"},
         {id: 6, type: "text", certificate: "phone", sectionName: ["شماره همراه", "Mobile number"], dir: "ltr", variant: "simple"},
         {id: 7, type: "email", certificate: "email", sectionName: ["ایمیل", "Email"], dir: "ltr", variant: "simple"},
