@@ -4,10 +4,10 @@ import { useState } from 'react'
 
 const MyCourses = () => {
     const headerTable = [
-        {text: ["نام دوره", "Course Name"]},
-        {text: ["مدرس دوره", "Teacher"]},
-        {text: ["تاریخ شروع", "Date"]},
-        {text: ["قیمت", "Price"]},
+        { text: ["نام دوره", "Course Name"] },
+        { text: ["مدرس دوره", "Teacher"] },
+        { text: ["تاریخ شروع", "Date"] },
+        { text: ["قیمت", "Price"] },
     ]
     const data = [
         { id: 1, profile: "", courseName: "آموزش Tailwind css", teacher: "دکتر محمدحسین بحر العلومی", date: "۱۴۰۴ / ۰۳ / ۱۸", price: "۵۰۰,۰۰۰" },
@@ -32,15 +32,15 @@ const MyCourses = () => {
     return (
         <div className='w-full flex flex-wrap h-fit -mt-8'>
             <SearchSection />
-            <Table sectionHeader={headerTable} style="border-t mt-3 pt-5">
-                <PaginateHolderItems style="justify-center h-[590px]">
-                    <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
-                        <div className='itemsTable_userPanel_holder'>
+            <PaginateHolderItems style="justify-center">
+                <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
+                    <div className='overflow-x-auto h-[590px]'>
+                        <Table sectionHeader={headerTable} style="border-t mt-3 pt-5">
                             {currentItems.map((item, index) => <TableItem key={index} object={item} variant="myCourses" />)}
-                        </div>
-                    </PaginatedItems>
-                </PaginateHolderItems>
-            </Table>
+                        </Table>
+                    </div>
+                </PaginatedItems>
+            </PaginateHolderItems>
         </div>
     )
 }

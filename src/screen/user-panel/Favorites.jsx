@@ -19,15 +19,15 @@ const Favorites = () => {
     const currentItems = data.slice(itemOffset, endOffset);
     return (
         <div className="w-full flex flex-wrap h-fit -mt-8">
-            <Table sectionHeader={headerTable}>
-                <PaginateHolderItems style="justify-center h-[666px]">
-                    <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
-                        <div className="itemsTable_userPanel_holder">
+            <PaginateHolderItems style="justify-center h-[666px]">
+                <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
+                    <div className="overflow-x-auto h-[666px]">
+                        <Table sectionHeader={headerTable}>
                             {currentItems.map((item, index) => <TableItem key={index} object={item} variant="favorites" />)}
-                        </div>
-                    </PaginatedItems>
-                </PaginateHolderItems>
-            </Table>
+                        </Table>
+                    </div>
+                </PaginatedItems>
+            </PaginateHolderItems>
         </div>
     )
 }

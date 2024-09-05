@@ -58,13 +58,13 @@ const TableItem = ({ object, variant }) => {
         }
     }
     return (
-        <div className="w-full h-fit text-center text-sm flex item-center odd:bg-[#C8C1ED]/30 justify-around p-1.5 rounded-lg shadow-md">
-            <span className="min-w-8 h-8 rounded-full bg-purpleCustom ml-2"></span>
-            {differentSection?.[variant].sections.map((item, index) => <span key={index} className={`line-clamp-1 h-fit ${differentSection?.[variant].width}`} dir={item.dir} style={{ color: item.color }}>{item.section}</span>)}
-            <span className="w-12 h-6 flex items-center justify-between">
+        <tr className="min-w-[830px] w-full h-fit text-center text-sm flex item-center odd:bg-[#C8C1ED]/30 justify-around p-1.5 rounded-lg shadow-md">
+            <td className="min-w-8 h-8 rounded-full bg-purpleCustom ml-2"></td>
+            {differentSection?.[variant].sections.map((item, index) => <td key={index} className={`line-clamp-1 h-fit ${differentSection?.[variant].width}`} dir={item.dir} style={{ color: item.color }}>{item.section}</td>)}
+            <td className="w-12 h-6 flex items-center justify-between">
                 {differentSection?.[variant].actions.map((item, index) => <div key={index} className="cursor-pointer hover:scale-110"><item.Icon /></div>)}
-            </span>
-        </div>
+            </td>
+        </tr>
     )
 }
 
