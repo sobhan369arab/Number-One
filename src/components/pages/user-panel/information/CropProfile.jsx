@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
-import CreateModal from "../CreateModal"
+import CreateModal from "../../../common/CreateModal"
 import { useDisclosure } from "@nextui-org/react"
 import { CloseIcon } from "../../../../core/icon";
-import ReactCrop, { centerCrop, convertToPixelCrop, makeAspectCrop,} from "react-image-crop";
+import ReactCrop, { centerCrop, convertToPixelCrop, makeAspectCrop, } from "react-image-crop";
 import 'react-image-crop/dist/ReactCrop.css'
 import setCanvasPreview from "./setCanvasPreview";
 

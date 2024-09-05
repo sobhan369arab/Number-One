@@ -2,8 +2,8 @@ import profile from "../../../../assets/images/profile.jpg"
 import { Camera, CloseIcon, IncreaseIcon } from "../../../../core/icon"
 import { useDisclosure } from "@nextui-org/react"
 import { useEffect, useState } from "react"
-import CreateModal from "../CreateModal"
-import CreateUserPicture from "../CreateUserPicture"
+import CreateModal from "../../../common/CreateModal"
+import CreateUserPicture from "./CreateUserPicture"
 import CropProfile from "./CropProfile"
 
 const Profile = () => {
@@ -14,14 +14,14 @@ const Profile = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     useEffect(() => {
-        if (!files) return
+        if (!files || userPictures.length > 4) return
         setPreviews(URL.createObjectURL(files))
     }, [files])
 
     useEffect(() => {
-        if (!previews) return
+        if (!previews || userPictures.length > 4) return
         let existed = userPictures.find(image => image.src === previews)
-        console.log(userPictures)
+        console.log(userPictures.length)
         if (!existed) {
             setUserPictures([...userPictures, { src: previews }])
         }
@@ -47,7 +47,7 @@ const Profile = () => {
                         )
                         : null}
                 </div>
-                <div className="w-80 overflow-x-scroll overflow-y-visible sm:w-full h-28 flex gap-x-8 items-center">
+                <div className="w-80 overflow-x-auto sm:overflow-visible sm:w-full h-28 flex gap-x-8 items-center">
                     {userPictures ? userPictures.map((item, index) => <CreateUserPicture key={index} setUserPictures={setUserPictures} userPictures={userPictures} previews={previews} setPreviews={setPreviews} src={item.src} />) : null}
                     <label htmlFor="choosePicture" className="cursor-pointer hover:scale-110">
                         <IncreaseIcon />
