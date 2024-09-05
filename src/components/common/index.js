@@ -15,6 +15,7 @@ import SwiperSlider from "./SwiperSlider";
 import SearchInput from "./SearchInput";
 import FormHolder from "./Form/FormHolder";
 import FormInput from "./Form/FormInput";
+import HamburgerMenu from "./HamburgerMenu";
 
 export {
   Button,
@@ -34,5 +35,6 @@ export {
   calculatePageCount,
   SearchInput,
   FormHolder,
-  FormInput
+  FormInput,
+  HamburgerMenu
 };
