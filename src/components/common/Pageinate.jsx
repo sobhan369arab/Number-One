@@ -7,6 +7,8 @@ import Course from '../pages/course/Course';
 import { useMediaQuery } from 'react-responsive';
 
 function Items({ currentItems }) {
+  const [comparisonId, setComparisonId] = useState([])
+
     const location = useLocation();
     return (
         <>
@@ -37,6 +39,8 @@ function Items({ currentItems }) {
                                 like={item.like}
                                 disLike={item.disLike}
                                 bio={item.bio}
+                                comparisonId={comparisonId}
+                                setComparisonId={setComparisonId}
                             /> : ""
                 ))}
         </>

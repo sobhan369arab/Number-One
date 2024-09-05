@@ -19,6 +19,8 @@ const Course = ({
     like,
     disLike,
     bio,
+    comparisonId,
+    setComparisonId
 
 }) => {
 
@@ -27,7 +29,7 @@ const Course = ({
             <div className="bg-slate-300 h-44 w-64">
                 <CourseHeader images={images} />
                 <div className="flex justify-center gap-8 my-3">
-                    <ComparisonBtn CourseId={id}/>
+                    <ComparisonBtn comparisonId={comparisonId} setComparisonId={setComparisonId} CourseId={id}/>
                     <FavoriteBtn/>
                 </div>
             </div>
