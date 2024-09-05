@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { CloseIcon } from "../../../core/icon"
+import { CloseIcon } from "../../../../core/icon"
 
 const CreateUserPicture = ({ src, setUserPictures, userPictures, previews, setPreviews }) => {
     const [active, setActive] = useState(false)
