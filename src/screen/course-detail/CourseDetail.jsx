@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
 import TitleSection from "../../components/partials/title-section/TitleSection";
-import { DetailsBox } from "../../components/common";
+import { DetailsBox, Title_details } from "../../components/common";
 import { CertificationsIcon, LevelIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { CoursePic } from "../../components/pages/course-detail";
 
@@ -11,12 +11,12 @@ const CourseDetail = () => {
     let courseSelected = CoursesDataFa.find(course => course.id == id);
     const DetailsCourse = [
         { titleDetail: "level", countDetail: courseSelected.level, iconDetail: LevelIcon },
-        { titleDetail: "duration", countDetail: courseSelected.duration, iconDetail: TimeIcon},
-        { titleDetail: "lessons", countDetail: courseSelected.lessons, iconDetail: TopicsIcon},
-        { titleDetail: "EventQuizzes", countDetail: courseSelected.quizzes, iconDetail: QuizzesIcon},
+        { titleDetail: "duration", countDetail: courseSelected.duration, iconDetail: TimeIcon },
+        { titleDetail: "lessons", countDetail: courseSelected.lessons, iconDetail: TopicsIcon },
+        { titleDetail: "EventQuizzes", countDetail: courseSelected.quizzes, iconDetail: QuizzesIcon },
         { titleDetail: "EventCertifications", countDetail: courseSelected.certifications, iconDetail: CertificationsIcon },
-        { titleDetail: "graduation", countDetail: courseSelected.graduation, iconDetail: TotalIcon},
-        { titleDetail: "type", countDetail: courseSelected.type, iconDetail: TotalIcon}
+        { titleDetail: "graduation", countDetail: courseSelected.graduation, iconDetail: TotalIcon },
+        { titleDetail: "type", countDetail: courseSelected.type, iconDetail: TotalIcon }
     ]
 
     return (
@@ -32,7 +32,16 @@ const CourseDetail = () => {
                     btnText={"signUpCourse"}
                 />
                 <div className="w-full">
-                    <CoursePic image={courseSelected.img}/>
+                    <CoursePic image={courseSelected.img} />
+                    <Title_details
+                        title={courseSelected.title}
+                        creator={courseSelected.instructor}
+                        NumberStudents={courseSelected.students}
+                        Score={courseSelected.score}
+                        category={courseSelected.category}
+                        differentDetail={courseSelected.date}
+                        variant={"course-detail"}
+                    />
                 </div>
             </div>
 
