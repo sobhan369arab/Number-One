@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
-import { DetailsBox, EventElements, EventImage, EventOverView, EventTitle } from "../../components/pages/event-details";
+import { DetailsBox, EventElements, EventImage, EventOverView} from "../../components/pages/event-details";
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { EventData } from "../../core/constants/Events/EventData";
-import { CustomMap } from "../../components/common";
+import { CustomMap, Title_details } from "../../components/common";
 import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 const EventDetails = () => {
@@ -24,12 +24,14 @@ const EventDetails = () => {
       <TitleSection title={SelectedEvents.title} />
       <div className="xl:w-9/12 w-[88%]  mx-auto my-20 relative lg:h-[1290px] cursor-default">
         <EventImage picture={SelectedEvents.img} />
-        <EventTitle
+        <Title_details
           title={SelectedEvents.title}
-          location={SelectedEvents.city}
-          NumberStudents={SelectedEvents.students}
           creator={SelectedEvents.createBy}
+          NumberStudents={SelectedEvents.students}
           Score={SelectedEvents.score}
+          differentDetail={SelectedEvents.city}
+          category={SelectedEvents.category}
+          variant={"event-detail"}
         />
         <DetailsBox
           variant="event-detail"

@@ -16,6 +16,7 @@ import CreateSocialMediaItems from "./CreateSocialMediaItems";
 import SearchInput from "./filter-box/FilterSearch.jsx";
 import ModalFilter from "./Modal.jsx";
 import DetailsBox from "./DetailsBox.jsx";
+import Title_details from "./Title_details.jsx";
 
 export {
   Button,
@@ -36,4 +37,5 @@ export {
   SearchInput,
   ModalFilter,
   DetailsBox,
+  Title_details,
 };
