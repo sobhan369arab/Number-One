@@ -27,7 +27,7 @@ const DetailsBox = ({
   ]
 
   return (
-    <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'}  Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300 ${detailVariant?.[variant]}`}>
+    <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'}  Box-shadow1 p-5 h-fit bg-white rounded-lg border border-neutral-300 ${detailVariant?.[variant]}`}>
       {/* price Info */}
       <div className="bg-purpleCustom px-4 py-3 w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg">
         <h1 className="text-xs">{t('EventPrice')}</h1>
@@ -62,7 +62,7 @@ const DetailsBox = ({
           </div>
         </div>
       </div>
-      <Button arrowColor={arrowColor} variant={colorButton} text={btnText} style="mt-4" />
+      <Button arrowColor={arrowColor} variant={colorButton} text={btnText} style="mb-2 mt-6 border-2 border-black" />
     </div>
   )
 }

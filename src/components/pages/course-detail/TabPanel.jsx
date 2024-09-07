@@ -3,13 +3,17 @@ import Details_Tabs from "./Details_Tabs"
 import Tab from "./Tab";
 import { OverView_Details } from "../../common";
 
-const TabPanel = () => {
+const TabPanel = ({
+    overView,
+    training,
+    MajorElements
+}) => {
     const { i18n } = useTranslation();
     return (
         <div>
             <Details_Tabs>
                 <Tab label="Overview"> 
-                    <OverView_Details/>
+                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements}/>
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
                 <Tab label="Instructor">Instructor </Tab>

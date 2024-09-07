@@ -42,7 +42,11 @@ const CourseDetail = () => {
                         differentDetail={courseSelected.date}
                         variant={"course-detail"}
                     />
-                    <TabPanel/>
+                    <TabPanel
+                        overView={courseSelected.overView}
+                        training={courseSelected.training}
+                        MajorElements={courseSelected.MajorElements}
+                    />
                 </div>
             </div>
 

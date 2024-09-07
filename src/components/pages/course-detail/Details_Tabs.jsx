@@ -3,7 +3,7 @@ import { TabData } from "../../../core/constants/event-details/tabData"
 import { useTranslation } from "react-i18next";
 
 const Details_Tabs = ({ children }) => {
-    console.log(children)
+    // console.log(children)
     const { i18n } = useTranslation();
     const [searchParams, setSearchParams] = useSearchParams({ detailsTab: "Overview" })
     const TabMood = searchParams.get("detailsTab")
@@ -15,7 +15,7 @@ const Details_Tabs = ({ children }) => {
 
     return (
         <div>
-            <div className="mb-7">
+            <div className="mb-9">
                 {TabData.map((tab, index) => (
                     <label key={index} className="duration-300 cursor-pointer py-1.5 mx-2 px-4 rounded-2xl bg-grayCustom text-gray-600 has-[:checked]:text-white
               has-[:checked]:bg-purpleCustom  has-[:checked]:buttonSimple_shadow">
