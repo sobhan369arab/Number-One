@@ -57,7 +57,7 @@ const DetailsBox = ({
           <h1 className="text-sm">{t('ShareCourse')}</h1>
           <div>
             {AppIcons.map((item, index) => (
-              <div className="inline-flex mx-1 mt-2 bg-slate-200 p-1.5 rounded-full hover:scale-125 duration-200 cursor-pointer">{item.icon}</div>
+              <div key={index} className="inline-flex mx-1 mt-2 bg-slate-200 p-1.5 rounded-full hover:scale-125 duration-200 cursor-pointer">{item.icon}</div>
             ))}
           </div>
         </div>

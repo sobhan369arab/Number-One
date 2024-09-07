@@ -3,7 +3,7 @@ import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { DetailsBox, Title_details } from "../../components/common";
 import { CertificationsIcon, LevelIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
-import { CoursePic } from "../../components/pages/course-detail";
+import { CoursePic, TabPanel } from "../../components/pages/course-detail";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -42,6 +42,7 @@ const CourseDetail = () => {
                         differentDetail={courseSelected.date}
                         variant={"course-detail"}
                     />
+                    <TabPanel/>
                 </div>
             </div>
 

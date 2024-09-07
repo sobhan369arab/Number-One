@@ -1,3 +1,4 @@
 import CoursePic from "./CoursePic";
+import TabPanel from "./TabPanel";
 
-export{CoursePic}
+export{CoursePic,TabPanel}
