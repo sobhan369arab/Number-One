@@ -17,6 +17,7 @@ import SearchInput from "./filter-box/FilterSearch.jsx";
 import ModalFilter from "./Modal.jsx";
 import DetailsBox from "./DetailsBox.jsx";
 import Title_details from "./Title_details.jsx";
+import OverView_Details from "./OverView_Details.jsx";
 
 export {
   Button,
@@ -38,4 +39,5 @@ export {
   ModalFilter,
   DetailsBox,
   Title_details,
+  OverView_Details,
 };
