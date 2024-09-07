@@ -81,6 +81,9 @@
   .faqMannequin_shadow:hover {
     box-shadow: 5px 4px 0px #171717;
   }
+  .med_box-shadow{
+    box-shadow: 0px 0px 12px 3px #b1aad3;
+  }
 
   .bgGradient_menu {
     background: linear-gradient(90deg,
