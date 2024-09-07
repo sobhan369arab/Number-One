@@ -98,6 +98,7 @@ i18n.use(initReactI18next)
                     removeFilters: 'حذف فیلترها', openFilter: 'فیلتر ها', filters: 'فیلتر ها',
                     // course Details
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
+                    CourseInfo:'دوره شامل',CoursePrice:'هزینه دوره',
                 },
             },
             en: {
@@ -155,7 +156,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
-                    signUpCourse: "Enroll in this course",
+                    signUpCourse: "Enroll course",
                     // LoginForm
                     LoginCaption: "Welcome back!",
                     LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",
@@ -190,6 +191,7 @@ i18n.use(initReactI18next)
                     removeFilters: 'Remove Filters', openFilter: 'Open Filters', filters: 'Filters',
                     // course Details
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
+                    CourseInfo:'Course Information',CoursePrice:'Course Fee',
                 },
             },
         },

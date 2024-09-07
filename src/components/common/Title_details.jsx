@@ -13,7 +13,7 @@ export const categoryItems_variant = {
 }
 export const icon_variant = {
     "event-detail": <LocationIcon />,
-    "course-detail": <DateIcon />,
+    "course-detail": <DateIcon height={18} width={18} />,
 }
 
 const Title_details = ({

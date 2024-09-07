@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom"
-import { DetailsBox, EventElements, EventImage, EventOverView} from "../../components/pages/event-details";
+import { DetailsBox, EventElements, EventImage, EventOverView } from "../../components/pages/event-details";
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { EventData } from "../../core/constants/Events/EventData";
 import { CustomMap, Title_details } from "../../components/common";
 import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 const EventDetails = () => {
-  const { i18n} = useTranslation();
+  const { i18n } = useTranslation();
   const { id } = useParams();
   // Find the details of the selected event
   const SelectedEvents = EventData.find(item => item.id == id);
@@ -40,6 +40,8 @@ const EventDetails = () => {
           arrowColor={"#fff"}
           colorButton={"purple"}
           btnText={"Join"}
+          detailInfo={"EventInfo"}
+          priceInfo={"EventPrice"}
         />
         <EventOverView
           overView={SelectedEvents.overView}
@@ -50,7 +52,7 @@ const EventDetails = () => {
           training={SelectedEvents.training}
         />
         <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute m-auto mt-6 bottom-24 Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
-          <CustomMap width="208px"/>
+          <CustomMap width="208px" />
         </div>
 
       </div>
