@@ -35,6 +35,10 @@
 }
 
 @layer components {
+  .buttonSimple_shadow {
+    box-shadow: 3px 5px 0px 0px #050071;
+  }
+
   .buttonPurple_shadow {
     box-shadow: 3px 5px 0px 0px #050071;
   }
@@ -59,6 +63,10 @@
     box-shadow: 0px 0px 10px 2px #8f9ea1;
   }
 
+  .OptionIcon_shadow {
+    box-shadow: 4px 3px 0px 0px #bdbcbc;
+  }
+
   .statistics_holder {
     background: #282568;
     box-shadow: 0px 25px 70px rgba(40, 37, 104, 0.4);
@@ -66,7 +74,7 @@
   }
 
   .boldStyle_text {
-    @apply text-titleColor font-Sahel text-2xl sm:text-3xl;
+    @apply text-titleColor font-Sahel text-xl sm:text-2xl;
   }
 
   .mediumStyle_text {

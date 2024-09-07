@@ -1,3 +1,4 @@
+import { Link} from "react-router-dom"
 import ComparisonBtn from "../../common/ComparisonBtn"
 import FavoriteBtn from "../../common/FavoriteBtn"
 import CourseCenterBody from "./CourseCenterBody"
@@ -25,34 +26,36 @@ const Course = ({
 }) => {
 
     return (
-        <div className="border border-grayBorder p-4 pb-3 course-item w-[290px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
-            <div className="bg-slate-300 h-44 w-64">
-                <CourseHeader images={images} />
-                <div className="flex justify-center gap-8 my-3">
-                    <ComparisonBtn comparisonId={comparisonId} setComparisonId={setComparisonId} CourseId={id}/>
-                    <FavoriteBtn/>
+        <Link to={`/CourseDetails/${id}`}>
+            <div className="border border-grayBorder p-4 pb-3 course-item w-[290px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
+                <div className="bg-slate-300 h-44 w-64">
+                    <CourseHeader images={images} />
+                    <div className="flex justify-center gap-8 my-3">
+                        <ComparisonBtn location={location} />
+                        <FavoriteBtn location={location} />
+                    </div>
+                </div>
+                <div className="py-2 course-body">
+                    <CourseTopBody
+                        title={title}
+                        score={score}
+                        category={category}
+                        bio={bio}
+                    />
+                    <CourseCenterBody
+                        instructor={instructor}
+                        studentsNumber={studentsNumber}
+                        level={level}
+                        like={like}
+                        disLike={disLike}
+                    />
+                    <CourseDownBody
+                        price={price}
+                        date={date}
+                    />
                 </div>
             </div>
-            <div className="py-2 course-body">
-                <CourseTopBody
-                    title={title}
-                    score={score}
-                    category={category}
-                    bio={bio}
-                />
-                <CourseCenterBody
-                    instructor={instructor}
-                    studentsNumber={studentsNumber}
-                    level={level}
-                    like={like}
-                    disLike={disLike}
-                />
-                <CourseDownBody
-                    price={price}
-                    date={date}
-                />
-            </div>
-        </div>
+        </Link>
     )
 }
 

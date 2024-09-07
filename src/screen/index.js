@@ -6,6 +6,7 @@ import Instructors from "./instructors/Instructors";
 import InstructorDetail from "./instructors-detail/InstructorDetail";
 import Courses from "./courses/Courses";
 import Comparison from "./comparison/Comparison";
+import CourseDetail from "./course-detail/CourseDetail";
 
 export {
   Error404,
@@ -16,4 +17,5 @@ export {
   InstructorDetail,
   Courses,
   Comparison,
+  CourseDetail
 };
