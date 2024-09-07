@@ -62,6 +62,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
+                    signUpCourse: "ثبت نام در دوره",
                     // LoginForm
                     LoginCaption: "خوش برگشتی!",
                     LoginDesc: " سلام! آماده ورود به سیستم هستید؟ فقط نام کاربری و رمز عبور خود را در زیر وارد کنید و شما در کمترین زمان به عمل خواهید رسید. بیا بریم!",
@@ -76,8 +77,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "آموزش جاوا اسکریپت با خیال پردازی", EventDate: "14تیر، 1403", EventCity1: "توکیو",
                     EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
-                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع',
-                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها',
+                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', graduation: 'فارغ التحصیلی',
+                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها',
                     EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
                     // Contact us page
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
@@ -94,7 +95,10 @@ i18n.use(initReactI18next)
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
                     // Filters Name
                     price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها', type: 'نحوه برگذاری',
-                    removeFilters: 'حذف فیلترها',openFilter:'فیلتر ها',filters:'فیلتر ها',
+                    removeFilters: 'حذف فیلترها', openFilter: 'فیلتر ها', filters: 'فیلتر ها',
+                    // course Details
+                    CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
+                    CourseInfo:'دوره شامل',CoursePrice:'هزینه دوره',
                 },
             },
             en: {
@@ -152,6 +156,7 @@ i18n.use(initReactI18next)
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
+                    signUpCourse: "Enroll course",
                     // LoginForm
                     LoginCaption: "Welcome back!",
                     LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",
@@ -166,15 +171,15 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "Learning JavaScript With Imagination", EventDate: "25 June, 2024", EventCity1: "Tokyo",
                     EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
-                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time',
-                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications',
+                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
+                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons',
                     EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
                     // Contact us page
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Feel free to contact us through Twitter or Facebook if you prefer!",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
-                    EventOverview: 'Event Overview', LearnEvent: 'What youll learn in this event?',
+                    EventOverview: 'Event Overview', LearnEvent: 'What will you learn in this event?',
                     EventElements: 'Four major elements that we offer for this event',
                     EventElement1: 'Work with color & Gradients & Grids', EventElement2: 'All the useful shortcuts',
                     EventElement3: 'Be able to create Flyers, Brochures, Advertisements',
@@ -183,7 +188,10 @@ i18n.use(initReactI18next)
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     // Filters Name
                     price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings', type: 'How to put',
-                    removeFilters: 'Remove Filters',openFilter:'Open Filters',filters:'Filters',
+                    removeFilters: 'Remove Filters', openFilter: 'Open Filters', filters: 'Filters',
+                    // course Details
+                    CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
+                    CourseInfo:'Course Information',CoursePrice:'Course Fee',
                 },
             },
         },
