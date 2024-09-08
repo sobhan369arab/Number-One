@@ -20,7 +20,7 @@ const CourseTopBody = ({
           <span className="text-gray-500 text-sm">{score}</span>
         </div>
       </div>
-      <h1 className="hidden course-bio line-clamp-1  text-sm my-5 text-gray-600">{bio}</h1>
+      <p className="hidden course-bio line-clamp-1 text-sm my-5 text-gray-600">{bio} یلریبلیقبلبیققی</p>
     </div>
   )
 }

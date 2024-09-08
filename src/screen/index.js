@@ -5,6 +5,7 @@ import ContactUs from "./contact-us/ContactUs";
 import Instructors from "./instructors/Instructors";
 import InstructorDetail from "./instructors-detail/InstructorDetail";
 import Courses from "./courses/Courses";
+import Comparison from "./comparison/Comparison";
 import CourseDetail from "./course-detail/CourseDetail";
 
 export {
@@ -15,5 +16,6 @@ export {
   Instructors,
   InstructorDetail,
   Courses,
+  Comparison,
   CourseDetail
 };

@@ -58,7 +58,7 @@ i18n.use(initReactI18next)
                     touchTitle: 'در تماس باشید', touchDesc: 'هنگامی که یک چاپگر ناشناس گرفت نوع گالری و درهم',
                     // titlePages
                     loginTitle: 'ورود به عنوان دانش آموز', login: "ورود", instructorsTitle: "همه مربیان",
-                    CoursesTitle: 'همه دوره ها',
+                    CoursesTitle: 'همه دوره ها', comparisonTitle: 'مقایسه',
                     signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
@@ -96,6 +96,9 @@ i18n.use(initReactI18next)
                     // Filters Name
                     price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها', type: 'نحوه برگذاری',
                     removeFilters: 'حذف فیلترها', openFilter: 'فیلتر ها', filters: 'فیلتر ها',
+                    // Comparison page
+                    titleComparison: 'مقایسه دو دوره با هم!',
+                    descComparison: 'با مقایسه کردن دوره های آموزشی باهم دیگه میتونی دوره مناسب خودتو پیدا کنی!',
                     // course Details
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
                     CourseInfo:'دوره شامل',CoursePrice:'هزینه دوره',
@@ -152,7 +155,7 @@ i18n.use(initReactI18next)
                     touchTitle: 'Get In Touch', touchDesc: 'when an unknown printer took galley type and scrambled',
                     // titlePages
                     loginTitle: 'Student Login', login: "Login", instructorsTitle: "All Instructors",
-                    CoursesTitle: 'All Courses',
+                    CoursesTitle: 'All Courses', comparisonTitle: 'Comparison',
                     signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
@@ -189,6 +192,9 @@ i18n.use(initReactI18next)
                     // Filters Name
                     price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings', type: 'How to put',
                     removeFilters: 'Remove Filters', openFilter: 'Open Filters', filters: 'Filters',
+                    // Comparison page
+                    titleComparison: 'Comparison of two courses',
+                    descComparison: 'By comparing training courses, you can find the right course for you!',
                     // course Details
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
                     CourseInfo:'Course Information',CoursePrice:'Course Fee',
