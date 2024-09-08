@@ -23,13 +23,13 @@ const ItemsCompared = ({
     { titleDetail: "Reviews", countDetail: score, iconDetail: StarIcon },
     { titleDetail: "level", countDetail: level, iconDetail: LevelIcon },
     { titleDetail: "eventDate", countDetail: date, iconDetail: DateIcon },
-    { titleDetail: "eventDate", countDetail: lessons, iconDetail: TopicsIcon },
+    { titleDetail: "lessons", countDetail: lessons, iconDetail: TopicsIcon },
     { titleDetail: "EventQuizzes", countDetail: quizzes, iconDetail: QuizzesIcon },
-    { titleDetail: "EventQuizzes", countDetail: duration, iconDetail: TotalIcon },
+    { titleDetail: "graduation", countDetail: duration, iconDetail: TotalIcon },
     { titleDetail: "EventCertifications", countDetail: certifications, iconDetail: CertificationsIcon },
     { titleDetail: "student", countDetail: students, iconDetail: StudentIcon },
     { titleDetail: "instructor", countDetail: instructor, iconDetail: TeacherIcon },
-    { titleDetail: "EventTotalSeat", countDetail: price,priceCount:"priceCount", iconDetail: BiDollar },
+    { titleDetail: "CoursePrice", countDetail: price, priceCount: "priceCount", iconDetail: BiDollar },
   ]
 
   return (
@@ -48,7 +48,7 @@ const ItemsCompared = ({
           </div>
         ))}
       </div>
-      <Button />
+      <Button arrowColor={'#000'} variant={"yellow"} text={"signUpCourse"} style="mb-2 mt-6 border-2 border-black" />
     </div>
   )
 }

@@ -150,7 +150,7 @@
       }
 
       .course-body {
-        @apply w-4/5;
+        @apply w-full ;
 
         .course-centerBody {
           @apply grid-cols-4

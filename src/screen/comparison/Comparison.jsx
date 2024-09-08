@@ -1,33 +1,33 @@
-import { useLocation, useSearchParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { HeadingSection, ItemsCompared } from "../../components/pages/comparison"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useEffect } from "react"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useState } from "react"
-import { StarIcon, VsIcon } from "../../core/icon"
+import { VsIcon } from "../../core/icon"
 
 const Comparison = () => {
-  const [searchParams, setSearchParams] = useSearchParams({ C: [] })
   const location = useLocation();
   const [objects, setObjects] = useState([]);
 
   useEffect(() => {
-    if (location.state === null) {
-      setSearchParams({ C: location.state })
-    }
-    getObj();
-  }, [location.state])
+    SetArray();
 
-  const getObj = () => {
+  }, [location.pathname])
+
+  // Converting the IDs in the form Array and Set to state
+  const SetArray = () => {
+    const getId = location.pathname.split("/")[2]
+    const ArrayId = getId.split(",");
+
     var CoursesFiltered = [];
-    for (let Id of location.state) {
+    for (let Id of ArrayId) {
       CoursesFiltered.push(
         CoursesDataFa.filter(el => el.id === Id)
       )
     }
     setObjects(CoursesFiltered.flat(Infinity))
   }
-  console.log(objects)
 
   return (
     <>
@@ -35,7 +35,7 @@ const Comparison = () => {
       <HeadingSection />
       <div className="md:mb-20 mt-52 sm:mx-4 md:flex gap-28 justify-evenly">
         <div className="h-fit w-fit absolute md:block hidden lg:mx-0 -mt-16">
-          <VsIcon/>
+          <VsIcon />
         </div>
         {objects.map((item) => {
           return (

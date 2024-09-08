@@ -16,6 +16,11 @@ const routerPublic = createBrowserRouter([
                 element: <CourseDetail />,
                 children: [{ path: '/CourseDetails/:id', element: <CourseDetail /> }]
             },
+            {
+                path: '/Comparison',
+                element: <Comparison/>,
+                children: [{ path: '/Comparison/:id', element: <Comparison/> }]
+            },
             { path: '/Events', element: <EventList /> },
             {
                 path: '/EventDetails',
@@ -28,7 +33,7 @@ const routerPublic = createBrowserRouter([
                 element: <InstructorDetail />,
                 children: [{ path: '/instructorsDetails/:id', element: <InstructorDetail /> }]
             },
-            { path: '/Comparison', element: <Comparison/> },
+            // { path: '/Comparison', element: <Comparison/> },
             { path: '/*', element: <Error404 /> },
         ]
     }
