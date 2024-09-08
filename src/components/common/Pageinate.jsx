@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useTranslation } from 'react-i18next';
-import Event from '../pages/event/Event';
+import Event from '../pages/Event/Event';
 import { useLocation } from 'react-router-dom';
 import Course from '../pages/course/Course';
 import { useMediaQuery } from 'react-responsive';
