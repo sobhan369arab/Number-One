@@ -1,6 +1,5 @@
 import { SwiperSlide } from "swiper/react"
-import { Label } from "../../common/index"
-import SwiperSlider from "../../common/SwiperSlider"
+import { Label, SwiperSlider } from "../../common/index"
 import { useTranslation } from "react-i18next"
 import { categoryItems } from "../../../core/constants/landing/category"
 import CategoryItem from "./CreateCategoryItem"

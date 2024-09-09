@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "../../core/icon"
+import { ArrowLeftIcon } from "../../../core/icon"
 
 const ButtonSlider = ({ style, arrowColor, click, side }) => {
     return (

@@ -1,0 +1,16 @@
+.rmdp-input {
+  width: 100% !important;
+  height: 2.5rem !important;
+  padding: 0.375rem 0.75rem !important;
+  border-radius: 0.375rem !important;
+  box-shadow: inset 0px 1px 2px hwb(0 0% 100% / 0.201) !important;
+  background-color: rgb(250 250 250) !important;
+  color: #5751E1 !important;
+}
+.rmdp-input:focus {
+  border: 2px solid #FFC224 !important;
+}
+.icon-tabler{
+  right: 10px !important;
+  left: auto !important;
+}

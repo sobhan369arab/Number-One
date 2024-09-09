@@ -1,7 +1,25 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import { ContactUs, Error404, EventDetails, EventList, Instructors, InstructorDetail, Courses, Comparison, CourseDetail } from "../../screen"
-import Landing from "../../screen/landing/landing"
-import MainLayouts from "../../components/Layouts/MainLayouts"
+import { MainLayouts, UserPanelLayout } from "../../components/layouts"
+import { 
+    ContactUs, 
+    Error404, 
+    EventDetails, 
+    EventList, 
+    Instructors, 
+    InstructorDetail, 
+    Courses, 
+    Comparison, 
+    CourseDetail,
+    Dashboard,
+    Favorites,
+    Information,
+    MyCourses,
+    MyViews,
+    Reserved,
+    Security,
+    EditInformation,
+    Landing
+} from "../../screen"
 
 const routerPublic = createBrowserRouter([
     {
@@ -18,8 +36,8 @@ const routerPublic = createBrowserRouter([
             },
             {
                 path: '/Comparison',
-                element: <Comparison/>,
-                children: [{ path: '/Comparison/:id', element: <Comparison/> }]
+                element: <Comparison />,
+                children: [{ path: '/Comparison/:id', element: <Comparison /> }]
             },
             { path: '/Events', element: <EventList /> },
             {
@@ -35,6 +53,19 @@ const routerPublic = createBrowserRouter([
             },
             // { path: '/Comparison', element: <Comparison/> },
             { path: '/*', element: <Error404 /> },
+        ]
+    },
+    {
+        element: <UserPanelLayout />,
+        children: [
+            { path: "/userPanel", element: <Dashboard /> },
+            { path: "/userPanel/information", element: <Information /> },
+            { path: "/userPanel/editInformation", element: <EditInformation /> },
+            { path: "/userPanel/myCourses", element: <MyCourses /> },
+            { path: "/userPanel/reserved", element: <Reserved /> },
+            { path: "/userPanel/myViews", element: <MyViews /> },
+            { path: "/userPanel/favorites", element: <Favorites /> },
+            { path: "/userPanel/security", element: <Security /> },
         ]
     }
 ])

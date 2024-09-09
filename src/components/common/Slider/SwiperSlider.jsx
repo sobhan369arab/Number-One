@@ -1,8 +1,6 @@
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
-import { Fragment } from 'react';
-import { useRef } from 'react';
-import { ArrowLeftIcon } from '../../core/icon';
+import { Fragment, useRef } from 'react';
 import ButtonSlider from './ButtonSlider';
 
 const SwiperSlider = ({ Breakpoints, modules, perView, children, arrowColor, buttonColor, buttonSideRight, buttonSideLeft }) => {

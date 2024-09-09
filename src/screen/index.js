@@ -7,6 +7,15 @@ import InstructorDetail from "./instructors-detail/InstructorDetail";
 import Courses from "./courses/Courses";
 import Comparison from "./comparison/Comparison";
 import CourseDetail from "./course-detail/CourseDetail";
+import Landing from "./landing/landing";
+import Dashboard from "./user-panel/Dashboard";
+import Favorites from "./user-panel/Favorites";
+import Information from "./user-panel/Information";
+import MyCourses from "./user-panel/MyCourses";
+import MyViews from "./user-panel/MyViews";
+import Reserved from "./user-panel/Reserved";
+import Security from "./user-panel/Security";
+import EditInformation from "./user-panel/EditInformation";
 
 export {
   Error404,
@@ -17,5 +26,14 @@ export {
   InstructorDetail,
   Courses,
   Comparison,
-  CourseDetail
+  CourseDetail,
+  Landing,
+  Dashboard,
+  Favorites,
+  Information,
+  MyCourses,
+  MyViews,
+  Reserved,
+  Security,
+  EditInformation,
 };
