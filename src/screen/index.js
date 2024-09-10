@@ -16,6 +16,7 @@ import MyViews from "./user-panel/MyViews";
 import Reserved from "./user-panel/Reserved";
 import Security from "./user-panel/Security";
 import EditInformation from "./user-panel/EditInformation";
+import Blog from "./blog/Blog";
 
 export {
   Error404,
@@ -36,4 +37,5 @@ export {
   Reserved,
   Security,
   EditInformation,
+  Blog,
 };
