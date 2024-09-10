@@ -27,6 +27,7 @@ import PaginatedItems from "./Paginate/Paginate.jsx";
 import PaginateHolderItems from "./Paginate/PaginateHolderItems";
 import SearchInput from "./searchBox/SearchInput.jsx"
 import CreateModal from "./CreateModal.jsx";
+import DarkModeBtn from "./DarkModeBtn.jsx"
 
 export {
   Button,
@@ -55,5 +56,6 @@ export {
   calculatePageCount,
   PaginateHolderItems,
   SearchInput,
-  CreateModal
+  CreateModal,
+  DarkModeBtn
 };
