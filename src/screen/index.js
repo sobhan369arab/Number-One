@@ -16,6 +16,10 @@ import MyViews from "./user-panel/MyViews";
 import Reserved from "./user-panel/Reserved";
 import Security from "./user-panel/Security";
 import EditInformation from "./user-panel/EditInformation";
+import Login from "./authorize/Login";
+import TowStepLogin from "./authorize/TowStep";
+import ForgetPasswordLogin from "./authorize/ForgetPassword";
+import Register from "./authorize/Register";
 
 export {
   Error404,
@@ -36,4 +40,8 @@ export {
   Reserved,
   Security,
   EditInformation,
+  Login,
+  TowStepLogin,
+  ForgetPasswordLogin,
+  Register,
 };
