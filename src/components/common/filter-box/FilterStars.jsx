@@ -10,7 +10,7 @@ const FilterStars = ({
         SetRating(newRating);
     };
     return (
-        <div className="p-5 bg-grayCustom rounded-lg mb-7">
+        <div className="filter-box">
             <h1 className="font-semibold pb-2">{t(title)}</h1>
             <ReactStars
                 count={5}

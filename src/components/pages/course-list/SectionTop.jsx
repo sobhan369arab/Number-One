@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { SortBox } from "../../common"
-import ChangeView from "./ChangeView"
+import ChangeView from "../../common/ChangeView"
 
 
 const SectionTop = ({

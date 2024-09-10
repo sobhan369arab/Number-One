@@ -1,9 +1,7 @@
-import { CategoryFilter, InstructorFilter, LevelFilter, TypeFilter } from "../../core/constants/Filters/Filters"
-import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch, FilterStars } from "./filter-box"
+import { CategoryFilter, InstructorFilter, LevelFilter, TypeFilter } from "../../../core/constants/Filters/Filters"
+import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch, FilterStars } from "../../common/filter-box"
 
-const FilterSide = ({
-  coursesData,
-  SetCoursesData,
+const FilterSide_Courses = ({
   SetCategoryData,
   SetInstructorData,
   SetLevelId,
@@ -11,36 +9,40 @@ const FilterSide = ({
   SetRating,
   setPriceDown,
   setPriceUp,
-  setQuery
+  setQuery,
+  typeId,
+  levelId,
+  categoryData,
+  instructorData,
 }) => {
 
   return (
-    <div className="h-fit lg:sticky top-4 mobile:block">
+    <div className="h-fit lg:w-72">
       <FilterSearch variant="Courses" setQuery={setQuery}/>
       <FilterCheckBox
-        data={coursesData}
-        setData={SetCoursesData}
+        
         labelArray={CategoryFilter}
         title={"category"}
         SetFilteredData={SetCategoryData}
-
+        filteredData={categoryData}
       />
       <FilterRadio
         title={"type"}
         setCourseID={SetTypeId}
+        inputId={typeId}
         labelArray={TypeFilter}
       />
       <FilterRadio
         title={"level"}
         setCourseID={SetLevelId}
+        inputId={levelId}
         labelArray={LevelFilter}
       />
       <FilterCheckBox
-        data={coursesData}
-        setData={SetCoursesData}
         labelArray={InstructorFilter}
         title={"instructor"}
         SetFilteredData={SetInstructorData}
+        filteredData={instructorData}
       />
       <FilterStars
         title={"rating"}
@@ -56,4 +58,4 @@ const FilterSide = ({
   )
 }
 
-export default FilterSide
+export default FilterSide_Courses
