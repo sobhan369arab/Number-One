@@ -18,9 +18,8 @@ const FilterSide_Courses = ({
 
   return (
     <div className="h-fit lg:w-72">
-      <FilterSearch variant="Courses" setQuery={setQuery}/>
+      <FilterSearch variant="Courses" setQuery={setQuery} />
       <FilterCheckBox
-        
         labelArray={CategoryFilter}
         title={"category"}
         SetFilteredData={SetCategoryData}

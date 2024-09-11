@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Select from 'react-select';
-import { sortCal, sortType } from "../../core/constants/sorts/Sort";
+import { sortCal, sortMostType, sortType } from "../../core/constants/sorts/Sort";
 
 const SortBox = ({
+  label,
   setSortCal,
   setSortType
 }) => {
-  const { t } = useTranslation();
+  const { t} = useTranslation();
   const [selectedOptionCal, SetSelectedOptionCal] = useState(null);
   const [selectedOptionType, SetSelectedOptionCalType] = useState(null);
 
@@ -24,9 +25,10 @@ const SortBox = ({
   }
 
   return (
-      <div className="flex gap-3 items-center mx-auto ">
-        <h1 className="text-gray-600 text-sm">{t('sortBy')}</h1>
-        <div >
+    <div className="flex gap-3 items-center mx-auto ">
+      <h1 className="text-gray-600 text-sm">{t('sortBy')}</h1>
+      {label === 'course' ?
+        <>
           <Select
             value={selectedOptionType}
             onChange={TypehandleChange}
@@ -34,16 +36,24 @@ const SortBox = ({
             placeholder={"محبوبیت"}
             className="text-sm w-32 "
           />
-        </div>
+          <Select
+            value={selectedOptionCal}
+            onChange={CalhandleChange}
+            options={sortCal}
+            placeholder={"نزولی"}
+            className="text-sm   w-24"
+          />
+        </>
+        :
         <Select
-          value={selectedOptionCal}
-          onChange={CalhandleChange}
-          options={sortCal}
-          placeholder={"نزولی"}
-          className="text-sm   w-24"
+          value={selectedOptionType}
+          onChange={TypehandleChange}
+          options={sortMostType}
+          placeholder={"محبوب ترین"}
+          className="text-sm w-40 "
         />
-
-      </div>
+      }
+    </div>
   )
 }
 

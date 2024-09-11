@@ -1,10 +1,9 @@
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal } from "../../components/common"
+import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useTranslation } from "react-i18next"
-import SectionTop from "../../components/pages/course-list/SectionTop"
 import Course from "../../components/pages/course/Course"
 import { useDisclosure, Button } from "@nextui-org/react"
 import { CloseIcon } from "../../core/icon"
@@ -95,8 +94,6 @@ const Courses = () => {
                                 <CloseIcon />
                             </div>
                             <FilterSide_Courses
-                                coursesData={AllData}
-                                SetCoursesData={SetAllData}
                                 SetCategoryData={SetCategoryData}
                                 SetInstructorData={SetInstructorData}
                                 levelId={levelId}
@@ -111,7 +108,8 @@ const Courses = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        CourseData={CoursesDataFa}
+                        label={"course"}
+                        AllData={CoursesDataFa}
                         FilteredData={AllData}
                         setSortCal={setSortCal}
                         setSortType={setSortType}

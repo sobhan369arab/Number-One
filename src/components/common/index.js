@@ -28,6 +28,7 @@ import PaginateHolderItems from "./Paginate/PaginateHolderItems";
 import SearchInput from "./searchBox/SearchInput.jsx"
 import CreateModal from "./CreateModal.jsx";
 import ChangeView from "./ChangeView.jsx";
+import SectionTop from "./SectionTop.jsx";
 
 export {
   Button,
@@ -57,5 +58,6 @@ export {
   PaginateHolderItems,
   SearchInput,
   CreateModal,
-  ChangeView
+  ChangeView,
+  SectionTop
 };
