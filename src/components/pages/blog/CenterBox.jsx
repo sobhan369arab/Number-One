@@ -16,7 +16,7 @@ const CenterBox = ({
           <h1 className="line-clamp-1 text-gray-500">{date}</h1>
         </div>
       </div>
-      <h1 className="line-clamp-2 text-gray-500 text-sm mt-3">{bio}</h1>
+      <h1 className="line-clamp-2 text-gray-500 text-sm mt-3 blog-bio h-10">{bio}</h1>
     </div>
   )
 }

@@ -14,19 +14,21 @@ const BlogCard = ({
     view,
 }) => {
     return (
-        <div className="border border-grayBorder p-5 course-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
+        <div className="border border-grayBorder p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
             <BlogHeader images={images} id={id} />
-            <CenterBox
-                title={title}
-                category={category}
-                date={date}
-                bio={bio}
-            />
-            <DownBox
-                like={like}
-                disLike={disLike}
-                view={view}
-            />
+            <div className="w-full">
+                <CenterBox
+                    title={title}
+                    category={category}
+                    date={date}
+                    bio={bio}
+                />
+                <DownBox
+                    like={like}
+                    disLike={disLike}
+                    view={view}
+                />
+            </div>
         </div>
     )
 }

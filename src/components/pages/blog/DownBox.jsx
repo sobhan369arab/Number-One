@@ -7,7 +7,7 @@ const DownBox = ({
   view,
 }) => {
   return (
-    <div className=" pt-5 border-t-2 border-grayBorder flex justify-between">
+    <div className=" pt-5 border-t-2  border-grayBorder flex justify-between">
       <div className="flex items-center gap-1.5">
         <BsEyeFill color="gray"/>
         <span className="text-gray-500">{view}</span>
