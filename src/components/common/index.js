@@ -7,7 +7,7 @@ import OptionParts from "./optionParts";
 import TeacherCard from "./teacherCard";
 import CustomMap from "./CustomMap";
 import SortBox from "./SortBox.jsx";
-import FilterSide from "./FilterSide";
+import FilterSide from "../pages/course-list/FilterSide_Courses.jsx";
 import Label from "./Label";
 import ButtonSlider from "./Slider/ButtonSlider.jsx";
 import SwiperSlider from "./Slider/SwiperSlider.jsx";
@@ -27,6 +27,9 @@ import PaginatedItems from "./Paginate/Paginate.jsx";
 import PaginateHolderItems from "./Paginate/PaginateHolderItems";
 import SearchInput from "./searchBox/SearchInput.jsx"
 import CreateModal from "./CreateModal.jsx";
+import ChangeView from "./ChangeView.jsx";
+import SectionTop from "./SectionTop.jsx";
+import ToLike from "./ToLike.jsx";
 import DarkModeBtn from "./DarkModeBtn.jsx"
 
 export {
@@ -57,5 +60,8 @@ export {
   PaginateHolderItems,
   SearchInput,
   CreateModal,
+  ChangeView,
+  SectionTop,
+  ToLike
   DarkModeBtn
 };

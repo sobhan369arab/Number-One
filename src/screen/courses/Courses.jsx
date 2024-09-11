@@ -1,13 +1,13 @@
-import { FilterSide, PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal } from "../../components/common"
+import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useTranslation } from "react-i18next"
-import SectionTop from "../../components/pages/course-list/SectionTop"
 import Course from "../../components/pages/course/Course"
 import { useDisclosure, Button } from "@nextui-org/react"
 import { CloseIcon } from "../../core/icon"
+import { FilterSide_Courses } from "../../components/pages/course-list"
 
 const Courses = () => {
     const { t } = useTranslation();
@@ -29,7 +29,7 @@ const Courses = () => {
     const [priceUp, setPriceUp] = useState(1000000);
     const [showGrid, setShowGrid] = useState(false);
     const [Query, setQuery] = useState(undefined);
-    const filterObj = {
+    const filterObj_Courses = {
         SortingCol: sortCal,
         SortType: sortType,
         Query: Query,
@@ -41,7 +41,7 @@ const Courses = () => {
         courseLevelId: levelId,
         courseTypeId: typeId,
     };
-    console.log(filterObj)
+    // console.log(filterObj_Courses)
 
     useEffect(() => {
         if (AllData.length === 0) {
@@ -63,17 +63,21 @@ const Courses = () => {
             <div className="main-container flex gap-7 relative">
 
                 <MediaQuery minWidth={"1024px"}>
-                    <FilterSide
+                    <FilterSide_Courses
                         coursesData={AllData}
                         SetCoursesData={SetAllData}
                         SetCategoryData={SetCategoryData}
                         SetInstructorData={SetInstructorData}
+                        levelId={levelId}
+                        typeId={typeId}
                         SetLevelId={SetLevelId}
                         SetTypeId={SetTypeId}
                         SetRating={SetRating}
                         setPriceDown={setPriceDown}
                         setPriceUp={setPriceUp}
                         setQuery={setQuery}
+                        categoryData={categoryData}
+                        instructorData={instructorData}
                     />
                 </MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
@@ -89,11 +93,11 @@ const Courses = () => {
                             <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
                                 <CloseIcon />
                             </div>
-                            <FilterSide
-                                coursesData={AllData}
-                                SetCoursesData={SetAllData}
+                            <FilterSide_Courses
                                 SetCategoryData={SetCategoryData}
                                 SetInstructorData={SetInstructorData}
+                                levelId={levelId}
+                                typeId={typeId}
                                 SetLevelId={SetLevelId}
                                 SetTypeId={SetTypeId}
                                 SetRating={SetRating}
@@ -104,12 +108,12 @@ const Courses = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        CourseData={CoursesDataFa}
+                        label={"course"}
+                        AllData={CoursesDataFa}
                         FilteredData={AllData}
                         setSortCal={setSortCal}
                         setSortType={setSortType}
                         setShowGrid={setShowGrid}
-
                     />
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData, currentCourse)}>
