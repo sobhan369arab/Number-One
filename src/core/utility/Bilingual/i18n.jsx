@@ -22,7 +22,7 @@ i18n.use(initReactI18next)
                     category: 'دسته بندی ها',
                     Login: 'حساب کاربری',
                     // PlaceHolder in search input Pages
-                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای اخبار ...',
                     PlaceHolder_Shop: 'جستجو برای محصول ...',
                     // data in the Footer
                     footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',

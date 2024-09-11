@@ -30,7 +30,7 @@ const Courses = () => {
     const [priceUp, setPriceUp] = useState(1000000);
     const [showGrid, setShowGrid] = useState(false);
     const [Query, setQuery] = useState(undefined);
-    const filterObj = {
+    const filterObj_Courses = {
         SortingCol: sortCal,
         SortType: sortType,
         Query: Query,
@@ -42,7 +42,7 @@ const Courses = () => {
         courseLevelId: levelId,
         courseTypeId: typeId,
     };
-    console.log(filterObj)
+    // console.log(filterObj_Courses)
 
     useEffect(() => {
         if (AllData.length === 0) {
