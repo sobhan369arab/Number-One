@@ -1,10 +1,10 @@
 import React from 'react'
 import UserPanelHeader from '../partials/user-panel-header/UserPanelHeader'
-import { DarkModeBtn, SidebarUserPanel } from '../pages/user-panel'
+import { SidebarUserPanel } from '../pages/user-panel'
 import { Link, Outlet } from 'react-router-dom'
 import { HomeBtnPanelIcon } from '../../core/icon'
 import MediaQuery from 'react-responsive'
-import { HamburgerMenu } from '../common'
+import { HamburgerMenu, DarkModeBtn } from '../common'
 
 const UserPanelLayout = () => {
     return (

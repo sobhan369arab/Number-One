@@ -30,6 +30,7 @@ import CreateModal from "./CreateModal.jsx";
 import ChangeView from "./ChangeView.jsx";
 import SectionTop from "./SectionTop.jsx";
 import ToLike from "./ToLike.jsx";
+import DarkModeBtn from "./DarkModeBtn.jsx"
 
 export {
   Button,
@@ -62,4 +63,5 @@ export {
   ChangeView,
   SectionTop,
   ToLike
+  DarkModeBtn
 };

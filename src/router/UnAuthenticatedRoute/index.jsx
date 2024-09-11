@@ -1,14 +1,14 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
 import { MainLayouts, UserPanelLayout } from "../../components/layouts"
-import {
-    ContactUs,
-    Error404,
-    EventDetails,
-    EventList,
-    Instructors,
-    InstructorDetail,
-    Courses,
-    Comparison,
+import { 
+    ContactUs, 
+    Error404, 
+    EventDetails, 
+    EventList, 
+    Instructors, 
+    InstructorDetail, 
+    Courses, 
+    Comparison, 
     CourseDetail,
     Dashboard,
     Favorites,
@@ -20,6 +20,10 @@ import {
     EditInformation,
     Landing,
     Blog,
+    Login,
+    ForgetPasswordLogin,
+    TowStepLogin,
+    Register
 } from "../../screen"
 
 const routerPublic = createBrowserRouter([
@@ -55,6 +59,20 @@ const routerPublic = createBrowserRouter([
             { path: '/Blog', element: <Blog/> },
 
             { path: '/*', element: <Error404 /> },
+        ]
+    },
+    {
+        path: '/authorize',
+        children: [
+            {
+                path: "/authorize/login",
+                children: [
+                    { index: true, element: <Login /> },
+                    { path: "/authorize/login/twoStep", element: <TowStepLogin /> },
+                ]
+            },
+            { path: "/authorize/forgetPassword", element: <ForgetPasswordLogin /> },
+            { path: "/authorize/register", element: <Register /> }
         ]
     },
     {

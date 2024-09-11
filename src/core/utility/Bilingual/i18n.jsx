@@ -25,6 +25,10 @@ i18n.use(initReactI18next)
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای اخبار ...',
                     PlaceHolder_Shop: 'جستجو برای محصول ...',
                     // data in the Footer
+                    // PlaceHolders
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
+                    PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
+                    phonePlaceholder: "شماره مبایل خود را وارد کنید",                    // data in the Footer
                     footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',
                     // Links
                     linksTitle: 'لینک های مفید', link1: 'ارزش های ما', link2: 'هیئت مشاوران ما', link3: 'شرکای ما',
@@ -65,14 +69,26 @@ i18n.use(initReactI18next)
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
                     signUpCourse: "ثبت نام در دوره",
                     // LoginForm
-                    LoginCaption: "خوش برگشتی!",
-                    LoginDesc: " سلام! آماده ورود به سیستم هستید؟ فقط نام کاربری و رمز عبور خود را در زیر وارد کنید و شما در کمترین زمان به عمل خواهید رسید. بیا بریم!",
-                    RememberMe: "مرا به خاطر بسپار", ForgetPassword: "رمز عبور را فراموش کرده اید؟", loginBtn: "ورود",
-                    HaveAccount2: "حساب کاربری ندارید؟",
+                    LoginCaption: "ورود",
+                    LoginDesc: "برای ورود به حساب خود ایمیل و رمز عبور خود را وارد کنید",
+                    RememberMe: "مرا به خاطر بسپار", ForgetPassword: "فراموشی رمز؟", loginBtn: "ورود به حساب کاربری",
+                    HaveAccount2: "حساب کاربری ندارید؟", signUp: "ثبت نام",
                     // SignUpForm
-                    SignUpCaption: "حساب کاربری برای خود بسازید",
-                    SignUpDesc: "سلام! برای پیوستن به حزب آماده اید؟ برای دریافت فقط به چند جزئیات از شما نیاز داریم آغاز شده. بیا انجامش بدیم!",
+                    SignUpCaption: "ثبت نام",
+                    SignUpDesc: "جهت دریافت کد یک بار مصرف شماره تلفن خود را وارد کنید",
                     SignUpBtn: "ثبت نام", HaveAccount1: "از قبل حساب کاربری دارید؟",
+                    // Steps
+                    // ChangePassword
+                    ChangePasswordCaption: "تغییر رمزعبور", ChangePasswordDesc: "جهت دریافت کد یک بار مصرف شماره تماس خود را وارد کنید",
+                    ChangePasswordPlaceholder: "شماره همراه خود را وارد کنید", ChangePasswordBtn: "دریافت کد یک بار مصرف",
+                    // GetCode
+                    GetCodeCaption: "دریافت کد", GetCodeDesc1: "کدی برای شماره مبایل", GetCodeDesc2: "ارسال شد آن کد را در اینجا وارد کنید",
+                    GetCodePlaceholder: "کد را وارد کنید", GetCodeBtn: "تایید کد یک بار مصرف",
+                    // SetNewPassword
+                    SetNewPasswordCaption: "رمز عبور جدید", SetNewPasswordDesc: "رمز عبور جدید خود را وارد کنید",
+                    SetNewPasswordPlaceholder: "رمز عبور جدید را وارد کنی", SetNewPasswordBtn: "تکمیل فرایند",
+                    // GetUserInfo
+                    GetUserInfoCaption: " مشخصات کاربری", GetUserInfoDesc: "ایمیل و پسورد خود را وارد کنید", GetUserInfoBtn: "تکمیل ثبت نام",
                     // ErrorPage
                     error: "صفحه خطا", ErrorDesc: "متاسفم! این صفحه در دسترس نیست!",
                     // EventsPage
@@ -121,9 +137,10 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     category: 'Categories',
                     Login: 'User Account',
-                    // PalceHolder in search input Pages
+                    // PalceHolders
                     PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...',
-                    PlaceHolder_Shop: 'Search For Product ...',
+                    PlaceHolder_Shop: 'Search For Product ...', emailPlaceholder: "Enter your email", passwordPlaceholder: "Enter your password",
+                    phonePlaceholder: "Enter your mobile number",
                     // Footer
                     footerDescription: 'when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.',
                     // Links
@@ -165,14 +182,26 @@ i18n.use(initReactI18next)
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
                     signUpCourse: "Enroll course",
                     // LoginForm
-                    LoginCaption: "Welcome back!",
-                    LoginDesc: "Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!",
-                    RememberMe: "Remember me", ForgetPassword: "Forget Password?", loginBtn: "Sign In",
-                    HaveAccount2: "Don't have an account?",
+                    LoginCaption: "Sign in",
+                    LoginDesc: "Enter your email and password to log in to your account",
+                    RememberMe: "Remember me", ForgetPassword: "Forget Password?", loginBtn: "login",
+                    HaveAccount2: "Don't have an account?", signUp: "Sign Up",
                     // SignUpForm
-                    SignUpCaption: "Create Your Account",
-                    SignUpDesc: "Hey there! Ready to join the party? We just need a few details from you to get started. Let's do this!",
+                    SignUpCaption: "Sign up",
+                    SignUpDesc: "Enter your phone number to receive a one-time code",
                     SignUpBtn: "Sign Up", HaveAccount1: "Already have an account?",
+                    // Steps
+                    // ChangePassword
+                    ChangePasswordCaption: "Change password", ChangePasswordDesc: "Enter your phone number to receive a one-time use code",
+                    ChangePasswordPlaceholder: "Enter your mobile number", ChangePasswordBtn: "Get a verification code",
+                    // GetCode
+                    GetCodeCaption: "Get the code", GetCodeDesc1: "A code has been sent to mobile number", GetCodeDesc2: "Enter that code here",
+                    GetCodePlaceholder: "Enter the code", GetCodeBtn: "Verification code",
+                    // SetNewPassword
+                    SetNewPasswordCaption: "New password", SetNewPasswordDesc: "Enter your new password",
+                    SetNewPasswordPlaceholder: "Enter the new password", SetNewPasswordBtn: "Complete the process",
+                    // GetUserInfo
+                    GetUserInfoCaption: "User profile", GetUserInfoDesc: "Enter your email and password", GetUserInfoBtn: "Complete",
                     // ErrorPage
                     error: "Error Page", ErrorDesc: "Sorry! This Page is Not Available!",
                     // EventsPage
