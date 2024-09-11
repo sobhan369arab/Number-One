@@ -1,7 +1,7 @@
 
 import { useLocation, useSearchParams } from "react-router-dom"
 import { useEffect } from "react";
-import { ButtonData } from "../../../core/constants/Courses/ChangeBtn_Data";
+import { ButtonData } from "../../core/constants/Courses/ChangeBtn_Data";
 
 const ChangeView = ({ setShowGrid }) => {
     const [searchParams, setSearchParams] = useSearchParams({ V: 1 })

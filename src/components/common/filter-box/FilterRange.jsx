@@ -16,7 +16,7 @@ const FilterRange = ({
     setPriceUp(maxValue);
   };
   return (
-    <div className="p-5 bg-grayCustom rounded-lg mb-7 relative">
+    <div className="filter-box relative">
       <h1 className="font-semibold pb-2">{t(title)}</h1>
       <div dir="ltr">
         <MultiRangeSlider
@@ -40,7 +40,7 @@ const FilterRange = ({
       </div>
       {/* price information */}
       <div className=" bottom-9 right-5 text-gray-600">
-        <h1 className="text-gray-500">{t('from')} :<span className="text-purpleCustom mx-2">{minValue} {t('priceCount')}</span></h1>     
+        <h1 className="text-gray-500">{t('from')} :<span className="text-purpleCustom mx-2">{minValue} {t('priceCount')}</span></h1>
         <h1 className="text-gray-500 mt-2">{t('upTo')} :<span className="text-purpleCustom mx-2">{maxValue} {t('priceCount')}</span></h1>
       </div>
     </div>

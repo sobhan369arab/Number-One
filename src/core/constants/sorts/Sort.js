@@ -7,3 +7,8 @@ export const sortType = [
   { value: "Price", label: "قیمت" },
   { value: "Rate", label: "محبوبیت" },
 ];
+export const sortMostType = [
+  { value: "Rate", label: "محبوب ترین ها" },
+  { value: "New", label: "جدید ترین ها" },
+  { value: "visited", label: "پربازدیدترین ها" },
+];

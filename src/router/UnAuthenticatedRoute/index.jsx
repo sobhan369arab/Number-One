@@ -19,6 +19,7 @@ import {
     Security,
     EditInformation,
     Landing,
+    Blog,
     Login,
     ForgetPasswordLogin,
     TowStepLogin,
@@ -55,7 +56,8 @@ const routerPublic = createBrowserRouter([
                 element: <InstructorDetail />,
                 children: [{ path: '/instructorsDetails/:id', element: <InstructorDetail /> }]
             },
-            // { path: '/Comparison', element: <Comparison/> },
+            { path: '/Blog', element: <Blog/> },
+
             { path: '/*', element: <Error404 /> },
         ]
     },

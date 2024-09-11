@@ -21,6 +21,10 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     category: 'دسته بندی ها',
                     Login: 'حساب کاربری',
+                    // PlaceHolder in search input Pages
+                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای اخبار ...',
+                    PlaceHolder_Shop: 'جستجو برای محصول ...',
+                    // data in the Footer
                     // PlaceHolders
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",

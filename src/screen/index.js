@@ -16,6 +16,7 @@ import MyViews from "./user-panel/MyViews";
 import Reserved from "./user-panel/Reserved";
 import Security from "./user-panel/Security";
 import EditInformation from "./user-panel/EditInformation";
+import Blog from "./blog/Blog";
 import Login from "./authorize/Login";
 import TowStepLogin from "./authorize/TowStep";
 import ForgetPasswordLogin from "./authorize/ForgetPassword";
@@ -40,6 +41,7 @@ export {
   Reserved,
   Security,
   EditInformation,
+  Blog,
   Login,
   TowStepLogin,
   ForgetPasswordLogin,
