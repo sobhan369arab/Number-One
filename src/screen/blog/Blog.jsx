@@ -1,20 +1,34 @@
-import { useState } from "react";
-import { FilterSide_Blogs } from "../../components/pages/blog"
+import { useEffect, useState } from "react";
+import { BlogCard, FilterSide_Blogs } from "../../components/pages/blog"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import MediaQuery from "react-responsive";
+import MediaQuery, { useMediaQuery } from "react-responsive";
 import { Button, useDisclosure } from "@nextui-org/react";
-import { CreateModal, SectionTop } from "../../components/common";
+import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop } from "../../components/common";
 import { CloseIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
+import { Blogs_data } from "../../core/constants/blogs/blogs-data";
 
 const Blog = () => {
   const { t } = useTranslation();
+
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' })
+  const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
+
   const [FilteredData, SetFilteredData] = useState([]);
   const [Query, setQuery] = useState(undefined);
   const [categoryData, SetCategoryData] = useState(null);
   const [sortType, setSortType] = useState("Rate");
   const [showGrid, setShowGrid] = useState(false);
+
+
+  useEffect(() => {
+    if (FilteredData.length === 0) {
+      SetFilteredData(Blogs_data);
+    }
+
+  }, [FilteredData])
+
 
 
   const filterObj_Blogs = {
@@ -26,6 +40,12 @@ const Blog = () => {
 
   // Modal
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Paginate
+  const currentBlog = isTabletOrMobile ? 6 : 12;
+  const [itemOffset, setItemOffset] = useState(0);
+  const endOffset = itemOffset + currentBlog;
+  const currentItems = FilteredData.slice(itemOffset, endOffset);
 
   return (
     <>
@@ -51,6 +71,26 @@ const Blog = () => {
             setSortType={setSortType}
             setShowGrid={setShowGrid}
           />
+          <PaginateHolderItems style="justify-center">
+            <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentBlog, setItemOffset, FilteredData) }} pageCount={calculatePageCount(FilteredData, currentBlog)}>
+              <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
+                {currentItems.map((item, index) => (
+                  <BlogCard
+                    key={index}
+                    id={item.id}
+                    title={item.title}
+                    images={item.img}
+                    category={item.category}
+                    date={item.date}
+                    like={item.like}
+                    disLike={item.disLike}
+                    view={item.view}
+                    bio={item.bio}
+                  />
+                ))}
+              </div>
+            </PaginatedItems>
+          </PaginateHolderItems>
         </div>
       </div>
     </>

@@ -29,6 +29,7 @@ import SearchInput from "./searchBox/SearchInput.jsx"
 import CreateModal from "./CreateModal.jsx";
 import ChangeView from "./ChangeView.jsx";
 import SectionTop from "./SectionTop.jsx";
+import ToLike from "./ToLike.jsx";
 
 export {
   Button,
@@ -59,5 +60,6 @@ export {
   SearchInput,
   CreateModal,
   ChangeView,
-  SectionTop
+  SectionTop,
+  ToLike
 };
