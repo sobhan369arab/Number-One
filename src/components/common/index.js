@@ -62,6 +62,6 @@ export {
   CreateModal,
   ChangeView,
   SectionTop,
-  ToLike
+  ToLike,
   DarkModeBtn
 };

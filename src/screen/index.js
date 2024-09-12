@@ -21,6 +21,7 @@ import Login from "./authorize/Login";
 import TowStepLogin from "./authorize/TowStep";
 import ForgetPasswordLogin from "./authorize/ForgetPassword";
 import Register from "./authorize/Register";
+import BlogDetail from "./blog-detail/BlogDetail";
 
 export {
   Error404,
@@ -46,4 +47,5 @@ export {
   TowStepLogin,
   ForgetPasswordLogin,
   Register,
+  BlogDetail,
 };

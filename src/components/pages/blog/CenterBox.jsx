@@ -7,7 +7,7 @@ const CenterBox = ({
   bio,
 }) => {
   return (
-    <div className="my-2 pb-2">
+    <div className="my-2 pb-2  cursor-pointer">
       <h1 className="text-lg font-bold line-clamp-1">{title}</h1>
       <div className="flex justify-between my-2">
         <div className="px-4 py-1 bg-purpleCustom text-xs text-white rounded-2xl whitespace-nowrap cursor-default">{category}</div>

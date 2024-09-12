@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import BlogHeader from "./BlogHeader"
 import CenterBox from "./CenterBox"
 import DownBox from "./DownBox"
@@ -14,15 +15,17 @@ const BlogCard = ({
     view,
 }) => {
     return (
-        <div className="border border-grayBorder p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
+        <div className="border border-grayBorder p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative">
             <BlogHeader images={images} id={id} />
             <div className="w-full">
-                <CenterBox
-                    title={title}
-                    category={category}
-                    date={date}
-                    bio={bio}
-                />
+                <Link to={`/BlogDetails/${id}`}>
+                    <CenterBox
+                        title={title}
+                        category={category}
+                        date={date}
+                        bio={bio}
+                    />
+                </Link >
                 <DownBox
                     like={like}
                     disLike={disLike}

@@ -1,14 +1,14 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
 import { MainLayouts, UserPanelLayout } from "../../components/Layouts"
-import { 
-    ContactUs, 
-    Error404, 
-    EventDetails, 
-    EventList, 
-    Instructors, 
-    InstructorDetail, 
-    Courses, 
-    Comparison, 
+import {
+    ContactUs,
+    Error404,
+    EventDetails,
+    EventList,
+    Instructors,
+    InstructorDetail,
+    Courses,
+    Comparison,
     CourseDetail,
     Dashboard,
     Favorites,
@@ -23,7 +23,8 @@ import {
     Login,
     ForgetPasswordLogin,
     TowStepLogin,
-    Register
+    Register,
+    BlogDetail
 } from "../../screen"
 
 const routerPublic = createBrowserRouter([
@@ -56,8 +57,13 @@ const routerPublic = createBrowserRouter([
                 element: <InstructorDetail />,
                 children: [{ path: '/instructorsDetails/:id', element: <InstructorDetail /> }]
             },
-            { path: '/Blog', element: <Blog/> },
+            { path: '/Blog', element: <Blog /> },
+            {
+                path: '/BlogDetails',
+                element: <BlogDetail />,
+                children: [{ path: '/BlogDetails/:id', element: <BlogDetail /> }]
 
+            },
             { path: '/*', element: <Error404 /> },
         ]
     },
