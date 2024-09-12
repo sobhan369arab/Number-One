@@ -15,7 +15,7 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
-                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو",
+                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", studyTime: "دقیقه خواندن",
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
                     // Search Input in the Header
@@ -122,6 +122,9 @@ i18n.use(initReactI18next)
                     exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTip: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.",
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
                     SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
+                    // Comments
+                    comment: 'نظر',
+
                 },
             },
             en: {
@@ -131,7 +134,7 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
-                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel",
+                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", studyTime: "minutes of reading",
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
@@ -235,6 +238,8 @@ i18n.use(initReactI18next)
                     exitFromAccount: "Exit", welcome: "welcome", progressTip: "To participate in the courses, you must complete at least 80% of your profile.",
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
                     SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
+                    // Comments
+                    comment: 'Comment',
                 },
             },
         },

@@ -1,4 +1,4 @@
-import blog1 from '../../../assets/images/blogs/blog1.png'
+import blog1 from "../../../assets/images/blogs/blog1.png";
 export const Blogs_data = [
   {
     id: 1,
@@ -9,6 +9,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهی این خبر برای این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -20,6 +22,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -31,6 +35,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -42,6 +48,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -53,6 +61,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -64,6 +74,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -75,6 +87,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -86,6 +100,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -97,6 +113,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -108,6 +126,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -119,6 +139,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -130,6 +152,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -141,6 +165,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -152,6 +178,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -163,6 +191,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -174,6 +204,8 @@ export const Blogs_data = [
     view: 20,
     like: 158,
     disLike: 58,
+    studyTime: 5,
+    commentsNumber: 3,
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
 ];
