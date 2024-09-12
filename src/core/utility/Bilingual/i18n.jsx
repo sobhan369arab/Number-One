@@ -21,14 +21,11 @@ i18n.use(initReactI18next)
                     // Search Input in the Header
                     category: 'دسته بندی ها',
                     Login: 'حساب کاربری',
-                    // PlaceHolder in search input Pages
-                    PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای اخبار ...',
-                    PlaceHolder_Shop: 'جستجو برای محصول ...',
-                    // data in the Footer
                     // PlaceHolders
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
-                    phonePlaceholder: "شماره مبایل خود را وارد کنید",                    // data in the Footer
+                    phonePlaceholder: "شماره مبایل خود را وارد کنید",                    
+                    // data in the Footer
                     footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',
                     // Links
                     linksTitle: 'لینک های مفید', link1: 'ارزش های ما', link2: 'هیئت مشاوران ما', link3: 'شرکای ما',
@@ -97,8 +94,6 @@ i18n.use(initReactI18next)
                     EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', graduation: 'فارغ التحصیلی',
                     EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها',
                     EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
-                    // Contact us page
-                    contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "از طریق تماس با ما راحت باشید اگر ترجیح می دهید توییتر یا فیس بوک!",
                     instructorBiography: "زندگینامه", instructorSkill: "مهارت ها", instructorCourses: "دوره های من",
@@ -210,8 +205,6 @@ i18n.use(initReactI18next)
                     EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
                     EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons',
                     EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
-                    // Contact us page
-                    contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Feel free to contact us through Twitter or Facebook if you prefer!",
                     instructorBiography: "Biography", instructorSkill: "Skills", instructorCourses: "My Courses",
