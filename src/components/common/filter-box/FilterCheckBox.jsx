@@ -7,7 +7,7 @@ const FilterCheckBox = ({
   SetFilteredData,
   filteredData
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [checkedData, SetCheckedData] = useState(false);
 
@@ -60,7 +60,7 @@ const FilterCheckBox = ({
           className="text-sm flex items-center gap-2 text-gray-500 w-fit mt-1"
         >
           <input type="checkbox" id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white appearance-none " />
-          <label className="cursor-pointer" htmlFor={title + index}>{item.label}</label>
+          <label className="cursor-pointer" htmlFor={title + index}>{i18n.language == "en" ? item.label[1] : item.label[0]}</label>
         </div>
       ))}
 
