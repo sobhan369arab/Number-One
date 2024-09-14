@@ -5,10 +5,14 @@ const FilterRadio = ({
   title,
   setCourseID,
   labelArray,
-  inputId
+  inputId,
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [checkedData, SetCheckedData] = useState(false);
+  const handleChange = (item) => {
+    setCourseID(item.id);
+    SetCheckedData(true);
+  }
   return (
     <div className="filter-box">
       <div className="flex justify-between">
@@ -29,13 +33,13 @@ const FilterRadio = ({
       </div>
       {labelArray.map((item, index) => (
         <div
-          onChange={() => { setCourseID(item.id); SetCheckedData(true); }}
+          onChange={() => { handleChange(item) }}
           key={index}
           className="text-sm flex items-center gap-2 text-gray-500 w-fit cursor-pointer mt-1"
         >
           {/* {checkStatus === false? defaultChecked={false}:} */}
           <input checked={item.id == inputId ? true : false} type="radio" id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white appearance-none" />
-          <label className="cursor-pointer" htmlFor={title + index}>{item.label}</label>
+          <label className="cursor-pointer" htmlFor={title + index}>{i18n.language == "en" ? item.label[1] : item.label[0]}</label>
         </div>
       ))}
 
