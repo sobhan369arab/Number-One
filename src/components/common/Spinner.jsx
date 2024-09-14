@@ -9,9 +9,9 @@ const Spinner = () => {
     }
     return (
         <div className="w-[116px] h-[50px] flex rounded-md border border-neutral-300 overflow-hidden">
-            <button onClick={handleDecrease} className="w-1/4 border-neutral-300 text-neutral-500 hover:bg-black/5 duration-200 border-l">-</button>
+            <button onClick={handleDecrease} className="spinner-buttons">-</button>
             <span className="w-2/4 text-center leading-[50px]">{count}</span>
-            <button onClick={handleIncrease} className="w-1/4 border-neutral-300 text-neutral-500 hover:bg-black/5 duration-200 border-r">+</button>
+            <button onClick={handleIncrease} className="spinner-buttons">+</button>
         </div>
     )
 }

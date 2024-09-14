@@ -1,6 +1,8 @@
 import { Tab, Tabs } from "@nextui-org/react"
+import { useTranslation } from "react-i18next"
 
 const TabSection = ({ bio }) => {
+    const { t } = useTranslation()
     return (
         <div>
             <Tabs
@@ -14,10 +16,10 @@ const TabSection = ({ bio }) => {
                     tabContent: "group-data-[selected=true]:text-[#5751E1]"
                 }}
             >
-                <Tab key="Explain" title="شرح" className="mediumStyle_text">
+                <Tab key="Explain" title={t("description")} className="mediumStyle_text">
                     <p>{bio}</p>
                 </Tab>
-                <Tab key="Reviews" title="کامنت ها" className="mediumStyle_text">
+                <Tab key="Reviews" title={t("Comments")} className="mediumStyle_text">
                     <p>کامنت ها</p>
                 </Tab>
             </Tabs>

@@ -15,16 +15,18 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
-                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو",
+                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", category: 'دسته بندی ها', AddToCart: "افزودن به سبد خرید",
+                    description: "شرح", Comments: "کامنت ها", products: "محصولات", related: "مرتبط",
+                    // shop Details
+                    ShopDetailId: "شناسه", ShopDetailTags: "برچسب ها",
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
                     // Search Input in the Header
-                    category: 'دسته بندی ها',
                     Login: 'حساب کاربری',
                     // PlaceHolders
                     PlaceHolder_Courses: 'جستجو برای دوره ...', PlaceHolder_Blogs: 'جستجو برای وبلاگ ...',
                     PlaceHolder_Shop: 'جستجو برای محصول ...', emailPlaceholder: "ایمیل خود را وارد کنید", passwordPlaceholder: "رمز عبور خود را وارد کنید",
-                    phonePlaceholder: "شماره مبایل خود را وارد کنید",                    
+                    phonePlaceholder: "شماره مبایل خود را وارد کنید",
                     // data in the Footer
                     footerDescription: 'هنگامی که یک چاپگر ناشناخته گالری را تایپ کرده و آن را در هم می زند تا نمونه ای بسازد',
                     // Links
@@ -61,7 +63,7 @@ i18n.use(initReactI18next)
                     // titlePages
                     loginTitle: 'ورود به عنوان دانش آموز', login: "ورود", instructorsTitle: "همه مربیان",
                     CoursesTitle: 'همه دوره ها', comparisonTitle: 'مقایسه',
-                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما",
+                    signUpTitle: 'ثبت نام به عنوان دانش آموز', or: "یا", EventsTitle: "همه مناسبت ها", contactUsTitle: "تماس با ما", shopDetail: "جزئیات فروشگاه",
                     // Buttons
                     GoHomePage: "به صفحه اصلی بروید", Join: 'به رویداد بپیوندید', submit: "ارسال کنید",
                     signUpCourse: "ثبت نام در دوره",
@@ -106,7 +108,7 @@ i18n.use(initReactI18next)
                     contactUsCaption: "برای ما پیام ارسال کنید", contactUsDescription: "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی علامت گذاری شده اند *",
                     // Filters Name
                     price: 'قیمت', level: 'سطح مهارت', instructor: 'مربیان', rating: 'رتبه بندی ها', type: 'نحوه برگذاری',
-                    removeFilters: 'حذف فیلترها', openFilter: 'فیلتر ها', filters: 'فیلتر ها',
+                    removeFilters: 'حذف فیلترها', openFilter: 'فیلتر ها', filters: 'فیلتر ها', exist: "موجودی در انبار",
                     // Comparison page
                     titleComparison: 'مقایسه دو دوره با هم!',
                     descComparison: 'با مقایسه کردن دوره های آموزشی باهم دیگه میتونی دوره مناسب خودتو پیدا کنی!',
@@ -126,11 +128,13 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
-                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel",
+                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", category: 'Categories', AddToCart: "Add to cart",
+                    description: "Description", Comments: "Comments", products: "Products", related: "related",
+                    // shop Details
+                    ShopDetailId: "ID", ShopDetailTags: "Tags",
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
-                    category: 'Categories',
                     Login: 'User Account',
                     // PalceHolders
                     PlaceHolder_Courses: 'Search For Course ...', PlaceHolder_Blogs: 'Search For Blog ...',
@@ -172,7 +176,7 @@ i18n.use(initReactI18next)
                     // titlePages
                     loginTitle: 'Student Login', login: "Login", instructorsTitle: "All Instructors",
                     CoursesTitle: 'All Courses', comparisonTitle: 'Comparison',
-                    signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us",
+                    signUpTitle: 'Student SignUp', or: "or", EventsTitle: "All Events", contactUsTitle: "Contact With Us", shopDetail: "Shop Detail",
                     // Buttons
                     GoHomePage: "Go To Home Page", Join: 'Join This Event', submit: "Submit Now",
                     signUpCourse: "Enroll course",
@@ -217,7 +221,7 @@ i18n.use(initReactI18next)
                     contactUsCaption: "Send Us Message", contactUsDescription: "Your email address will not be published. Required fields are marked *",
                     // Filters Name
                     price: 'Price', level: 'Skill Level', instructor: 'Instructors', rating: 'Ratings', type: 'How to put',
-                    removeFilters: 'Remove Filters', openFilter: 'Open Filters', filters: 'Filters',
+                    removeFilters: 'Remove Filters', openFilter: 'Open Filters', filters: 'Filters', exist: "Stock in stock",
                     // Comparison page
                     titleComparison: 'Comparison of two courses',
                     descComparison: 'By comparing training courses, you can find the right course for you!',

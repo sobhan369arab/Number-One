@@ -207,4 +207,7 @@
   .authorizeForm {
     @apply relative w-full max-w-[500px] sm:min-w-[500px] sm:w-[500px] h-full flex flex-wrap items-center bg-white rounded-[30px] sm:rounded-[50px] px-6 sm:px-16 py-12 sm:py-0;
   }
+  .spinner-buttons {
+    @apply w-1/4 border-neutral-300 text-neutral-500 hover:bg-black/5 duration-200 border-x
+  }
 }
