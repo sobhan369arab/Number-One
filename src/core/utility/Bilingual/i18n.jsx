@@ -15,7 +15,7 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'بله', no: 'خیر', Reviews: 'امتیاز', student: 'دانشجو', Development: 'توسعه', By: 'توسط', map: 'نقشه', from: 'از',
                     test: 'این یک پیام تستی است', priceCount: 'تومان', show: 'نمایش', result: 'نتیجه از', sortBy: 'مرتب سازی بر اساس:', upTo: 'تا',
-                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو",
+                    course: "دوره", viewAll: "مشاهده همه", edit: "ویرایش", cancel: "لغـــو", studyTime: "دقیقه خواندن",
                     // Menu Items in the Header
                     HomeSection: 'صفحه اصلی', CoursesSection: 'دوره های آموزشی', Events: 'ایونت ها', ShopSection: 'فروشگاه', BlogSection: 'وبلاگ', InstructorsSection: "مربیان",
                     // Search Input in the Header
@@ -54,6 +54,7 @@ i18n.use(initReactI18next)
                     howToStartLabel: "چگونه سفر را شروع می کنیم", howToStartTitle: "سفر یادگیری خود را از همین امروز شروع کنید!", howToStartDesc: "اعضای شهودی Groove make team ورودی را با هم به تقسیم سازماندهی، اولویت بندی و.در این قسمت.",
                     // lastBlogs
                     lastBlogsLabel: "اخبار و وبلاگ ها", lastBlogsTitle: "آخرین خبر ما", lastBlogsDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
+                    blogFavorite: 'آیا از این مقاله راضی بودید؟',LearnBlog:'در این مقاله چه چیزی یاد خواهم گرفت؟',
                     // informedPoster
                     informedPlaceholder: "ایمیل خود را تایپ کنید", informedWord1: "میخواهید در مورد", informedWord3: "جدید",
                     informedImportantWord1: "دوره های", informedImportantWord2: "مطلع باشید", informedBtn: "اکنون مشترک شوید",
@@ -122,6 +123,10 @@ i18n.use(initReactI18next)
                     exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTip: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.",
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
                     SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
+                    // Comments
+                    comment: 'نظر',
+                    // Related titles
+                    Related:'مرتبط',Blogs:'اخبار',
                 },
             },
             en: {
@@ -131,7 +136,7 @@ i18n.use(initReactI18next)
                     // Others
                     yes: 'Yes', no: 'No', Reviews: 'Reviews', student: 'Students', Development: 'Development', By: 'By', map: 'Map',
                     test: 'This is a test message', priceCount: '$', show: 'Showing', result: 'Result of', sortBy: 'Sort By:', from: 'from', upTo: 'up To',
-                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel",
+                    course: "Course", viewAll: "view all", edit: "Edit", cancel: "Cancel", studyTime: "minutes of reading",
                     // Menu Items in the Header
                     HomeSection: 'Home', CoursesSection: 'Courses', Events: 'Events', ShopSection: 'Shop', BlogSection: 'Blog', InstructorsSection: "Instructors",
                     // Search Input in the Header
@@ -167,6 +172,7 @@ i18n.use(initReactI18next)
                     howToStartLabel: "How We Start Journey", howToStartTitle: "Start your Learning Journey Today!", howToStartDesc: "Groove’s intuitive shared inbox makesteam members together organize, prioritize and.In this episode.",
                     // lastBlogs
                     lastBlogsLabel: "News & Blogs", lastBlogsTitle: "Our Latest News Feed", lastBlogsDesc: "when known printer took a galley of type scrambl edmake",
+                    blogFavorite: 'Were you satisfied with this article?',LearnBlog:'What will I learn in this blog?',
                     // informedPoster
                     informedPlaceholder: "Type your e-mail", informedWord1: "Want To Stay About", informedWord3: "New",
                     informedImportantWord1: "Informed", informedImportantWord2: "Courses & Study?", informedBtn: "Subscribe Now",
@@ -235,6 +241,11 @@ i18n.use(initReactI18next)
                     exitFromAccount: "Exit", welcome: "welcome", progressTip: "To participate in the courses, you must complete at least 80% of your profile.",
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
                     SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
+                    // Comments
+                    comment: 'Comment',
+                    // Related titles
+                    Related:'Related',Blogs:'Blogs',
+
                 },
             },
         },

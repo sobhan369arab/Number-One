@@ -1,19 +1,31 @@
 import { useTranslation } from "react-i18next"
 import OptionParts from "./optionParts"
 
+export const BorderStyleVariant = {
+    "blog": "border-none",
+    "course_event": "Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300",
+}
+
+
 const OverView_Details = ({
     overView,
     training,
-    MajorElements }) => {
+    MajorElements,
+    Class,
+    variant,
+    titleLearning,
+}) => {
     const { t } = useTranslation()
     return (
         <div>
-            <div className="Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300">
+            <div  className={`max-sm:text-center ${BorderStyleVariant?.[variant]}`}>
                 {/* OverView Text */}
-                <h1 className="boldStyle_text mb-3">{t('CourseOverView')}</h1>
-                <h2 className="mediumStyle_text">{t(overView)}</h2>
+                <div className={`${Class}`}>
+                    <h1 className="boldStyle_text mb-3">{t('CourseOverView')}</h1>
+                    <h2 className="mediumStyle_text">{t(overView)}</h2>
+                </div>
                 {/* Learn Text */}
-                <h1 className="boldStyle_text my-3">{t('LearnCourse')}</h1>
+                <h1 className="boldStyle_text my-3">{t(titleLearning)}</h1>
                 <h2 className="mediumStyle_text">{t(training)}</h2>
                 {MajorElements.map((item, index) => (
                     <OptionParts

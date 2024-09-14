@@ -12,15 +12,12 @@ const TabPanel = ({
     return (
         <div>
             <Details_Tabs>
-                <Tab label="Overview"> 
-                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements}/>
+                <Tab label="Overview">
+                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements} Class={'block'} titleLearning={'LearnCourse'} variant={"course_event"} />
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
                 <Tab label="Instructor">Instructor </Tab>
                 <Tab label="User comments">User comments </Tab>
-
-
-
             </Details_Tabs>
         </div>
     )
