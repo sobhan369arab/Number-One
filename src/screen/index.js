@@ -21,6 +21,8 @@ import Login from "./authorize/Login";
 import TowStepLogin from "./authorize/TowStep";
 import ForgetPasswordLogin from "./authorize/ForgetPassword";
 import Register from "./authorize/Register";
+import Shop from "./shop/Shop"
+import ShopDetail from "./shop-detail/ShopDetail"
 
 export {
   Error404,
@@ -46,4 +48,6 @@ export {
   TowStepLogin,
   ForgetPasswordLogin,
   Register,
+  Shop,
+  ShopDetail
 };

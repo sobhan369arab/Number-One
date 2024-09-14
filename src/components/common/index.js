@@ -31,6 +31,8 @@ import ChangeView from "./ChangeView.jsx";
 import SectionTop from "./SectionTop.jsx";
 import ToLike from "./ToLike.jsx";
 import DarkModeBtn from "./DarkModeBtn.jsx"
+import Spinner from "./Spinner.jsx";
+import FavoriteBtn from "./FavoriteBtn.jsx";
 
 export {
   Button,
@@ -63,5 +65,7 @@ export {
   ChangeView,
   SectionTop,
   ToLike,
-  DarkModeBtn
+  DarkModeBtn,
+  Spinner,
+  FavoriteBtn
 };

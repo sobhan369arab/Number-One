@@ -23,7 +23,9 @@ import {
     Login,
     ForgetPasswordLogin,
     TowStepLogin,
-    Register
+    Register,
+    Shop,
+    ShopDetail
 } from "../../screen"
 
 const routerPublic = createBrowserRouter([
@@ -57,7 +59,12 @@ const routerPublic = createBrowserRouter([
                 children: [{ path: '/instructorsDetails/:id', element: <InstructorDetail /> }]
             },
             { path: '/Blog', element: <Blog/> },
-
+            { path: '/shop', element: <Shop/> },
+            {
+                path: "/shopDetails",
+                element: <ShopDetail />,
+                children: [{ path: '/shopDetails/:id', element: <ShopDetail /> }]
+            },
             { path: '/*', element: <Error404 /> },
         ]
     },
