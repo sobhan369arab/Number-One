@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import ComparisonBtn from "../../common/ComparisonBtn"
-import FavoriteBtn from "../../common/FavoriteBtn"
+import { FavoriteBtn } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseHeader from "./CourseHeader"
@@ -31,7 +31,7 @@ const Course = ({
                 <CourseHeader images={images} />
                 <div className="flex justify-center gap-8 my-3">
                     <ComparisonBtn location={location} CourseId={id} comparisonId={comparisonId} setComparisonId={setComparisonId} />
-                    <FavoriteBtn location={location} />
+                    <FavoriteBtn location={location} variantStyle="card" />
                 </div>
             </div>
             <Link to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">
