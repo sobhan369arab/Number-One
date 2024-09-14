@@ -125,7 +125,8 @@ i18n.use(initReactI18next)
                     SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
                     // Comments
                     comment: 'نظر',
-
+                    // Related titles
+                    Related:'مرتبط',Blogs:'اخبار',
                 },
             },
             en: {
@@ -242,6 +243,9 @@ i18n.use(initReactI18next)
                     SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
                     // Comments
                     comment: 'Comment',
+                    // Related titles
+                    Related:'Related',Blogs:'Blogs',
+
                 },
             },
         },

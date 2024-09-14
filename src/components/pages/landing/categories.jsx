@@ -26,8 +26,8 @@ const Categories = () => {
                     perView={6}
                     Breakpoints={Breakpoints}
                     arrowColor="#000"
-                    buttonSideLeft="top-[100px] xl:left-[40px] left-[20px]"
-                    buttonSideRight="top-[100px] xl:right-[40px] right-[20px]"
+                    buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] h-12 w-12"
+                    buttonSideRight="top-[100px] xl:right-[40px] right-[20px] h-12 w-12"
                     buttonColor="bg-yellowCustom"
                 >
                     {categoryItems.map((item, index) => (<SwiperSlide key={index}><CategoryItem amount={item.count} title={i18n.language === "en" ? item.name[1] : item.name[0]} /></SwiperSlide>))}
