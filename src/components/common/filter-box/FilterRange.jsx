@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import MultiRangeSlider from "multi-range-slider-react";
+import { Slider } from "@nextui-org/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 const FilterRange = ({
@@ -9,39 +9,35 @@ const FilterRange = ({
 
 }) => {
   const { t } = useTranslation();
-  const [minValue, set_minValue] = useState(0);
-  const [maxValue, set_maxValue] = useState(1000000);
-  const handleInput = () => {
-    setPriceDown(minValue)
-    setPriceUp(maxValue);
+  const [value, setValue] = useState([0, 1000000]);
+  const handleInput = (event) => {
+    setValue(event)
+    setPriceDown(event[0])
+    setPriceUp(event[1]);
   };
   return (
     <div className="filter-box relative">
       <h1 className="font-semibold pb-2">{t(title)}</h1>
-      <div dir="ltr">
-        <MultiRangeSlider
-          min={0}
-          max={1000000}
-          step={5000}
-          minValue={minValue}
-          maxValue={maxValue}
-          ruler={false}
-          label={false}
-          barInnerColor="#5751E1"
-          thumbLeftColor="#5751E1"
-          thumbRightColor="#5751E1"
-          className="border-none shadow-none py-3 mb-5"
-          onInput={(e) => {
-            set_minValue(e.minValue)
-            set_maxValue(e.maxValue)
-            handleInput();
-          }}
-        />
-      </div>
+      <Slider
+        aria-label="filter-rage"
+        step={10}
+        maxValue={1000000}
+        minValue={0}
+        value={value}
+        onChange={(event) => { handleInput(event) }}
+        hideValue
+        size="sm"
+        classNames={{
+          base: "max-w-md gap-3 my-5",
+          filler: "bg-[#5751E1]",
+          thumb: "bg-[#5751E1]"
+        }}
+        color="#5751E1"
+      />
       {/* price information */}
       <div className=" bottom-9 right-5 text-gray-600">
-        <h1 className="text-gray-500">{t('from')} :<span className="text-purpleCustom mx-2">{minValue} {t('priceCount')}</span></h1>
-        <h1 className="text-gray-500 mt-2">{t('upTo')} :<span className="text-purpleCustom mx-2">{maxValue} {t('priceCount')}</span></h1>
+        <h1 className="text-gray-500">{t('from')} :<span className="text-purpleCustom mx-2">{value[0]} {t('priceCount')}</span></h1>
+        <h1 className="text-gray-500 mt-2">{t('upTo')} :<span className="text-purpleCustom mx-2">{value[1]} {t('priceCount')}</span></h1>
       </div>
     </div>
   )
