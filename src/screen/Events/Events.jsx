@@ -2,7 +2,7 @@ import { useMediaQuery } from "react-responsive"
 import { EventData } from "../../core/constants/Events/EventData"
 import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount } from "../../components/common"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import Event from "../../components/pages/event/Event"
+import Event from "../../components/pages/Event/Event"
 import { useState } from "react"
 
 const EventList = () => {

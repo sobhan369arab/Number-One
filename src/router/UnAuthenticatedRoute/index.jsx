@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import { MainLayouts, UserPanelLayout } from "../../components/Layouts"
+import { MainLayouts, UserPanelLayout } from "../../components/layouts"
 import {
     ContactUs,
     Error404,
