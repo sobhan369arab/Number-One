@@ -54,6 +54,7 @@ i18n.use(initReactI18next)
                     howToStartLabel: "چگونه سفر را شروع می کنیم", howToStartTitle: "سفر یادگیری خود را از همین امروز شروع کنید!", howToStartDesc: "اعضای شهودی Groove make team ورودی را با هم به تقسیم سازماندهی، اولویت بندی و.در این قسمت.",
                     // lastBlogs
                     lastBlogsLabel: "اخبار و وبلاگ ها", lastBlogsTitle: "آخرین خبر ما", lastBlogsDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
+                    blogFavorite: 'آیا از این مقاله راضی بودید؟',LearnBlog:'در این مقاله چه چیزی یاد خواهم گرفت؟',
                     // informedPoster
                     informedPlaceholder: "ایمیل خود را تایپ کنید", informedWord1: "میخواهید در مورد", informedWord3: "جدید",
                     informedImportantWord1: "دوره های", informedImportantWord2: "مطلع باشید", informedBtn: "اکنون مشترک شوید",
@@ -170,6 +171,7 @@ i18n.use(initReactI18next)
                     howToStartLabel: "How We Start Journey", howToStartTitle: "Start your Learning Journey Today!", howToStartDesc: "Groove’s intuitive shared inbox makesteam members together organize, prioritize and.In this episode.",
                     // lastBlogs
                     lastBlogsLabel: "News & Blogs", lastBlogsTitle: "Our Latest News Feed", lastBlogsDesc: "when known printer took a galley of type scrambl edmake",
+                    blogFavorite: 'Were you satisfied with this article?',LearnBlog:'What will I learn in this blog?',
                     // informedPoster
                     informedPlaceholder: "Type your e-mail", informedWord1: "Want To Stay About", informedWord3: "New",
                     informedImportantWord1: "Informed", informedImportantWord2: "Courses & Study?", informedBtn: "Subscribe Now",

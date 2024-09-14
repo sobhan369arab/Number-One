@@ -11,6 +11,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهی این خبر برای این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -24,6 +30,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -37,6 +49,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -50,6 +68,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -63,6 +87,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -76,6 +106,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -89,6 +125,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -102,6 +144,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -115,6 +163,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -128,6 +182,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -141,6 +201,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -153,7 +219,12 @@ export const Blogs_data = [
     like: 158,
     disLike: 58,
     studyTime: 5,
-    commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -167,6 +238,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -180,6 +257,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -193,6 +276,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
   {
@@ -206,6 +295,12 @@ export const Blogs_data = [
     disLike: 58,
     studyTime: 5,
     commentsNumber: 3,
+    MajorElements: [
+      "EventElement1",
+      "EventElement2",
+      "EventElement3",
+      "EventElement4",
+    ],
     bio: "این خبر برای این است که توسعه خود را بسازید و عنوان محتوای خود میتوانیذ قرار دهید این خبر برای",
   },
 ];
