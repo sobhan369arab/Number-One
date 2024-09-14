@@ -47,11 +47,11 @@ const RelatedBlogs = ({ category }) => {
           </div>
           <div>
             <SwiperSlider
-              perView={3}
+              perView={1}
               Breakpoints={Breakpoints}
               arrowColor="#fff"
-              buttonSideLeft={`top-3 h-10 w-10 ${i18n.language === 'fa' ? "left-0" : "right-12"} `}
-              buttonSideRight={`top-3 h-10 w-10 ${i18n.language === 'fa' ? "left-12" : "right-0"} `}
+              buttonSideLeft={`top-3 h-10 w-10 ${LatestBlogs.length <= 3 ? "hidden" : ""} ${i18n.language === 'fa' ? "left-0" : "right-12"} `}
+              buttonSideRight={`top-3 h-10 w-10 ${LatestBlogs.length <= 3 ? "hidden" : ""} ${i18n.language === 'fa' ? "left-12" : "right-0"} `}
               buttonColor="bg-purpleCustom"
             >
               {LatestBlogs.map((item) => (

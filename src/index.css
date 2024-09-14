@@ -118,7 +118,7 @@
   }
 
   .main-container {
-    @apply xl:w-4/5 sm:w-11/12 mobile:w-[98%] m-auto my-8;
+    @apply xl:w-4/5 sm:w-11/12 w-[98%] m-auto my-8;
   }
 
   .grid-list {

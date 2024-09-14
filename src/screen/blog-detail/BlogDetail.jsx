@@ -28,9 +28,11 @@ const BlogDetail = () => {
                         bio={blogSelected.bio}
                     />
                     <OverView_Details training={blogSelected.bio} MajorElements={blogSelected.MajorElements} Class={"hidden"} titleLearning={'LearnBlog'} />
-                    <div className="border-y-2 flex  gap-8 my-7 py-5">
-                        <p className="font-semibold">{t('blogFavorite')}</p>
-                        <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
+                    <div className="border-y-2 my-7 py-5">
+                        <div className="flex gap-8 w-fit max-sm:m-auto">
+                            <p className="font-semibold">{t('blogFavorite')}</p>
+                            <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
+                        </div>
                     </div>
                 </div>
                 <RelatedBlogs category={blogSelected.category} />
