@@ -8,6 +8,7 @@ import { CloseIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
 import { Blogs_data } from "../../core/constants/blogs/blogs-data";
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 
 const Blog = () => {
   const { t } = useTranslation();
@@ -49,7 +50,9 @@ const Blog = () => {
 
   return (
     <>
-      <TitleSection title={'BlogSection'} />
+      <TitleSection title={'BlogSection'} >
+        <BreadCrumb type="Div" text="BlogSection"/>
+      </TitleSection>
       <div className="main-container flex gap-7 relative">
         <MediaQuery minWidth={"1024px"}>
           <FilterSide_Blogs setQuery={setQuery} SetCategoryData={SetCategoryData} />

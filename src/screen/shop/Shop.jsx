@@ -7,6 +7,7 @@ import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, Pagin
 import { useTranslation } from "react-i18next";
 import { CloseIcon } from "../../core/icon";
 import { shopData } from "../../core/constants/shop/ShopData"
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 
 const Shop = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' })
@@ -58,7 +59,9 @@ const Shop = () => {
 
   return (
     <>
-      <TitleSection title={'ShopSection'} />
+      <TitleSection title={'ShopSection'}>
+        <BreadCrumb type="Div" text="ShopSection"/>
+      </TitleSection>
       <div className="main-container flex gap-7 relative">
         <MediaQuery minWidth="1024px">
           <FilterSide_Shop

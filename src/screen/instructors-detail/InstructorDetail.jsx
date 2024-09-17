@@ -6,6 +6,7 @@ import { teachers } from '../../core/constants/instructors/teachers'
 import { EmailIcon, PhoneIcon, InstagramIcon, WhatsAppIcon, TwitterIcon, FacebookIcon, YouTubeIcon } from '../../core/icon'
 import { PercentageSkills, WaysToReach } from '../../components/pages/instructor-detail'
 import { useTranslation } from 'react-i18next'
+import BreadCrumb from '../../components/partials/title-section/BreadCrumb'
 
 const InstructorDetail = () => {
     const { t, i18n } = useTranslation()
@@ -30,7 +31,10 @@ const InstructorDetail = () => {
     return (
         teacher != undefined ? (
             <>
-                <TitleSection title={t("instructorsTitle")} />
+                <TitleSection title={t("instructorsTitle")} >
+                <BreadCrumb href={'/instructors'} text="instructorsTitle"/>
+                <BreadCrumb type='Div' text={teacher.name}/>
+                </TitleSection>
                 <div className='lg:px-44 sm:px-16 px-8 w-full flex flex-wrap xl:flex-nowrap gap-x-10 my-20'>
                     <div className='w-full xl:w-1/4 h-fit order-2 mt-32 md:mt-12 xl: xl:mt-0 xl:order-none flex flex-wrap gap-y-3 py-8 px-6 rounded-xl border border-neutral-300 shadow-lg'>
                         <h1 className='boldStyle_text text-xl w-full'>{t("sideBarTitle")}</h1>

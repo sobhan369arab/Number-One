@@ -2,8 +2,9 @@ import { useMediaQuery } from "react-responsive"
 import { EventData } from "../../core/constants/Events/EventData"
 import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount } from "../../components/common"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import Event from "../../components/pages/Event/Event"
+import Event from "../../components/pages/event/Event"
 import { useState } from "react"
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 
 const EventList = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 530px)' })
@@ -15,7 +16,9 @@ const EventList = () => {
 
   return (
     <>
-      <TitleSection title={'EventsTitle'} />
+      <TitleSection title={'EventsTitle'} >
+        <BreadCrumb type="Div" text={'EventsTitle'}/>
+      </TitleSection>
       <div dir="ltr" className="sm:my-20 my-12 flex justify-around flex-wrap md:w-[70%] w-11/12 gap-5 m-auto">
         <PaginateHolderItems style="justify-center">
           <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, EventData) }} pageCount={calculatePageCount(EventData, 8)}>

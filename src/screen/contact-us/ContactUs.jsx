@@ -2,12 +2,15 @@ import { useTranslation } from "react-i18next";
 import { ContactMain, ContactSidebar } from "../../components/pages/contact-us"
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { CustomMap } from "../../components/common";
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 
 const ContactUs = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
-      <TitleSection title={t("contactUsTitle")} />
+      <TitleSection title={t("contactUsTitle")} >
+        <BreadCrumb type="Div" text={'contactUsTitle'} />
+      </TitleSection>
       <div className="lg:px-44 sm:px-16 px-8 w-full flex flex-wrap gap-y-16 my-20">
         <div className="w-full h-fit xl:h-auto flex flex-wrap xl:flex-nowrap justify-between gap-y-4 xl:gap-x-6">
           <ContactSidebar />
