@@ -7,7 +7,7 @@ export const variantPlaceHolder = {
     "Shop": "PlaceHolder_Shop"
 }
 
-const FilterSearch = ({ variant, setQuery }) => {
+const FilterSearch = ({ variant, setQuery, Style }) => {
     const { t } = useTranslation();
 
     const SetFilterQuery = (e) => {
@@ -20,7 +20,7 @@ const FilterSearch = ({ variant, setQuery }) => {
     }
 
     return (
-        <div className="flex items-center p-3 bg-grayCustom rounded-lg mb-5">
+        <div className={`flex items-center p-3 bg-grayCustom rounded-lg mb-5 ${Style}`}>
             <input type="text" onChange={(e) => SetFilterQuery(e)} placeholder={t(variantPlaceHolder?.[variant])} className="text-sm w-11/12 bg-transparent outline-none" />
             <Search_TwoIcon />
         </div>

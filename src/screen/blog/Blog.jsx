@@ -3,7 +3,7 @@ import { BlogCard, FilterSide_Blogs } from "../../components/pages/blog"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { Button, useDisclosure } from "@nextui-org/react";
-import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop } from "../../components/common";
+import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop, SortBox } from "../../components/common";
 import { CloseIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
@@ -65,12 +65,12 @@ const Blog = () => {
             </CreateModal>
           </MediaQuery>
           <SectionTop
-            label={"blog"}
             AllData={CoursesDataFa}
             FilteredData={FilteredData}
-            setSortType={setSortType}
             setShowGrid={setShowGrid}
-          />
+          >
+            <SortBox setSortType={setSortType} label={"blog"} />
+          </SectionTop>
           <PaginateHolderItems style="justify-center">
             <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentBlog, setItemOffset, FilteredData) }} pageCount={calculatePageCount(FilteredData, currentBlog)}>
               <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>

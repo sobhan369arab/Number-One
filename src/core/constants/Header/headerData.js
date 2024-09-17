@@ -6,10 +6,3 @@ export const menuItem = [
   { title: "BlogSection", href: "/Blog" },
   { title: "InstructorsSection", href: "/instructors" },
 ];
-
-import { CartIcon, FavoriteIcon } from "../../icon";
-
-export const baskets = [
-  { icon: CartIcon, number: 0 },
-  { icon: FavoriteIcon, number: 0 },
-];

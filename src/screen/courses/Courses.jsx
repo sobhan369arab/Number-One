@@ -1,4 +1,4 @@
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop } from "../../components/common"
+import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
@@ -108,13 +108,12 @@ const Courses = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        label={"course"}
                         AllData={CoursesDataFa}
                         FilteredData={AllData}
-                        setSortCal={setSortCal}
-                        setSortType={setSortType}
                         setShowGrid={setShowGrid}
-                    />
+                    >
+                        <SortBox setSortType={setSortType} setSortCal={setSortCal} label={"course"} />
+                    </SectionTop>
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData, currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
