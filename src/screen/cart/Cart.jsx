@@ -2,7 +2,6 @@ import { CreateCartItems } from "../../components/pages/cart"
 import { useSelector, useDispatch } from "react-redux"
 import { clearCartAction } from "../../redux/slices/CartData"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import { useTranslation } from "react-i18next"
 import { Button, calculatePageCount, DetailsBox, FilterSearch, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop } from "../../components/common"
 import { useEffect, useState } from "react"
 import { LevelIcon, TrashCan, } from "../../core/icon"
@@ -77,7 +76,7 @@ const Cart = () => {
                         showViewBtn={false}
                     >
                         <div className="flex gap-x-4 h-fit justify-between sm:justify-start items-center w-full sm:w-auto">
-                            <Button isClick={() => { dispatch(clearCartAction()) }} vType="link" vStyle="purple" text={!isMobile ? "clearBtn" : ""} Icon={TrashCan} style="order-2" />
+                            <Button isClick={() => { dispatch(clearCartAction()) }} vType="button" vStyle="purple" text={!isMobile ? "clearBtn" : ""} Icon={TrashCan} style="order-2" />
                             <MediaQuery maxWidth="749px">
                                 <FilterSearch variant="Shop" setQuery={setQuery} Style="mt-5" />
                             </MediaQuery>
