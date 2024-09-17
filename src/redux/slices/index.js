@@ -1,3 +1,4 @@
 import StepStatus from "./StepStatus";
+import CartData from "./CartData"
 
-export { StepStatus };
+export { StepStatus, CartData };

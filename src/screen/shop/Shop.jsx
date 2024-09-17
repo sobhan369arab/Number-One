@@ -3,7 +3,7 @@ import TitleSection from "../../components/partials/title-section/TitleSection"
 import { ShopCard, FilterSide_Shop } from "../../components/pages/shop";
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { Button, useDisclosure } from "@nextui-org/react";
-import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop } from "../../components/common"
+import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop, SortBox } from "../../components/common"
 import { useTranslation } from "react-i18next";
 import { CloseIcon } from "../../core/icon";
 import { shopData } from "../../core/constants/shop/ShopData"
@@ -93,12 +93,12 @@ const Shop = () => {
             </CreateModal>
           </MediaQuery>
           <SectionTop
-            label={"shop"}
             AllData={shopData}
             FilteredData={FilteredData}
-            setSortType={setSortType}
             showViewBtn={false}
-          />
+          >
+            <SortBox setSortType={setSortType} label={"shop"} />
+          </SectionTop>
           <PaginateHolderItems style="justify-center">
             <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentShop, setItemOffset, FilteredData) }} pageCount={calculatePageCount(FilteredData, currentShop)}>
               <div className="flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2">

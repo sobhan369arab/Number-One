@@ -24,6 +24,7 @@ import Register from "./authorize/Register";
 import BlogDetail from "./blog-detail/BlogDetail";
 import Shop from "./shop/Shop"
 import ShopDetail from "./shop-detail/ShopDetail"
+import Cart from "./cart/Cart";
 
 export {
   Error404,
@@ -51,5 +52,6 @@ export {
   Register,
   BlogDetail,
   Shop,
-  ShopDetail
+  ShopDetail,
+  Cart
 };

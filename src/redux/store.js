@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { StepStatus } from "./slices";
+import { StepStatus, CartData } from "./slices";
 
 const store = configureStore({
   reducer: {
     StepStatus,
+    CartData,
   },
 });
 
