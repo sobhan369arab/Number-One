@@ -125,6 +125,8 @@ i18n.use(initReactI18next)
                     comment: 'نظر',
                     // Related titles
                     Related:'مرتبط',Blogs:'اخبار',
+                    // Cart
+                    cartTitle: "سبد خرید", cartTotalSum: "جمع کل", cartInfo: "اطلاعات", cartButton: "اقدام به پرداخت", clearBtn: "خالی کردن سبد", numberOfItemsInCart: "تعداد آیتم ها",
                 },
             },
             en: {
@@ -244,7 +246,8 @@ i18n.use(initReactI18next)
                     comment: 'Comment',
                     // Related titles
                     Related:'Related',Blogs:'Blogs',
-
+                    // Cart
+                    cartTitle: "Cart", cartTotalSum: "Total sum", cartInfo: "Information", cartButton: "Proceed to pay", clearBtn: "Clear Cart", numberOfItemsInCart: "Number of items",
                 },
             },
         },
