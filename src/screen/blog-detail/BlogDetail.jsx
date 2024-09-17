@@ -5,6 +5,7 @@ import { BlogBiography, BlogPic, DetailsSection, RelatedBlogs } from "../../comp
 import OverView_Details from "../../components/common/OverView_Details";
 import { useTranslation } from "react-i18next";
 import { ToLike } from "../../components/common";
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 
 const BlogDetail = () => {
     const { t } = useTranslation();
@@ -12,7 +13,10 @@ const BlogDetail = () => {
     const blogSelected = Blogs_data.find(blog => blog.id == id)
     return (
         <>
-            <TitleSection title={blogSelected.title} />
+            <TitleSection title={blogSelected.title} >
+                <BreadCrumb href={'/Blog'} text="BlogSection"/>
+                <BreadCrumb type="Div" text={blogSelected.title}/>
+            </TitleSection>
             <div className="main-container lg:flex lg:flex-row-reverse  gap-7">
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <BlogPic image={blogSelected.img} />

@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useState } from "react"
 import { VsIcon } from "../../core/icon"
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 
 const Comparison = () => {
   const location = useLocation();
@@ -31,7 +32,10 @@ const Comparison = () => {
 
   return (
     <>
-      <TitleSection title={'comparisonTitle'} />
+      <TitleSection title={'comparisonTitle'}>
+        <BreadCrumb href={'/courses'} text={'CoursesTitle'} />
+        <BreadCrumb type="Div" text={'comparisonTitle'} />
+      </TitleSection>
       <HeadingSection />
       <div className="md:mb-20 mt-52 sm:mx-4 md:flex gap-28 justify-evenly">
         <div className="h-fit w-fit absolute md:block hidden lg:mx-0 -mt-16">

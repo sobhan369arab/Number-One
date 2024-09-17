@@ -8,6 +8,7 @@ import Course from "../../components/pages/course/Course"
 import { useDisclosure, Button } from "@nextui-org/react"
 import { CloseIcon } from "../../core/icon"
 import { FilterSide_Courses } from "../../components/pages/course-list"
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 
 const Courses = () => {
     const { t } = useTranslation();
@@ -59,7 +60,9 @@ const Courses = () => {
 
     return (
         <>
-            <TitleSection title={'CoursesTitle'} />
+            <TitleSection title={'CoursesTitle'} >
+                <BreadCrumb type="Div" text={'CoursesTitle'}/>
+            </TitleSection>
             <div className="main-container flex gap-7 relative">
 
                 <MediaQuery minWidth={"1024px"}>

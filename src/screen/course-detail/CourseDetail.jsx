@@ -5,6 +5,7 @@ import { DetailsBox, Title_details } from "../../components/common";
 import { CertificationsIcon, LevelIcon, MenuIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { CoursePic, TabPanel } from "../../components/pages/course-detail";
 import MediaQuery from "react-responsive";
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -22,7 +23,10 @@ const CourseDetail = () => {
 
     return (
         <>
-            <TitleSection title={courseSelected.title} />
+            <TitleSection title={courseSelected.title}>
+                <BreadCrumb href={'/courses'} text={'CoursesTitle'}  />
+                <BreadCrumb type="Div" text={courseSelected.title}  />
+            </TitleSection>
             <div className="main-container lg:flex lg: flex-row-reverse gap-9">
                 <div className="w-full">
                     <CoursePic image={courseSelected.img} />

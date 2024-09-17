@@ -5,11 +5,12 @@ import { EventData } from "../../core/constants/Events/EventData";
 import { CustomMap, Title_details } from "../../components/common";
 import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 const EventDetails = () => {
   const { i18n } = useTranslation();
   const { id } = useParams();
   // Find the details of the selected event
-  const SelectedEvents = EventData.find(item => item.id == id);
+  let SelectedEvents = EventData.find(item => item.id == id);
   const DetailsEvent = [
     { titleDetail: "eventDate", countDetail: SelectedEvents.date2, iconDetail: DateIcon },
     { titleDetail: "StartTime", countDetail: SelectedEvents.startTime, iconDetail: TimeIcon },
@@ -21,7 +22,10 @@ const EventDetails = () => {
 
   return (
     <>
-      <TitleSection title={SelectedEvents.title} />
+      <TitleSection title={SelectedEvents.title} >
+        <BreadCrumb href={'/Events'} text={'EventsTitle'} />
+        <BreadCrumb type="Div" text={SelectedEvents.title} />
+      </TitleSection>
       <div className="xl:w-9/12 w-[88%]  mx-auto my-20 relative lg:h-[1290px] cursor-default">
         <EventImage picture={SelectedEvents.img} />
         <Title_details
