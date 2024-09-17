@@ -26,16 +26,7 @@ const ShopDetail = () => {
                             setActivePic={setActivePic}
                             img={item.img}
                         />
-                        <Details 
-                            category={item.category}
-                            certificate={item.certificate}
-                            discount={item.discount}
-                            price={item.price}
-                            score={item.score}
-                            tags={item.tags}
-                            title={item.title}
-                            bio={item.bio}
-                        />
+                        <Details item={item} />
                     </div>
                     <TabSection bio={item.bio} />
                     <RelatedProducts />
