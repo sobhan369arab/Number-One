@@ -4,13 +4,12 @@ import {
   Categories,
   Faq,
   HeroSection,
-  HowToStart,
   LastBlogs,
   SkilledTeachers,
   Statistics,
   TopCourses
 } from "../../components/pages/landing/"
-import InformedPoster from "../../components/common/informedPoster"
+import { InformedPoster, HowToStart } from "../../components/common"
 
 const Landing = () => {
   return (
