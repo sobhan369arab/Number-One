@@ -12,7 +12,7 @@ const CreateRequestCard = ({ title, picture, paragraph, buttonValue }) => {
             <p className="mediumStyle_text w-full mobile:text-start text-center md:text-start">
                 {paragraph}
             </p>
-            <Button text={buttonValue} arrowColor="#fff" variant={"purple"} />
+            <Button text={buttonValue} arrowColor="#fff" vStyle={"purple"} vType="link" />
         </div>
     )
 }
