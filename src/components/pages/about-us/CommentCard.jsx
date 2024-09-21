@@ -1,7 +1,10 @@
 import ReactStars from "react-rating-stars-component";
 import { VigVigIcon } from "../../../core/icon";
+import { useTranslation } from "react-i18next";
 
 const CommentCard = ({ star, description, name }) => {
+    const { i18n } = useTranslation()
+
     return (
         <div className="w-full h-full flex flex-wrap bg-[#F6F5FE] rounded-xl p-10">
             <div className="w-full flex gap-x-4 max-[1400px]:justify-center max-[1400px]:flex-wrap">
@@ -18,7 +21,7 @@ const CommentCard = ({ star, description, name }) => {
                     <h1 className="text-xl -mt-2 w-full max-[1400px]:text-center">{name}</h1>
                 </div>
             </div>
-            <VigVigIcon className="min-w-[48px] h-[48px] max-[1400px]:hidden reverse-img absolute top-10 left-10" />
+            <VigVigIcon className={`min-w-[48px] h-[48px] max-[1400px]:hidden reverse-img absolute top-10 ${i18n.language == "en" ? "right-10" : "left-10"}`} />
             <p className="max-[1400px]:text-center mediumStyle_text line-clamp-3">{description}</p>
         </div>
     )
