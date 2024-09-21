@@ -33,6 +33,7 @@ import ToLike from "./ToLike.jsx";
 import DarkModeBtn from "./DarkModeBtn.jsx"
 import Spinner from "./Spinner.jsx";
 import FavoriteBtn from "./FavoriteBtn.jsx";
+import HowToStart from "./howToStart.jsx";
 
 export {
   Button,
@@ -67,5 +68,6 @@ export {
   ToLike,
   DarkModeBtn,
   Spinner,
-  FavoriteBtn
+  FavoriteBtn,
+  HowToStart
 };
