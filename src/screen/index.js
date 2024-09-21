@@ -25,6 +25,7 @@ import BlogDetail from "./blog-detail/BlogDetail";
 import Shop from "./shop/Shop"
 import ShopDetail from "./shop-detail/ShopDetail"
 import Cart from "./cart/Cart";
+import AboutUs from "./about-us/AboutUs";
 
 export {
   Error404,
@@ -53,5 +54,6 @@ export {
   BlogDetail,
   Shop,
   ShopDetail,
-  Cart
+  Cart,
+  AboutUs
 };

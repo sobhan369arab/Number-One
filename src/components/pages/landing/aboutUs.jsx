@@ -11,7 +11,7 @@ const AboutUs = () => {
     <div className="w-full bg-titleSectionGradient lg:bg-none flex justify-center gap-x-12 py-28 lg:px-44 sm:px-16 px-8">
       <div className=" w-[400px] hidden h-fit mt-20 relative lg:flex flex-wrap justify-center group">
         <img className="w-20 absolute left-28 -top-10 transition-all duration-200 group-hover:-top-14" src={liveClass_icon} alt="Live Class" />
-        <button className="w-14 h-14 hover:scale-105 transition-all duration-300 rounded-full absolute top-[40%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+        <button className="playButton top-[40%]">
           <PlayIcon width="55px" />
         </button>
         <img src={aboutUs_poster} alt="Poster" />
