@@ -4,7 +4,7 @@ import { Blogs_data } from "../../core/constants/blogs/blogs-data";
 import { BlogBiography, BlogPic, DetailsSection, RelatedBlogs } from "../../components/pages/blog-detail";
 import OverView_Details from "../../components/common/OverView_Details";
 import { useTranslation } from "react-i18next";
-import { ToLike } from "../../components/common";
+import { CommentSection, ToLike } from "../../components/common";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 
 const BlogDetail = () => {
@@ -14,8 +14,8 @@ const BlogDetail = () => {
     return (
         <>
             <TitleSection title={blogSelected.title} >
-                <BreadCrumb href={'/Blog'} text="BlogSection"/>
-                <BreadCrumb type="Div" text={blogSelected.title}/>
+                <BreadCrumb href={'/Blog'} text="BlogSection" />
+                <BreadCrumb type="Div" text={blogSelected.title} />
             </TitleSection>
             <div className="main-container lg:flex lg:flex-row-reverse  gap-7">
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
@@ -38,6 +38,7 @@ const BlogDetail = () => {
                             <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
                         </div>
                     </div>
+                    <CommentSection Id={id} nameItem={'blogId'}/>
                 </div>
                 <RelatedBlogs category={blogSelected.category} />
             </div>

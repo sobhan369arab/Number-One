@@ -5,7 +5,7 @@ const FormHolder = ({ initialValues, onSubmit, style, children, validations }) =
         <Formik
             initialValues={initialValues}
             onSubmit={onSubmit}
-            validationSchema={validations}
+            validationSchema={validations && validations}
         >
             <Form className={style}>
                 {children}
