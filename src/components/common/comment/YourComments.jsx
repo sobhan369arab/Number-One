@@ -3,31 +3,44 @@ import FormHolder from "../Form/FormHolder";
 import FormInput from "../Form/FormInput";
 import Button from "../Button";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import * as yup from 'yup'
+import { useEffect, useState } from "react";
 import { titleCommentValid } from "../../../core/validations/validations";
 
 const YourComments = ({ comments, setComments, nameItem }) => {
   const { t, } = useTranslation();
   const [Param, setParam] = useState(useParams());
+  const [testArray, setTestArray] = useState([]);
 
   // Providing field information
   const fields = [
-    { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple",errorStyle:"text-end !bg-transparent", fieldStyle: 'rounded-lg py-2 h-auto mt-0.5' },
+    { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg py-2 h-auto mt-0.5' },
     { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", fieldStyle: 'rounded-lg pb-28 h-auto line-clamp-4 mt-0.5' }
   ]
 
+
   const addComment = (values) => {
 
-    let formData = new FormData();
-    formData.append(nameItem, Param.id);
-    formData.append("title", values.title);
-    formData.append("describe", values.description);
+    // create FormData
+    // const formData = new FormData();
+    // formData.append(nameItem, Param.id);
+    // formData.append("title", values.title);
+    // formData.append("describe", values.description);
 
-    console.log(formData)
+    // Test
+    const formData = { title: values.title, describe: values.description };
+
+    setTestArray([...testArray, formData]);
+
   }
 
-  
+  useEffect(() => {
+    if (testArray.length !== 0) {
+      setComments(testArray)
+    }
+  }, [testArray])
+
+
+
   return (
     <div className="px-7 py-4 bg-grayCustom rounded-lg ">
 

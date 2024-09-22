@@ -38,7 +38,7 @@ const BlogDetail = () => {
                             <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
                         </div>
                     </div>
-                    <CommentSection Id={id} nameItem={'blogId'}/>
+                    <CommentSection commentsNumber={blogSelected.commentsNumber} nameItem={'blogId'} />
                 </div>
                 <RelatedBlogs category={blogSelected.category} />
             </div>
