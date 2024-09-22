@@ -3,13 +3,13 @@ import { DateIcon, LocationIcon, StarIcon, TotalIcon } from "../../core/icon";
 // import arrow from "../../../assets/ArrowSvg.svg"
 
 export const boxTitle_variant = {
-    "event-detail": 'lg:w-[70%] border-b border-grayCustom',
+    "event-detail": 'lg:w-[70%] border-b border-LightLavender',
     "course-detail": 'w-full',
 }
 
 export const categoryItems_variant = {
-    "event-detail": 'bg-purpleCustom  text-white',
-    "course-detail": 'bg-grayCustom text-gray-600',
+    "event-detail": 'bg-VioletBlue text-white',
+    "course-detail": 'bg-LightLavender text-GrayishPurple',
 }
 export const icon_variant = {
     "event-detail": <LocationIcon />,
@@ -35,25 +35,25 @@ const Title_details = ({
                 ))}
                 {/* Score Box */}
                 <StarIcon />
-                <span className="text-gray-400 text-sm ">({Score} {t('Reviews')})</span>
+                <span className="mediumStyle_text text-sm ">({Score} {t('Reviews')})</span>
             </div>
-            <h1 className="lg:text-3xl text-2xl font-semibold my-4 max-lg:w-[420px]">{t(title)}</h1>
+            <h1 className="lg:text-3xl text-2xl font-semibold my-4 max-lg:w-[420px] text-DarkBlue">{t(title)}</h1>
             {/* other details */}
             <div className="flex items-center text-sm text-textGray2 gap-3">
                 {/* Creator detail */}
                 <div className="flex items-center">
                     <img src='../images/Events/creator.png' className="h-11" />
-                    <span className="mx-3 text-black"><span className="text-textGray2 text-gray-400">{t('By')}</span> {creator}</span>
+                    <span className="mx-3 text-DarkBlue"><span className="mediumStyle_text">{t('By')}</span> {creator}</span>
                 </div>
                 .
-                <div className="flex items-center">
+                <div className="flex items-center mediumStyle_text">
                     {icon_variant?.[variant]}
-                    <span className="mx-1 text-gray-400">{t(differentDetail)}</span>
+                    <span className="mx-1">{t(differentDetail)}</span>
                 </div>
                 .
-                <div className="flex items-center">
-                    <TotalIcon  />
-                    <span className="mx-1 mt-0.5 text-gray-400">{NumberStudents} {t('student')}</span>
+                <div className="flex items-center mediumStyle_text">
+                    <TotalIcon />
+                    <span className="mx-1 mt-0.5">{NumberStudents} {t('student')}</span>
                 </div>
             </div>
         </div>

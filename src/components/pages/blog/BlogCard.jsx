@@ -15,7 +15,7 @@ const BlogCard = ({
     view,
 }) => {
     return (
-        <div className="border border-grayBorder p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative m-auto">
+        <div className="border border-LightGrayish p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative m-auto">
             <BlogHeader images={images} id={id} />
             <div className="w-full">
                 <Link to={`/BlogDetails/${id}`}>

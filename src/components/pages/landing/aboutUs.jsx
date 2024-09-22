@@ -15,8 +15,8 @@ const AboutUs = () => {
           <PlayIcon width="55px" />
         </button>
         <img src={aboutUs_poster} alt="Poster" />
-        <div className="w-44 p-2 h-24 rounded-lg bg-white relative bottom-16 -right-0 border-2 border-neutral-300 drop-shadow-xl">
-          <h1 className="text-center text-[#161439] text-sm">{t("boardText")}</h1>
+        <div className="w-44 p-2 h-24 rounded-lg bg-MainBg relative bottom-16 -right-0 border-2 border-LightGray drop-shadow-xl">
+          <h1 className="text-center text-DarkBlue text-sm">{t("boardText")}</h1>
           <ul className="w-full h-1/2 flex justify-center items-end">
             <li className={`bg-yellow-100 min-w-9 h-9 rounded-full -mr-4`}></li>
           </ul>

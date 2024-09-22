@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick }) => {
     const { t, i18n } = useTranslation();
     const variantStyle = {
-        "purple": "bg-purpleCustom text-white buttonPurple_shadow",
-        "yellow": "bg-yellowCustom text-black buttonYellow_shadow",
+        "purple": "bg-VioletBlue text-white buttonPurple_shadow",
+        "yellow": "bg-SunshineYellow text-black buttonYellow_shadow",
     }
     const variantType = {
         link: (

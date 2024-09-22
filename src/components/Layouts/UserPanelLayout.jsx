@@ -12,14 +12,14 @@ const UserPanelLayout = () => {
             {/* <UserPanelHeader /> */}
             <div className='relative w-full lg:h-[813px] flex rounded-2xl overflow-hidden sm:userPanel_holder_shadow'>
                 <MediaQuery minWidth="1280px">
-                    <div className='min-w-[308px] w-[308px] bg-purpleCustom flex justify-center flex-wrap py-12'>
+                    <div className='min-w-[308px] w-[308px] bg-VioletBlue dark:bg-[#1B1B2A] flex justify-center flex-wrap py-12'>
                         <SidebarUserPanel />
                     </div>
                 </MediaQuery>
                 <div className='w-full h-full flex flex-wrap sm:p-6'>
                     <div className='w-full h-fit flex items-center justify-between xl:justify-end'>
                         <MediaQuery maxWidth="1279px">
-                            <HamburgerMenu width={308} style="bg-purpleCustom flex justify-center flex-wrap pt-12 pb-20">
+                            <HamburgerMenu width={308} style="bg-VioletBlue flex justify-center flex-wrap pt-12 pb-20">
                                 <SidebarUserPanel />
                             </HamburgerMenu>
                         </MediaQuery>

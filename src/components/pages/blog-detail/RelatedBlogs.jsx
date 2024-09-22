@@ -20,8 +20,8 @@ const RelatedBlogs = ({ category }) => {
     <>
       {/* Side related blogs for laptop mode */}
       <MediaQuery minWidth={'1024px'}>
-        <div className="bg-grayCustom h-fit lg:w-64 p-5">
-          <h1 className="text-xl font-semibold">{t('Blogs')} {t('Related')}</h1>
+        <div className="bg-LightGray h-fit lg:w-[315px] p-5 rounded-lg">
+          <h1 className="text-xl font-semibold text-DarkBlue">{t('Blogs')} {t('Related')}</h1>
           {LatestBlogs.map((item) => (
             <Link key={item.id} to={`/BlogDetails/${item.id}`}>
               <div className="flex gap-x-4 items-center mt-3 py-1 cursor-pointer hover:Box-shadow2 duration-250">
@@ -52,7 +52,7 @@ const RelatedBlogs = ({ category }) => {
               arrowColor="#fff"
               buttonSideLeft={`top-3 h-10 w-10 ${LatestBlogs.length <= 3 ? "hidden" : ""} ${i18n.language === 'fa' ? "left-0" : "right-12"} `}
               buttonSideRight={`top-3 h-10 w-10 ${LatestBlogs.length <= 3 ? "hidden" : ""} ${i18n.language === 'fa' ? "left-12" : "right-0"} `}
-              buttonColor="bg-purpleCustom"
+              buttonColor="bg-VioletBlue"
             >
               {LatestBlogs.map((item) => (
                 <SwiperSlide key={item.id}>

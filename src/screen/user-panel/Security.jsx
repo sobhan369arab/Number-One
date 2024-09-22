@@ -7,12 +7,12 @@ import { useTranslation } from 'react-i18next';
 const Security = () => {
     const { t } = useTranslation()
     const itemClasses = {
-        title: "font-normal text-medium w-fit px-4 mt-1 -mx-4 bg-white",
-        trigger: "px-2 flex h-1 items-center border-b w-full",
-        indicator: "-mx-4 mt-3 bg-white pl-2",
+        title: "font-normal text-medium w-fit px-4 mt-1 -mx-4 bg-MainBg",
+        trigger: "px-2 flex h-1 items-center border-b border-LightGrayish w-full",
+        indicator: "-mx-4 mt-3 bg-MainBg pl-2",
     };
     return (
-        <div className='w-[90%] border-t border-neutral-300 flex relative justify-center'>
+        <div className='w-[90%] border-t border-LightGrayish flex relative justify-center'>
             <TitleSectionPanel Icon={SecurityIcon} name={t("SecuritySettings")} />
             <div className='w-full h-fit mt-20'>
                 <Accordion defaultExpandedKeys={["1", "2", "3"]} fullWidth selectionMode="multiple" className='flex flex-wrap gap-y-10' dividerProps={true} showDivider={false} itemClasses={itemClasses}>

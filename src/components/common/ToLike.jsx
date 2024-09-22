@@ -41,11 +41,11 @@ const ToLike = ({
     }
     return (
         <div className="flex gap-1.5">
-            <div onClick={() => handleLike()} className="px-2 py-0.5 bg-grayCustom flex gap-0.5 items-center rounded-2xl cursor-pointer">
+            <div onClick={() => handleLike()} className="px-2 py-0.5 bg-LightLavender mediumStyle_text flex gap-0.5 items-center rounded-2xl cursor-pointer">
                 {like == false ? <BiLike /> : <BiSolidLike />}
                 <span className={numberStatus}>{LikeCount}</span>
             </div>
-            <div onClick={() => handleDisLike()} className="px-2 py-0.5 bg-grayCustom flex  gap-0.5 items-center rounded-2xl cursor-pointer">
+            <div onClick={() => handleDisLike()} className="px-2 py-0.5 bg-LightLavender mediumStyle_text flex gap-0.5 items-center rounded-2xl cursor-pointer">
                 {disLike == false ? <BiDislike /> : <BiSolidDislike />}
                 <span className={numberStatus}>{dislikeCount}</span>
             </div>

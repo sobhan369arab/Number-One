@@ -25,14 +25,14 @@ const Dashboard = () => {
         </div>
         <div className='w-[300px] h-20 lg:mb-0 mb-32 flex flex-wrap lg:flex-nowrap gap-4 items-center justify-center lg:justify-end'>
           {progressAmount < 80 ?
-            <p className='w-full text-center order-2 lg:order-none text-neutral-400'>{t("progressTip")}</p> : null
+            <p className='w-full text-center order-2 lg:order-none mediumStyle_text'>{t("progressTip")}</p> : null
           }
           <CircularProgress
             classNames={{
               svg: "w-40 h-40 lg:w-28 lg-h-28 drop-shadow-md",
-              indicator: "text-yellowCustom",
+              indicator: "text-SunshineYellow",
               track: "stroke-black/5 border-2 border-red-500",
-              value: "text-3xl text-black text-purpleCustom",
+              value: "text-3xl text-black text-VioletBlue",
             }}
             value={progressAmount}
             strokeWidth={2}
@@ -40,16 +40,16 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className='w-full bg-[#C8C1ED]/40 shadow-lg rounded-xl mt-16 relative py-8 px-10 flex flex-wrap gap-y-2'>
+      <div className='w-full bg-[#C8C1ED]/40 dark:bg-[#C8C1ED]/10 shadow-lg rounded-xl mt-16 relative py-8 px-10 flex flex-wrap gap-y-2'>
         <div className='userPanel_icons -top-6 left-[50%] translate-x-[-50%] sm:left-12'>
           <NotificationIcon />
         </div>
         <h1 className='boldStyle_text w-full text-xl text-center sm:text-start'>{t("latestNewsAndBlogs")}</h1>
-        <div className='w-full h-fit flex flex-wrap text-neutral-500 gap-y-3'>
+        <div className='w-full h-fit flex flex-wrap mediumStyle_text gap-y-3'>
           {lastBlogs.map(obj => <LatestBlogs key={obj.id} name={obj.name} date={obj.date} />)}
         </div>
       </div>
-      <div className='w-full border-t border-neutral-200 py-8 mt-8 flex flex-wrap lg:flex-nowrap gap-x-14 gap-y-10 lg:gap-y-0'>
+      <div className='w-full border-t border-neutral-200 dark:border-gray-400/30 py-8 mt-8 flex flex-wrap lg:flex-nowrap gap-x-14 gap-y-10 lg:gap-y-0'>
         <UserCoursesSection sectionName={t("currentCourses")}>
           {currentCourse.map((item, index) => <CreateCourse key={index} date={item.date} nameCourse={item.name} teacher={item.teacher} />)}
         </UserCoursesSection>

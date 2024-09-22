@@ -25,11 +25,11 @@ const DetailsSection = ({
     return (
         <div className="flex justify-between mt-8 mb-6">
             <div className="flex gap-4 items-center">
-                <div className="px-4 py-1 bg-purpleCustom text-sm text-white rounded-2xl whitespace-nowrap cursor-default">{category}</div>
+                <div className="px-4 py-1 bg-VioletBlue text-sm text-white rounded-2xl whitespace-nowrap cursor-default">{category}</div>
                 {firstDetails.map((item, index) => (
-                    <div key={index} className="flex gap-1.5">
+                    <div key={index} className="flex gap-1.5 mediumStyle_text text-sm">
                         {item.icon}
-                        <h1 className="text-gray-500 text-sm">{item.text}</h1>
+                        <h1>{item.text}</h1>
                     </div>
                 ))}
             </div>
@@ -37,9 +37,9 @@ const DetailsSection = ({
                 {lastDetails.map((item, index) => (
                     <div key={index} className="flex gap-1.5">
                         {item.icon}
-                        <div className="flex gap-1">
-                            <h1 className="text-gray-500 text-sm">{item.count}</h1>
-                            <h2 className="text-gray-500 text-sm">{t(item.text)}</h2>
+                        <div className="flex gap-1 mediumStyle_text text-sm">
+                            <h1>{item.count}</h1>
+                            <h2>{t(item.text)}</h2>
                         </div>
                     </div>
                 ))}

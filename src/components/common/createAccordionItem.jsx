@@ -15,10 +15,10 @@ const CreateAccordionItem = ({ label, content }) => {
         <AccordionItem className="border-none">
             <AccordionItemHeading className='mobile:bg-neutral-300 sm:bg-none rounded-xl px-2 my-2'>
                 <AccordionItemButton dir={i18n.language === "en" ? "rtl" : "ltr"} style={buttonStyle}>
-                    <span className={`w-full ${i18n.language === "en" ? "text-left" : "text-right"} text-titleColor`}>{label}</span>
+                    <span className={`w-full ${i18n.language === "en" ? "text-left" : "text-right"} text-DarkBlue`}>{label}</span>
                 </AccordionItemButton>
             </AccordionItemHeading>
-            <AccordionItemPanel className="text-start mobile:bg-neutral-200 sm:bg-none text-sm py-5 px-2 rounded-xl text-titleColor">
+            <AccordionItemPanel className="text-start mobile:bg-neutral-200 sm:bg-none text-sm py-5 px-2 rounded-xl text-DarkBlue">
                 <p>
                     {content}
                 </p>

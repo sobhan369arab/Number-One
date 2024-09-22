@@ -5,7 +5,7 @@ const SidebarPictures = ({ pic, setPic, picture }) => {
             <img
                 src={picture}
                 alt="Picture"
-                className="border-2 peer-checked/active:border-purpleCustom rounded-lg"
+                className="border-3 peer-checked/active:border-VioletBlue rounded-lg"
             />
         </label>
     )

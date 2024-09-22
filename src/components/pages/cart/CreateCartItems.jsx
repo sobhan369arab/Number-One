@@ -20,17 +20,17 @@ const CreateCartItems = ({ title, description, price, amount, picture, id }) => 
     }, [productAmount])
 
     return (
-        <div className='w-full h-fit xl:h-28 flex flex-wrap justify-between items-center border-2 rounded-xl p-4 gap-y-4'>
+        <div className='w-full h-fit xl:h-28 flex flex-wrap justify-between items-center border-2 border-LightGrayish rounded-xl p-4 gap-y-4'>
             <Link to={`/shopDetails/${id}`} className="w-full xl:w-80 h-full flex gap-3 over">
                 <img className='xl:h-full min-w-32 w-32 h-32 rounded-lg' src={picture} alt="" />
                 <div className='flex flex-wrap'>
-                    <h1 className='text-titleColor text-lg h-fit line-clamp-1'>{title}</h1>
+                    <h1 className='text-DarkBlue text-lg h-fit line-clamp-1'>{title}</h1>
                     <p className='line-clamp-2 mediumStyle_text text-sm h-[44px]'>{description}</p>
                 </div>
             </Link>
             <div className='w-full xl:w-fit h-fit flex justify-end gap-x-4 border-t xl:border-none pt-2 xl:pt-0'>
                 <div className='flex gap-x-2 items-center mediumStyle_text'>
-                    <span className='text-purpleCustom text-xl'>{totalPrice} هزار</span>
+                    <span className='text-VioletBlue text-xl'>{totalPrice} هزار</span>
                     <span>تومان</span>
                 </div>
                 <Spinner

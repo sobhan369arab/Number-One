@@ -27,7 +27,7 @@ const SkilledTeachers = () => {
                         arrowColor="#000"
                         buttonSideLeft="top-[30px] xl:left-[40px] left-[5px] z-20"
                         buttonSideRight="top-[30px] xl:right-[40px] right-[5px] z-20"
-                        buttonColor="bg-yellowCustom"
+                        buttonColor="bg-SunshineYellow"
                     >
                         <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>
                         <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>

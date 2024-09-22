@@ -55,8 +55,8 @@ const EventDetails = () => {
           MajorElements={SelectedEvents.MajorElements}
           training={SelectedEvents.training}
         />
-        <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute m-auto mt-6 bottom-24 Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
-          <CustomMap width="208px" />
+        <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute m-auto mt-7 bottom-14 Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
+          <CustomMap width="214px" />
         </div>
 
       </div>

@@ -26,7 +26,7 @@ const Reserved = () => {
             <PaginateHolderItems style="justify-center">
                 <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
                     <div className='overflow-x-auto h-[590px]'>
-                        <Table sectionHeader={headerTable} style="border-t mt-3 pt-5">
+                        <Table sectionHeader={headerTable} style="border-t border-LightGrayish mt-3 pt-5">
                             {currentItems.map((item, index) => <TableItem key={index} object={item} variant="reserved" />)}
                         </Table>
                     </div>

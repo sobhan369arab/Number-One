@@ -26,7 +26,7 @@ const OurTestimonials = () => {
                     arrowColor="#fff"
                     buttonSideLeft="top-[100px] left-0 sm:-left-12 p-3 z-50"
                     buttonSideRight="top-[100px] right-0 sm:-right-12 p-3 z-50"
-                    buttonColor="bg-purpleCustom"
+                    buttonColor="bg-VioletBlue"
                     Breakpoints={Breakpoints}
                 >
                     {Comments.map((item, index) => (

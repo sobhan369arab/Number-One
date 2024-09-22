@@ -24,7 +24,7 @@ const ChangeView = ({ setShowGrid }) => {
     return (
         <div className="md:flex sm:hidden mobile:hidden gap-2">
             {ButtonData.map((Button, index) => (
-                <div key={index} onClick={() => SearchParams(Button.id)} className={`${location.search == `?V=${Button.id}` ? "bg-purpleCustom" : "bg-transparent"} cursor-pointer border border-purpleCustom p-2 rounded-md`}>
+                <div key={index} onClick={() => SearchParams(Button.id)} className={`${location.search == `?V=${Button.id}` ? "bg-VioletBlue" : "bg-transparent"} cursor-pointer border border-VioletBlue p-2 rounded-md`}>
                     <Button.icon stroke={location.search == `?V=${Button.id}` ? "#fff" : "#5751E1"} />
                 </div>
             ))}

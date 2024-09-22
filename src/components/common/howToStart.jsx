@@ -10,8 +10,8 @@ const HowToStart = ({ requestSection = "show" }) => {
     const { t, i18n } = useTranslation()
 
     return (
-        <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 bg-[#282568] lg:px-44 sm:px-16 px-8">
-            <Label text={t("howToStartLabel")} variant="section" style="bg-purpleCustom text-white" />
+        <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 bg-DarkIndigo lg:px-44 sm:px-16 px-8">
+            <Label text={t("howToStartLabel")} variant="section" style="bg-VioletBlue text-white" />
             <h1 className="boldStyle_text w-full text-center text-white">{t("howToStartTitle")}</h1>
             <p className="mediumStyle_text md:w-1/2 lg:w-1/3 text-center">{t("howToStartDesc")}</p>
             <ul className="w-full flex flex-wrap xl:flex-nowrap relative mt-10">
@@ -30,7 +30,7 @@ const HowToStart = ({ requestSection = "show" }) => {
                         arrowColor="#fff"
                         buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] z-50 p-3"
                         buttonSideRight="top-[100px] xl:right-[40px] right-[20px] z-50 p-3"
-                        buttonColor="bg-purpleCustom"
+                        buttonColor="bg-VioletBlue"
                     >
                         {encouragementItems.map((obj, index) => {
                             if (i18n.language === "en") {

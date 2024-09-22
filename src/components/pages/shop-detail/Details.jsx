@@ -13,7 +13,7 @@ const Details = ({ item }) => {
     const [productAmount, setProductAmount] = useState(1)
 
     const handleAdd = (item) => {
-        let obj = {...item, amount: productAmount}
+        let obj = { ...item, amount: productAmount }
         dispatch(addToCartAction(obj))
     }
 
@@ -33,7 +33,7 @@ const Details = ({ item }) => {
             </div>
             <div className="w-full flex flex-wrap gap-y-2">
                 <span className="w-full">
-                    <span className="text-purpleCustom text-xl">{item.price} هزار</span>
+                    <span className="text-VioletBlue text-xl">{item.price} هزار</span>
                     <span className="mediumStyle_text mx-2">{t("priceCount")}</span>
                 </span>
                 <span className="w-full line-through mediumStyle_text font-Pop_Med">{item.discount}</span>

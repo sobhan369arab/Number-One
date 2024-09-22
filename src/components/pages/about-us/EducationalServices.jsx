@@ -16,12 +16,12 @@ const EducationalServices = ({ Icon, title, description, bgCard, shadowCard, bgI
                 <SparklesIcon />
             </div>
             <div className="w-full flex items-center gap-4 max-xl:flex-wrap max-xl:justify-center">
-                <div style={{backgroundColor: bgIcon}} className="w-[70px] h-[70px] rounded-full grid place-items-center">
+                <div style={{ backgroundColor: bgIcon }} className="w-[70px] h-[70px] rounded-full grid place-items-center">
                     <Icon fill="#fff" width="30px" height="30px" />
                 </div>
-                <h1 className="boldStyle_text text-xl line-clamp-2 max-xl:w-full max-xl:text-center">{title}</h1>
+                <h1 className="boldStyle_text text-xl line-clamp-2 max-xl:w-full max-xl:text-center text-[#161439]">{title}</h1>
             </div>
-            <p className="mediumStyle_text text-titleColor line-clamp-3 max-xl:text-center">{description}</p>
+            <p className="mediumStyle_text line-clamp-3 max-xl:text-center text-[#161439]">{description}</p>
         </div>
     )
 }

@@ -8,7 +8,7 @@ const SidebarUserPanel = () => {
   const { t, i18n } = useTranslation()
   return (
     <>
-      <div className="w-32 h-32 bg-yellowCustom rounded-full"></div>
+      <div className="w-32 h-32 bg-SunshineYellow rounded-full"></div>
       <h1 className="w-full text-center mt-8 text-xl text-white">فلان فلانی {t("welcome")}</h1>
       <span className="w-full h-1 borderButton_sidebar_userPanel mt-4"></span>
       <div className={`w-full h-[379px] mt-10 ${i18n.language == "en" ? "pl-8" : "pr-8"} flex flex-wrap`}>

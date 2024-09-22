@@ -2,6 +2,7 @@ import { useMediaQuery } from "react-responsive"
 import { ComparisonIcon } from "../../core/icon"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 
 const ComparisonBtn = ({ CourseId, comparisonId, setComparisonId }) => {
   const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
@@ -29,8 +30,10 @@ const ComparisonBtn = ({ CourseId, comparisonId, setComparisonId }) => {
 
   }, [comparisonId])
 
+  const theme = useSelector(state => state.DarkMode)
+
   return (
-    <div onClick={() => { { getId(CourseId); setSelectBtn(!selectBtn); } }} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} ${selectBtn ? "bg-yellow-300" : "bg-white"} p-1   rounded-xl top-5 right-5  comparison-btn`}>
+    <div onClick={() => { { getId(CourseId); setSelectBtn(!selectBtn); } }} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} ${selectBtn ? "bg-SunshineYellow" : "bg-LightLavender"} p-1   rounded-xl top-5 right-5  comparison-btn`}>
       <ComparisonIcon className={"h-7"} />
     </div>
   )

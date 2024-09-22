@@ -4,11 +4,14 @@ import { CreateAccordionItem, Label } from "../../common"
 import MediaQuery from "react-responsive"
 import { useTranslation } from "react-i18next"
 import { faqOptions } from "../../../core/constants/landing/faq"
+import { useSelector } from "react-redux"
 
 const Faq = () => {
   const { t, i18n } = useTranslation()
+  const theme = useSelector(state => state.DarkMode)
+
   return (
-    <div className="w-full flex-wrap lg:flex-nowrap flex justify-center gap-y-10 gap-x-10 xl:gap-x-28 py-28 lg:px-44 sm:px-16 px-8 bg-gradientBackground bg-cover bg-center bg-no-repeat">
+    <div className={`w-full flex-wrap lg:flex-nowrap flex justify-center gap-y-10 gap-x-10 xl:gap-x-28 py-28 lg:px-44 sm:px-16 px-8 ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
       <MediaQuery minWidth={"550px"}>
         <div className={`${i18n.language === "en" ? "reverse-img" : ""} min-w-[320px] w-[400px] h-[500px] overflow-hidden bg-white rounded-full faqMannequin_shadow flex justify-center items-end`}>
           <img className="h-[90%]" src={mannequin} alt="Mannequin" />

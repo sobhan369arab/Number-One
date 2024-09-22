@@ -3,7 +3,7 @@ import OptionParts from "./optionParts"
 
 export const BorderStyleVariant = {
     "blog": "border-none",
-    "course_event": "Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300",
+    "course_event": "Box-shadow1 p-5 bg-MainBg rounded-lg border border-LightLavender",
 }
 
 

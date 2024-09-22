@@ -11,11 +11,11 @@ const ContactMain = () => {
     ]
 
     return (
-        <div className="w-full xl:w-4/6 xl:h-full flex items-center bg-grayCustom border-2 border-grayBorder rounded-lg p-4 xl:p-8">
+        <div className="w-full xl:w-4/6 xl:h-full flex items-center bg-LightLavender border-2 border-LightGrayish rounded-lg p-4 xl:p-8">
             <div className="w-full h-fit flex flex-wrap gap-y-4">
-                <h1 className="w-full text-3xl font-bold">{t("contactUsCaption")}</h1>
+                <h1 className="w-full boldStyle_text">{t("contactUsCaption")}</h1>
                 <p className="w-full text-sm text-neutral-500">{t("contactUsDescription")}</p>
-                <textarea className="w-full max-h-60 min-h-60 p-4 outline-none border-2 border-neutral-200 rounded-md" name="contactUs"></textarea>
+                <textarea className="w-full max-h-60 min-h-60 p-4 outline-none border-2 border-LightGrayish rounded-md text-DarkBlue" name="contactUs"></textarea>
                 <div className="w-full flex flex-wrap sm:flex-nowrap gap-4">
                     {fields.map(obj => {
                         if (i18n.language === "fa") {
@@ -25,7 +25,7 @@ const ContactMain = () => {
                         }
                     })}
                 </div>
-                <Button arrowColor="#000" variant="yellow" text={t("submit")} />
+                <Button arrowColor="#000" vStyle="yellow" text="submit" vType="button" />
             </div>
         </div>
     )
