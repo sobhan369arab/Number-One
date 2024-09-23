@@ -13,7 +13,7 @@ function PaginatedItems({ handlePageClick, children, pageCount }) {
                 pageCount={pageCount != undefined ? pageCount : 0}
                 renderOnZeroPageCount={null}
                 activeLinkClassName='!bg-VioletBlue text-white'
-                pageLinkClassName="bg-slate-300 !px-5 !py-2.5 rounded-full bg-red-500 text-center text-lg"
+                pageLinkClassName="bg-slate-300 !px-5 !py-2.5 text-[#161439] rounded-full bg-red-500 text-center text-lg"
             />
         </>
     );
