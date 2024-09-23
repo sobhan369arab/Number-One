@@ -122,7 +122,9 @@ i18n.use(initReactI18next)
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
                     SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
                     // Comments
-                    comment: 'نظر',
+                    comment: 'نظر',user_comment:'نظرات کاربران',sendComment:'ارسال نظر',titleComment:'عنوان پیام',
+                    descComment:'توضیحات بیشتر',comment_text:'متن خود را وارد کنید',ConfirmComment:'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
+                    commentAnswer:'پاسخ',viewAnswers:'مشاهده پاسخ ها',
                     // Related titles
                     Related: 'مرتبط', Blogs: 'اخبار',
                     // Cart
@@ -255,7 +257,9 @@ i18n.use(initReactI18next)
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
                     SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
                     // Comments
-                    comment: 'Comment',
+                    comment: 'Comment',user_comment:'User Comments',sendComment:'Submit a comment',titleComment:'Comment title',
+                    descComment:'More details',comment_text:'Enter your text',ConfirmComment:'Your comment will be registered after approval by the admin!',
+                    commentAnswer:'Answer',viewAnswers:'View Answers',
                     // Related titles
                     Related: 'Related', Blogs: 'Blogs',
                     // Cart
