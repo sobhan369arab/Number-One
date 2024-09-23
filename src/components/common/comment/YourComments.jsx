@@ -4,7 +4,7 @@ import FormInput from "../Form/FormInput";
 import Button from "../Button";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { titleCommentValid } from "../../../core/validations/validations";
+import { CommentValid } from "../../../core/validations/validations";
 
 const YourComments = ({ comments, setComments, nameItem }) => {
   const { t, } = useTranslation();
@@ -14,7 +14,7 @@ const YourComments = ({ comments, setComments, nameItem }) => {
   // Providing field information
   const fields = [
     { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg py-2 h-auto mt-0.5' },
-    { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", fieldStyle: 'rounded-lg pb-28 h-auto line-clamp-4 mt-0.5' }
+    { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg pb-28 h-auto line-clamp-4 mt-0.5' }
   ]
 
 
@@ -48,7 +48,7 @@ const YourComments = ({ comments, setComments, nameItem }) => {
       <FormHolder
         initialValues={{ title: '', description: '' }}
         onSubmit={(values) => { addComment(values) }}
-        validations={titleCommentValid}
+        validations={CommentValid}
         style={'w-full mt-4'}
       >
         {fields.map(field => {

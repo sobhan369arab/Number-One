@@ -53,6 +53,7 @@ export const getCodeValidation = yup.object().shape({
 export const getPhoneNumber = yup.object().shape({
   phoneNumber: yup.number().required("این فیلد الزامیست!").min(9000000000, "شماره موبایل را درست وارد کنید").max(9999999999, "شماره موبایل را درست وارد کنید"),
 });
-export const titleCommentValid = yup.object().shape({
-  title: yup.string().max(80,'طول نویسه بیش از حد مجاز')
+export const CommentValid = yup.object().shape({
+  title: yup.string().max(80,'طول نویسه بیش از حد مجاز').required('فیلد نمی تواند خالی باشد'),
+  description: yup.string().required('فیلد نمی تواند خالی باشد')
 })
