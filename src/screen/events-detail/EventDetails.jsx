@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { DetailsBox, EventElements, EventImage, EventOverView } from "../../components/pages/event-details";
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { EventData } from "../../core/constants/Events/EventData";
-import { CustomMap, Title_details } from "../../components/common";
+import { CommentSection, CustomMap, Title_details } from "../../components/common";
 import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
@@ -26,7 +26,7 @@ const EventDetails = () => {
         <BreadCrumb href={'/Events'} text={'EventsTitle'} />
         <BreadCrumb type="Div" text={SelectedEvents.title} />
       </TitleSection>
-      <div className="xl:w-9/12 w-[88%]  mx-auto my-20 relative lg:h-[1290px] cursor-default">
+      <div className="xl:w-9/12 w-[88%]  mx-auto my-20 relative  cursor-default">
         <EventImage picture={SelectedEvents.img} />
         <Title_details
           title={SelectedEvents.title}
@@ -55,7 +55,10 @@ const EventDetails = () => {
           MajorElements={SelectedEvents.MajorElements}
           training={SelectedEvents.training}
         />
-        <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute m-auto mt-6 bottom-24 Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
+        <div className="w-3/5">
+          <CommentSection />
+        </div>
+        <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute m-auto mt-6 top-[1030px] Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
           <CustomMap width="208px" />
         </div>
 

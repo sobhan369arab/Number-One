@@ -9,7 +9,7 @@ import {
 import { Button, CreateSocialMediaItems } from ".";
 
 export const detailVariant = {
-  "event-detail": "md:absolute top-96",
+  "event-detail": "md:absolute lg:w-64 top-96",
   "course-detail": "lg:w-64 mb-8",
 }
 export const detailInfoVariant = {

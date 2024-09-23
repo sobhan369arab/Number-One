@@ -6,9 +6,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CommentValid } from "../../../core/validations/validations";
 
-const YourComments = ({ comments, setComments, nameItem }) => {
+const YourComments = ({ comments, setComments }) => {
   const { t, } = useTranslation();
-  const [Param, setParam] = useState(useParams());
   const [testArray, setTestArray] = useState([]);
 
   // Providing field information
@@ -16,7 +15,6 @@ const YourComments = ({ comments, setComments, nameItem }) => {
     { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg py-2 h-auto mt-0.5' },
     { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg pb-28 h-auto line-clamp-4 mt-0.5' }
   ]
-
 
   const addComment = (values) => {
     alert()
@@ -36,10 +34,8 @@ const YourComments = ({ comments, setComments, nameItem }) => {
   }, [testArray])
 
 
-
   return (
     <div className="px-7 py-4 bg-grayCustom rounded-lg ">
-
       <h1 className="text-titleColor text-2xl font-semibold">{t('sendComment')}</h1>
       <FormHolder
         initialValues={{ title: '', description: '' }}

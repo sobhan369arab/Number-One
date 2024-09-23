@@ -1,5 +1,6 @@
 import { Tab, Tabs } from "@nextui-org/react"
 import { useTranslation } from "react-i18next"
+import { CommentSection } from "../../common"
 
 const TabSection = ({ bio }) => {
     const { t } = useTranslation()
@@ -20,7 +21,9 @@ const TabSection = ({ bio }) => {
                     <p>{bio}</p>
                 </Tab>
                 <Tab key="Reviews" title={t("Comments")} className="mediumStyle_text">
-                    <p>کامنت ها</p>
+                    <div className="w-full m-auto bg-black">
+                        <CommentSection />
+                    </div>
                 </Tab>
             </Tabs>
         </div>
