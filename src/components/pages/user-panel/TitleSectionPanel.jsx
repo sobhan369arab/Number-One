@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 const TitleSectionPanel = ({ name, Icon }) => {
   const { i18n } = useTranslation()
   return (
-    <div className={`flex items-end gap-x-3 bg-white absolute -top-8 ${i18n.language != "en" ? "right-0" : "left-0"}`}>
+    <div className={`flex items-end gap-x-3 bg-MainBg absolute -top-8 ${i18n.language != "en" ? "right-0" : "left-0"}`}>
       <div className='userPanel_icons static'>
         <Icon />
       </div>

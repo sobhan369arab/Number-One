@@ -54,7 +54,7 @@ i18n.use(initReactI18next)
                     howToStartLabel: "چگونه سفر را شروع می کنیم", howToStartTitle: "سفر یادگیری خود را از همین امروز شروع کنید!", howToStartDesc: "اعضای شهودی Groove make team ورودی را با هم به تقسیم سازماندهی، اولویت بندی و.در این قسمت.",
                     // lastBlogs
                     lastBlogsLabel: "اخبار و وبلاگ ها", lastBlogsTitle: "آخرین خبر ما", lastBlogsDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
-                    blogFavorite: 'آیا از این مقاله راضی بودید؟',LearnBlog:'در این مقاله چه چیزی یاد خواهم گرفت؟',
+                    blogFavorite: 'آیا از این مقاله راضی بودید؟', LearnBlog: 'در این مقاله چه چیزی یاد خواهم گرفت؟',
                     // informedPoster
                     informedPlaceholder: "ایمیل خود را تایپ کنید", informedWord1: "میخواهید در مورد", informedWord3: "جدید",
                     informedImportantWord1: "دوره های", informedImportantWord2: "مطلع باشید", informedBtn: "اکنون مشترک شوید",
@@ -126,9 +126,21 @@ i18n.use(initReactI18next)
                     descComment:'توضیحات بیشتر',comment_text:'متن خود را وارد کنید',ConfirmComment:'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
                     commentAnswer:'پاسخ',viewAnswers:'مشاهده پاسخ ها',
                     // Related titles
-                    Related:'مرتبط',Blogs:'اخبار',
+                    Related: 'مرتبط', Blogs: 'اخبار',
                     // Cart
                     cartTitle: "سبد خرید", cartTotalSum: "جمع کل", cartInfo: "اطلاعات", cartButton: "اقدام به پرداخت", clearBtn: "خالی کردن سبد", numberOfItemsInCart: "تعداد آیتم ها",
+                    // About
+                    aboutTitle: "ما کی هستیم",
+                    //MoreInfoAboutUs
+                    MoreInfoAboutUsChip: "درباره ما بیشتر بدانید", MoreInfoAboutUsTitleS1: "توانمندسازی دانش آموزان برای رسیدن به هدف", MoreInfoAboutUsTitleS2: "بالقوه ",
+                    MoreInfoAboutUsTitleS3: "آنها برای چالش سطح بعدی.", MoreInfoAboutUsBtn: "آزمایش رایگان را شروع کنید",
+                    MoreInfoAboutUsDesc: "هنگامی که یک چاپگر ناشناس یک گالری از نوع را گرفت و آن را به هم زد تا یک تایپ بسازد کتاب نمونه نه تنها از پنج قرن، بلکه از جهش به آن نیز جان سالم به در برده است حروفچینی الکترونیکی",
+                    //WhatWeOffer
+                    WhatWeOfferChip: "آنچه ما ارائه می دهیم", WhatWeOfferTitle: "یادگیری مهارت های جدید در زمانی که و جایی که تو دوست داری", 
+                    WhatWeOfferDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
+                    //OurTestimonials
+                    OurTestimonialsChip: "توصیفات ما", OurTestimonialsTitle: "آنچه دانش آموزان فکر می کنند و می گویند درباره نامبر وان",
+                    OurTestimonialsDesc: "نظرات کاربران ما نشان‌دهنده کیفیت بالای خدمات و محصولات ماست و ما همواره به بازخوردهای آنان گوش می‌دهیم تا تجربه بهتری را ارائه دهیم."
                 },
             },
             en: {
@@ -177,7 +189,7 @@ i18n.use(initReactI18next)
                     howToStartLabel: "How We Start Journey", howToStartTitle: "Start your Learning Journey Today!", howToStartDesc: "Groove’s intuitive shared inbox makesteam members together organize, prioritize and.In this episode.",
                     // lastBlogs
                     lastBlogsLabel: "News & Blogs", lastBlogsTitle: "Our Latest News Feed", lastBlogsDesc: "when known printer took a galley of type scrambl edmake",
-                    blogFavorite: 'Were you satisfied with this article?',LearnBlog:'What will I learn in this blog?',
+                    blogFavorite: 'Were you satisfied with this article?', LearnBlog: 'What will I learn in this blog?',
                     // informedPoster
                     informedPlaceholder: "Type your e-mail", informedWord1: "Want To Stay About", informedWord3: "New",
                     informedImportantWord1: "Informed", informedImportantWord2: "Courses & Study?", informedBtn: "Subscribe Now",
@@ -249,9 +261,21 @@ i18n.use(initReactI18next)
                     descComment:'More details',comment_text:'Enter your text',ConfirmComment:'Your comment will be registered after approval by the admin!',
                     commentAnswer:'Answer',viewAnswers:'View Answers',
                     // Related titles
-                    Related:'Related',Blogs:'Blogs',
+                    Related: 'Related', Blogs: 'Blogs',
                     // Cart
                     cartTitle: "Cart", cartTotalSum: "Total sum", cartInfo: "Information", cartButton: "Proceed to pay", clearBtn: "Clear Cart", numberOfItemsInCart: "Number of items",
+                    // About
+                    aboutTitle: "Who We Are",
+                    //MoreInfoAboutUs
+                    MoreInfoAboutUsChip: "Learn More About Us", MoreInfoAboutUsTitleS1: "Empowering Students To Reach Their", MoreInfoAboutUsTitleS2: "Potential",
+                    MoreInfoAboutUsTitleS3: " Goal For Next Level Challenge.", MoreInfoAboutUsBtn: "Start Free Trial",
+                    MoreInfoAboutUsDesc: "When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+                    //WhatWeOffer
+                    WhatWeOfferChip: "What We Offer", WhatWeOfferTitle: "Learn New Skills When And Where You Like", 
+                    WhatWeOfferDesc: "When known printer took a galley of type scrambl edmake",
+                    //OurTestimonials
+                    OurTestimonialsChip: "Our Testimonials", OurTestimonialsTitle: "What Students Think and Say About SkillGrow",
+                    OurTestimonialsDesc: "The opinions of our users show the high quality of our services and products, and we always listen to their feedback to provide a better experience."
                 },
             },
         },

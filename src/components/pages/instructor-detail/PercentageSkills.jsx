@@ -6,7 +6,7 @@ const PercentageSkills = ({skillName, percentage}) => {
                 <span>{percentage}</span>
             </div>
             <div className='w-full h-2 rounded-full bg-[#EBEBEB] overflow-hidden'>
-                <div style={{width: percentage}} className="h-full bg-yellowCustom"></div>
+                <div style={{width: percentage}} className="h-full bg-SunshineYellow"></div>
             </div>
         </div>
     )

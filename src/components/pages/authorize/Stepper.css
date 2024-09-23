@@ -23,7 +23,7 @@
   @apply bg-[#5751E1];
 }
 .active .description {
-  @apply text-black;
+  @apply text-DarkBlue;
 }
 .step-container-button {
   @apply bg-[#5751E1] text-white py-1.5 px-4 rounded-full;

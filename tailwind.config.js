@@ -1,3 +1,4 @@
+import nextUIConfig from "./src/core/utility/next-ui/NextUiConfig";
 const { nextui } = require("@nextui-org/react");
 
 /** @type {import('tailwindcss').Config} */
@@ -7,6 +8,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -14,15 +16,10 @@ export default {
         importantWord: "url('./src/assets/images/importantWord.png')",
         informedPoster: "url('./src/assets/images/informedPoster.jpg')",
         gradientBackground: "url('./src/assets/images/gradientBackground.jpg')",
+        gradientBackgroundDark:
+          "url('./src/assets/images/gradientBackgroundDark.jpg')",
         titleSectionGradient:
           "url('./src/assets/images/titleSectionGradient.jpg')",
-      },
-      colors: {
-        footerColor: "#06042E",
-        titleColor: "#161439",
-        purpleCustom: "#5751E1",
-        yellowCustom: "#FFC224",
-        grayCustom: "rgba(244, 243, 248, 1)",
       },
       fontFamily: {
         IranSans: ["Iran-Sans"],
@@ -32,5 +29,5 @@ export default {
       screens: {},
     },
   },
-  plugins: [nextui()],
+  plugins: [nextui(nextUIConfig)],
 };

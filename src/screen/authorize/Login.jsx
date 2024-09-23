@@ -35,13 +35,13 @@ const Login = () => {
                             variants={item.variant}
                         />)
                     )}
-                    <div className='w-full flex justify-between gap-x-2 text-nowrap'>
+                    <div className='w-full flex justify-between gap-x-2 text-nowrap text-DarkBlue'>
                         <FormInput certificate="twoStep" variants="checkbox" placeholder={t("RememberMe")} />
                         <Link to="/authorize/forgetPassword">{t("ForgetPassword")}</Link>
                     </div>
                     <Button vType="button" vStyle="yellow" text={t("loginBtn")} style="w-full justify-center !py-2.5 h-auto" />
                     <div className='w-full flex gap-x-2 justify-center'>
-                        <span>{t("HaveAccount2")}</span>
+                        <span className='text-DarkBlue'>{t("HaveAccount2")}</span>
                         <Link to="/authorize/register" className='text-[#5751E1] underline'>{t("signUp")}</Link>
                     </div>
                 </div>

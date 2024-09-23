@@ -41,7 +41,7 @@
   }
 
   .Box-shadow1 {
-    box-shadow: 0px 0px 7px 1px #bbcbcf70;
+    box-shadow: 0px 0px 7px 1px #00000014;
   }
 
   .Box-shadow2 {
@@ -53,13 +53,12 @@
   }
 
   .statistics_holder {
-    background: #282568;
     box-shadow: 0px 25px 70px rgba(40, 37, 104, 0.4);
     border-radius: 40px;
   }
 
   .boldStyle_text {
-    @apply text-titleColor font-Sahel text-2xl sm:text-3xl;
+    @apply text-DarkBlue font-Sahel text-2xl sm:text-3xl;
   }
 
   .mediumStyle_text {
@@ -76,14 +75,16 @@
   }
 
   .med_box-shadow {
-    box-shadow: 0px 0px 12px 3px #b1aad3;
+    box-shadow: 0px 0px 30px 3px #00000076;
   }
 
   .bgGradient_menu {
-    background: linear-gradient(90deg,
-        rgba(87, 81, 225, 0) 0%,
-        rgba(67, 63, 174, 0.5) 53.1%,
-        rgba(48, 44, 123, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(87, 81, 225, 0) 0%,
+      rgba(67, 63, 174, 0.5) 53.1%,
+      rgba(48, 44, 123, 0) 100%
+    );
     border-radius: 2px;
   }
 
@@ -132,11 +133,11 @@
       }
 
       .comparison-btn {
-        @apply bg-grayCustom;
+        @apply bg-LightLavender;
       }
 
       .favorite-btn {
-        @apply bg-grayCustom p-1 rounded-xl;
+        @apply bg-LightLavender p-1 rounded-xl;
       }
 
       .course-body {
@@ -153,7 +154,6 @@
         .course-bio {
           @apply line-clamp-1;
         }
-
       }
     }
   }
@@ -164,7 +164,7 @@
   }
 
   .borderButton_sidebar_userPanel {
-    background: linear-gradient(90deg, #5751e1 0%, #ffc224 50%, #5751e1 100%);
+    background: linear-gradient(90deg, transparent 0%, #ffc224 50%, transparent 100%);
   }
 
   .userPanel_holder_shadow {
@@ -172,12 +172,12 @@
   }
 
   .userPanel_icons {
-    @apply w-12 h-12 rounded-xl bg-purpleCustom absolute flex justify-center items-center;
+    @apply w-12 h-12 rounded-xl bg-VioletBlue absolute flex justify-center items-center;
     box-shadow: 4px 3px 0px rgba(0, 0, 0, 0.25);
   }
 
   .borderTable_header_userPanel {
-    background: linear-gradient(90deg, #fff 0%, #ffc224 50%, #fff 100%);
+    background: linear-gradient(90deg, transparent 0%, #ffc224 50%, transparent 100%);
   }
 
   .itemsTable_userPanel_holder {
@@ -190,11 +190,11 @@
 
   .fieldsStyle {
     box-shadow: inset 0px 1px 2px hwb(0 0% 100% / 0.201);
-    @apply w-full h-10 bg-neutral-50 text-purpleCustom outline-none border-2 focus:border-yellowCustom py-1.5 px-3 rounded-md;
+    @apply w-full h-10 bg-LightLavender text-VioletBlue outline-none border-2 border-LightGrayish focus:border-SunshineYellow py-1.5 px-3 rounded-md;
   }
 
   .filter-box {
-    @apply p-5 bg-grayCustom rounded-lg mb-7
+    @apply p-5 bg-LightGray rounded-lg mb-7 text-DarkBlue;
   }
   .authorizePanel_shadow_fa {
     box-shadow: 10px 8px 0px #000000;
@@ -205,10 +205,30 @@
   }
 
   .authorizeForm {
-    @apply relative w-full max-w-[500px] sm:min-w-[500px] sm:w-[500px] h-full flex flex-wrap items-center bg-white rounded-[30px] sm:rounded-[50px] px-6 sm:px-16 py-12 sm:py-0
+    @apply relative w-full max-w-[500px] sm:min-w-[500px] sm:w-[500px] h-full flex flex-wrap items-center bg-MainBg rounded-[30px] sm:rounded-[50px] px-6 sm:px-16 py-12 sm:py-0;
   }
 
   .spinner-buttons {
-    @apply w-1/4 border-neutral-300 text-neutral-500 hover:bg-black/5 duration-200 border-x
+    @apply w-1/4 border-LightGrayish text-GrayishPurple hover:bg-black/5 duration-200 border-x;
+  }
+
+  .importantWord {
+    @apply boldStyle_text text-white bg-[url('./assets/images/importantWord.png')] bg-no-repeat bg-center px-5 mx-2 text-nowrap;
+    background-size: 100% 100%;
+  }
+
+  .playButton {
+    @apply w-14 h-14  rounded-full absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
+  }
+
+  .bottomNav_shadow {
+    background: radial-gradient(
+      70.71% 70.71% at 50% 50%,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  }
+  .bottomNav {
+    @apply w-10 h-10 hover:scale-95 flex text-white justify-center items-center cursor-pointer rounded-md bg-VioletBlue dark:bg-LavenderMist border-2 border-LightGrayish;
   }
 }

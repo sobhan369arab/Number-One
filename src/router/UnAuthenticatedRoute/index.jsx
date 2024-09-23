@@ -27,7 +27,8 @@ import {
     BlogDetail,
     Shop,
     ShopDetail, 
-    Cart
+    Cart,
+    AboutUs
 } from "../../screen"
 
 const routerPublic = createBrowserRouter([
@@ -37,6 +38,7 @@ const routerPublic = createBrowserRouter([
             { path: '/', element: <Landing /> },
             { path: '/home', element: <Navigate to={"/"} /> },
             { path: '/ContactUs', element: <ContactUs /> },
+            { path: '/aboutUs', element: <AboutUs /> },
             { path: "/cart", element: <Cart /> },
             { path: '/Courses', element: <Courses /> },
             {

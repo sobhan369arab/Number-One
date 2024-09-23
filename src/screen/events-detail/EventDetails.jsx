@@ -61,7 +61,6 @@ const EventDetails = () => {
         <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} md:absolute m-auto mt-6 top-[1030px] Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
           <CustomMap width="208px" />
         </div>
-
       </div>
     </>
   )

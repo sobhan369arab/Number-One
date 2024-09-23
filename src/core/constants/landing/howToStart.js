@@ -29,32 +29,32 @@ export const encouragementItems = [
   {
     title: ["با کارشناسان بیاموزید", "Learn with Experts"],
     description: [
-      "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما",
-      "Curate anding area share Pluralsight content to reach your",
+      "با کارشناسان بیاموزید و از تجربیات آنها بهره‌مند شوید.",
+      "Learn with the experts and benefit from their experiences.",
     ],
     icon: LearnWithExperts,
   },
   {
     title: ["هر چیزی یاد بگیر", "Learn Anything"],
     description: [
-      "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما",
-      "Curate anding area share Pluralsight content to reach your",
+      "هر چیزی یاد بگیرید و افق‌های جدیدی را به روی خودتان باز کنید.",
+      "Learn anything and open new horizons for yourself.",
     ],
     icon: LearnAnything,
   },
   {
     title: ["دریافت گواهی آنلاین", "Get Online Certificate"],
     description: [
-      "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما",
-      "Curate anding area share Pluralsight content to reach your",
+      "گواهی آنلاین دریافت کنید و مدارک معتبر مهارت‌های خود را تکمیل کنید.",
+      "Get certified online and complete valid proof of your skills.",
     ],
     icon: OnlineCertificate,
   },
   {
     title: ["بازاریابی ایمیلی", "E-mail Marketing"],
     description: [
-      "Pluralsight را انتخاب کنید محتوا برای رسیدن به شما",
-      "Curate anding area share Pluralsight content to reach your",
+      "بازاریابی ایمیلی ابزاری موثر برای ارتباط با مشتریان و افزایش فروش است.",
+      "Email marketing is an effective tool to communicate with customers and increase sales.",
     ],
     icon: EmailMarketing,
   },

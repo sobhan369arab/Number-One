@@ -17,7 +17,7 @@ const AuthorizePanel = ({ children, Vector }) => {
     return (
         <div className='w-full h-svh max-h-svh lg:px-44 sm:px-16 px-8 flex justify-center xl:justify-start items-center'>
             <ParticlesAuthorize />
-            <div className='relative xl:w-full sm:h-[590px] flex justify-between rounded-[50px] bg-white/50'>
+            <div className='relative xl:w-full sm:h-[590px] flex justify-between rounded-[50px] bg-white/50 dark:bg-black/30'>
                 <div className={`authorizeForm ${i18n.language == "en" ? "authorizePanel_shadow_en" : "authorizePanel_shadow_fa"}`}>
                     {children}
                 </div>
@@ -34,7 +34,6 @@ const AuthorizePanel = ({ children, Vector }) => {
                                 <HomeBtnPanelIcon fill="#050079" />
                             </Link>
                         </Tooltip>
-
                     </div>
                     <div className='w-full'>
                         <div className="flex justify-center md:justify-start flex-wrap h-fit gap-y-4 md:gap-x-3 items-end">

@@ -10,7 +10,7 @@ const RelatedProducts = () => {
                 <ImportantWord>{t("products")}</ImportantWord>
                 <h1 className="boldStyle_text">{t("related")}</h1>
             </div>
-            <div className="w-full h-[410px] bg-yellowCustom"></div>
+            <div className="w-full h-[410px] bg-SunshineYellow"></div>
         </div>
     )
 }

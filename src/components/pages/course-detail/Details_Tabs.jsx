@@ -17,8 +17,8 @@ const Details_Tabs = ({ children }) => {
         <div>
             <div className="mb-8 flex flex-wrap md:justify-start justify-between gap-4 sm:w-auto w-80 m-auto" >
                 {TabData.map((tab, index) => (
-                    <label key={index} className="duration-300 cursor-pointer py-1.5  w-32 text-center px-1 rounded-2xl bg-gray-200 text-gray-600 has-[:checked]:text-white
-              has-[:checked]:bg-purpleCustom  has-[:checked]:buttonSimple_shadow">
+                    <label key={index} className="duration-300 cursor-pointer py-1.5  w-32 text-center px-1 rounded-2xl bg-LightGrayish text-GrayishPurple has-[:checked]:text-white
+              has-[:checked]:bg-VioletBlue  has-[:checked]:buttonSimple_shadow">
                         <input checked={TabMood === tab.value ? true : false} onChange={() => SetValue(tab.value)} type="radio" name="TabDetail" className="hidden" />
                         {i18n.language === 'fa' ? tab.label[0] : tab.label[1]}
                     </label>

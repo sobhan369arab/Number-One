@@ -8,11 +8,11 @@ const CourseTopBody = ({
 }) => {
   return (
     <div>
-      <h1 className='text-xl font-semibold line-clamp-1 mt-1'>{title}</h1>
+      <h1 className='text-xl font-semibold line-clamp-1 mt-1 text-DarkBlue'>{title}</h1>
       <div className='flex justify-between my-2 '>
         <div className={`flex gap-1  ${location.search === '?V=1'?"w-40":""}  ${category.length > 2 ? "scrollBehavior" : ""}`}>
           {category.map((categoryBox, index) => (
-            <div key={index} className='px-4 py-1 bg-grayCustom text-xs text-gray-600 rounded-2xl whitespace-nowrap cursor-default'>{categoryBox}</div>
+            <div key={index} className='px-4 py-1 bg-LightLavender mediumStyle_text text-xs rounded-2xl whitespace-nowrap cursor-default'>{categoryBox}</div>
           ))}
         </div>
         <div className="flex gap-1 items-baseline">

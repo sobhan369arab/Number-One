@@ -25,7 +25,7 @@ const SortBox = ({
   }
 
   return (
-    <div className="flex gap-3 items-center mx-auto ">
+    <div className="flex gap-3 items-center mx-auto">
       <h1 className="text-gray-600 text-sm">{t('sortBy')}</h1>
       {label === 'course' ?
         <>
@@ -34,14 +34,14 @@ const SortBox = ({
             onChange={TypehandleChange}
             options={sortType}
             placeholder={"محبوبیت"}
-            className="text-sm w-32 "
+            className="text-sm w-32"
           />
           <Select
             value={selectedOptionCal}
             onChange={CalhandleChange}
             options={sortCal}
             placeholder={"نزولی"}
-            className="text-sm   w-24"
+            className="text-sm w-24"
           />
         </>
         :
@@ -50,7 +50,7 @@ const SortBox = ({
           onChange={TypehandleChange}
           options={sortMostType}
           placeholder={"محبوب ترین"}
-          className="text-sm w-40 "
+          className="text-sm w-40"
         />
       }
     </div>

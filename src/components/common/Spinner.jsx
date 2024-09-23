@@ -10,9 +10,9 @@ const Spinner = ({ value, height, setAmount }) => {
     useEffect(() => {setAmount(count)}, [count])
 
     return (
-        <div style={{ height: height }} className="w-[116px] flex rounded-md border border-neutral-300 overflow-hidden">
+        <div style={{ height: height }} className="w-[116px] flex rounded-md border border-LightGrayish overflow-hidden">
             <button onClick={handleDecrease} className="spinner-buttons">-</button>
-            <span className="w-2/4 flex justify-center items-center">{count}</span>
+            <span className="w-2/4 flex justify-center items-center text-DarkBlue">{count}</span>
             <button onClick={handleIncrease} className="spinner-buttons">+</button>
         </div>
     )

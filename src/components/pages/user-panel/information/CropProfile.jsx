@@ -54,7 +54,7 @@ const CropProfile = ({ previews, setPreviews }) => {
                         <img ref={imgRef} src={previews} alt="Upload" style={{ maxHeight: "50vh" }} onLoad={onImageLoad} />
                     </ReactCrop>
                     <button
-                        className="py-2 font-IranSans px-10 rounded-full bg-yellowCustom mt-4 buttonYellow_shadow duration-150"
+                        className="py-2 font-IranSans px-10 rounded-full bg-SunshineYellow mt-4 buttonYellow_shadow duration-150"
                         onClick={() => {
                             setCanvasPreview(
                                 imgRef.current,

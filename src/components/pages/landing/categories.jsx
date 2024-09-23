@@ -21,14 +21,14 @@ const Categories = () => {
             <Label text={t("categoryLabel")} variant="section" />
             <h1 className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
             <p className="mediumStyle_text text-center">{t("categoryDescription")}</p>
-            <div className="w-full relative bg-neutral-200/50 mt-5 flex justify-center items-center px-20 xl:px-28 py-8 rounded-full">
+            <div className="w-full relative bg-LightGray mt-5 flex justify-center items-center px-20 xl:px-28 py-8 rounded-full">
                 <SwiperSlider
                     perView={6}
                     Breakpoints={Breakpoints}
                     arrowColor="#000"
                     buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] h-12 w-12"
                     buttonSideRight="top-[100px] xl:right-[40px] right-[20px] h-12 w-12"
-                    buttonColor="bg-yellowCustom"
+                    buttonColor="bg-SunshineYellow"
                 >
                     {categoryItems.map((item, index) => (<SwiperSlide key={index}><CategoryItem amount={item.count} title={i18n.language === "en" ? item.name[1] : item.name[0]} /></SwiperSlide>))}
                 </SwiperSlider>

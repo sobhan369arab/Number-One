@@ -1,5 +1,5 @@
 const variants = {
-    "section": "bg-[#EFEEFE] text-purpleCustom rounded-full text-sm sm:text-base",
+    "section": "bg-LavenderMist text-VioletBlue rounded-full text-sm sm:text-base",
 }
 
 const Label = ({ text, variant, style }) => {

@@ -1,17 +1,17 @@
-import { Label, SwiperSlider } from "../../common"
-import CreateRequestCard from "./createRequestCard"
-import Encouragement from "./encouragementList"
+import { Label, SwiperSlider } from "."
+import CreateRequestCard from "../pages/landing/createRequestCard"
+import Encouragement from "../pages/landing/encouragementList"
 import { SwiperSlide } from 'swiper/react';
 import MediaQuery from "react-responsive";
 import { useTranslation } from "react-i18next"
-import { requestCards, encouragementItems } from "../../../core/constants/landing/howToStart";
+import { requestCards, encouragementItems } from "../../core/constants/landing/howToStart";
 
-const HowToStart = () => {
+const HowToStart = ({ requestSection = "show" }) => {
     const { t, i18n } = useTranslation()
 
     return (
-        <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 bg-[#282568] lg:px-44 sm:px-16 px-8">
-            <Label text={t("howToStartLabel")} variant="section" style="bg-purpleCustom text-white" />
+        <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 bg-DarkIndigo lg:px-44 sm:px-16 px-8">
+            <Label text={t("howToStartLabel")} variant="section" style="bg-VioletBlue text-white" />
             <h1 className="boldStyle_text w-full text-center text-white">{t("howToStartTitle")}</h1>
             <p className="mediumStyle_text md:w-1/2 lg:w-1/3 text-center">{t("howToStartDesc")}</p>
             <ul className="w-full flex flex-wrap xl:flex-nowrap relative mt-10">
@@ -28,9 +28,9 @@ const HowToStart = () => {
                     <SwiperSlider
                         perView={1}
                         arrowColor="#fff"
-                        buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] z-50"
-                        buttonSideRight="top-[100px] xl:right-[40px] right-[20px] z-50"
-                        buttonColor="bg-purpleCustom"
+                        buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] z-50 p-3"
+                        buttonSideRight="top-[100px] xl:right-[40px] right-[20px] z-50 p-3"
+                        buttonColor="bg-VioletBlue"
                     >
                         {encouragementItems.map((obj, index) => {
                             if (i18n.language === "en") {
@@ -42,7 +42,7 @@ const HowToStart = () => {
                     </SwiperSlider>
                 </MediaQuery>
             </ul>
-            <div className="w-full flex mobile:flex-wrap gap-5 mt-20">
+            {requestSection == "show" && <div className="w-full flex mobile:flex-wrap gap-5 mt-20">
                 {requestCards.map((item, index) => {
                     if (i18n.language === "en") {
                         return <CreateRequestCard key={index} buttonValue={item.buttonValue[1]} paragraph={item.paragraph[1]} picture={item.picture} title={item.title[1]} />
@@ -50,7 +50,7 @@ const HowToStart = () => {
                         return <CreateRequestCard key={index} buttonValue={item.buttonValue[0]} paragraph={item.paragraph[0]} picture={item.picture} title={item.title[0]} />
                     }
                 })}
-            </div>
+            </div>}
         </div>
     )
 }

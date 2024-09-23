@@ -8,7 +8,7 @@ import BasketItems from "./basketItems"
 import { useSelector } from "react-redux"
 
 const Header = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const cartLength = useSelector(state => state.CartData.value.length)
 
   const baskets = [
@@ -21,7 +21,7 @@ const Header = () => {
     <div className="flex gap-x-10 items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-4 relative">
       {/* Right Part */}
       <div className="flex gap-x-4 items-center">
-        <LogoGroup color={'text-purpleCustom'} />
+        <LogoGroup color={'text-VioletBlue'} />
         <MediaQuery maxWidth={"1024px"}>
           <MenuIcon height="35px" width="35px" />
         </MediaQuery>
@@ -40,7 +40,7 @@ const Header = () => {
           {baskets.map((item, index) => <BasketItems key={index} href={item.href} Icon={item.icon} number={item.number} />)}
         </MediaQuery>
         {/* Login Button */}
-        <button className="bg-yellowCustom border-yellowCustom text-sm border rounded-full text-nowrap py-2 px-4">{t('Login')}</button>
+        <button className="bg-SunshineYellow border-SunshineYellow text-sm border rounded-full text-nowrap py-2 px-4 text-[#161439]">{t('Login')}</button>
       </div>
     </div>
   )

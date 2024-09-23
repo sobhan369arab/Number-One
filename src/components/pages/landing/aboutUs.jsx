@@ -11,12 +11,12 @@ const AboutUs = () => {
     <div className="w-full bg-titleSectionGradient lg:bg-none flex justify-center gap-x-12 py-28 lg:px-44 sm:px-16 px-8">
       <div className=" w-[400px] hidden h-fit mt-20 relative lg:flex flex-wrap justify-center group">
         <img className="w-20 absolute left-28 -top-10 transition-all duration-200 group-hover:-top-14" src={liveClass_icon} alt="Live Class" />
-        <button className="w-14 h-14 hover:scale-105 transition-all duration-300 rounded-full absolute top-[40%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+        <button className="playButton top-[40%]">
           <PlayIcon width="55px" />
         </button>
         <img src={aboutUs_poster} alt="Poster" />
-        <div className="w-44 p-2 h-24 rounded-lg bg-white relative bottom-16 -right-0 border-2 border-neutral-300 drop-shadow-xl">
-          <h1 className="text-center text-[#161439] text-sm">{t("boardText")}</h1>
+        <div className="w-44 p-2 h-24 rounded-lg bg-MainBg relative bottom-16 -right-0 border-2 border-LightGray drop-shadow-xl">
+          <h1 className="text-center text-DarkBlue text-sm">{t("boardText")}</h1>
           <ul className="w-full h-1/2 flex justify-center items-end">
             <li className={`bg-yellow-100 min-w-9 h-9 rounded-full -mr-4`}></li>
           </ul>

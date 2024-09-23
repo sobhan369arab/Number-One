@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { LevelIcon, TrashCan, } from "../../core/icon"
 import { setItem } from "../../core/services/local-storage/LocalStorage"
 import MediaQuery, { useMediaQuery } from "react-responsive"
+import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 
 const Cart = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 430px)' })
@@ -53,7 +54,9 @@ const Cart = () => {
 
     return (
         <>
-            <TitleSection title={"cartTitle"} />
+            <TitleSection title={"cartTitle"}>
+                <BreadCrumb type="Div" text={'cartTitle'} />
+            </TitleSection>
             <div className="main-container flex gap-7 relative">
                 <MediaQuery minWidth="750px">
                     <div className="w-72 h-fit">

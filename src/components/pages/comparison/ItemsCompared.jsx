@@ -33,13 +33,13 @@ const ItemsCompared = ({
   ]
 
   return (
-    <div className="lg:w-[420px] md:w-80 w-96 px-10 py-28 pb-10 mb-40  bg-purpleCustom bg-opacity-20 border-2 m-auto border-[#C8C1ED] rounded-xl relative">
+    <div className="lg:w-[420px] md:w-80 w-96 px-10 py-28 pb-10 mb-40 bg-[#5751E1]/20 bg-opacity-20 border-2 m-auto border-LightGrayish rounded-xl relative flex flex-wrap justify-center">
       <img src={images} className="absolute -top-28 lg:w-[340px] md:w-60 h-52 left-10 med_box-shadow " />
-      <h1 className="text-2xl font-semibold text-center">{title}</h1>
-      <div>
+      <h1 className="text-2xl font-semibold text-center text-DarkBlue line-clamp-2">{title}</h1>
+      <div className="w-full">
         {Details.map((item, index) => (
-          <div key={index} className="text-purpleCustom my-4 flex justify-between  items-center gap-2 w-full">
-            <div className=" border-b-3 flex gap-2 border-purpleCustom ">
+          <div key={index} className="text-VioletBlue my-4 flex justify-between items-center gap-2 w-full">
+            <div className=" border-b-3 flex gap-2 border-VioletBlue ">
               <item.iconDetail stroke="#5751e1" height={20} width={20} />
               <span>
                 {t(item.titleDetail)} : </span>
@@ -48,7 +48,7 @@ const ItemsCompared = ({
           </div>
         ))}
       </div>
-      <Button arrowColor={'#000'} variant={"yellow"} text={"signUpCourse"} style="mb-2 mt-6 border-2 border-black" />
+      <Button arrowColor={'#000'} vType="button" vStyle={"yellow"} text={"signUpCourse"} style="mb-2 mt-6 border-2 border-black" />
     </div>
   )
 }
