@@ -25,15 +25,17 @@ import {
 } from "./Paginate/PaginateFunctions";
 import PaginatedItems from "./Paginate/Paginate.jsx";
 import PaginateHolderItems from "./Paginate/PaginateHolderItems";
-import SearchInput from "./searchBox/SearchInput.jsx"
+import SearchInput from "./searchBox/SearchInput.jsx";
 import CreateModal from "./CreateModal.jsx";
 import ChangeView from "./ChangeView.jsx";
 import SectionTop from "./SectionTop.jsx";
 import ToLike from "./ToLike.jsx";
-import DarkModeBtn from "./DarkModeBtn.jsx"
+import DarkModeBtn from "./DarkModeBtn.jsx";
 import Spinner from "./Spinner.jsx";
 import FavoriteBtn from "./FavoriteBtn.jsx";
 import HowToStart from "./howToStart.jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
+import BottomNav from "./bottom-nav/BottomNav.jsx";
 
 export {
   Button,
@@ -69,5 +71,7 @@ export {
   DarkModeBtn,
   Spinner,
   FavoriteBtn,
-  HowToStart
+  HowToStart,
+  ScrollToTop,
+  BottomNav
 };
