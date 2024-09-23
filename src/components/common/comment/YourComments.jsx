@@ -19,15 +19,11 @@ const YourComments = ({ comments, setComments, nameItem }) => {
 
 
   const addComment = (values) => {
-
-    // create FormData
-    // const formData = new FormData();
-    // formData.append(nameItem, Param.id);
-    // formData.append("title", values.title);
-    // formData.append("describe", values.description);
+    alert()
 
     // Test
     const formData = { title: values.title, describe: values.description };
+    console.log(formData)
 
     setTestArray([...testArray, formData]);
 

@@ -5,26 +5,21 @@ import FormInput from "../Form/FormInput"
 import { useTranslation } from "react-i18next";
 import { CommentValid } from "../../../core/validations/validations";
 
-const AddReplay_Comment = ({ setReplayComment }) => {
+const AddReplay_Comment = ({testArray ,setTestArray, setReplayComment }) => {
   const {t} = useTranslation();
-  const [testArray, setTestArray] = useState([]);
 
-  const addComment = (values) => {
-
-    // create FormData
-    // const formData = new FormData();
-    // formData.append(nameItem, Param.id);
-    // formData.append("title", values.title);
-    // formData.append("describe", values.description);
-
+  const addReplayComment = (values) => {
+    alert()
     // Test
     const formData = { describe: values.description };
+    console.log(formData)
 
-    setReplayComment([...testArray, formData]);
+    setTestArray([...testArray, formData]);
 
   }
 
   useEffect(() => {
+    console.log(testArray)
     if (testArray.length !== 0) {
       setReplayComment(testArray)
     }
@@ -34,9 +29,8 @@ const AddReplay_Comment = ({ setReplayComment }) => {
     <div>
       <FormHolder
         initialValues={{ description: '' }}
-        onSubmit={(values) => { addComment(values) }}
-        validations={CommentValid}
-      // style={'w-full mt-4'}
+        onSubmit={(values) => { addReplayComment(values) }}
+        // validations={CommentValid}
       >
         <FormInput
           type={"text"}
