@@ -7,9 +7,9 @@ import DatePicker from "react-multi-date-picker"
 import "./FormDate.css"
 import { useTranslation } from "react-i18next"
 
-const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, style, variants, fieldStyle, eyeStyle, placeholder }) => {
+const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, style, variants, fieldStyle, eyeStyle, placeholder,errorStyleComment }) => {
     const [visible, setVisible] = useState(false)
-    const { i18n } = useTranslation()
+    const { t,i18n } = useTranslation()
     const fieldVariants = {
         password: (
             <div className="w-full relative">
@@ -20,7 +20,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
             </div>
         ),
         simple: (
-            <Field dir={dir} placeholder={placeholder} type={type} name={certificate} id={certificate} className={`fieldsStyle ${fieldStyle}`} />
+            <Field dir={dir} placeholder={t(placeholder)} type={type} name={certificate} id={certificate} className={`fieldsStyle ${fieldStyle}`} />
         ),
         select: (
             <Field as="select" name={certificate} id={certificate} className="fieldsStyle w-full min-h-10 max-h-40">
@@ -28,7 +28,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
             </Field>
         ),
         area: (
-            <Field as="textarea" placeholder={placeholder} name={certificate} id={certificate} className={`fieldsStyle w-full min-h-10 max-h-40 h-40 ${fieldStyle}`} />
+            <Field as="textarea" placeholder={t(placeholder)} name={certificate} id={certificate} className={`fieldsStyle w-full min-h-10 max-h-64 h-36 ${fieldStyle}`} />
         ),
         date: (
             <DatePicker
@@ -46,9 +46,9 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
     }
     return (
         <div className={`flex flex-wrap h-fit ${fullSize ? "w-full" : style ? style : "w-full sm:w-[45%]"}`}>
-            <div className="relative w-full text-nowrap px-3 flex items-end gap-x-2 justify-between text-sm text-red-600">
-                <label htmlFor={certificate} className="mediumStyle_text">{sectionName}</label>
-                <span className={`w-full bg-MainBg top-1 right-3 ${sectionName ? "absolute" : ""}`}>
+            <div className="relative w-full text-nowrap flex items-end gap-x-2 justify-between text-sm text-red-600">
+                <label htmlFor={certificate} className="text-base text-neutral-400">{t(sectionName)}</label>
+                <span className={`w-full bg-white top-1 right-2 ${errorStyleComment} ${sectionName ? "absolute" : ""}`}>
                     <ErrorMessage name={certificate} />
                 </span>
             </div>

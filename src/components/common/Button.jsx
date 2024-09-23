@@ -18,7 +18,7 @@ const Button = ({ text, arrowColor, vStyle, style, Icon, href, vType, isClick })
             </Link>
         ),
         button: (
-            <button onClick={isClick} type='submit' className={`pb-3 pt-1.5 px-5 flex items-center gap-x-2 rounded-full duration-200 ${variantStyle?.[vStyle]} ${style}`}>
+            <button onClick={isClick} type='submit' className={`pb-3 pt-1.5 border-2  border-black px-5 flex items-center gap-x-2 rounded-full duration-200 ${variantStyle?.[vStyle]} ${style}`}>
                 {t(text)}
                 <div className={i18n.language === "en" ? "reverse-img" : ""}>
                     {Icon ? <Icon /> : <ArrowLeftIcon stroke={arrowColor} height="12px" />}

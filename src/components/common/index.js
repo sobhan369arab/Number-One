@@ -33,6 +33,7 @@ import ToLike from "./ToLike.jsx";
 import DarkModeBtn from "./DarkModeBtn.jsx";
 import Spinner from "./Spinner.jsx";
 import FavoriteBtn from "./FavoriteBtn.jsx";
+import CommentSection from "./comment/CommentSection.jsx";
 import HowToStart from "./howToStart.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import BottomNav from "./bottom-nav/BottomNav.jsx";
@@ -73,5 +74,6 @@ export {
   FavoriteBtn,
   HowToStart,
   ScrollToTop,
-  BottomNav
+  BottomNav,
+  CommentSection,
 };
