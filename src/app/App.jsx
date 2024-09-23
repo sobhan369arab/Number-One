@@ -3,9 +3,9 @@ import { useState } from "react"
 import { routerPublic } from "../router";
 import { useTranslation } from "react-i18next";
 import { NextUIProvider } from "@nextui-org/react";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import store from "../redux/store";
-import BottomNav from "../components/common/bottom-nav/BottomNav";
+import { BottomNav } from "../components/common";
 
 const App = () => {
   // const [isLogin, setLogin] = useState(false);
