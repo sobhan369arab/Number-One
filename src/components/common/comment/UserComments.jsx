@@ -11,7 +11,7 @@ const UserComments = ({ uid, title, describe }) => {
   return (
     <>
       <div className="border-t-2 border-gray-100 py-4 flex gap-4">
-        <img src={userImg} alt={"user-img" + uid} className='w-24 h-24 rounded-full' />
+        <img src={userImg} alt={"user-img" + uid} className='sm:w-24 w-16 sm:h-24 h-16 rounded-full' />
         <div className='w-full'>
           <TopSection title={title} describe={describe} />
           <DownSection ArrayLength={replayComment.length} setReplayComment={setReplayComment} replayStatus={replayStatus} setReplayStatus={setReplayStatus} />

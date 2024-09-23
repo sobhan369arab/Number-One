@@ -63,7 +63,7 @@ const YourComments = ({ comments, setComments, nameItem }) => {
           )
         })}
         <p className="text-sm text-titleColor">{t('ConfirmComment')}</p>
-        <Button vType="button" arrowColor={"#000"} vStyle="yellow" text="sendComment" style="border w-fit !px-10  my-4 justify-center !py-1.5 h-auto" />
+        <Button vType="button" arrowColor={"#000"} vStyle="yellow" text="sendComment" style="border sm:mx-0 mx-auto w-fit !px-10  my-4 justify-center !py-1.5 h-auto" />
       </FormHolder>
     </div>
   )
