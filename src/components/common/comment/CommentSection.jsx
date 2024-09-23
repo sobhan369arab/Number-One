@@ -21,8 +21,6 @@ const CommentSection = ({ commentsNumber, nameItem }) => {
               uid={index + 1}
               title={item.title}
               describe={item.describe}
-
-
             />
           )
         })}
