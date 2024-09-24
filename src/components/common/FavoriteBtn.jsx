@@ -7,7 +7,7 @@ const FavoriteBtn = ({variantStyle}) => {
     const [isClick, setClick] = useState(false);
     const variant = {
         card: (
-            <div onClick={() => setClick(!isClick)} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} cursor-pointer left-5 top-5 favorite-btn bg-LightLavender p-1 rounded-md`}>
+            <div onClick={() => setClick(!isClick)} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} cursor-pointer left-6 top-6 favorite-btn bg-LightLavender p-1 rounded-md`}>
                 {isClick ? <CheckedHeartIcon width="25px" height="25px" /> : <UnCheckedHeartIcon width="25px" height="25px" fill="#555555" />}
             </div>
         ),

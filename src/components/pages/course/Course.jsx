@@ -3,7 +3,6 @@ import ComparisonBtn from "../../common/ComparisonBtn"
 import { FavoriteBtn } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
-import CourseHeader from "./CourseHeader"
 import CourseTopBody from "./CourseTopBody"
 
 const Course = ({
@@ -26,21 +25,27 @@ const Course = ({
 }) => {
 
     return (
-        <div className="border border-LightGrayish p-4 pb-3 grid-item w-[290px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer">
-            <div className="h-44 min-w-64 rounded-lg med_box-shadow">
-                <CourseHeader images={images} />
+        <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer group/item">
+            <div className="h-44 w-fit course-height-img mx-auto  rounded-lg">
+                {/* course Images */}
+                <Link to={`/CourseDetails/${id}`}>
+                    <img src={images} className="w-full h-44 shadow-xl" />
+                </Link >
+
                 <div className="flex justify-center gap-8 my-3">
                     <ComparisonBtn location={location} CourseId={id} comparisonId={comparisonId} setComparisonId={setComparisonId} />
                     <FavoriteBtn location={location} variantStyle="card" />
                 </div>
             </div>
-            <Link to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">
-                <CourseTopBody
-                    title={title}
-                    score={score}
-                    category={category}
-                    bio={bio}
-                />
+            <div to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">
+                <Link to={`/CourseDetails/${id}`}>
+                    <CourseTopBody
+                        title={title}
+                        score={score}
+                        category={category}
+                        bio={bio}
+                    />
+                </Link >
                 <CourseCenterBody
                     instructor={instructor}
                     studentsNumber={studentsNumber}
@@ -52,7 +57,7 @@ const Course = ({
                     price={price}
                     date={date}
                 />
-            </Link >
+            </div >
         </div>
     )
 }
