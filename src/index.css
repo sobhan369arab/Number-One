@@ -136,6 +136,10 @@
         @apply bg-LightLavender p-1 rounded-xl;
       }
 
+      .course-height-img{
+        @apply w-96
+      } 
+
       .course-body {
         @apply w-full;
 
