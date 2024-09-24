@@ -25,8 +25,8 @@ const SkilledTeachers = () => {
                     <SwiperSlider
                         perView={1}
                         arrowColor="#000"
-                        buttonSideLeft="top-[30px] xl:left-[40px] left-[5px] z-20"
-                        buttonSideRight="top-[30px] xl:right-[40px] right-[5px] z-20"
+                        buttonSideLeft="top-[30px] xl:left-[40px] left-[5px] z-20 p-3"
+                        buttonSideRight="top-[30px] xl:right-[40px] right-[5px] z-20 p-3"
                         buttonColor="bg-SunshineYellow"
                     >
                         <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>
