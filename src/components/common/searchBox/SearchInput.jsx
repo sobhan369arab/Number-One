@@ -10,7 +10,7 @@ const SearchInput = ({ maxResponsiveValue, minResponsiveValue, showSearchFilter 
     return (
         <>
             <MediaQuery minWidth={minResponsiveValue}>
-                <div className="w-fit border border-LightGrayish h-full overflow-hidden px-px text-sm flex justify-between items-center rounded-full max-xl:hidden">
+                <div className="w-fit border border-LightGrayish py-0.5 overflow-hidden px-px text-sm flex justify-between items-center rounded-full max-xl:hidden">
                     <div className="w-[90%] flex items-center">
                         {/* category Section */}
                         <div style={{ display: showSearchFilter ? "flex" : "none" }} className={`group text-DarkBlue items-center gap-x-2 cursor-pointer duration-200 border-neutral-400 ${i18n.language === 'fa' ? 'border-l' : 'border-r'} ${i18n.language === 'fa' ? 'pr-2 pl-6' : 'pr-6 pl-2'}`}>
