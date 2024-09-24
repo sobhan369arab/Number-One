@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next"
 import Details_Tabs from "./Details_Tabs"
 import Tab from "./Tab";
 import { CommentSection, OverView_Details } from "../../common";
@@ -8,7 +7,6 @@ const TabPanel = ({
     training,
     MajorElements
 }) => {
-    const { i18n } = useTranslation();
     return (
         <div>
             <Details_Tabs>
