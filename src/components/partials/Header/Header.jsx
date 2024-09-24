@@ -6,7 +6,7 @@ import { MenuIcon, CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./basketItems"
 import { useSelector } from "react-redux"
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -20,39 +20,39 @@ const Header = () => {
 
   return (
     <Navbar
-      // style={{ padding: 0 }}
       shouldHideOnScroll
       className="flex gap-x-10 items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-3"
       maxWidth="full"
     >
-      <NavbarContent className="flex gap-x-6">
+      <div className="w-fit flex gap-x-6 items-center">
         <LogoGroup color={'text-VioletBlue'} />
-        <MediaQuery maxWidth={"1024px"}>
+        <MediaQuery maxWidth={"1024px"} minWidth={"768px"}>
           <MenuIcon height="35px" width="35px" />
         </MediaQuery>
         <MediaQuery minWidth={"1024px"}>
           {menuItem.map((item, index) => (
-            <NavbarItem>
+            <div>
               <MenuHeader key={index} href={item.href} title={item.title} />
-            </NavbarItem>
+            </div>
           ))}
         </MediaQuery>
-      </NavbarContent>
-      <NavbarContent className="h-[42px] flex gap-x-3 justify-end items-center" justify="end">
-        <NavbarItem>
-          <SearchInput maxResponsiveValue="1279px" minResponsiveValue="1280px" />
-        </NavbarItem>
-        <MediaQuery minWidth={"500px"}>
+      </div>
+      <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center">
+        <div>
+          <SearchInput maxResponsiveValue="1285px" minResponsiveValue="1285px" />
+        </div>
+        <MediaQuery minWidth={"768px"}>
           {baskets.map((item, index) => (
-            <NavbarItem>
+            <div>
               <BasketItems key={index} href={item.href} Icon={item.icon} number={item.number} />
-            </NavbarItem>
+            </div>
           ))}
         </MediaQuery>
-        <NavbarItem>
-          <button className="bg-SunshineYellow border-SunshineYellow text-sm border rounded-full text-nowrap py-2 px-4 text-[#161439]">{t('Login')}</button>
-        </NavbarItem>
-      </NavbarContent>
+        <MediaQuery maxWidth={"767px"}>
+          <MenuIcon height="35px" width="35px" />
+        </MediaQuery>
+        <button className="bg-SunshineYellow max-md:hidden border-SunshineYellow text-sm border rounded-full text-nowrap py-2 px-4 text-[#161439]">{t('Login')}</button>
+      </div>
     </Navbar>
   )
 }
