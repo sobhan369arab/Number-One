@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { EyeIcon, TrashCan } from "../../../core/icon"
+import { Tooltip } from "@nextui-org/react"
+import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 
 const TableItem = ({ object, variant }) => {
     const { i18n } = useTranslation()
@@ -13,7 +15,7 @@ const TableItem = ({ object, variant }) => {
             ],
             width: "w-1/4",
             actions: [
-                { Icon: EyeIcon },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
             ]
         },
         reserved: {
@@ -26,8 +28,8 @@ const TableItem = ({ object, variant }) => {
             ],
             width: "w-1/5",
             actions: [
-                { Icon: EyeIcon },
-                { Icon: TrashCan },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
+                { Icon: TrashCan, tooltip: ["حذف", "Delete"] },
             ]
         },
         myViews: {
@@ -39,8 +41,8 @@ const TableItem = ({ object, variant }) => {
             ],
             width: "w-1/4",
             actions: [
-                { Icon: EyeIcon },
-                { Icon: TrashCan },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
+                { Icon: TrashCan, tooltip: ["حذف", "Delete"] },
             ]
         },
         favorites: {
@@ -52,8 +54,8 @@ const TableItem = ({ object, variant }) => {
             ],
             width: "w-1/4",
             actions: [
-                { Icon: EyeIcon },
-                { Icon: TrashCan },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
+                { Icon: TrashCan, tooltip: ["حذف", "Delete"] },
             ]
         }
     }
@@ -62,7 +64,13 @@ const TableItem = ({ object, variant }) => {
             <td className="min-w-8 h-8 rounded-full bg-VioletBlue ml-2"></td>
             {differentSection?.[variant].sections.map((item, index) => <td key={index} className={`line-clamp-1 h-fit text-DarkBlue ${differentSection?.[variant].width}`} dir={item.dir} style={{ color: item.color }}>{item.section}</td>)}
             <td className="w-12 h-6 flex items-center justify-between">
-                {differentSection?.[variant].actions.map((item, index) => <div key={index} className="cursor-pointer bg-re hover:scale-110"><item.Icon stroke="#5751E1" /></div>)}
+                {differentSection?.[variant].actions.map((item, index) => (
+                    <Tooltip key={index} {...tooltipStyle} content={i18n.language == "en" ? item.tooltip[1] : item.tooltip[0]}>
+                        <div className="cursor-pointer bg-re hover:scale-110">
+                            <item.Icon stroke="#5751E1" />
+                        </div>
+                    </Tooltip>
+                ))}
             </td>
         </tr>
     )

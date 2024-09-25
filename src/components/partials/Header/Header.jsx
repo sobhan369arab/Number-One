@@ -6,16 +6,17 @@ import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./basketItems"
 import { useSelector } from "react-redux"
-import { Navbar } from "@nextui-org/react";
+import { Navbar, Tooltip } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
+import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const cartLength = useSelector(state => state.CartData.value.length)
 
   const baskets = [
-    { icon: CartIcon, number: cartLength, href: "/cart" },
-    { icon: FavoriteIcon, number: 0, href: "" },
+    { icon: CartIcon, number: cartLength, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
+    { icon: FavoriteIcon, number: 0, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
   const menuItems = menuItem.map((item, index) => {
@@ -29,9 +30,11 @@ const Header = () => {
 
   const basketItems = baskets.map((item, index) => {
     return (
-      <div>
-        <BasketItems key={index} href={item.href} Icon={item.icon} number={item.number} />
-      </div>
+      <Tooltip key={index} {...tooltipStyle} content={i18n.language == "en" ? item.tooltip[1] : item.tooltip[0]}>
+        <div>
+          <BasketItems href={item.href} Icon={item.icon} number={item.number} />
+        </div>
+      </Tooltip>
     )
   });
 
