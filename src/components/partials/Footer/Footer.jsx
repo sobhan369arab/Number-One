@@ -1,5 +1,5 @@
 import DescFooter from "./descFooter"
-import ItemsFooter from "./linksFooter"
+import LinksWrapper from "./LinksWrapper"
 
 const Footer = () => {
   return (
@@ -8,12 +8,11 @@ const Footer = () => {
       <div className="bg-PrussianBlue md:py-20 py-10 xl:px-40 lg:px-16 px-8 md:flex justify-between gap-4 cursor-default">
         {/* discription in the Footer */}
         <DescFooter />
-        <ItemsFooter />
+        <LinksWrapper />
       </div>
       {/* Bottom section in the Footer */}
-      <div className="bg-LawSection py-6 flex justify-around text-neutral-400">
-        <span> Privacy Policy |</span>
-        <span>@ 2010-2024 skillgro.com.All rights reserved</span>
+      <div className="bg-LawSection py-6 text-center mediumStyle_text">
+        © تمامی حقوق این سایت متعلق به تیم نامبر وان می باشد.
       </div>
     </div>
   )
