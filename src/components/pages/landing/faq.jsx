@@ -18,7 +18,7 @@ const Faq = () => {
         </div>
       </MediaQuery>
       <div className="flex flex-wrap justify-center lg:flex-col gap-y-4 w-full lg:w-[450px] h-fit">
-        <Label text={t("faqLabel")} variant="section" style="w-fit" />
+        <Label text={t("faqLabel")} variant="bgGray" style="w-fit" />
         <h1 className="boldStyle_text w-full xl:w-2/3 lg:text-start text-center">{t("faqTitle")}</h1>
         <p className="mediumStyle_text text-center lg:text-start w-full">{t("faqDescription")}</p>
         <Accordion className="w-full">
