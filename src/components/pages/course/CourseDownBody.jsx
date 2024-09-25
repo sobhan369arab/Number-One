@@ -9,7 +9,7 @@ const CourseDownBody = ({
 }) => {
   const {t} = useTranslation()
   return (
-    <div className='border-t-2 border-gray-400/30 pt-5 mt-5 flex justify-between'>
+    <div className='border-t-2 border-gray-400/30 pt-5 mt-5 flex justify-between cursor-default'>
       <div className='flex gap-1'>
         <DateIcon height={20} width={17}/>
         <h1 className="line-clamp-1 text-gray-500">{date}</h1>
