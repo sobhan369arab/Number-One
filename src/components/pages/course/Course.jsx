@@ -25,7 +25,7 @@ const Course = ({
 }) => {
 
     return (
-        <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative cursor-pointer group/item">
+        <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative  group/item">
             <div className="h-44 w-fit course-height-img mx-auto  rounded-lg">
                 {/* course Images */}
                 <Link to={`/CourseDetails/${id}`}>

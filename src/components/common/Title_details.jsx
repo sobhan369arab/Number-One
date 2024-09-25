@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { DateIcon, LocationIcon, StarIcon, TotalIcon } from "../../core/icon";
-// import arrow from "../../../assets/ArrowSvg.svg"
+import Label from "./Label";
 
 export const boxTitle_variant = {
     "event-detail": 'lg:w-[70%] border-b border-LightLavender',
@@ -8,8 +8,8 @@ export const boxTitle_variant = {
 }
 
 export const categoryItems_variant = {
-    "event-detail": 'bg-VioletBlue text-white',
-    "course-detail": 'bg-LightLavender text-GrayishPurple',
+    "event-detail": 'bgBlue',
+    "course-detail": 'bgTextGray',
 }
 export const icon_variant = {
     "event-detail": <LocationIcon />,
@@ -31,7 +31,7 @@ const Title_details = ({
             <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center ">
                 {/* Category Box */}
                 {category.map((item, index) => (
-                    <div key={index} className={`${categoryItems_variant?.[variant]} py-1 px-8 rounded-2xl text-sm hover:scale-110 duration-200`}>{item}</div>
+                    <Label key={index} variant={categoryItems_variant?.[variant]} text={item} style=' py-1 px-8 text-sm hover:scale-110 duration-200 ' />
                 ))}
                 {/* Score Box */}
                 <div className="flex gap-1 max-sm:mx-auto max-sm:mt-2">

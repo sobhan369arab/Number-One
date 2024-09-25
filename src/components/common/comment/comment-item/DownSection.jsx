@@ -17,7 +17,7 @@ const DownSection = ({ ArrayLength, setReplayComment, replayStatus, setReplaySta
     <div className='flex justify-between items-center mt-3'>
       <div className={`sm:flex gap-3 ${Style}`}>
         {/* Modal for Replay comment */}
-        <button onClick={onOpen} className='bg-grayCustom py-1 px-3 text-purpleCustom rounded-lg text-sm'>{t('commentAnswer')}</button>
+        <button onClick={onOpen} className='bg-LavenderMist py-1 px-3 text-VioletBlue rounded-lg text-sm'>{t('commentAnswer')}</button>
         <CreateModal
           isOpen={isOpen}
           onClose={onClose}
@@ -31,8 +31,8 @@ const DownSection = ({ ArrayLength, setReplayComment, replayStatus, setReplaySta
           <AddReplay_Comment testArray={testArray} setTestArray={setTestArray} setReplayComment={setReplayComment} />
         </CreateModal>
         {ArrayLength !== 0 &&
-          <button onClick={() => setReplayStatus(!replayStatus)} className="bg-grayCustom py-1 px-3 mt-3 sm:mt-0 text-gray-500 flex gap-2 items-center rounded-lg text-sm">
-            <p>{t('viewAnswers')} <span className="text-purpleCustom">({ArrayLength})</span></p>
+          <button onClick={() => setReplayStatus(!replayStatus)} className="bg-LavenderMist py-1 px-3 mt-3 sm:mt-0 text-gray-500 flex gap-2 items-center rounded-lg text-sm">
+            <p>{t('viewAnswers')} <span className="text-VioletBlue">({ArrayLength})</span></p>
             <IoIosArrowDown className={`${replayStatus ? "rotate-180" : ""} duration-300`} />
           </button>
         }

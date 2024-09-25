@@ -18,7 +18,7 @@ const Categories = () => {
     }
     return (
         <div className="w-full flex flex-wrap gap-y-4 justify-center py-28 lg:px-44 sm:px-16 px-8">
-            <Label text={t("categoryLabel")} variant="section" />
+            <Label text={t("categoryLabel")} variant="bgGray" />
             <h1 className="boldStyle_text w-full text-center">{t("categoryTitle")}</h1>
             <p className="mediumStyle_text text-center">{t("categoryDescription")}</p>
             <div className="w-full relative bg-LightGray mt-5 flex justify-center items-center px-20 xl:px-28 py-8 rounded-full">
