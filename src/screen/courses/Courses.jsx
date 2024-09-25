@@ -85,7 +85,7 @@ const Courses = () => {
                 </MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <MediaQuery maxWidth={"1023px"}>
-                        <Button onPress={onOpen} className="sticky top-3 z-50">{t('openFilter')}</Button>
+                        <Button onPress={onOpen} className="sticky top-3 z-30">{t('openFilter')}</Button>
                         <CreateModal
                             isOpen={isOpen}
                             onClose={onClose}

@@ -1,12 +1,13 @@
 import { menuItem } from "../../../core/constants/Header/headerData"
 import MenuHeader from "./menuHeader"
 import { useTranslation } from "react-i18next"
-import { LogoGroup, SearchInput } from "../../common"
-import { MenuIcon, CartIcon, FavoriteIcon } from "../../../core/icon"
+import { Button, HamburgerMenu, LogoGroup, SearchInput } from "../../common"
+import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./basketItems"
 import { useSelector } from "react-redux"
-import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Navbar } from "@nextui-org/react";
+import SideBarMenu from "./SideBarMenu"
 
 const Header = () => {
   const { t } = useTranslation();
@@ -17,6 +18,22 @@ const Header = () => {
     { icon: FavoriteIcon, number: 0, href: "" },
   ];
 
+  const menuItems = menuItem.map((item, index) => {
+    return (
+      <MenuHeader
+        key={index}
+        href={item.href}
+        title={item.title} />
+    )
+  });
+
+  const basketItems = baskets.map((item, index) => {
+    return (
+      <div>
+        <BasketItems key={index} href={item.href} Icon={item.icon} number={item.number} />
+      </div>
+    )
+  });
 
   return (
     <Navbar
@@ -26,32 +43,25 @@ const Header = () => {
     >
       <div className="w-fit flex gap-x-6 items-center">
         <LogoGroup color={'text-VioletBlue'} />
-        <MediaQuery maxWidth={"1024px"} minWidth={"768px"}>
-          <MenuIcon height="35px" width="35px" />
-        </MediaQuery>
         <MediaQuery minWidth={"1024px"}>
-          {menuItem.map((item, index) => (
-            <div>
-              <MenuHeader key={index} href={item.href} title={item.title} />
-            </div>
-          ))}
+          <div className="w-fit flex gap-x-6 items-center">
+            {menuItems}
+          </div>
+        </MediaQuery>
+        <MediaQuery maxWidth={"1024px"}>
+          <HamburgerMenu style={'w-80 bg-VioletBlue dark:bg-LightLavender p-8'}>
+            <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
+          </HamburgerMenu >
         </MediaQuery>
       </div>
-      <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center">
+      <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center ">
         <div>
           <SearchInput maxResponsiveValue="1285px" minResponsiveValue="1285px" />
         </div>
         <MediaQuery minWidth={"768px"}>
-          {baskets.map((item, index) => (
-            <div>
-              <BasketItems key={index} href={item.href} Icon={item.icon} number={item.number} />
-            </div>
-          ))}
+          {basketItems}
         </MediaQuery>
-        <MediaQuery maxWidth={"767px"}>
-          <MenuIcon height="35px" width="35px" />
-        </MediaQuery>
-        <button className="bg-SunshineYellow max-md:hidden border-SunshineYellow text-sm border rounded-full text-nowrap py-2 px-4 text-[#161439]">{t('Login')}</button>
+        <Button href={"/authorize/login"} disableArrow={'hidden'} vType={'link'} vStyle={"yellow"} style={'shadow-none !pt-2 !pb-2'} text={'Login'} />
       </div>
     </Navbar>
   )
