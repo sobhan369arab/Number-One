@@ -10,7 +10,7 @@ import { Button, CreateSocialMediaItems } from ".";
 import { UnitPrice } from "../../core/utility/SeparationPrice/SeparationPrice";
 
 export const detailVariant = {
-  "event-detail": "md:absolute lg:w-64 top-96",
+  "event-detail": "lg:absolute lg:w-64 top-96",
   "course-detail": "lg:w-64 mb-8",
 }
 export const detailInfoVariant = {

@@ -58,7 +58,7 @@
   }
 
   .boldStyle_text {
-    @apply text-DarkBlue font-Sahel text-2xl sm:text-3xl;
+    @apply text-DarkBlue font-Sahel text-xl sm:text-2xl;
   }
 
   .mediumStyle_text {

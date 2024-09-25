@@ -27,8 +27,8 @@ const Title_details = ({
 }) => {
     const { t } = useTranslation();
     return (
-        <div className={`my-4 py-4 ${boxTitle_variant?.[variant]}`}>
-            <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center">
+        <div className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
+            <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center ">
                 {/* Category Box */}
                 {category.map((item, index) => (
                     <div key={index} className={`${categoryItems_variant?.[variant]} py-1 px-8 rounded-2xl text-sm hover:scale-110 duration-200`}>{item}</div>
@@ -39,7 +39,7 @@ const Title_details = ({
                     <span className="mediumStyle_text text-sm ">({Score} {t('Reviews')})</span>
                 </div>
             </div>
-            <h1 className="lg:text-3xl text-2xl font-semibold my-4 max-sm:text-center max-lg:w-[420px] text-DarkBlue">{t(title)} </h1>
+            <h1 className="lg:text-3xl text-2xl font-semibold my-4 max-sm:text-center max-sm:mx-auto text-DarkBlue">{t(title)} </h1>
             {/* other details */}
             <div className="sm:flex items-center text-sm text-textGray2 gap-3">
                 {/* Creator detail */}

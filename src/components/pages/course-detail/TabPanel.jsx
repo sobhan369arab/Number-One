@@ -11,7 +11,7 @@ const TabPanel = ({
         <div>
             <Details_Tabs>
                 <Tab label="Overview">
-                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements} Class={'block'} titleLearning={'LearnCourse'} variant={"course_event"} />
+                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements} Class={'block'}  ElementClass={'hidden'} titleOverView={'CourseOverView'} titleLearning={'LearnCourse'} variant={"course"} />
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
                 <Tab label="Instructor">Instructor </Tab>
