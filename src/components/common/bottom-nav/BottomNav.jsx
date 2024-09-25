@@ -13,7 +13,6 @@ const BottomNav = () => {
             </div>
             <div className='flex flex-col gap-3 fixed right-5 bottom-20 z-50'>
                 <ScrollToUpButton />
-                <span className='w-10 h-3 bottomNav_shadow'></span>
             </div>
         </>
     )
