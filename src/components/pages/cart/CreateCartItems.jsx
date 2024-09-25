@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { removeFromCartAction, changeAmountItemAction } from "../../../redux/slices/CartData"
 import { useEffect, useState } from "react"
+import { SeparationPrice } from "../../../core/utility/SeparationPrice/SeparationPrice";
 
 const CreateCartItems = ({ title, description, price, amount, picture, id }) => {
     const [productAmount, setProductAmount] = useState(amount)
@@ -30,7 +31,7 @@ const CreateCartItems = ({ title, description, price, amount, picture, id }) => 
             </Link>
             <div className='w-full xl:w-fit h-fit flex justify-end gap-x-4 border-t xl:border-none pt-2 xl:pt-0'>
                 <div className='flex gap-x-2 items-center mediumStyle_text'>
-                    <span className='text-VioletBlue text-xl'>{totalPrice} هزار</span>
+                    <span className='text-VioletBlue text-xl'>{SeparationPrice(totalPrice)}</span>
                     <span>تومان</span>
                 </div>
                 <Spinner
