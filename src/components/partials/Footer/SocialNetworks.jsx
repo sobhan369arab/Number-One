@@ -1,7 +1,7 @@
 import { FacebookIcon, InstagramIcon, TwitterIcon, WhatsAppIcon, YouTubeIcon } from '../../../core/icon'
 import CreateSocialMediaItems from '../../common/CreateSocialMediaItems'
-import GooglePlay from "../../../../public/icons/google-play.png"
-import AppStore from "../../../../public/icons/apple-store.png"
+import GooglePlay from "../../../assets/images/google-play.png"
+import AppStore from "../../../assets/images/apple-store.png"
 
 const SocialNetworks = ({ show }) => {
     const socialMedia = [
@@ -13,8 +13,8 @@ const SocialNetworks = ({ show }) => {
     ]
 
     const downloadApp = [
-        {url: GooglePlay},
-        {url: AppStore}
+        { url: AppStore },
+        { url: GooglePlay },
     ]
 
     return show && (
