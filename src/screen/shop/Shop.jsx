@@ -3,11 +3,12 @@ import TitleSection from "../../components/partials/title-section/TitleSection"
 import { ShopCard, FilterSide_Shop } from "../../components/pages/shop";
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { Button, useDisclosure } from "@nextui-org/react";
-import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop, SortBox } from "../../components/common"
+import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop, SortBox, SortBoxHolder } from "../../components/common"
 import { useTranslation } from "react-i18next";
 import { CloseIcon } from "../../core/icon";
 import { shopData } from "../../core/constants/shop/ShopData"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
+import { sortOptionMostType } from "../../core/constants/sorts/Sort";
 
 const Shop = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' })
@@ -60,7 +61,7 @@ const Shop = () => {
   return (
     <>
       <TitleSection title={'ShopSection'}>
-        <BreadCrumb type="Div" text="ShopSection"/>
+        <BreadCrumb type="Div" text="ShopSection" />
       </TitleSection>
       <div className="main-container flex gap-7 relative">
         <MediaQuery minWidth="1024px">
@@ -97,7 +98,9 @@ const Shop = () => {
             FilteredData={FilteredData}
             showViewBtn={false}
           >
-            <SortBox setSortType={setSortType} label={"shop"} />
+            <SortBoxHolder>
+              <SortBox setState={setSortType} options={sortOptionMostType} placeholder="محبوب ترین ها" />
+            </SortBoxHolder>
           </SectionTop>
           <PaginateHolderItems style="justify-center">
             <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentShop, setItemOffset, FilteredData) }} pageCount={calculatePageCount(FilteredData, currentShop)}>

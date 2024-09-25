@@ -6,7 +6,8 @@ import InformedPoster from "./informedPoster";
 import OptionParts from "./optionParts";
 import TeacherCard from "./teacherCard";
 import CustomMap from "./CustomMap";
-import SortBox from "./SortBox.jsx";
+import SortBox from "./sectionTop/SortBox.jsx";
+import SortBoxHolder from "./sectionTop/SortBoxHolder.jsx";
 import FilterSide from "../pages/course-list/FilterSide_Courses.jsx";
 import Label from "./Label";
 import ButtonSlider from "./Slider/ButtonSlider.jsx";
@@ -27,8 +28,8 @@ import PaginatedItems from "./Paginate/Paginate.jsx";
 import PaginateHolderItems from "./Paginate/PaginateHolderItems";
 import SearchInput from "./searchBox/SearchInput.jsx";
 import CreateModal from "./CreateModal.jsx";
-import ChangeView from "./ChangeView.jsx";
-import SectionTop from "./SectionTop.jsx";
+import ChangeView from "./sectionTop/ChangeView.jsx";
+import SectionTop from "./sectionTop/SectionTop.jsx";
 import ToLike from "./ToLike.jsx";
 import DarkModeBtn from "./DarkModeBtn.jsx";
 import Spinner from "./Spinner.jsx";
@@ -76,4 +77,5 @@ export {
   ScrollToTop,
   BottomNav,
   CommentSection,
+  SortBoxHolder
 };
