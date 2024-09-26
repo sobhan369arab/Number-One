@@ -10,7 +10,7 @@ const CenterBox = ({
 
   return (
     <div className="my-2 pb-2  cursor-pointer">
-      <h1 className="text-lg font-bold line-clamp-1 text-DarkBlue">{title}</h1>
+      <h1 className="text-lg line-clamp-1 text-DarkBlue">{title}</h1>
       <div className="flex justify-between my-2">
         <Label variant={'bgBlue'} text={category} style='text-xs whitespace-nowrap cursor-default' />
         <div className='flex gap-2'>

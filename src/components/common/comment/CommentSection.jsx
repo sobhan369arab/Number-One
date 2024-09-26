@@ -11,7 +11,7 @@ const CommentSection = () => {
 
   return (
     <div className="my-3">
-      <h1 className="font-semibold mb-6">{t('user_comment')}</h1>
+      <h1 className="mb-6">{t('user_comment')}</h1>
       <YourComments comment={comments} setComments={setComments}/>
       <div className={`my-5 `}>
         <p className="text-xl mb-3">{comments.length} {t('comment')}</p>

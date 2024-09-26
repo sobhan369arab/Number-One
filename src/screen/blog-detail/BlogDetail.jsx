@@ -41,7 +41,7 @@ const BlogDetail = () => {
                     />
                     <div className="border-y-2 my-7 py-5">
                         <div className="flex gap-8 w-fit max-sm:m-auto">
-                            <p className="font-semibold text-DarkBlue">{t('blogFavorite')}</p>
+                            <p className="text-DarkBlue">{t('blogFavorite')}</p>
                             <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
                         </div>
                     </div>

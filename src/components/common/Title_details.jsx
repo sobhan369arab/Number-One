@@ -39,7 +39,7 @@ const Title_details = ({
                     <span className="mediumStyle_text text-sm ">({Score} {t('Reviews')})</span>
                 </div>
             </div>
-            <h1 className="lg:text-3xl text-2xl font-semibold my-4 max-sm:text-center max-sm:mx-auto text-DarkBlue">{t(title)} </h1>
+            <h1 className="my-4 max-sm:text-center max-sm:mx-auto text-DarkBlue boldStyle_text">{t(title)} </h1>
             {/* other details */}
             <div className="sm:flex items-center text-sm gap-3">
                 {/* Creator detail */}

@@ -14,7 +14,7 @@ const CourseDownBody = ({
         <DateIcon height={20} width={17}/>
         <h1 className="line-clamp-1 text-gray-500">{date}</h1>
       </div>
-      <div className='text-blue-600 font-semibold'>{UnitPrice(price)}<span className='text-gray-500 mx-1'>{t('priceCount')}</span></div>
+      <div className='text-blue-600 text-xl'>{UnitPrice(price)}<span className='text-gray-500 text-base mx-1'>{t('priceCount')}</span></div>
     </div>
   )
 }

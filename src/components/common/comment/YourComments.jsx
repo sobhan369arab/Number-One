@@ -36,7 +36,7 @@ const YourComments = ({ comments, setComments }) => {
 
   return (
     <div className="px-7 py-4 bg-grayCustom rounded-lg bg-LightLavender border border-LightGrayish">
-      <h1 className="text-titleColor text-2xl font-semibold">{t('sendComment')}</h1>
+      <h1 className="boldStyle_text text-2xl">{t('sendComment')}</h1>
       <FormHolder
         initialValues={{ title: '', description: '' }}
         onSubmit={(values) => { addComment(values) }}
