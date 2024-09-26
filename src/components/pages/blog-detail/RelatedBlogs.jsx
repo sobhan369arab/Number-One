@@ -29,9 +29,9 @@ const RelatedBlogs = ({ category }) => {
                 <div>
                   <div className="flex gap-2">
                     <DateIcon fill="#5751E1" height={14} width={14} />
-                    <p className="text-gray-500 text-xs">{item.date}</p>
+                    <p className="mediumStyle_text text-xs">{item.date}</p>
                   </div>
-                  <p className="text-gray-800 text-sm w-20 line-clamp-2 ">{item.title}</p>
+                  <p className="mediumStyle_text text-sm w-20 line-clamp-2 ">{item.title}</p>
                 </div>
               </div>
             </Link>

@@ -37,8 +37,8 @@ const FilterRange = ({
       />
       {/* price information */}
       <div className=" bottom-9 right-5 text-gray-600">
-        <h1 className="text-gray-500">{t('from')} :<span className="text-VioletBlue mx-2">{SeparationPrice(value[0])} {t('priceCount')}</span></h1>
-        <h1 className="text-gray-500 mt-2">{t('upTo')} :<span className="text-VioletBlue mx-2">{SeparationPrice(value[1])} {t('priceCount')}</span></h1>
+        <h1 className="mediumStyle_text">{t('from')} :<span className="text-VioletBlue mx-2">{SeparationPrice(value[0])} {t('priceCount')}</span></h1>
+        <h1 className="mediumStyle_text mt-2">{t('upTo')} :<span className="text-VioletBlue mx-2">{SeparationPrice(value[1])} {t('priceCount')}</span></h1>
       </div>
     </div>
   )

@@ -49,7 +49,7 @@ const Header = () => {
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={"1024px"}>
-          <HamburgerMenu width={308} style={'bg-VioletBlue dark:bg-LightLavender p-8'}>
+          <HamburgerMenu width={308} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
             <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
           </HamburgerMenu >
         </MediaQuery>
