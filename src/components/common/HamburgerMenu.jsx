@@ -1,15 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CloseIcon, MenuIcon } from "../../core/icon"
 import { useTranslation } from "react-i18next"
 
 const HamburgerMenu = ({ children, style, width }) => {
     const [visible, setVisible] = useState(false)
+
+    useEffect(() => {
+        if (visible) document.documentElement.classList.add('overflow-y-hidden')
+            else document.documentElement.classList.remove('overflow-y-hidden')
+    }, [visible])
+
     const { i18n } = useTranslation()
     return (
         <div>
             <div onClick={() => { setVisible(!visible); }} className="cursor-pointer hover:scale-110 duration-200"><MenuIcon width="25" height="25px" /></div>
             <div onClick={() => { setVisible(false) }} style={{ opacity: visible ? "1" : "0", visibility: visible ? "visible" : "hidden", }} className={`w-full duration-250 h-svh fixed top-0 right-0 bg-black/55 z-[9999]`}></div>
-            <div style={visible ? {width: width} : {width: "0", padding: "0"}} className={`${i18n.language == "en" ? "left-0" : "right-0"} h-svh duration-200 fixed top-0 right-0 select-none z-[9999] overflow-hidden ${style}`}>
+            <div style={visible ? {width: width} : {width: "0", padding: "0"}} className={`${i18n.language == "en" ? "left-0" : "right-0"} h-svh duration-200 fixed top-0 right-0 select-none z-[9999] overflow-x-hidden overflow-y-auto ${style}`}>
                 <div onClick={() => { setVisible(!visible) }} className={`${i18n.language != "en" ? "right-6" : "left-6"}  absolute top-6 cursor-pointer hover:scale-105 duration-200 w-8 h-8 bg-SunshineYellow rounded-full flex justify-center items-center`}><CloseIcon /></div>
                 {children}
             </div>
