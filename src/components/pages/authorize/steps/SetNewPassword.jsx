@@ -23,6 +23,7 @@ const SetNewPassword = () => {
                 fullSize
                 variants="password"
                 eyeStyle={`bottom-9 ${i18n.language == "en" ? "" : "left-4 right-auto"}`}
+                errorStyleComment="!bg-MainBg"
             />
             <Button vType="button" vStyle="yellow" text="SetNewPasswordBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
         </FormHolder>
