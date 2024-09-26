@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UserPanelHeader from '../partials/user-panel-header/UserPanelHeader'
 import { SidebarUserPanel } from '../pages/user-panel'
 import { Link, Outlet } from 'react-router-dom'
 import { HomeBtnPanelIcon } from '../../core/icon'
 import MediaQuery from 'react-responsive'
-import { HamburgerMenu, DarkModeBtn } from '../common'
+import { HamburgerMenu } from '../common'
 import { Tooltip } from '@nextui-org/react'
 import tooltipStyle from '../../core/constants/tooltip-style/tooltip'
 import { useTranslation } from 'react-i18next'
 
 const UserPanelLayout = () => {
+    const [visibleMenu, setVisibleMenu] = useState(false)
     const { i18n } = useTranslation()
 
     return (
@@ -24,7 +25,7 @@ const UserPanelLayout = () => {
                 <div className='w-full h-full flex flex-wrap sm:p-6'>
                     <div className='w-full h-fit flex items-center justify-between xl:justify-end'>
                         <MediaQuery maxWidth="1279px">
-                            <HamburgerMenu width={308} style="bg-VioletBlue dark:bg-LightLavender flex justify-center flex-wrap pt-12 pb-20">
+                            <HamburgerMenu setVisible={setVisibleMenu} visible={visibleMenu} style="bg-VioletBlue dark:bg-LightLavender flex justify-center flex-wrap pt-12 pb-20">
                                 <SidebarUserPanel />
                             </HamburgerMenu>
                         </MediaQuery>

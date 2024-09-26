@@ -1,7 +1,7 @@
 import { menuItem } from "../../../core/constants/Header/headerData"
 import MenuHeader from "./menuHeader"
 import { useTranslation } from "react-i18next"
-import { Button, HamburgerMenu, LogoGroup, SearchInput } from "../../common"
+import { Button, HamburgerMenu, LogoGroup, SearchInput, SearchModal } from "../../common"
 import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./basketItems"
@@ -9,8 +9,12 @@ import { useSelector } from "react-redux"
 import { Navbar, Tooltip } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
 import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
+import { useState } from "react"
+import SearchBtn from "../../common/searchBox/SearchBtn"
 
 const Header = () => {
+  const [visibleSearch, setVisibleSearch] = useState(false)
+  const [visibleMenu, setVisibleMenu] = useState(false)
   const { t, i18n } = useTranslation();
   const cartLength = useSelector(state => state.CartData.value.length)
 
@@ -40,7 +44,7 @@ const Header = () => {
 
   return (
     <Navbar
-      shouldHideOnScroll
+      shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
       className="flex gap-x-10 items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-3"
       maxWidth="full"
     >
@@ -52,15 +56,21 @@ const Header = () => {
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={"1024px"}>
-          <HamburgerMenu width={308} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
+          <HamburgerMenu setVisible={setVisibleMenu} visible={visibleMenu} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
             <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
           </HamburgerMenu >
         </MediaQuery>
       </div>
       <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center ">
-        <div>
-          <SearchInput maxResponsiveValue="1285px" minResponsiveValue="1285px" />
-        </div>
+        <MediaQuery minWidth={"1285px"}>
+          <SearchInput />
+        </MediaQuery>
+        <MediaQuery maxWidth={"1284px"}>
+          <div onClick={() => { setVisibleSearch(true) }} className="cursor-pointer">
+            <SearchBtn />
+          </div>
+          <SearchModal setVisible={setVisibleSearch} visible={visibleSearch} />
+        </MediaQuery>
         <MediaQuery minWidth={"768px"}>
           {basketItems}
         </MediaQuery>

@@ -11,6 +11,12 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      keyframes: {
+        mobileMenu: { "0%": { width: 0 }, "100%": { width: "308px" } },
+      },
+      animation: {
+        mobileMenu: 'mobileMenu 0.2s',
+      },
       backgroundImage: {
         heroSection: "url('./src/assets/images/hero_section_landing.jpg')",
         importantWord: "url('./src/assets/images/importantWord.png')",
