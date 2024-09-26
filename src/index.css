@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-x: hidden;
+}
+
 @layer base {
   @font-face {
     font-family: "Iran-Sans";
@@ -136,9 +140,9 @@
         @apply bg-LightLavender p-1 rounded-xl;
       }
 
-      .course-height-img{
-        @apply w-96
-      } 
+      .course-height-img {
+        @apply w-96;
+      }
 
       .course-body {
         @apply w-full;
@@ -164,7 +168,12 @@
   }
 
   .borderButton_sidebar_userPanel {
-    background: linear-gradient(90deg, transparent 0%, #ffc224 50%, transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffc224 50%,
+      transparent 100%
+    );
   }
 
   .userPanel_holder_shadow {
@@ -177,7 +186,12 @@
   }
 
   .borderTable_header_userPanel {
-    background: linear-gradient(90deg, transparent 0%, #ffc224 50%, transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffc224 50%,
+      transparent 100%
+    );
   }
 
   .itemsTable_userPanel_holder {
