@@ -37,6 +37,7 @@ import CommentSection from "./comment/CommentSection.jsx";
 import HowToStart from "./howToStart.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import BottomNav from "./bottom-nav/BottomNav.jsx";
+import SearchModal from "./searchBox/SearchModal.jsx"
 
 export {
   Button,
@@ -75,5 +76,6 @@ export {
   ScrollToTop,
   BottomNav,
   CommentSection,
-  SortBoxHolder
+  SortBoxHolder,
+  SearchModal
 };

@@ -24,6 +24,10 @@ body {
 }
 
 @layer components {
+  .select_dir {
+    direction: rtl;
+  }
+
   .buttonSimple_shadow {
     box-shadow: 3px 5px 0px 0px #050071;
   }
