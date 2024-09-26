@@ -13,7 +13,7 @@ const UserPanelLayout = () => {
     const { i18n } = useTranslation()
 
     return (
-        <div className='py-20 flex flex-wrap gap-y-10 sm:px-16 mobile:px-8'>
+        <div className='py-20 flex flex-wrap gap-y-10 sm:px-16 px-8'>
             <UserPanelHeader />
             <div className='relative w-full lg:h-[813px] flex rounded-2xl overflow-hidden sm:userPanel_holder_shadow'>
                 <MediaQuery minWidth="1280px">
