@@ -1,6 +1,5 @@
 import Button from "./Button";
 import LogoGroup from "./LogoGroup";
-import CreateAccordionItem from "./createAccordionItem";
 import ImportantWord from "./importantWord";
 import InformedPoster from "./informedPoster";
 import OptionParts from "./optionParts";
@@ -44,7 +43,6 @@ export {
   LogoGroup,
   PaginatedItems,
   CustomMap,
-  CreateAccordionItem,
   ImportantWord,
   InformedPoster,
   OptionParts,
