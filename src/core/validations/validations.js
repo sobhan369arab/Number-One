@@ -47,13 +47,34 @@ export const loginValidations = yup.object().shape({
 });
 
 export const getCodeValidation = yup.object().shape({
-  verificationCode: yup.number().required("این فیلد الزامیست!").typeError("لطفا کد را به درستی وارد کنید")
+  verificationCode: yup
+    .number()
+    .required("این فیلد الزامیست!")
+    .typeError("لطفا کد را به درستی وارد کنید"),
 });
 
 export const getPhoneNumber = yup.object().shape({
-  phoneNumber: yup.number().required("این فیلد الزامیست!").min(9000000000, "شماره موبایل را درست وارد کنید").max(9999999999, "شماره موبایل را درست وارد کنید"),
+  phoneNumber: yup
+    .number()
+    .required("این فیلد الزامیست!")
+    .min(9000000000, "شماره موبایل را درست وارد کنید")
+    .max(9999999999, "شماره موبایل را درست وارد کنید"),
 });
 export const CommentValid = yup.object().shape({
-  title: yup.string().max(80,'طول نویسه بیش از حد مجاز').required('فیلد نمی تواند خالی باشد'),
-  description: yup.string().required('فیلد نمی تواند خالی باشد')
-})
+  title: yup
+    .string()
+    .max(80, "طول نویسه بیش از حد مجاز")
+    .required("فیلد نمی تواند خالی باشد"),
+  description: yup.string().required("فیلد نمی تواند خالی باشد"),
+});
+
+export const ContactValidation = yup.object().shape({
+  description: yup.string().required("این فیلد الزامیست!"),
+  name: yup.string().required("این فیلد الزامیست!"),
+  email: yup
+    .string()
+    .email("ایمیل را به درستی وارد کنید!")
+    .typeError("ایمیل را به درستی وارد کنید!")
+    .required("این فیلد الزامیست!"),
+  webSite: yup.string().url("آدرس را به درستی وارد کنید!").required("این فیلد الزامیست!"),
+});
