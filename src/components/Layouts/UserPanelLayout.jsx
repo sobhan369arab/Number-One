@@ -24,7 +24,7 @@ const UserPanelLayout = () => {
                 <div className='w-full h-full flex flex-wrap sm:p-6'>
                     <div className='w-full h-fit flex items-center justify-between xl:justify-end'>
                         <MediaQuery maxWidth="1279px">
-                            <HamburgerMenu width={308} style="bg-VioletBlue flex justify-center flex-wrap pt-12 pb-20">
+                            <HamburgerMenu width={308} style="bg-VioletBlue dark:bg-LightLavender flex justify-center flex-wrap pt-12 pb-20">
                                 <SidebarUserPanel />
                             </HamburgerMenu>
                         </MediaQuery>

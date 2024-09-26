@@ -41,7 +41,7 @@ const Title_details = ({
             </div>
             <h1 className="lg:text-3xl text-2xl font-semibold my-4 max-sm:text-center max-sm:mx-auto text-DarkBlue">{t(title)} </h1>
             {/* other details */}
-            <div className="sm:flex items-center text-sm text-textGray2 gap-3">
+            <div className="sm:flex items-center text-sm gap-3">
                 {/* Creator detail */}
                 <div className="flex items-center w-fit  max-sm:mx-auto">
                     <img src='../images/Events/creator.png' className="h-11" />

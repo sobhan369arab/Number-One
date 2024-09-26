@@ -62,7 +62,7 @@
   }
 
   .mediumStyle_text {
-    @apply text-gray-500 text-base;
+    @apply text-GrayishPurple text-base;
   }
 
   .faqMannequin_shadow {
