@@ -33,8 +33,8 @@ const ComparisonBtn = ({ CourseId, comparisonId, setComparisonId }) => {
   const theme = useSelector(state => state.DarkMode)
 
   return (
-    <div onClick={() => { { getId(CourseId); setSelectBtn(!selectBtn); } }} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} ${selectBtn ? "bg-SunshineYellow" : "bg-LightLavender"} p-1 cursor-pointer  rounded-xl top-6 right-6  comparison-btn`}>
-      <ComparisonIcon className={"h-7"} />
+    <div onClick={() => { { getId(CourseId); setSelectBtn(!selectBtn); } }} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} ${selectBtn ? "bg-SunshineYellow" : "bg-LightLavender"} w-[35px] h-[35px] flex justify-center items-center cursor-pointer  rounded-xl top-6 right-6  comparison-btn`}>
+      <ComparisonIcon width="25px" height="25px" />
     </div>
   )
 }
