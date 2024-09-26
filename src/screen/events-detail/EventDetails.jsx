@@ -5,6 +5,7 @@ import { CommentSection, CustomMap, DetailsBox, OverView_Details, Title_details 
 import { CertificationsIcon, DateIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
+import { useMediaQuery } from "react-responsive";
 const EventDetails = () => {
   const { i18n } = useTranslation();
   const { id } = useParams();
@@ -18,6 +19,8 @@ const EventDetails = () => {
     { titleDetail: "EventCertifications", countDetail: SelectedEvents.certifications, iconDetail: CertificationsIcon },
     { titleDetail: "EventTotalSeat", countDetail: SelectedEvents.totalSeat, iconDetail: TotalIcon }
   ]
+  const isTablet = useMediaQuery({ query: '(max-width: 1024px)' })
+
   return (
     <>
       <TitleSection title={SelectedEvents.title} >
@@ -55,8 +58,8 @@ const EventDetails = () => {
           detailInfo={"EventInfo"}
           priceInfo={"EventPrice"}
         />
-        <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} lg:absolute m-auto mt-6 top-[1030px] Box-shadow1 p-5 w-fit bg-white rounded-lg border border-neutral-300`}>
-          <CustomMap width="208px" />
+        <div className={`${i18n.language === 'fa' ? 'left-7' : 'right-7'} lg:absolute m-auto mt-6 top-[1030px] Box-shadow1 p-5 bg-white rounded-lg border border-neutral-300`}>
+          <CustomMap width={isTablet ? "100%" : "215px"} />
         </div>
         <div className="lg:w-3/5">
           <CommentSection />

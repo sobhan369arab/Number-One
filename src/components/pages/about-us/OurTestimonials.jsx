@@ -15,7 +15,7 @@ const OurTestimonials = () => {
 
     return (
         <div className="w-full flex flex-wrap justify-center gap-y-3 lg:px-44 sm:px-16 px-8 my-20">
-            <Label text={t("OurTestimonialsChip")} variant="section" />
+            <Label text={t("OurTestimonialsChip")} variant="bgGray" />
             <div className="w-full flex justify-center">
                 <h1 className="text-center boldStyle_text w-[570px]">{t("OurTestimonialsTitle")}</h1>
             </div>

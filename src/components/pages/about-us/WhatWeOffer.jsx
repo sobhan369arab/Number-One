@@ -7,7 +7,7 @@ const WhatWeOffer = () => {
     const { t, i18n } = useTranslation()
     return (
         <div className="w-full bg-[#F7F7F9] dark:bg-[#1E1E2F] flex flex-wrap justify-center gap-y-3 lg:px-44 sm:px-16 px-8 mt-20 py-20">
-            <Label text={t("WhatWeOfferChip")} variant="section" />
+            <Label text={t("WhatWeOfferChip")} variant="bgGray" />
             <div className="w-full flex justify-center">
                 <h1 className="text-center boldStyle_text w-[583px]">{t("WhatWeOfferTitle")}</h1>
             </div>
