@@ -5,7 +5,7 @@ const SortBoxHolder = ({ children }) => {
 
     return (
         <div className="flex gap-3 items-center mx-auto">
-            <h1 className="text-gray-600 text-sm">{t('sortBy')}</h1>
+            <h1 className="text-gray-600 text-sm text-nowrap">{t('sortBy')}</h1>
             {children}
         </div>
     )

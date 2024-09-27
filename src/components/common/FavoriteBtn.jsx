@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { UnCheckedHeartIcon, CheckedHeartIcon } from "../../core/icon";
 import { useMediaQuery } from "react-responsive";
+import { Tooltip } from "@nextui-org/react";
+import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
+import { useTranslation } from "react-i18next";
 
-const FavoriteBtn = ({variantStyle}) => {
+const FavoriteBtn = ({ variantStyle }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
     const [isClick, setClick] = useState(false);
     const variant = {
@@ -17,7 +20,13 @@ const FavoriteBtn = ({variantStyle}) => {
             </div>
         )
     }
-    return variant?.[variantStyle]
+    const { i18n } = useTranslation()
+
+    return (
+        <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Add To Favorite" : "افزودن به علاقهمندی ها"}>
+            {variant?.[variantStyle]}
+        </Tooltip>
+    )
 }
 
 export default FavoriteBtn

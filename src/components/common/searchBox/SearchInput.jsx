@@ -6,7 +6,7 @@ import { Select, SelectItem, } from "@nextui-org/react";
 import { useState } from "react";
 
 const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const selectItems = [
         { id: 1, label: "دوره ها", value: "course", icon: CategoryIcon },
         { id: 2, label: "وبلاگ ها", value: "blog", icon: TopicsIcon },
@@ -25,7 +25,7 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
                         radius="none"
                         items={selectItems}
                         selectedKeys={[SearchValue]}
-                        className="w-[130px] border-l-2 border-LightGrayish h-[25px] flex items-center"
+                        className={`w-[130px] ${i18n.language == "en" ? "border-r-2" : "border-l-2"} border-LightGrayish h-[25px] flex items-center`}
                         classNames={{
                             trigger: "bg-transparent min-h-[25px] h-[25px] hover:!bg-transparent duration-500",
                             listboxWrapper: "font-IranSans select_dir",

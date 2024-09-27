@@ -140,7 +140,10 @@ i18n.use(initReactI18next)
                     WhatWeOfferDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
                     //OurTestimonials
                     OurTestimonialsChip: "توصیفات ما", OurTestimonialsTitle: "آنچه دانش آموزان فکر می کنند و می گویند درباره نامبر وان",
-                    OurTestimonialsDesc: "نظرات کاربران ما نشان‌دهنده کیفیت بالای خدمات و محصولات ماست و ما همواره به بازخوردهای آنان گوش می‌دهیم تا تجربه بهتری را ارائه دهیم."
+                    OurTestimonialsDesc: "نظرات کاربران ما نشان‌دهنده کیفیت بالای خدمات و محصولات ماست و ما همواره به بازخوردهای آنان گوش می‌دهیم تا تجربه بهتری را ارائه دهیم.",
+                    // SortOptions 
+                    Descending: "نزولی", Ascending: "صعودی", ActiveCourses: "دوره های فعال", Price: "قیمت", 
+                    Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها",
                 },
             },
             en: {
@@ -275,7 +278,10 @@ i18n.use(initReactI18next)
                     WhatWeOfferDesc: "When known printer took a galley of type scrambl edmake",
                     //OurTestimonials
                     OurTestimonialsChip: "Our Testimonials", OurTestimonialsTitle: "What Students Think and Say About SkillGrow",
-                    OurTestimonialsDesc: "The opinions of our users show the high quality of our services and products, and we always listen to their feedback to provide a better experience."
+                    OurTestimonialsDesc: "The opinions of our users show the high quality of our services and products, and we always listen to their feedback to provide a better experience.",
+                    // SortOptions 
+                    Descending: "Descending", Ascending: "Ascending", ActiveCourses: "Active Courses", Price: "Price", 
+                    Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",
                 },
             },
         },
