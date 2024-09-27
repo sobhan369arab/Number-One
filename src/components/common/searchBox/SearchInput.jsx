@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import SearchBtn from "./SearchBtn";
-import MediaQuery from "react-responsive";
-import { CategoryIcon, QuizzesIcon, TopicsIcon, TotalIcon } from "../../../core/icon";
+import { CategoryIcon, EventIcon, ShopIcon, TopicsIcon } from "../../../core/icon";
 import { Select, SelectItem, } from "@nextui-org/react";
 import { useState } from "react";
 
@@ -10,8 +9,8 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
     const selectItems = [
         { id: 1, label: "دوره ها", value: "course", icon: CategoryIcon },
         { id: 2, label: "وبلاگ ها", value: "blog", icon: TopicsIcon },
-        { id: 3, label: "فروشگاه", value: "shop", icon: QuizzesIcon },
-        { id: 4, label: "ایونت ها", value: "event", icon: TotalIcon },
+        { id: 3, label: "فروشگاه", value: "shop", icon: ShopIcon },
+        { id: 4, label: "ایونت ها", value: "event", icon: EventIcon },
     ]
 
     const [SearchValue, setSearchValue] = useState("1")
@@ -34,7 +33,7 @@ const SearchInput = ({ showSearchFilter = true, inputStyle, holderStyle }) => {
                         renderValue={(items) => {
                             return items.map((item, index) => (
                                 <div key={index} className="flex items-center gap-2">
-                                    <item.data.icon width="16px" height="16px" className="fill-VioletBlue" />
+                                    <item.data.icon className="fill-VioletBlue max-w-[20px] max-h-[20px]" />
                                     <span>{item.data.label}</span>
                                 </div>
                             ));

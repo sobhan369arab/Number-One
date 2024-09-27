@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { LogoGroup } from "../../common"
-import { CartIcon, ShoppingBag, UserIcon } from "../../../core/icon"
+import { CartIcon, UserIcon } from "../../../core/icon"
 import { Tooltip } from "@nextui-org/react"
 import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 import { useTranslation } from "react-i18next"

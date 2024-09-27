@@ -10,7 +10,7 @@ const Faq = () => {
   const { t, i18n } = useTranslation()
   const theme = useSelector(state => state.DarkMode)
   const itemClasses = {
-    title: "text-[#6D6C80]",
+    title: "text-[#6D6C80] data-[open=true]:text-[#5751E1]",
     trigger: "border-b-2 border-LightGrayish",
   };
 

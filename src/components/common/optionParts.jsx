@@ -7,7 +7,7 @@ const OptionParts = ({ text, holderStyle, disableIconIn }) => {
     return (
         <li className={`w-full flex gap-x-2 items-center ${holderStyle}`}>
             <MediaQuery minWidth={disableIconIn}>
-                <div className={`${i18n.language === "en" ? "reverse-img" : ""} min-w-7 min-h-7 border border-[#282568] rounded-full bg-[#FFC224] flex justify-center items-center OptionIcon_shadow`}>
+                <div className={`${i18n.language === "en" ? "reverse-img" : ""} min-w-7 min-h-7 border border-[#282568] rounded-full bg-[#FFC224] flex justify-center items-center dark:shadow-lg OptionIcon_shadow`}>
                     <OptionIcon fill="#1c1A4A" />
                 </div>
             </MediaQuery>
