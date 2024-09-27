@@ -60,7 +60,7 @@ const Blog = () => {
         </MediaQuery>
         <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
           <MediaQuery maxWidth={"1023px"}>
-            <Button onPress={onOpen} className="sticky top-3 z-50">{t('openFilter')}</Button>
+            <Button onPress={onOpen} className="sticky top-3 z-30">{t('openFilter')}</Button>
             <CreateModal isOpen={isOpen} onClose={onClose} header={t('filters')} size="xl" headerStyle="flex flex-col gap-1 text-white">
               <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
                 <CloseIcon />
