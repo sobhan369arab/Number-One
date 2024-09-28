@@ -1,4 +1,4 @@
 import FilterSide_Courses from "./FilterSide_Courses";
-import SectionTop from "../../common/SectionTop";
+import SectionTop from "../../common/sectionTop/SectionTop";
 
-export {FilterSide_Courses,SectionTop}
+export { FilterSide_Courses, SectionTop };

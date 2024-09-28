@@ -4,7 +4,7 @@ import TitleSection from '../../components/partials/title-section/TitleSection'
 import { Button, CreateSocialMediaItems, SwiperSlider } from '../../components/common'
 import { teachers } from '../../core/constants/instructors/teachers'
 import { EmailIcon, PhoneIcon, InstagramIcon, WhatsAppIcon, TwitterIcon, FacebookIcon, YouTubeIcon } from '../../core/icon'
-import { PercentageSkills, WaysToReach } from '../../components/pages/instructor-detail'
+import { FastCall, PercentageSkills, WaysToReach } from '../../components/pages/instructor-detail'
 import { useTranslation } from 'react-i18next'
 import BreadCrumb from '../../components/partials/title-section/BreadCrumb'
 
@@ -36,11 +36,7 @@ const InstructorDetail = () => {
                     <BreadCrumb type='Div' text={teacher.name} />
                 </TitleSection>
                 <div className='lg:px-44 sm:px-16 px-8 w-full flex flex-wrap xl:flex-nowrap gap-x-10 my-20'>
-                    <div className='w-full xl:w-1/4 h-fit order-2 mt-32 md:mt-12 xl: xl:mt-0 xl:order-none flex flex-wrap gap-y-3 py-8 px-6 rounded-xl border border-LightGrayish shadow-lg'>
-                        <h1 className='boldStyle_text text-xl w-full'>{t("sideBarTitle")}</h1>
-                        <p className='mediumStyle_text text-sm w-full'>{t("sideBarDesc")}</p>
-                        <Button arrowColor="#fff" text={t("sideBarBtn")} vType="button" vStyle="purple" style="xl:w-full justify-center" />
-                    </div>
+                    <FastCall />
                     <div className='xl:w-3/4 h-fit flex flex-wrap gap-y-6'>
                         <div className='w-full rounded-xl flex flex-wrap md:flex-nowrap justify-center md:justify-start px-10 py-12 bg-DarkIndigo gap-x-8'>
                             <div className='w-40 h-40 sm:min-w-56 sm:h-56 rounded-full bg-white'></div>

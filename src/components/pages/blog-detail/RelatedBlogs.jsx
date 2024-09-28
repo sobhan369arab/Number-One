@@ -21,17 +21,17 @@ const RelatedBlogs = ({ category }) => {
       {/* Side related blogs for laptop mode */}
       <MediaQuery minWidth={'1024px'}>
         <div className="bg-LightGray h-fit lg:w-[315px] p-5 rounded-lg">
-          <h1 className="text-xl font-semibold text-DarkBlue">{t('Blogs')} {t('Related')}</h1>
+          <h1 className="boldStyle_text text-xl">{t('Blogs')} {t('Related')}</h1>
           {LatestBlogs.map((item) => (
             <Link key={item.id} to={`/BlogDetails/${item.id}`}>
-              <div className="flex gap-x-4 items-center mt-3 py-1 cursor-pointer hover:Box-shadow2 duration-250">
+              <div className="flex gap-x-4 items-center mt-3 py-1 cursor-pointer hover:Box-shadow1 dark:hover:Box-shadow2 duration-250 rounded-md">
                 <img src={item.img} alt={'img' + item.id} className="h-16 w-16 rounded-md" />
                 <div>
                   <div className="flex gap-2">
                     <DateIcon fill="#5751E1" height={14} width={14} />
-                    <p className="text-gray-500 text-xs">{item.date}</p>
+                    <p className="mediumStyle_text text-xs">{item.date}</p>
                   </div>
-                  <p className="text-gray-800 text-sm w-20 line-clamp-2 ">{item.title}</p>
+                  <p className="mediumStyle_text text-sm w-20 line-clamp-2 ">{item.title}</p>
                 </div>
               </div>
             </Link>

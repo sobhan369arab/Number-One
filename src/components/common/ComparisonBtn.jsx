@@ -2,7 +2,9 @@ import { useMediaQuery } from "react-responsive"
 import { ComparisonIcon } from "../../core/icon"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
+import { Tooltip } from "@nextui-org/react"
+import { useTranslation } from "react-i18next"
 
 const ComparisonBtn = ({ CourseId, comparisonId, setComparisonId }) => {
   const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
@@ -30,12 +32,14 @@ const ComparisonBtn = ({ CourseId, comparisonId, setComparisonId }) => {
 
   }, [comparisonId])
 
-  const theme = useSelector(state => state.DarkMode)
+  const { i18n } = useTranslation()
 
   return (
-    <div onClick={() => { { getId(CourseId); setSelectBtn(!selectBtn); } }} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} ${selectBtn ? "bg-SunshineYellow" : "bg-LightLavender"} p-1   rounded-xl top-5 right-5  comparison-btn`}>
-      <ComparisonIcon className={"h-7"} />
-    </div>
+    <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "Comparison" : "مقایسه"}>
+      <div onClick={() => { { getId(CourseId); setSelectBtn(!selectBtn); } }} className={`${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute"} ${selectBtn ? "bg-SunshineYellow" : "bg-LightLavender"} w-[35px] h-[35px] flex justify-center items-center cursor-pointer  rounded-xl top-6 right-6  comparison-btn`}>
+        <ComparisonIcon width="25px" height="25px" className="stroke-[#555555] dark:stroke-[#fff]" />
+      </div>
+    </Tooltip>
   )
 }
 

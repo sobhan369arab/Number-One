@@ -27,6 +27,7 @@ const GetPhoneNumber = ({ setPhone, title, description }) => {
                 placeholder={t("phonePlaceholder")}
                 fullSize
                 variants="simple"
+                errorStyleComment="!bg-MainBg"
             />
             <Button vType="button" vStyle="yellow" text="GetCodeBtn" style="w-full mb-5 justify-center !py-2.5 h-auto" />
         </FormHolder>

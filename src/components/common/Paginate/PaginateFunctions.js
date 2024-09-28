@@ -4,7 +4,7 @@ export const handlePageClick = (event, numberOfItem, setItemOffset, data) => {
 };
 
 export const calculatePageCount = (data, numberOfItem) => {
-  if (data.length < numberOfItem) return;
+  if (data.length <= numberOfItem) return;
 
   const pageCount = Math.ceil(data.length / numberOfItem);
   return pageCount;

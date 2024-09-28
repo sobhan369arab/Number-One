@@ -15,7 +15,7 @@ const Details_Tabs = ({ children }) => {
 
     return (
         <div>
-            <div className="mb-8 flex flex-wrap md:justify-start justify-between gap-4 sm:w-auto w-80 m-auto" >
+            <div className="mb-8 flex flex-wrap md:justify-start justify-center gap-5 sm:w-auto w-80 m-auto" >
                 {TabData.map((tab, index) => (
                     <label key={index} className="duration-300 cursor-pointer py-1.5  w-32 text-center px-1 rounded-2xl bg-LightGrayish text-GrayishPurple has-[:checked]:text-white
               has-[:checked]:bg-VioletBlue  has-[:checked]:buttonSimple_shadow">

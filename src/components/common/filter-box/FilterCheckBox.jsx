@@ -57,9 +57,9 @@ const FilterCheckBox = ({
         <div
           onChange={(e) => selectBtn(e, item)}
           key={index}
-          className="text-sm flex items-center gap-2 text-gray-500 w-fit mt-1"
+          className="text-sm flex items-center gap-2 mediumStyle_text w-fit mt-1"
         >
-          <input type="checkbox" id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white appearance-none " />
+          <input type="checkbox" id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none " />
           <label className="cursor-pointer" htmlFor={title + index}>{i18n.language == "en" ? item.label[1] : item.label[0]}</label>
         </div>
       ))}

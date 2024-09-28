@@ -7,9 +7,10 @@ import {
   YouTubeIcon
 } from "../../core/icon";
 import { Button, CreateSocialMediaItems } from ".";
+import { UnitPrice } from "../../core/utility/SeparationPrice/SeparationPrice";
 
 export const detailVariant = {
-  "event-detail": "md:absolute lg:w-64 top-96",
+  "event-detail": "lg:absolute lg:w-64 top-96",
   "course-detail": "lg:w-64 mb-8",
 }
 export const detailInfoVariant = {
@@ -46,7 +47,7 @@ const DetailsBox = ({
       {/* price Info */}
       <div className="bg-VioletBlue px-4 py-3 w-full min-w-52 shadow-[0_0_10px_1px_rgba(13,9,99,0.36)] text-white rounded-lg flex flex-wrap justify-center gap-y-3">
         <h1 className="text-xs w-full">{t(priceInfoVariant?.[variant])}:</h1>
-        <h2 className="text-2xl font-semibold w-fit"><span className="float-left mx-1">{i18n.language === 'fa' ? 'ریال' : '$'}</span>{price}</h2>
+        <h2 className="text-2xl font-semibold w-fit"><span className="float-left mx-1">{i18n.language === 'fa' ? 'ریال' : '$'}</span>{UnitPrice(price)}</h2>
       </div>
       {/* details Information*/}
       <div className="my-2 w-full">

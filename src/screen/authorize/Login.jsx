@@ -33,6 +33,7 @@ const Login = () => {
                             type={item.type}
                             fieldStyle="rounded-full py-2.5 h-auto"
                             variants={item.variant}
+                            errorStyleComment="!bg-MainBg"
                         />)
                     )}
                     <div className='w-full flex justify-between gap-x-2 text-nowrap text-DarkBlue'>

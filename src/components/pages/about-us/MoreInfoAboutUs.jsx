@@ -17,7 +17,7 @@ const MoreInfoAboutUs = () => {
                 <img className={`${i18n.language == "en" ? "left-0 group-hover:-left-4" : "right-0 reverse-img group-hover:-right-4"} absolute w-20 h-20 top-0 group-hover:-top-4 duration-200`} src={Explosion} alt="" />
             </div>
             <div className="w-1/2 max-lg:w-full h-fit flex gap-y-3 flex-wrap max-lg:justify-center">
-                <Label text={t("MoreInfoAboutUsChip")} variant="section" />
+                <Label text={t("MoreInfoAboutUsChip")} variant="bgGray" />
                 <div className="w-11/12 max-xl:w-full leading-[50px] max-lg:text-center">
                     <span className="boldStyle_text">{t("MoreInfoAboutUsTitleS1")}</span>
                     <span className="importantWord px-8 py-1"> {t("MoreInfoAboutUsTitleS2")} </span>

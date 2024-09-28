@@ -1,4 +1,4 @@
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox } from "../../components/common"
+import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox, SortBoxHolder } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"
 import Course from "../../components/pages/course/Course"
 import { useDisclosure, Button } from "@nextui-org/react"
 import { CloseIcon } from "../../core/icon"
+import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 
@@ -61,11 +62,11 @@ const Courses = () => {
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
-                <BreadCrumb type="Div" text={'CoursesTitle'}/>
+                <BreadCrumb type="Div" text={'CoursesTitle'} />
             </TitleSection>
             <div className="main-container flex gap-7 relative">
 
-                <MediaQuery minWidth={"1024px"}>
+                <MediaQuery minWidth={"1050px"}>
                     <FilterSide_Courses
                         coursesData={AllData}
                         SetCoursesData={SetAllData}
@@ -84,8 +85,8 @@ const Courses = () => {
                     />
                 </MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
-                    <MediaQuery maxWidth={"1023px"}>
-                        <Button onPress={onOpen} className="sticky top-3 z-50">{t('openFilter')}</Button>
+                    <MediaQuery maxWidth={"1049px"}>
+                        <Button onPress={onOpen} className="sticky top-24 z-30">{t('openFilter')}</Button>
                         <CreateModal
                             isOpen={isOpen}
                             onClose={onClose}
@@ -115,7 +116,10 @@ const Courses = () => {
                         FilteredData={AllData}
                         setShowGrid={setShowGrid}
                     >
-                        <SortBox setSortType={setSortType} setSortCal={setSortCal} label={"course"} />
+                        <SortBoxHolder>
+                            <SortBox setState={setSortType} options={sortOptionType} placeholder="محبوبیت" />
+                            <SortBox setState={setSortCal} options={sortOptionCal} placeholder="نزولی" />
+                        </SortBoxHolder>
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData, currentCourse)}>

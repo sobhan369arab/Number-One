@@ -1,58 +1,81 @@
 import { menuItem } from "../../../core/constants/Header/headerData"
 import MenuHeader from "./menuHeader"
 import { useTranslation } from "react-i18next"
-import { LogoGroup, SearchInput } from "../../common"
-import { MenuIcon, CartIcon, FavoriteIcon } from "../../../core/icon"
+import { Button, HamburgerMenu, LogoGroup, SearchInput, SearchModal } from "../../common"
+import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./basketItems"
 import { useSelector } from "react-redux"
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Navbar, Tooltip } from "@nextui-org/react";
+import SideBarMenu from "./SideBarMenu"
+import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
+import { useState } from "react"
+import SearchBtn from "../../common/searchBox/SearchBtn"
 
 const Header = () => {
-  const { t } = useTranslation();
+  const [visibleSearch, setVisibleSearch] = useState(false)
+  const [visibleMenu, setVisibleMenu] = useState(false)
+  const { t, i18n } = useTranslation();
   const cartLength = useSelector(state => state.CartData.value.length)
 
   const baskets = [
-    { icon: CartIcon, number: cartLength, href: "/cart" },
-    { icon: FavoriteIcon, number: 0, href: "" },
+    { icon: CartIcon, number: cartLength, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
+    { icon: FavoriteIcon, number: 0, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
+  const menuItems = menuItem.map((item, index) => {
+    return (
+      <MenuHeader
+        key={index}
+        href={item.href}
+        title={item.title} />
+    )
+  });
+
+  const basketItems = baskets.map((item, index) => {
+    return (
+      <Tooltip key={index} {...tooltipStyle} content={i18n.language == "en" ? item.tooltip[1] : item.tooltip[0]}>
+        <div>
+          <BasketItems href={item.href} Icon={item.icon} number={item.number} />
+        </div>
+      </Tooltip>
+    )
+  });
 
   return (
     <Navbar
-      // style={{ padding: 0 }}
-      shouldHideOnScroll
+      shouldHideOnScroll={visibleMenu || visibleSearch ? false : true}
       className="flex gap-x-10 items-center justify-between min-[1360px]:px-20 sm:px-10 px-3 py-3"
       maxWidth="full"
     >
-      <NavbarContent className="flex gap-x-6">
+      <div className="w-fit flex gap-x-6 items-center">
         <LogoGroup color={'text-VioletBlue'} />
-        <MediaQuery maxWidth={"1024px"}>
-          <MenuIcon height="35px" width="35px" />
-        </MediaQuery>
         <MediaQuery minWidth={"1024px"}>
-          {menuItem.map((item, index) => (
-            <NavbarItem>
-              <MenuHeader key={index} href={item.href} title={item.title} />
-            </NavbarItem>
-          ))}
+          <div className="w-fit flex gap-x-6 items-center">
+            {menuItems}
+          </div>
         </MediaQuery>
-      </NavbarContent>
-      <NavbarContent className="h-[42px] flex gap-x-3 justify-end items-center" justify="end">
-        <NavbarItem>
-          <SearchInput maxResponsiveValue="1279px" minResponsiveValue="1280px" />
-        </NavbarItem>
-        <MediaQuery minWidth={"500px"}>
-          {baskets.map((item, index) => (
-            <NavbarItem>
-              <BasketItems key={index} href={item.href} Icon={item.icon} number={item.number} />
-            </NavbarItem>
-          ))}
+        <MediaQuery maxWidth={"1024px"}>
+          <HamburgerMenu setVisible={setVisibleMenu} visible={visibleMenu} style={'bg-VioletBlue dark:bg-LightLavender z-50 p-8'}>
+            <SideBarMenu basketItems={basketItems} menuItems={menuItems} />
+          </HamburgerMenu >
         </MediaQuery>
-        <NavbarItem>
-          <button className="bg-SunshineYellow border-SunshineYellow text-sm border rounded-full text-nowrap py-2 px-4 text-[#161439]">{t('Login')}</button>
-        </NavbarItem>
-      </NavbarContent>
+      </div>
+      <div className="w-fit h-[42px] flex gap-x-3 justify-end items-center ">
+        <MediaQuery minWidth={"1285px"}>
+          <SearchInput />
+        </MediaQuery>
+        <MediaQuery maxWidth={"1284px"}>
+          <div onClick={() => { setVisibleSearch(true) }} className="cursor-pointer">
+            <SearchBtn />
+          </div>
+          <SearchModal setVisible={setVisibleSearch} visible={visibleSearch} />
+        </MediaQuery>
+        <MediaQuery minWidth={"768px"}>
+          {basketItems}
+        </MediaQuery>
+        <Button href={"/authorize/login"} disableArrow={'hidden'} vType={'link'} vStyle={"yellow"} style={'shadow-none !pt-2 !pb-2'} text={'Login'} />
+      </div>
     </Navbar>
   )
 }

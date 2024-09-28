@@ -1,14 +1,18 @@
 import mannequin from "../../../assets/images/mannequin-faqPoster.png"
-import { Accordion } from "react-accessible-accordion"
-import { CreateAccordionItem, Label } from "../../common"
+import { Label } from "../../common"
 import MediaQuery from "react-responsive"
 import { useTranslation } from "react-i18next"
 import { faqOptions } from "../../../core/constants/landing/faq"
 import { useSelector } from "react-redux"
+import { Accordion, AccordionItem } from "@nextui-org/react"
 
 const Faq = () => {
   const { t, i18n } = useTranslation()
   const theme = useSelector(state => state.DarkMode)
+  const itemClasses = {
+    title: "text-[#6D6C80] data-[open=true]:text-[#5751E1]",
+    trigger: "border-b-2 border-LightGrayish",
+  };
 
   return (
     <div className={`w-full flex-wrap lg:flex-nowrap flex justify-center gap-y-10 gap-x-10 xl:gap-x-28 py-28 lg:px-44 sm:px-16 px-8 ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
@@ -18,11 +22,15 @@ const Faq = () => {
         </div>
       </MediaQuery>
       <div className="flex flex-wrap justify-center lg:flex-col gap-y-4 w-full lg:w-[450px] h-fit">
-        <Label text={t("faqLabel")} variant="section" style="w-fit" />
+        <Label text={t("faqLabel")} variant="bgGray" style="w-fit" />
         <h1 className="boldStyle_text w-full xl:w-2/3 lg:text-start text-center">{t("faqTitle")}</h1>
         <p className="mediumStyle_text text-center lg:text-start w-full">{t("faqDescription")}</p>
-        <Accordion className="w-full">
-          {faqOptions.map((item, index) => <CreateAccordionItem key={index} label={i18n.language === "en" ? item.label[1] : item.label[0]} content={i18n.language === "en" ? item.content[1] : item.content[0]} />)}
+        <Accordion itemClasses={itemClasses} showDivider={false}>
+          {faqOptions.map((item, index) => (
+            <AccordionItem key={index} aria-label={"Accordion" + index} title={i18n.language == "en" ? item.label[1] : item.label[0]}>
+              <p className="text-DarkBlue">{i18n.language == "en" ? item.content[1] : item.content[0]}</p>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
     </div>

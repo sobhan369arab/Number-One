@@ -1,32 +1,43 @@
 import { useTranslation } from "react-i18next"
-import { Button } from "../../common"
-import ContactField from "./ContactField"
+import { Button, FormHolder, FormInput } from "../../common"
+import { ContactValidation } from "../../../core/validations/validations"
 
 const ContactMain = () => {
     const { t, i18n } = useTranslation()
     const fields = [
-        { id: 1, name: ["نام *", "Name *"] },
-        { id: 2, name: ["پست الکترونیک *", "E-mail *"] },
-        { id: 3, name: ["سایت اینترنتی *", "Website *"] },
+        { id: 1, certificate: "name", variants: "simple", placeholder: ["نام *", "Name *"] },
+        { id: 2, certificate: "email", variants: "simple", type: "email", placeholder: ["پست الکترونیک *", "E-mail *"] },
+        { id: 3, certificate: "webSite", variants: "simple", placeholder: ["سایت اینترنتی *", "Website *"] },
     ]
+
+    const initialValues = { description: "", name: "", email: "", webSite: "" }
 
     return (
         <div className="w-full xl:w-4/6 xl:h-full flex items-center bg-LightLavender border-2 border-LightGrayish rounded-lg p-4 xl:p-8">
-            <div className="w-full h-fit flex flex-wrap gap-y-4">
+            <FormHolder
+                initialValues={initialValues}
+                onSubmit={(event) => { console.log(event) }}
+                style="w-full h-fit flex flex-wrap gap-y-4"
+                validations={ContactValidation}
+            >
                 <h1 className="w-full boldStyle_text">{t("contactUsCaption")}</h1>
                 <p className="w-full text-sm text-neutral-500">{t("contactUsDescription")}</p>
-                <textarea className="w-full max-h-60 min-h-60 p-4 outline-none border-2 border-LightGrayish rounded-md text-DarkBlue" name="contactUs"></textarea>
+                <FormInput certificate="description" variants="area" fullSize fieldStyle="!h-[230px]" errorStyleComment="!bg-LightLavender" />
                 <div className="w-full flex flex-wrap sm:flex-nowrap gap-4">
-                    {fields.map(obj => {
-                        if (i18n.language === "fa") {
-                            return (<ContactField key={obj.id} placeholder={obj.name[0]} />)
-                        } else {
-                            return (<ContactField key={obj.id} placeholder={obj.name[1]} />)
-                        }
-                    })}
+                    {fields.map(item => (
+                        <FormInput
+                            certificate={item.certificate}
+                            variants={item.variants}
+                            type={item.type}
+                            placeholder={i18n.language == "en" ? item.placeholder[1] : item.placeholder[0]}
+                            key={item.id}
+                            fieldStyle="h-[50px]"
+                            errorStyleComment="!bg-LightLavender"
+                        />
+                    ))}
                 </div>
                 <Button arrowColor="#000" vStyle="yellow" text="submit" vType="button" />
-            </div>
+            </FormHolder>
         </div>
     )
 }

@@ -28,8 +28,8 @@ const HowToStart = ({ requestSection = "show" }) => {
                     <SwiperSlider
                         perView={1}
                         arrowColor="#fff"
-                        buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] z-50 p-3"
-                        buttonSideRight="top-[100px] xl:right-[40px] right-[20px] z-50 p-3"
+                        buttonSideLeft="top-[100px] xl:left-[40px] left-[20px] z-30 p-3"
+                        buttonSideRight="top-[100px] xl:right-[40px] right-[20px] z-30 p-3"
                         buttonColor="bg-VioletBlue"
                     >
                         {encouragementItems.map((obj, index) => {

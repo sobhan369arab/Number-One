@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 const Table = ({ sectionHeader, children, style }) => {
     const { i18n } = useTranslation()
     return (
-        <table dir="rtl" className={`w-full flex-wrap justify-center ${style}`}>
+        <table className={`w-full flex-wrap justify-center ${style}`}>
             <thead>
                 <tr dir={i18n.language == "en" ? "ltr" : "rtl"} className="w-full flex justify-around p-1.5 text-center">
                     <th className="min-w-8 ml-2 h-8 rounded-full"></th>

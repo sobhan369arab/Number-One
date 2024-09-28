@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-x: hidden;
+}
+
 @layer base {
   @font-face {
     font-family: "Iran-Sans";
@@ -20,6 +24,10 @@
 }
 
 @layer components {
+  .select_dir {
+    direction: rtl;
+  }
+
   .buttonSimple_shadow {
     box-shadow: 3px 5px 0px 0px #050071;
   }
@@ -58,11 +66,11 @@
   }
 
   .boldStyle_text {
-    @apply text-DarkBlue font-Sahel text-2xl sm:text-3xl;
+    @apply text-DarkBlue font-Sahel text-xl sm:text-3xl;
   }
 
   .mediumStyle_text {
-    @apply text-gray-500 text-base;
+    @apply text-GrayishPurple text-base;
   }
 
   .faqMannequin_shadow {
@@ -132,12 +140,12 @@
         @apply line-clamp-3 h-16;
       }
 
-      .comparison-btn {
-        @apply bg-LightLavender;
-      }
-
       .favorite-btn {
         @apply bg-LightLavender p-1 rounded-xl;
+      }
+
+      .course-height-img {
+        @apply w-96;
       }
 
       .course-body {
@@ -164,7 +172,12 @@
   }
 
   .borderButton_sidebar_userPanel {
-    background: linear-gradient(90deg, transparent 0%, #ffc224 50%, transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffc224 50%,
+      transparent 100%
+    );
   }
 
   .userPanel_holder_shadow {
@@ -177,7 +190,12 @@
   }
 
   .borderTable_header_userPanel {
-    background: linear-gradient(90deg, transparent 0%, #ffc224 50%, transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffc224 50%,
+      transparent 100%
+    );
   }
 
   .itemsTable_userPanel_holder {

@@ -3,12 +3,13 @@ import { BlogCard, FilterSide_Blogs } from "../../components/pages/blog"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { Button, useDisclosure } from "@nextui-org/react";
-import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop, SortBox } from "../../components/common";
+import { calculatePageCount, CreateModal, handlePageClick, PaginatedItems, PaginateHolderItems, SectionTop, SortBox, SortBoxHolder } from "../../components/common";
 import { CloseIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa";
 import { Blogs_data } from "../../core/constants/blogs/blogs-data";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
+import { sortOptionMostType } from "../../core/constants/sorts/Sort";
 
 const Blog = () => {
   const { t } = useTranslation();
@@ -37,7 +38,7 @@ const Blog = () => {
     Query: Query,
     ListCategory: categoryData,
   };
-  console.log(filterObj_Blogs)
+  // console.log(filterObj_Blogs)
 
   // Modal
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -59,7 +60,7 @@ const Blog = () => {
         </MediaQuery>
         <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
           <MediaQuery maxWidth={"1023px"}>
-            <Button onPress={onOpen} className="sticky top-3 z-50">{t('openFilter')}</Button>
+            <Button onPress={onOpen} className="sticky top-3 z-30">{t('openFilter')}</Button>
             <CreateModal isOpen={isOpen} onClose={onClose} header={t('filters')} size="xl" headerStyle="flex flex-col gap-1 text-white">
               <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
                 <CloseIcon />
@@ -72,7 +73,9 @@ const Blog = () => {
             FilteredData={FilteredData}
             setShowGrid={setShowGrid}
           >
-            <SortBox setSortType={setSortType} label={"blog"} />
+            <SortBoxHolder>
+              <SortBox setState={setSortType} options={sortOptionMostType} placeholder="محبوب ترین ها" />
+            </SortBoxHolder>
           </SectionTop>
           <PaginateHolderItems style="justify-center">
             <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentBlog, setItemOffset, FilteredData) }} pageCount={calculatePageCount(FilteredData, currentBlog)}>

@@ -27,6 +27,7 @@ const ChangePassword = () => {
                         dir={item.dir}
                         style="w-[340px] lg:w-[28%]"
                         variants="password"
+                        errorStyleComment="!bg-MainBg -mr-2"
                     />
                 )}
             </div>

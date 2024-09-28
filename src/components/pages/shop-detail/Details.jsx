@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { addToCartAction } from "../../../redux/slices/CartData";
 import { useEffect, useState } from "react";
+import { UnitPrice } from "../../../core/utility/SeparationPrice/SeparationPrice";
 
 const Details = ({ item }) => {
     const { t } = useTranslation()
@@ -33,10 +34,10 @@ const Details = ({ item }) => {
             </div>
             <div className="w-full flex flex-wrap gap-y-2">
                 <span className="w-full">
-                    <span className="text-VioletBlue text-xl">{item.price} هزار</span>
+                    <span className="text-VioletBlue text-xl">{UnitPrice(item.price)}</span>
                     <span className="mediumStyle_text mx-2">{t("priceCount")}</span>
                 </span>
-                <span className="w-full line-through mediumStyle_text font-Pop_Med">{item.discount}</span>
+                <span className="w-full line-through mediumStyle_text font-Pop_Med">{UnitPrice(item.discount)}</span>
             </div>
             <p className="mediumStyle_text line-clamp-3">{item.bio}</p>
             <div className="w-full flex gap-x-3 mt-5 justify-center xl:justify-start flex-wrap sm:flex-none gap-y-8">

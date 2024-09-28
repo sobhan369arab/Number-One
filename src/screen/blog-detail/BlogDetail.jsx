@@ -31,14 +31,21 @@ const BlogDetail = () => {
                         title={blogSelected.title}
                         bio={blogSelected.bio}
                     />
-                    <OverView_Details training={blogSelected.bio} MajorElements={blogSelected.MajorElements} Class={"hidden"} titleLearning={'LearnBlog'} />
+                    <OverView_Details
+                        training={blogSelected.bio}
+                        MajorElements={blogSelected.MajorElements}
+                        Class={"hidden"}
+                        variant={'blog_event'}
+                        titleLearning={'LearnBlog'}
+                        ElementClass={'hidden'}
+                    />
                     <div className="border-y-2 my-7 py-5">
                         <div className="flex gap-8 w-fit max-sm:m-auto">
-                            <p className="font-semibold text-DarkBlue">{t('blogFavorite')}</p>
+                            <p className="text-DarkBlue">{t('blogFavorite')}</p>
                             <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
                         </div>
                     </div>
-                    <CommentSection/>
+                    <CommentSection />
                 </div>
                 <RelatedBlogs category={blogSelected.category} />
             </div>

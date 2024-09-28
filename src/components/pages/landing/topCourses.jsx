@@ -9,7 +9,7 @@ const TopCourses = () => {
     const theme = useSelector(state => state.DarkMode)
     return (
         <div className={`w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
-            <Label text={t("topCoursesLabel")} variant="section" />
+            <Label text={t("topCoursesLabel")} variant="bgGray" />
             <h1 className="boldStyle_text w-full text-center">{t("topCoursesTitle")}</h1>
             <p className="mediumStyle_text w-full text-center">{t("topCoursesDescription")}</p>
             <div className="mobile:w-full sm:w-auto flex mobile:justify-evenly justify-center relative mobile:px-0 sm:px-20 mt-10">

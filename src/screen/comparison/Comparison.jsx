@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { HeadingSection, ItemsCompared } from "../../components/pages/comparison"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useEffect } from "react"
@@ -10,6 +10,7 @@ import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 const Comparison = () => {
   const location = useLocation();
   const [objects, setObjects] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     SetArray();
@@ -27,7 +28,9 @@ const Comparison = () => {
         CoursesDataFa.filter(el => el.id === Id)
       )
     }
-    setObjects(CoursesFiltered.flat(Infinity))
+    if (CoursesFiltered.flat(Infinity).length <= 2) {
+      setObjects(CoursesFiltered.flat(Infinity))
+    }else navigate("/*")
   }
 
   return (
