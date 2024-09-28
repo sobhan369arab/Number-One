@@ -14,6 +14,7 @@ const nextUIConfig = {
         LightGrayish: "#B5B5C380",
         LightLavender: "#F4F3F8",
         GrayishPurple: "#6D6C80",
+        whiteBlack:"#fff",
       },
     },
     dark: {
@@ -30,6 +31,7 @@ const nextUIConfig = {
         LightGrayish: "#434343",
         LightLavender: "#2C2C2C",
         GrayishPurple: "#B0B0B0",
+        whiteBlack:"#333",
       },
     },
   },
