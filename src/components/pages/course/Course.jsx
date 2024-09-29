@@ -26,10 +26,10 @@ const Course = ({
 
     return (
         <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative  group/item">
-            <div className="h-44 w-fit course-height-img mx-auto  rounded-lg">
+            <div className="w-full h-44 course-height-img mx-auto  rounded-lg">
                 {/* course Images */}
                 <Link to={`/CourseDetails/${id}`}>
-                    <img src={images} className="w-full h-44 shadow-xl" />
+                    <img src={images} className="w-full h-44 shadow-xl rounded-md" />
                 </Link >
 
                 <div className="flex justify-center gap-8 my-3">

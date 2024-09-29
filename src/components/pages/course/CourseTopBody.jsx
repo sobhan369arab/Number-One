@@ -7,12 +7,15 @@ const CourseTopBody = ({
   category,
   bio
 }) => {
+
+  const categoryList = category.split(",")
+
   return (
     <div>
       <h1 className='text-lg line-clamp-1 mt-2 text-DarkBlue group-hover/item:text-VioletBlue duration-150'>{title}</h1>
       <div className='flex justify-between my-2 '>
         <div className={`flex gap-1  ${location.search === '?V=1'?"w-40":""}  ${category.length > 2 ? "scrollBehavior" : ""}`}>
-          {category.map((categoryBox, index) => (
+          {categoryList.map((categoryBox, index) => (
             <Label key={index} variant={'bgTextGray'} text={categoryBox} style='text-xs whitespace-nowrap '/>
           ))}
         </div>
