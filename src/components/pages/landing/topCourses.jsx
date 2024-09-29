@@ -4,10 +4,11 @@ import Tab from "./tab"
 import { tabOptions } from "../../../core/constants/landing/TopCoursesTab"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
-import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/Courses"
 import Course from "../course/Course"
 import { useLocation } from "react-router-dom"
 import { SwiperSlide } from "swiper/react"
+import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies"
+import GetAllCourseByPagination from "../../../core/services/api/GetData/GetAllCourses"
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()

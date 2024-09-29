@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next"
 import { Label, SwiperSlider } from "../../common"
 import { useSelector } from "react-redux"
-import { GetNewsFilterPage } from "../../../core/services/api/News"
 import { useEffect, useState } from "react"
 import { BlogCard } from "../blog"
 import { SwiperSlide } from "swiper/react"
+import GetNewsFilterPage from "../../../core/services/api/GetData/GetNewsFilter"
 
 const LastBlogs = () => {
   const { t } = useTranslation()

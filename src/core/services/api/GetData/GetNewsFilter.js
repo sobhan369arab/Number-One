@@ -1,6 +1,6 @@
-import http from "../interceptor";
+import http from "../../interceptor";
 
-export const GetNewsFilterPage = (apiParams) => {
+ const GetNewsFilterPage = (apiParams) => {
   try {
     const response = http.get("/News", { params: apiParams });
     return response;
@@ -8,3 +8,4 @@ export const GetNewsFilterPage = (apiParams) => {
     return [];
   }
 };
+export default GetNewsFilterPage
