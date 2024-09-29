@@ -1,26 +1,30 @@
-export const statisticsItem = [
-  {
-    id: 1,
-    name: ["جایزه به دست آمده", "Award Achieved"],
-    statistics: "42 K",
-    isBorder: true,
-  },
-  {
-    id: 2,
-    name: ["بهترین اساتید", "Best Professors"],
-    statistics: "156 K",
-    isBorder: true,
-  },
-  {
-    id: 3,
-    name: ["دروس دانشکده", "Faculty Courses"],
-    statistics: "89 K",
-    isBorder: true,
-  },
-  {
-    id: 4,
-    name: ["دانشجو های فعال", "Active Students"],
-    statistics: "45 K+",
-    isBorder: false,
-  },
-];
+export const LandingReportsItem = (report) => {
+  const statisticsItem = [
+    {
+      id: 1,
+      name: ["وبلاگ ها", "Blogs"],
+      statistics: report.newsCount,
+      isBorder: true,
+    },
+    {
+      id: 2,
+      name: ["بهترین اساتید", "Best Professors"],
+      statistics: report.teacherCount,
+      isBorder: true,
+    },
+    {
+      id: 3,
+      name: ["دوره ها", "Courses"],
+      statistics: report.courseCount,
+      isBorder: true,
+    },
+    {
+      id: 4,
+      name: ["دانشجو های فعال", "Active Students"],
+      statistics: report.studentCount,
+      isBorder: false,
+    },
+  ];
+
+  return statisticsItem;
+};

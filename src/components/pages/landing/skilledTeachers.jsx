@@ -3,9 +3,22 @@ import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import MediaQuery from "react-responsive";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import { getAllTeachers } from "../../../core/services/api/Teachers";
 
 const SkilledTeachers = () => {
     const { t } = useTranslation()
+    const [teacherList, setTeacherList] = useState([])
+
+    const getTeachers = async () => {
+        let teacherList = await getAllTeachers()
+        setTeacherList(teacherList.slice(0, 4))
+    }
+
+    useEffect(() => {
+        getTeachers()
+    }, [])
+
     return (
         <div className="w-full flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-y-12 py-28 lg:px-44 sm:px-16 px-8">
             <div className="min-w-[280px] w-full xl:w-[280px] h-fit flex justify-center xl:justify-start flex-wrap gap-y-4">
@@ -16,10 +29,13 @@ const SkilledTeachers = () => {
             </div>
             <div className="w-full xl:w-[640px] h-fit flex flex-wrap justify-between gap-y-10 relative">
                 <MediaQuery minWidth={"700px"}>
-                    <TeacherCard />
-                    <TeacherCard />
-                    <TeacherCard />
-                    <TeacherCard />
+                    {teacherList.map(item => (
+                        <TeacherCard
+                            key={item.teacherId}
+                            name={item.fullName}
+                            picture={item.pictureAddress}
+                        />
+                    ))}
                 </MediaQuery>
                 <MediaQuery maxWidth={"700px"}>
                     <SwiperSlider
@@ -29,10 +45,11 @@ const SkilledTeachers = () => {
                         buttonSideRight="top-[30px] xl:right-[40px] right-[5px] z-20 p-3"
                         buttonColor="bg-SunshineYellow"
                     >
-                        <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>
-                        <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>
-                        <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>
-                        <SwiperSlide className="justify-center flex"><TeacherCard /></SwiperSlide>
+                        {teacherList.map(item => (
+                            <SwiperSlide key={item.teacherId} className="justify-center flex">
+                                <TeacherCard name={item.fullName} picture={item.pictureAddress} />
+                            </SwiperSlide>
+                        ))}
                     </SwiperSlider>
                 </MediaQuery>
             </div>

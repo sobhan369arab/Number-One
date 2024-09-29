@@ -1,8 +1,9 @@
 import axios from "axios";
-const baceURL = import.meta.env.VITE_BASE_URL;
+
+const baseURL = import.meta.env.VITE_BASE_URL;
 
 const instance = axios.create({
-  baceURL: baceURL,
+  baseURL: baseURL,
 });
 
 const onSuccess = (response) => {
