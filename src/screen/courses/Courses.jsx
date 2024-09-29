@@ -10,6 +10,7 @@ import { CloseIcon } from "../../core/icon"
 import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
+import GetAllCourseByPagination from "../../core/services/api/GetData/GetAllCourses"
 
 const Courses = () => {
     const { t } = useTranslation();
@@ -43,19 +44,23 @@ const Courses = () => {
         courseLevelId: levelId,
         courseTypeId: typeId,
     };
-    // console.log(filterObj_Courses)
 
-    useEffect(() => {
-        if (AllData.length === 0) {
-            SetAllData(CoursesDataFa);
-        }
-    }, [AllData])
+    const getCourseList = async () => {
+
+        const courses = await GetAllCourseByPagination()
+
+        SetAllData(courses.courseFilterDtos)
+
+    }
+
+
+    useEffect(() => { getCourseList() }, [AllData])
 
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
-    const currentItems = AllData.slice(itemOffset, endOffset);
+    const currentItems = AllData?.slice(itemOffset, endOffset);
 
     const [comparisonId, setComparisonId] = useState([])
 
@@ -65,7 +70,6 @@ const Courses = () => {
                 <BreadCrumb type="Div" text={'CoursesTitle'} />
             </TitleSection>
             <div className="main-container flex gap-7 relative">
-
                 <MediaQuery minWidth={"1050px"}>
                     <FilterSide_Courses
                         coursesData={AllData}
@@ -112,7 +116,7 @@ const Courses = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        AllData={CoursesDataFa}
+                        AllData={AllData}
                         FilteredData={AllData}
                         setShowGrid={setShowGrid}
                     >
@@ -122,24 +126,23 @@ const Courses = () => {
                         </SortBoxHolder>
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData, currentCourse)}>
+                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData ?? [], currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                                {currentItems.map((item, index) => (
+                                {currentItems && currentItems.map((item, index) => (
                                     <Course
-                                        key={index}
-                                        id={item.id}
+                                        id={index}
                                         title={item.title}
-                                        images={item.img}
-                                        instructor={item.instructor}
-                                        score={item.score}
-                                        category={item.category}
-                                        level={item.level}
-                                        price={item.price}
-                                        date={item.date}
-                                        studentsNumber={item.students}
-                                        like={item.like}
-                                        disLike={item.disLike}
-                                        bio={item.bio}
+                                        images={item.tumbImageAddress}
+                                        instructor={item.teacherName}
+                                        score={item.courseRate}
+                                        category={item.technologyList}
+                                        level={item.levelName}
+                                        price={item.cost}
+                                        date={item.lastUpdate}
+                                        studentsNumber={0}
+                                        like={item.likeCount}
+                                        disLike={item.dissLikeCount}
+                                        bio={item.describe}
                                         comparisonId={comparisonId}
                                         setComparisonId={setComparisonId}
                                     />
