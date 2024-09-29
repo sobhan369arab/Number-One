@@ -10,11 +10,12 @@ const SwiperSlider = ({ Breakpoints, modules, perView, children, arrowColor, but
             <ButtonSlider side="right" style={`reverse-img ${buttonSideRight} ${buttonColor}`} arrowColor={arrowColor} click={sliderRef} />
             <Swiper
                 modules={modules}
-                spaceBetween={30}
+                spaceBetween={5}
                 slidesPerView={perView}
                 breakpoints={Breakpoints}
                 dir='rtl'
                 ref={sliderRef}
+                
             >
                 {children}
             </Swiper>
