@@ -1,8 +1,6 @@
-
-
-const BlogHeader = ({images,id}) => {
+const BlogHeader = ({ images, id }) => {
   return (
-    <img src={images} className="rounded-xl"/>
+    <img src={images} className="rounded-xl w-full h-[224px]" />
   )
 }
 
