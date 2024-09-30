@@ -44,23 +44,21 @@ const Courses = () => {
         courseLevelId: levelId,
         courseTypeId: typeId,
     };
-
-    const getCourseList = async () => {
-
-        const courses = await GetAllCourseByPagination()
-
-        SetAllData(courses.courseFilterDtos)
-
-    }
-
-
-    useEffect(() => { getCourseList() }, [AllData])
-
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
     const currentItems = AllData?.slice(itemOffset, endOffset);
+
+    const getCourseList = async () => {
+
+        const courses = await GetAllCourseByPagination(filterObj_Courses,1, 34)
+        SetAllData(courses.courseFilterDtos)
+    }
+
+
+    useEffect(() => { getCourseList() }, [AllData])
+
 
     const [comparisonId, setComparisonId] = useState([])
 
