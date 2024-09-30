@@ -134,7 +134,7 @@ body {
     @apply md:block;
 
     .grid-item {
-      @apply w-full flex gap-4;
+      @apply w-full flex gap-4 h-auto;
 
       .blog-bio {
         @apply line-clamp-3 h-16;
@@ -161,6 +161,9 @@ body {
 
         .course-bio {
           @apply line-clamp-1;
+        }
+        .course-title {
+          @apply -mt-2;
         }
       }
     }

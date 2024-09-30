@@ -52,7 +52,7 @@ const Courses = () => {
 
     const getCourseList = async () => {
 
-        const courses = await GetAllCourseByPagination(filterObj_Courses,1, 34)
+        const courses = await GetAllCourseByPagination(filterObj_Courses, 1, 34)
         SetAllData(courses.courseFilterDtos)
     }
 
