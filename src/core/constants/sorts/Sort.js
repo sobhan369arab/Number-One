@@ -1,11 +1,11 @@
 export const sortOptionCal = [
-  { id: 1, value: "DESC", label: "Descending" },
-  { id: 2, value: "ASC", label: "Ascending" },
+  { id: 1, value: "DESC", label: ["نزولی", "Descending"] },
+  { id: 2, value: "ASC", label: ["صعودی", "Ascending"]},
 ];
 export const sortOptionType = [
-  { id: 1, value: "Active", label: "ActiveCourses" },
-  { id: 2, value: "Price", label: "Price" },
-  { id: 3, value: "Rate", label: "Popularity" },
+  { id: 1, value: "Active", label:["دوره های فعال", "ActiveCourses"] },
+  { id: 2, value: "Price", label: ["قیمت", "Price"] },
+  { id: 3, value: "Rate", label: ["محبوبیت", "Popularity"] },
 ];
 export const sortOptionMostType = [
   { id: 1, value: "Rate", label: "MostPopular" },

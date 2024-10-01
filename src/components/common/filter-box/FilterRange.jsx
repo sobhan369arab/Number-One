@@ -10,7 +10,7 @@ const FilterRange = ({
 
 }) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState([0, 1000000]);
+  const [value, setValue] = useState([0, 1000000000]);
   const handleInput = (event) => {
     setValue(event)
     setPriceDown(event[0])
@@ -22,7 +22,7 @@ const FilterRange = ({
       <Slider
         aria-label="filter-rage"
         step={10}
-        maxValue={1000000}
+        maxValue={1000000000}
         minValue={0}
         value={value}
         onChange={(event) => { handleInput(event) }}

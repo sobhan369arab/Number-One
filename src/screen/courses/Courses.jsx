@@ -21,47 +21,74 @@ const Courses = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const [AllData, SetAllData] = useState([]);
+    const [Query, setQuery] = useState(undefined);
+    const [ListTech, setListTech] = useState(null);
+    const [TechCount, setTechCount] = useState(undefined);
     const [sortCal, setSortCal] = useState("DESC");
-    const [sortType, setSortType] = useState("Rate");
-    const [categoryData, SetCategoryData] = useState(null);
-    const [instructorData, SetInstructorData] = useState(null);
+    const [sortType, setSortType] = useState("Active");
+    const [instructorId, SetInstructorId] = useState(null);
     const [levelId, SetLevelId] = useState(undefined);
     const [typeId, SetTypeId] = useState(undefined);
-    const [rating, SetRating] = useState(0);
+    // const [rating, SetRating] = useState(0);
     const [priceDown, setPriceDown] = useState(0);
     const [priceUp, setPriceUp] = useState(1000000);
     const [showGrid, setShowGrid] = useState(false);
-    const [Query, setQuery] = useState(undefined);
     const filterObj_Courses = {
-        SortingCol: sortCal,
-        SortType: sortType,
+        SortingCol: sortType,
+        SortType: sortCal,
         Query: Query,
-        CostDown: priceDown,
         CostUp: priceUp,
-        ListCategory: categoryData,
-        ListInstructor: instructorData,
-        courseRating: rating,
+        CostDown: priceDown,
+        TechCount: TechCount,
+        ListTech: ListTech,
         courseLevelId: levelId,
-        courseTypeId: typeId,
+        CourseTypeId: typeId,
+        TeacherId: instructorId,
+        PageNumber: 1,
+        RowsOfPage: 10000
     };
+
+    const filterSide = <FilterSide_Courses
+        setQuery={setQuery}
+        setListTech={setListTech}
+        SetTypeId={SetTypeId}
+        SetLevelId={SetLevelId}
+        setTeacherId={SetInstructorId}
+        // SetRating={SetRating}
+        setPriceDown={setPriceDown}
+        setPriceUp={setPriceUp}
+        setTechCount={setTechCount}
+    />
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
     const currentItems = AllData?.slice(itemOffset, endOffset);
+    console.log(currentItems)
 
     const getCourseList = async () => {
 
-        const courses = await GetAllCourseByPagination(filterObj_Courses, 1, 34)
+        const courses = await GetAllCourseByPagination(filterObj_Courses)
         SetAllData(courses.courseFilterDtos)
     }
 
-
-    useEffect(() => { getCourseList() }, [AllData])
-
+    useEffect(() => { getCourseList() }, []);
+    useEffect(() => {
+        getCourseList()
+    }, [Query,
+        ListTech,
+        TechCount,
+        typeId,
+        levelId,
+        instructorId,
+        sortCal,
+        sortType,
+        priceDown,
+        priceUp,
+    ]);
 
     const [comparisonId, setComparisonId] = useState([])
-
+    console.log(filterObj_Courses)
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -69,22 +96,7 @@ const Courses = () => {
             </TitleSection>
             <div className="main-container flex gap-7 relative">
                 <MediaQuery minWidth={"1050px"}>
-                    <FilterSide_Courses
-                        coursesData={AllData}
-                        SetCoursesData={SetAllData}
-                        SetCategoryData={SetCategoryData}
-                        SetInstructorData={SetInstructorData}
-                        levelId={levelId}
-                        typeId={typeId}
-                        SetLevelId={SetLevelId}
-                        SetTypeId={SetTypeId}
-                        SetRating={SetRating}
-                        setPriceDown={setPriceDown}
-                        setPriceUp={setPriceUp}
-                        setQuery={setQuery}
-                        categoryData={categoryData}
-                        instructorData={instructorData}
-                    />
+                    {filterSide}
                 </MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <MediaQuery maxWidth={"1049px"}>
@@ -99,18 +111,7 @@ const Courses = () => {
                             <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
                                 <CloseIcon />
                             </div>
-                            <FilterSide_Courses
-                                SetCategoryData={SetCategoryData}
-                                SetInstructorData={SetInstructorData}
-                                levelId={levelId}
-                                typeId={typeId}
-                                SetLevelId={SetLevelId}
-                                SetTypeId={SetTypeId}
-                                SetRating={SetRating}
-                                setPriceDown={setPriceDown}
-                                setPriceUp={setPriceUp}
-                                setQuery={setQuery}
-                            />
+                            {filterSide}
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
@@ -119,8 +120,8 @@ const Courses = () => {
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
-                            <SortBox setState={setSortType} options={sortOptionType} placeholder="محبوبیت" />
-                            <SortBox setState={setSortCal} options={sortOptionCal} placeholder="نزولی" />
+                            <SortBox setState={setSortType} options={sortOptionType} placeholder={["محبوبیت", "Popularity"]} />
+                            <SortBox setState={setSortCal} options={sortOptionCal} placeholder={["نزولی", "Descending"]} />
                         </SortBoxHolder>
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">

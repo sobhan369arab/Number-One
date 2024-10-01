@@ -1,11 +1,9 @@
 import { useTranslation } from "react-i18next"
 import { Label, SwiperSlider } from "../../common"
 import Tab from "./tab"
-import { tabOptions } from "../../../core/constants/landing/TopCoursesTab"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import Course from "../course/Course"
-import { useLocation } from "react-router-dom"
 import { SwiperSlide } from "swiper/react"
 import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies"
 import GetAllCourseByPagination from "../../../core/services/api/GetData/GetAllCourses"
@@ -42,8 +40,6 @@ const TopCourses = () => {
 
     const [comparisonId, setComparisonId] = useState([])
 
-
-
     return (
         <div className={`w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
             <Label text={t("topCoursesLabel")} variant="bgGray" />
@@ -62,7 +58,7 @@ const TopCourses = () => {
                     buttonSideRight="top-[190px] xl:-right-[60px] sm:right-[20px] hidden sm:flex h-12 z-30 w-12"
                     buttonColor="bg-VioletBlue"
                 >
-                    {courseList.length > 0 && courseList.map((item, index) => (
+                    {courseList != undefined && courseList.map((item, index) => (
                         <SwiperSlide key={index}>
                             <Course
                                 id={index}

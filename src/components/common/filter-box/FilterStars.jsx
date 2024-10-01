@@ -7,7 +7,8 @@ const FilterStars = ({
     const { t } = useTranslation();
 
     const ratingChanged = (newRating) => {
-        SetRating(newRating);
+        // SetRating(newRating);
+        console.log(newRating)
     };
     return (
         <div className="filter-box">

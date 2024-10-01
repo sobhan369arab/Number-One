@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
 
 const FilterCheckBox = ({
   title,
   labelArray,
   SetFilteredData,
-  filteredData
+  setTechCount
 }) => {
   const { t, i18n } = useTranslation();
+  useEffect(() => {
+  }, [labelArray])
+
 
   const [checkedData, SetCheckedData] = useState(false);
 
   // Checkbox filtering function
   const selectBtn = (e, item) => {
+    item.id.toString();
     if (e.target.checked) {
       item.active = true
       SetCheckedData(true);
@@ -26,10 +30,13 @@ const FilterCheckBox = ({
 
     if (activeButton.length === 0) {
       SetFilteredData(null);
+      setTechCount(null);
       SetCheckedData(false);
     }
     else {
-      SetFilteredData(ButtonId);
+      console.log(activeButton)
+      SetFilteredData(ButtonId.toString());
+      setTechCount(1);
     }
 
   }
@@ -47,20 +54,21 @@ const FilterCheckBox = ({
           onClick={() => {
             SetFilteredData(null);
             SetCheckedData(false);
+            setTechCount(null);
           }}
         >
           {t('removeFilters')}
 
         </button>
       </div>
-      {labelArray.map((item, index) => (
+      {labelArray.length != 0 && labelArray.map((item, index) => (
         <div
           onChange={(e) => selectBtn(e, item)}
           key={index}
           className="text-sm flex items-center gap-2 mediumStyle_text w-fit mt-1"
         >
           <input type="checkbox" id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none " />
-          <label className="cursor-pointer" htmlFor={title + index}>{i18n.language == "en" ? item.label[1] : item.label[0]}</label>
+          <label className="cursor-pointer" htmlFor={title + index}>{item.techName}</label>
         </div>
       ))}
 

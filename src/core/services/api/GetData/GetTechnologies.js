@@ -1,6 +1,6 @@
 import http from "../../interceptor";
 
-const GetTechnologies = async (setState) => {
+const GetTechnologies = async () => {
   try {
     const request = await http.get("/Home/GetTechnologies");
     return request;

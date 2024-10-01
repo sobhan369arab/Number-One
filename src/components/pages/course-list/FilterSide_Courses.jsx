@@ -1,52 +1,72 @@
-import { CategoryFilter, InstructorFilter, LevelFilter, TypeFilter } from "../../../core/constants/Filters/Filters"
+import { useEffect, useState } from "react"
+import { InstructorFilter, LevelFilter, TypeFilter } from "../../../core/constants/Filters/Filters"
 import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch, FilterStars } from "../../common/filter-box"
+import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies";
+import getAllTeachers from "../../../core/services/api/GetData/GetAllTeachers";
+import GetCourseType from "../../../core/services/api/GetData/GetCourseType";
+import GetCourseLevel from "../../../core/services/api/GetData/GetCourseLevel";
 
 const FilterSide_Courses = ({
-  SetCategoryData,
-  SetInstructorData,
-  SetLevelId,
+  setQuery,
+  setListTech,
   SetTypeId,
-  SetRating,
+  SetLevelId,
+  setTeacherId,
+  // SetRating,
   setPriceDown,
   setPriceUp,
-  setQuery,
-  typeId,
-  levelId,
-  categoryData,
-  instructorData,
+  setTechCount
 }) => {
+
+  // State filters
+  const [categoryData, setCategoryData] = useState([]);
+  const [typeData, setTypeData] = useState([]);
+  const [levelData, setLevelData] = useState([]);
+  const [teacherData, setTeacherData] = useState([]);
+
+  // Getting filter data from api
+  const getFiltersData = async (api, setState) => {
+
+    const result = await api;
+
+    setState(result)
+  }
+
+  useEffect(() => {
+    getFiltersData(GetTechnologies(), setCategoryData),
+      getFiltersData(GetCourseType(), setTypeData),
+      getFiltersData(GetCourseLevel(), setLevelData),
+      getFiltersData(getAllTeachers(), setTeacherData)
+  }, [])
+
 
   return (
     <div className="h-fit lg:w-72">
       <FilterSearch variant="Courses" setQuery={setQuery} />
       <FilterCheckBox
-        labelArray={CategoryFilter}
+        labelArray={categoryData}
         title={"category"}
-        SetFilteredData={SetCategoryData}
-        filteredData={categoryData}
+        SetFilteredData={setListTech}
+        setTechCount={setTechCount}
       />
       <FilterRadio
         title={"type"}
-        setCourseID={SetTypeId}
-        inputId={typeId}
-        labelArray={TypeFilter}
+        setInputID={SetTypeId}
+        inputData={typeData}
       />
       <FilterRadio
         title={"level"}
-        setCourseID={SetLevelId}
-        inputId={levelId}
-        labelArray={LevelFilter}
+        setInputID={SetLevelId}
+        inputData={levelData}
       />
-      <FilterCheckBox
-        labelArray={InstructorFilter}
+      <FilterRadio
         title={"instructor"}
-        SetFilteredData={SetInstructorData}
-        filteredData={instructorData}
+        setInputID={setTeacherId}
+        inputData={teacherData}
       />
       <FilterStars
         title={"rating"}
-        SetRating={SetRating}
-
+        // SetRating={SetRating}
       />
       <FilterRange
         title={"price"}

@@ -12,14 +12,14 @@ const SortBox = ({ options, placeholder, setState }) => {
         setState(findKey.value)
     }
 
-    const { i18n, t } = useTranslation()
+    const { i18n,} = useTranslation()
 
     return (
         <Select
             radius='sm'
             aria-label="select"
             items={options}
-            placeholder={placeholder}
+            placeholder={i18n.language === 'fa' ? placeholder[0] : placeholder[1]}
             className="w-[150px]"
             onChange={(e) => { handleChange(e.target.value) }}
             classNames={{
@@ -29,7 +29,7 @@ const SortBox = ({ options, placeholder, setState }) => {
                 listboxWrapper: `font-IranSans ${i18n.language != "en" && "select_dir"}`
             }}
         >
-            {(options) => <SelectItem>{t(options.label)}</SelectItem>}
+            {(options) => <SelectItem>{i18n.language === 'fa' ? options.label[0] : options.label[1]}</SelectItem>}
         </Select>
     )
 }

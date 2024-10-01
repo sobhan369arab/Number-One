@@ -1,9 +1,7 @@
 import { CategoryFilter } from "../../../core/constants/Filters/Filters"
 import { FilterCheckBox, FilterSearch } from "../../common/filter-box"
 
-const FilterSide_Blogs = ({setQuery,SetCategoryData}) => {
-
-
+const FilterSide_Blogs = ({ setQuery, SetCategoryData }) => {
 
     return (
         <div className='h-fit lg:w-72'>
@@ -11,7 +9,7 @@ const FilterSide_Blogs = ({setQuery,SetCategoryData}) => {
             <FilterCheckBox
                 labelArray={CategoryFilter}
                 title={"category"}
-            SetFilteredData={SetCategoryData}
+                SetFilteredData={SetCategoryData}
             />
         </div>
     )
