@@ -1,9 +1,10 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { getItem } from "../../services/local-storage/LocalStorage";
 
 i18n.use(initReactI18next)
     .init({
-        fallbackLng: "fa",
+        fallbackLng: (getItem('lang') === false ? 'fa' : getItem('lang')),
         interpolation: {
             escapeValue: false,
         },
@@ -122,9 +123,9 @@ i18n.use(initReactI18next)
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های در حال برگزاری:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
                     SecuritySettings: "تنظیمات امنیتی", saveChanges: "ذخیره تغییرات", newEmail: "ایمیل جدید", editInformationTitle: "ویرایش اطلاعات کاربری", participateInCourse: "شرکت کرده اید", reservationInCourse: "رزرو کرده اید",
                     // Comments
-                    comment: 'نظر',user_comment:'نظرات کاربران',sendComment:'ارسال نظر',titleComment:'عنوان پیام',
-                    descComment:'توضیحات بیشتر',comment_text:'متن خود را وارد کنید',ConfirmComment:'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
-                    commentAnswer:'پاسخ',viewAnswers:'مشاهده پاسخ ها',
+                    comment: 'نظر', user_comment: 'نظرات کاربران', sendComment: 'ارسال نظر', titleComment: 'عنوان پیام',
+                    descComment: 'توضیحات بیشتر', comment_text: 'متن خود را وارد کنید', ConfirmComment: 'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
+                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',
                     // Related titles
                     Related: 'مرتبط', Blogs: 'اخبار',
                     // Cart
@@ -136,13 +137,13 @@ i18n.use(initReactI18next)
                     MoreInfoAboutUsTitleS3: "آنها برای چالش سطح بعدی.", MoreInfoAboutUsBtn: "آزمایش رایگان را شروع کنید",
                     MoreInfoAboutUsDesc: "هنگامی که یک چاپگر ناشناس یک گالری از نوع را گرفت و آن را به هم زد تا یک تایپ بسازد کتاب نمونه نه تنها از پنج قرن، بلکه از جهش به آن نیز جان سالم به در برده است حروفچینی الکترونیکی",
                     //WhatWeOffer
-                    WhatWeOfferChip: "آنچه ما ارائه می دهیم", WhatWeOfferTitle: "یادگیری مهارت های جدید در زمانی که و جایی که تو دوست داری", 
+                    WhatWeOfferChip: "آنچه ما ارائه می دهیم", WhatWeOfferTitle: "یادگیری مهارت های جدید در زمانی که و جایی که تو دوست داری",
                     WhatWeOfferDesc: "هنگامی که چاپگر شناخته شده یک گالری از نوع scrambl edmake گرفت",
                     //OurTestimonials
                     OurTestimonialsChip: "توصیفات ما", OurTestimonialsTitle: "آنچه دانش آموزان فکر می کنند و می گویند درباره نامبر وان",
                     OurTestimonialsDesc: "نظرات کاربران ما نشان‌دهنده کیفیت بالای خدمات و محصولات ماست و ما همواره به بازخوردهای آنان گوش می‌دهیم تا تجربه بهتری را ارائه دهیم.",
                     // SortOptions 
-                    Descending: "نزولی", Ascending: "صعودی", ActiveCourses: "دوره های فعال", Price: "قیمت", 
+                    Descending: "نزولی", Ascending: "صعودی", ActiveCourses: "دوره های فعال", Price: "قیمت",
                     Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها",
                 },
             },
@@ -260,9 +261,9 @@ i18n.use(initReactI18next)
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "Current courses:", suggestedCourses: "Suggested courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
                     SecuritySettings: "Security settings", saveChanges: "Save changes", newEmail: "New email", editInformationTitle: "Edit user information", participateInCourse: "Participate", reservationInCourse: "Reserved",
                     // Comments
-                    comment: 'Comment',user_comment:'User Comments',sendComment:'Submit a comment',titleComment:'Comment title',
-                    descComment:'More details',comment_text:'Enter your text',ConfirmComment:'Your comment will be registered after approval by the admin!',
-                    commentAnswer:'Answer',viewAnswers:'View Answers',
+                    comment: 'Comment', user_comment: 'User Comments', sendComment: 'Submit a comment', titleComment: 'Comment title',
+                    descComment: 'More details', comment_text: 'Enter your text', ConfirmComment: 'Your comment will be registered after approval by the admin!',
+                    commentAnswer: 'Answer', viewAnswers: 'View Answers',
                     // Related titles
                     Related: 'Related', Blogs: 'Blogs',
                     // Cart
@@ -274,13 +275,13 @@ i18n.use(initReactI18next)
                     MoreInfoAboutUsTitleS3: " Goal For Next Level Challenge.", MoreInfoAboutUsBtn: "Start Free Trial",
                     MoreInfoAboutUsDesc: "When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
                     //WhatWeOffer
-                    WhatWeOfferChip: "What We Offer", WhatWeOfferTitle: "Learn New Skills When And Where You Like", 
+                    WhatWeOfferChip: "What We Offer", WhatWeOfferTitle: "Learn New Skills When And Where You Like",
                     WhatWeOfferDesc: "When known printer took a galley of type scrambl edmake",
                     //OurTestimonials
                     OurTestimonialsChip: "Our Testimonials", OurTestimonialsTitle: "What Students Think and Say About SkillGrow",
                     OurTestimonialsDesc: "The opinions of our users show the high quality of our services and products, and we always listen to their feedback to provide a better experience.",
                     // SortOptions 
-                    Descending: "Descending", Ascending: "Ascending", ActiveCourses: "Active Courses", Price: "Price", 
+                    Descending: "Descending", Ascending: "Ascending", ActiveCourses: "Active Courses", Price: "Price",
                     Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",
                 },
             },

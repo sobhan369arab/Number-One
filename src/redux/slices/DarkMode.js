@@ -7,6 +7,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = getItem("theme") ? getItem("theme") : false;
 
 function changeTheme(state) {
+  console.log(state)
   state = !state;
   setItem("theme", state);
   return state

@@ -1,22 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getItem, setItem } from '../../../core/services/local-storage/LocalStorage';
 
 const LanguageButton = () => {
     const { i18n } = useTranslation();
-    const [lang, setLang] = useState("FA")
+
+    useEffect(() => {
+        if (getItem('lang') === false) {
+            setItem('lang', 'fa')
+        }
+    }, [])
 
     const onChangeLang = () => {
-        if (lang == "FA") {
-            i18n.changeLanguage("en");
-            setLang("EN")
-        } else {
-            i18n.changeLanguage("fa");
-            setLang("FA")
+        if (getItem('lang') !== false) {
+            if (getItem('lang') == 'fa') {
+                i18n.changeLanguage("en");
+                setItem('lang', 'en')
+            } else {
+                i18n.changeLanguage("fa");
+                setItem('lang', 'fa')
+            }
         }
     }
     return (
         <div defaultValue={"fa"} onClick={onChangeLang} className="bottomNav">
-            <span>{lang}</span>
+            <span>{getItem('lang') === false ? 'fa' : getItem('lang')}</span>
         </div>
     )
 }

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { BrushIcon, MoonIcon, SunIcon } from "../../../core/icon"
+import { useEffect, } from "react"
+import { MoonIcon, SunIcon } from "../../../core/icon"
 import { useSelector, useDispatch } from "react-redux"
 import { changeThemeAction } from "../../../redux/slices/DarkMode"
 
