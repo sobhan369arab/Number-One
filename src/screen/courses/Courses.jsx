@@ -1,6 +1,5 @@
 import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox, SortBoxHolder } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
-import { CoursesDataFa } from "../../core/constants/Courses/courses-data_Fa"
 import { useEffect, useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useTranslation } from "react-i18next"
@@ -14,8 +13,8 @@ import GetAllCourseByPagination from "../../core/services/api/GetData/GetAllCour
 
 const Courses = () => {
     const { t } = useTranslation();
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' })
-    const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' });
+    const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' });
 
     // Modal
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -89,6 +88,25 @@ const Courses = () => {
 
     const [comparisonId, setComparisonId] = useState([])
     console.log(filterObj_Courses)
+    const courses = currentItems && currentItems.map((item, index) => (
+        <Course
+            id={index}
+            title={item.title}
+            images={item.tumbImageAddress}
+            instructor={item.teacherName}
+            score={item.courseRate}
+            category={item.technologyList}
+            level={item.levelName}
+            price={item.cost}
+            date={item.lastUpdate}
+            studentsNumber={0}
+            like={item.likeCount}
+            disLike={item.dissLikeCount}
+            bio={item.describe}
+            comparisonId={comparisonId}
+            setComparisonId={setComparisonId}
+        />
+    ))
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -127,25 +145,7 @@ const Courses = () => {
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData ?? [], currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                                {currentItems && currentItems.map((item, index) => (
-                                    <Course
-                                        id={index}
-                                        title={item.title}
-                                        images={item.tumbImageAddress}
-                                        instructor={item.teacherName}
-                                        score={item.courseRate}
-                                        category={item.technologyList}
-                                        level={item.levelName}
-                                        price={item.cost}
-                                        date={item.lastUpdate}
-                                        studentsNumber={0}
-                                        like={item.likeCount}
-                                        disLike={item.dissLikeCount}
-                                        bio={item.describe}
-                                        comparisonId={comparisonId}
-                                        setComparisonId={setComparisonId}
-                                    />
-                                ))}
+                                {courses}
                             </div>
                         </PaginatedItems>
                     </PaginateHolderItems>

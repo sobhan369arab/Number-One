@@ -1,3 +1,4 @@
+import { Skeleton } from "@nextui-org/react"
 import { LevelIcon, StudentIcon, TeacherIcon } from "../../../core/icon"
 import ToLike from "../../common/ToLike"
 
@@ -6,7 +7,8 @@ const CourseCenterBody = ({
     studentsNumber,
     level,
     like,
-    disLike
+    disLike,
+    isLoaded
 }) => {
 
     const Data = [
@@ -19,17 +21,21 @@ const CourseCenterBody = ({
         <div className="grid grid-cols-2 course-centerBody gap-y-5 place-content-between justify-between">
             {Data.map((item, index) => (
                 <div key={index} className="course-flexBody">
-                    <div  className={`flex items-center gap-1 ${item.justify}`}>
-                        {item.icon}
-                        <p className="line-clamp-1 text-gray-500">{item.title}</p>
-                    </div>
+                    <Skeleton isLoaded={isLoaded}>
+                        <div className={`flex items-center gap-1 ${item.justify}`}>
+                            {item.icon}
+                            <p className="line-clamp-1 text-gray-500">{item.title}</p>
+                        </div>
+                    </Skeleton>
                 </div>
             ))}
             <div className="flex items-center gap-1 justify-end">
-                <ToLike
-                    likeNumber={like}
-                    disLikeNumber={disLike}
-                />
+                <Skeleton isLoaded={isLoaded}>
+                    <ToLike
+                        likeNumber={like}
+                        disLikeNumber={disLike}
+                    />
+                </Skeleton>
             </div>
         </div>
     )
