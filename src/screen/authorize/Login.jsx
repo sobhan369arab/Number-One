@@ -4,20 +4,23 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Vector from '../../assets/images/SignIn.svg'
 import { loginValidations } from "../../core/validations/validations"
+import { UserLogin } from '../../core/services/api/PostData/Login'
 
 const Login = () => {
     const { t, i18n } = useTranslation()
-    const initialValues = { email: "", password: "", twoStep: false }
+    const initialValues = { phoneOrGmail: "", password: "", rememberMe: false }
     const fields = [
-        { id: 1, type: "email", certificate: "email", variant: "simple", placeholder: t("emailPlaceholder") },
+        { id: 1, type: "email", certificate: "phoneOrGmail", variant: "simple", placeholder: t("emailPlaceholder") },
         { id: 2, certificate: "password", variant: "password", placeholder: t("passwordPlaceholder"), eyeStyle: `bottom-4 ${i18n.language == "en" ? "" : "left-4 right-auto"}` },
     ]
+
+    const handleUserLogin = async (user) => UserLogin(user)
 
     return (
         <AuthorizePanel Vector={Vector}>
             <FormHolder
                 initialValues={initialValues}
-                onSubmit={(event) => { console.log(event) }}
+                onSubmit={(event) => { handleUserLogin(event) }}
                 validations={loginValidations}
             >
                 <div className='w-full h-fit flex flex-wrap gap-y-5'>

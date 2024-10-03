@@ -26,7 +26,7 @@ import {
     Register,
     BlogDetail,
     Shop,
-    ShopDetail, 
+    ShopDetail,
     Cart,
     AboutUs
 } from "../../screen"
@@ -88,8 +88,14 @@ const routerPublic = createBrowserRouter([
                     { path: "/authorize/login/twoStep", element: <TowStepLogin /> },
                 ]
             },
-            { path: "/authorize/forgetPassword", element: <ForgetPasswordLogin /> },
-            { path: "/authorize/register", element: <Register /> }
+            { path: "/authorize/register", element: <Register /> },
+            {
+                path: "/authorize/forgetPassword",
+                element: <ForgetPasswordLogin />,
+                children: [
+                    { path: "/authorize/forgetPassword/:config", element: <ForgetPasswordLogin /> },
+                ]
+            },
         ]
     },
     {

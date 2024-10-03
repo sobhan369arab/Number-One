@@ -4,7 +4,7 @@ import Vector from "../../assets/images/SignIn.svg"
 import { Stepper, GetCode, AuthorizePanel, GetPhoneNumber, GetUserInfo } from '../../components/pages/authorize'
 
 const Register = () => {
-    const [phone, setPhone] = useState()
+    const [phone, setPhone] = useState("")
     const { t, i18n } = useTranslation()
     const stepsFa = ["شماره تماس", "دریافت کد", "مشخصات کاربری"]
     const stepsEn = ["Phone", "Code", "Information"]
@@ -14,6 +14,7 @@ const Register = () => {
                 return (
                     <GetPhoneNumber
                         setPhone={setPhone}
+                        phone={phone}
                         title={t("SignUpCaption")}
                         description={t("SignUpDesc")}
                     />
@@ -21,7 +22,7 @@ const Register = () => {
             case 2:
                 return <GetCode phone={phone} />
             case 3:
-                return <GetUserInfo />
+                return <GetUserInfo phone={phone} />
         }
     }
     return (

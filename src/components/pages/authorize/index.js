@@ -4,6 +4,8 @@ import SetNewPassword from "./steps/SetNewPassword";
 import AuthorizePanel from "./AuthorizePanel";
 import GetPhoneNumber from "./steps/GetPhoneNumber";
 import GetUserInfo from "./steps/GetUserInfo";
+import FirstSetpPassword from "./steps/FirstSetpPassword";
+import GoToGmail from "./steps/GoToGmail";
 
 export {
   Stepper,
@@ -12,4 +14,6 @@ export {
   AuthorizePanel,
   GetPhoneNumber,
   GetUserInfo,
+  FirstSetpPassword,
+  GoToGmail,
 };

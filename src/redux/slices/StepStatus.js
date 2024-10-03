@@ -4,13 +4,17 @@ const initialState = {
   value: 1,
 };
 
-function increase(state) {
-  state.value += 1;
+function increase(state, action) {
+  if (!action.payload) {
+    state.value += 1;
+  } else {
+    state.value = action.payload + 1;
+  }
 }
 
-function decrease(state) {
+function decrease(state, action) {
   if (state.value === 1) return;
-  state.value -= 1;
+  state.value = action.payload + 1;
 }
 
 const stepStatus = createSlice({

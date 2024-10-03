@@ -31,7 +31,7 @@ export const NationalCode = yup.object().shape({
     .positive("کد ملی باید عددی مثبت باشد!"),
 });
 export const loginValidations = yup.object().shape({
-  email: yup
+  phoneOrGmail: yup
     .string()
     .email("ایمیل را به درستی وارد کنید!")
     .typeError("ایمیل را به درستی وارد کنید!")
@@ -47,7 +47,7 @@ export const loginValidations = yup.object().shape({
 });
 
 export const getCodeValidation = yup.object().shape({
-  verificationCode: yup
+  verifyCode: yup
     .number()
     .required("این فیلد الزامیست!")
     .typeError("لطفا کد را به درستی وارد کنید"),
