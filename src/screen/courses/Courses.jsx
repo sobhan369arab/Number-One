@@ -11,7 +11,6 @@ import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import GetAllCourseByPagination from "../../core/services/api/GetData/GetAllCourses"
 import { useQuery } from "react-query"
-import { CourseProps } from "../../components/pages/course/CourseParams"
 
 const Courses = () => {
     const { t } = useTranslation();
@@ -66,38 +65,23 @@ const Courses = () => {
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
     const currentItems = coursesData?.slice(itemOffset, endOffset);
-    console.log(currentItems)
 
     useEffect(() => { refetch; }, []);
     useEffect(() => {
         refetch;
-    }, [Query,
-        ListTech,
-        TechCount,
-        typeId,
-        levelId,
-        instructorId,
-        sortCal,
-        sortType,
-        priceDown,
-        priceUp,
-    ]);
+    }, [Query, ListTech, TechCount, typeId, levelId, instructorId, sortCal, sortType, priceDown, priceUp]);
     const [comparisonId, setComparisonId] = useState([])
-    // console.log(filterObj_Courses)
-    // console.log(isLoading)
+    // Handling the course item before and after loading the data from the api
     const RenderCourse = () => {
         if (isLoading || isLoading === undefined) {
             return (
-                // <div>
                 AllData.map((item, index) => (
                     <Course key={index} isLoaded={isLoading ?? true} />
                 ))
-                // </div>
             )
         }
         else {
             return (
-                // <div>
                 currentItems.map((item, index) => (
                     <Course key={index}
                         isLoaded={isLoading ?? true}
@@ -118,21 +102,9 @@ const Courses = () => {
                         setComparisonId={setComparisonId}
                     />
                 ))
-                // </div>
             )
         }
     }
-    const Courses = RenderCourse();
-    // const courses = coursesData ?? AllData.map((item, index) => {
-    //     return (
-    //         <Course
-    //             isLoaded={isLoading}
-    //             Props={isLoading === false && <CourseProps item={JSON.stringify(item)} index={index} />}
-    //             comparisonId={comparisonId}
-    //             setComparisonId={setComparisonId}
-    //         />
-    //     )
-    // })
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -171,7 +143,7 @@ const Courses = () => {
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, coursesData) }} pageCount={calculatePageCount(coursesData ?? [], currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                                {Courses}
+                                {RenderCourse()}
                             </div>
                         </PaginatedItems>
                     </PaginateHolderItems>
