@@ -4,10 +4,10 @@ import { FavoriteBtn } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
-import { Card, Skeleton, Button } from "@nextui-org/react";
-import { useState } from "react"
+import { Card, Skeleton } from "@nextui-org/react";
 
 const Course = ({
+    isLoaded,
     id,
     title,
     images,
@@ -15,9 +15,9 @@ const Course = ({
     score,
     category,
     level,
+    price,
     date,
     studentsNumber,
-    price,
     like,
     disLike,
     bio,
@@ -25,30 +25,25 @@ const Course = ({
     setComparisonId
 
 }) => {
-    const [isLoaded, setIsLoaded] = useState(true);
-
-    const toggleLoad = () => {
-        setIsLoaded(!isLoaded);
-    };
-
+    // const Props = JSON.parse(props)
     return (
         <>
-            <Card className="w-[300px] h-[435px]">
+            <Card>
                 <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200 relative  group/item">
                     <div className="w-full h-44 course-height-img mx-auto  rounded-lg">
                         {/* course Images */}
                         <Link to={`/CourseDetails/${id}`}>
-                            <Skeleton isLoaded={isLoaded}>
-                                <img src={images && images} className="w-full h-44 shadow-xl rounded-md" />
+                            <Skeleton isLoaded={!isLoaded} className="h-44">
+                                <img src={images} className="w-full h-44 shadow-xl rounded-md" />
                             </Skeleton>
                         </Link >
 
                         <div className="flex justify-center gap-8 my-3">
-                            <Skeleton isLoaded={isLoaded}>
-                                <ComparisonBtn location={location} CourseId={id} comparisonId={comparisonId} setComparisonId={setComparisonId} />
+                            <Skeleton isLoaded={!isLoaded} className="top-6 right-6">
+                                <ComparisonBtn CourseId={id} comparisonId={comparisonId && comparisonId} setComparisonId={setComparisonId && setComparisonId} />
                             </Skeleton>
-                            <Skeleton isLoaded={isLoaded}>
-                                <FavoriteBtn location={location} variantStyle="card" />
+                            <Skeleton isLoaded={!isLoaded} className="top-6 left-6">
+                                <FavoriteBtn variantStyle="card" />
                             </Skeleton>
                         </div>
                     </div>

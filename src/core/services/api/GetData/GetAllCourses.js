@@ -6,7 +6,7 @@ const GetAllCourseByPagination = async (apiParams) => {
       params: apiParams,
     });
 
-    return request;
+    return request.courseFilterDtos;
   } catch (error) {
     return [];
   }

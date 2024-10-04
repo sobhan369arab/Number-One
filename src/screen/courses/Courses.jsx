@@ -10,6 +10,8 @@ import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import GetAllCourseByPagination from "../../core/services/api/GetData/GetAllCourses"
+import { useQuery } from "react-query"
+import { CourseProps } from "../../components/pages/course/CourseParams"
 
 const Courses = () => {
     const { t } = useTranslation();
@@ -19,7 +21,7 @@ const Courses = () => {
     // Modal
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const [AllData, SetAllData] = useState([]);
+    const [AllData, SetAllData] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}]);
     const [Query, setQuery] = useState(undefined);
     const [ListTech, setListTech] = useState(null);
     const [TechCount, setTechCount] = useState(undefined);
@@ -46,7 +48,6 @@ const Courses = () => {
         PageNumber: 1,
         RowsOfPage: 10000
     };
-
     const filterSide = <FilterSide_Courses
         setQuery={setQuery}
         setListTech={setListTech}
@@ -58,22 +59,18 @@ const Courses = () => {
         setPriceUp={setPriceUp}
         setTechCount={setTechCount}
     />
+    // Query Object
+    const { data: coursesData, refetch, isLoading } = useQuery("GetCourses", GetAllCourseByPagination);
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
-    const currentItems = AllData?.slice(itemOffset, endOffset);
+    const currentItems = coursesData?.slice(itemOffset, endOffset);
     console.log(currentItems)
 
-    const getCourseList = async () => {
-
-        const courses = await GetAllCourseByPagination(filterObj_Courses)
-        SetAllData(courses.courseFilterDtos)
-    }
-
-    useEffect(() => { getCourseList() }, []);
+    useEffect(() => { refetch; }, []);
     useEffect(() => {
-        getCourseList()
+        refetch;
     }, [Query,
         ListTech,
         TechCount,
@@ -85,28 +82,57 @@ const Courses = () => {
         priceDown,
         priceUp,
     ]);
-
     const [comparisonId, setComparisonId] = useState([])
-    console.log(filterObj_Courses)
-    const courses = currentItems && currentItems.map((item, index) => (
-        <Course
-            id={index}
-            title={item.title}
-            images={item.tumbImageAddress}
-            instructor={item.teacherName}
-            score={item.courseRate}
-            category={item.technologyList}
-            level={item.levelName}
-            price={item.cost}
-            date={item.lastUpdate}
-            studentsNumber={0}
-            like={item.likeCount}
-            disLike={item.dissLikeCount}
-            bio={item.describe}
-            comparisonId={comparisonId}
-            setComparisonId={setComparisonId}
-        />
-    ))
+    // console.log(filterObj_Courses)
+    // console.log(isLoading)
+    const RenderCourse = () => {
+        if (isLoading || isLoading === undefined) {
+            return (
+                // <div>
+                AllData.map((item, index) => (
+                    <Course key={index} isLoaded={isLoading ?? true} />
+                ))
+                // </div>
+            )
+        }
+        else {
+            return (
+                // <div>
+                currentItems.map((item, index) => (
+                    <Course key={index}
+                        isLoaded={isLoading ?? true}
+                        id={index}
+                        title={item.title}
+                        images={item.tumbImageAddress}
+                        instructor={item.teacherName}
+                        score={item.courseRate}
+                        category={item.technologyList}
+                        level={item.levelName}
+                        price={item.cost}
+                        date={item.lastUpdate}
+                        studentsNumber={0}
+                        like={item.likeCount}
+                        disLike={item.dissLikeCount}
+                        bio={item.describe}
+                        comparisonId={comparisonId}
+                        setComparisonId={setComparisonId}
+                    />
+                ))
+                // </div>
+            )
+        }
+    }
+    const Courses = RenderCourse();
+    // const courses = coursesData ?? AllData.map((item, index) => {
+    //     return (
+    //         <Course
+    //             isLoaded={isLoading}
+    //             Props={isLoading === false && <CourseProps item={JSON.stringify(item)} index={index} />}
+    //             comparisonId={comparisonId}
+    //             setComparisonId={setComparisonId}
+    //         />
+    //     )
+    // })
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -133,8 +159,8 @@ const Courses = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        AllData={AllData}
-                        FilteredData={AllData}
+                        AllData={coursesData}
+                        FilteredData={coursesData}
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
@@ -143,9 +169,9 @@ const Courses = () => {
                         </SortBoxHolder>
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, AllData) }} pageCount={calculatePageCount(AllData ?? [], currentCourse)}>
+                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, coursesData) }} pageCount={calculatePageCount(coursesData ?? [], currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                                {courses}
+                                {Courses}
                             </div>
                         </PaginatedItems>
                     </PaginateHolderItems>
@@ -154,5 +180,4 @@ const Courses = () => {
         </>
     )
 }
-
 export default Courses
