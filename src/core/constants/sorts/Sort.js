@@ -4,7 +4,7 @@ export const sortOptionCal = [
 ];
 export const sortOptionType = [
   { id: 1, value: "Active", label:["دوره های فعال", "ActiveCourses"] },
-  { id: 2, value: "Price", label: ["قیمت", "Price"] },
+  { id: 2, value: "Cost", label: ["قیمت", "Price"] },
   { id: 3, value: "Rate", label: ["محبوبیت", "Popularity"] },
 ];
 export const sortOptionMostType = [

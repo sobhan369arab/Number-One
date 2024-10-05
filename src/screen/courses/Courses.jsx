@@ -4,16 +4,18 @@ import { useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useTranslation } from "react-i18next"
 import Course from "../../components/pages/course/Course"
-import { useDisclosure, Button } from "@nextui-org/react"
+import { useDisclosure, Button, Tooltip } from "@nextui-org/react"
 import { CloseIcon } from "../../core/icon"
 import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
 import { useQuery } from "react-query"
 import { GetAllCourseByPagination } from "../../core/services/api/GetData"
+import { IoFilter } from "react-icons/io5"
+import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
 
 const Courses = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' });
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' });
 
@@ -112,13 +114,17 @@ const Courses = () => {
             <TitleSection title={'CoursesTitle'} >
                 <BreadCrumb type="Div" text={'CoursesTitle'} />
             </TitleSection>
-            <div className="main-container flex gap-7 relative">
+            <div className="main-container flex gap-7">
                 <MediaQuery minWidth={"1050px"}>
                     {filterSide}
                 </MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <MediaQuery maxWidth={"1049px"}>
-                        <Button onPress={onOpen} className="sticky top-24 z-30">{t('openFilter')}</Button>
+                        <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "ّFilters" : "فیلتر ها"}>
+                            <div onClick={onOpen} className="fixed right-5 bottom-40 bg-VioletBlue dark:bg-LavenderMist bottomNav z-30">
+                                <IoFilter color="#fff" />
+                            </div>
+                        </Tooltip>
                         <CreateModal
                             isOpen={isOpen}
                             onClose={onClose}
@@ -143,7 +149,7 @@ const Courses = () => {
                         </SortBoxHolder>
                     </SectionTop>
                     {coursesData?.length == 0 &&
-                        <NotFound_Pic text={"course_NotFound"}/>
+                        <NotFound_Pic text={"course_NotFound"} />
                     }
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, coursesData) }} pageCount={calculatePageCount(coursesData ?? [], currentCourse)}>
