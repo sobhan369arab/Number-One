@@ -5,8 +5,7 @@ import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import Course from "../course/Course"
 import { SwiperSlide } from "swiper/react"
-import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies"
-import GetAllCourseByPagination from "../../../core/services/api/GetData/GetAllCourses"
+import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/GetData"
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()

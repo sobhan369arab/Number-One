@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { BlogCard } from "../blog"
 import { SwiperSlide } from "swiper/react"
-import GetNewsFilterPage from "../../../core/services/api/GetData/GetNewsFilter"
+import { GetNewsFilterPage } from "../../../core/services/api/GetData"
 
 const LastBlogs = () => {
   const { t } = useTranslation()

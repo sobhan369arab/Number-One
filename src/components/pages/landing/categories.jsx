@@ -4,8 +4,7 @@ import { useTranslation } from "react-i18next"
 import { categoryItems } from "../../../core/constants/landing/category"
 import CategoryItem from "./CreateCategoryItem"
 import { useEffect, useState } from "react"
-import GetAllCourseByPagination from "../../../core/services/api/GetData/GetAllCourses"
-import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies"
+import { GetAllCourseByPagination, GetTechnologies } from "../../../core/services/api/GetData"
 
 const Categories = () => {
     const { t, i18n } = useTranslation()
