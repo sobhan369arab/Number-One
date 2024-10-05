@@ -1,18 +1,28 @@
 import { useTranslation } from "react-i18next"
 import { FormInput, FormHolder, Button } from "../../../common"
+import { UserRegister } from "../../../../core/services/api/PostData/Register"
 
-const GetUserInfo = () => {
+const GetUserInfo = ({ phone }) => {
     const { t, i18n } = useTranslation()
     const fields = [
-        { id: 1, type: "email", certificate: "email", variant: "simple", placeholder: t("emailPlaceholder") },
+        { id: 1, type: "email", certificate: "gmail", variant: "simple", placeholder: t("emailPlaceholder") },
         { id: 2, certificate: "password", variant: "password", placeholder: t("passwordPlaceholder"), eyeStyle: `bottom-9 ${i18n.language == "en" ? "" : "left-4 right-auto"}` },
     ]
+
+    const handleSubmit = (event) => {
+        console.log(event)
+        const body = { password: event.password, gmail: event.gmail, phoneNumber: phone }
+        const api = "/Sign/Register"
+        UserRegister(api, body)
+    }
+
     return (
         <FormHolder
-            initialValues={{ email: "", password: "" }}
-            onSubmit={(event) => { console.log(event) }}
+            initialValues={{ gmail: "", password: "" }}
+            onSubmit={(event) => { handleSubmit(event) }}
             validations=""
             style="w-full"
+            additionParams={{ enableReinitialize: true }}
         >
             <h1 className='boldStyle_text w-full mb-5'>{t("GetUserInfoCaption")}</h1>
             <p className='mediumStyle_text mb-5'>{t("GetUserInfoDesc")}</p>

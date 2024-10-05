@@ -8,12 +8,9 @@ import { decreaseAction } from '../../../redux/slices/StepStatus'
 const Stepper = ({ contents, steps }) => {
     const active = useSelector(state => state.StepStatus.value)
     const dispatch = useDispatch()
-    const handleActive = (index) => {
-        if (index < active) {
-            dispatch(decreaseAction())
-        }
-    }
     const { i18n } = useTranslation()
+
+    const handleActive = (index) => dispatch(decreaseAction(index))
 
     return (
         <>

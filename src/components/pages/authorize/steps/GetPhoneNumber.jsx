@@ -1,23 +1,27 @@
 import { useTranslation } from "react-i18next"
 import { FormInput, FormHolder, Button } from "../../../common"
 import { getPhoneNumber } from "../../../../core/validations/validations"
+import { VerifyMessage } from "../../../../core/services/api/PostData/VerifyMessage"
 import { useDispatch } from "react-redux"
-import { increaseAction } from "../../../../redux/slices/StepStatus"
 
-const GetPhoneNumber = ({ setPhone, title, description }) => {
+const GetPhoneNumber = ({ setPhone, phone, title, description }) => {
     const { t } = useTranslation()
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
-        dispatch(increaseAction())
+        const body = { phoneNumber: event.phoneNumber };
+        const api = "/Sign/SendVerifyMessage";
+        VerifyMessage(api, body, dispatch)
         setPhone(event.phoneNumber)
     }
+
     return (
         <FormHolder
-            initialValues={{ phoneNumber: "" }}
+            initialValues={{ phoneNumber: phone }}
             onSubmit={(event) => { handleSubmit(event) }}
             validations={getPhoneNumber}
             style="w-full"
+            additionParams={{ enableReinitialize: true }}
         >
             <h1 className='boldStyle_text w-full mb-5'>{title}</h1>
             <p className='mediumStyle_text mb-5'>{description}</p>

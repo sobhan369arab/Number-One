@@ -39,6 +39,7 @@ import ScrollToTop from "./ScrollToTop.jsx";
 import BottomNav from "./bottom-nav/BottomNav.jsx";
 import SearchModal from "./searchBox/SearchModal.jsx"
 import NotFound_Pic from "./NotFound_Pic.jsx";
+import ToastAlert from "./ToastAlert.jsx";
 
 export {
   Button,
@@ -80,4 +81,5 @@ export {
   SortBoxHolder,
   SearchModal,
   NotFound_Pic
+  ToastAlert,
 };

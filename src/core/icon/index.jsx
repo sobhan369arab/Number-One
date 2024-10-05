@@ -150,6 +150,7 @@ export function SearchIcon(props) {
         </svg>
     )
 }
+
 export function Search_TwoIcon(props) {
     return (
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -251,6 +252,7 @@ export function DateIcon(props) {
 
     )
 }
+
 export function TimeIcon(props) {
     return (
         <svg
@@ -279,6 +281,7 @@ export function TimeIcon(props) {
         </svg>
     )
 }
+
 export function TopicsIcon(props) {
     return (
         <svg
@@ -294,6 +297,7 @@ export function TopicsIcon(props) {
 
     )
 }
+
 export function QuizzesIcon(props) {
     return (
         <svg
@@ -308,6 +312,7 @@ export function QuizzesIcon(props) {
         </svg>
     )
 }
+
 export function CertificationsIcon(props) {
     return (
         <svg
@@ -322,6 +327,7 @@ export function CertificationsIcon(props) {
         </svg>
     )
 }
+
 export function TotalIcon(props) {
     return (
         <svg
@@ -336,6 +342,7 @@ export function TotalIcon(props) {
         </svg>
     )
 }
+
 export function StarIcon(props) {
     return (
         <svg
@@ -351,6 +358,7 @@ export function StarIcon(props) {
 
     )
 }
+
 export function ArrowLeftIcon(props) {
     return (
         <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -402,6 +410,7 @@ export function EmailIcon(props) {
         </svg>
     )
 }
+
 export function TeacherIcon(props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5" {...props}>
@@ -410,6 +419,7 @@ export function TeacherIcon(props) {
 
     )
 }
+
 export function StudentIcon(props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5" {...props}>
@@ -419,6 +429,7 @@ export function StudentIcon(props) {
 
     )
 }
+
 export function LevelIcon(props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gray" className="size-5" {...props}>
@@ -427,6 +438,7 @@ export function LevelIcon(props) {
 
     )
 }
+
 export function ComparisonIcon(props) {
     return (
         <svg width="25" height="25" viewBox="0 0 97 117" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -435,6 +447,7 @@ export function ComparisonIcon(props) {
         </svg>
     )
 }
+
 export function UnCheckedHeartIcon(props) {
     return (
         <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -442,6 +455,7 @@ export function UnCheckedHeartIcon(props) {
         </svg>
     )
 }
+
 export function CheckedHeartIcon(props) {
     return (
         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -453,6 +467,7 @@ export function CheckedHeartIcon(props) {
 
     )
 }
+
 export function View1Icon(props) {
     return (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -466,6 +481,7 @@ export function View1Icon(props) {
         </svg>
     )
 }
+
 export function View2Icon(props) {
     return (
         <svg width="20" height="16" viewBox="0 0 20 16" stroke="none" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -476,6 +492,7 @@ export function View2Icon(props) {
 
     )
 }
+
 export function VsIcon(props) {
     return (
         <svg width="180" height="70" viewBox="0 0 208 118" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -783,6 +800,7 @@ export function CheckIcon(props) {
         </svg>
     )
 }
+
 export function VigVigIcon(props) {
     return (
         <svg width="62" height="55" viewBox="0 0 62 55" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>

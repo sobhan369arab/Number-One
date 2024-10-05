@@ -1,22 +1,27 @@
 import { menuItem } from "../../../core/constants/Header/headerData"
 import MenuHeader from "./menuHeader"
 import { useTranslation } from "react-i18next"
-import { Button, HamburgerMenu, LogoGroup, SearchInput, SearchModal } from "../../common"
+import { HamburgerMenu, LogoGroup, SearchInput } from "../../common"
 import { CartIcon, FavoriteIcon } from "../../../core/icon"
 import MediaQuery from "react-responsive"
 import BasketItems from "./basketItems"
-import { useSelector } from "react-redux"
-import { Navbar, Tooltip } from "@nextui-org/react";
+import { useSelector, useDispatch } from "react-redux"
+import { Navbar } from "@nextui-org/react";
 import SideBarMenu from "./SideBarMenu"
-import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
-import { useState } from "react"
-import SearchBtn from "../../common/searchBox/SearchBtn"
+import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
+import GetProfileInfo from "../../../core/services/api/GetData/GetProfileInfo"
+import { setInfoAction } from "../../../redux/slices/UserInfo"
+import { getItem } from "../../../core/services/local-storage/LocalStorage"
+import HeaderButtons from "./HeaderButtons"
 
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
   const [visibleMenu, setVisibleMenu] = useState(false)
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const cartLength = useSelector(state => state.CartData.value.length)
+  const dispatch = useDispatch()
+  const location = useLocation()
 
   const baskets = [
     { icon: CartIcon, number: cartLength, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
@@ -32,15 +37,18 @@ const Header = () => {
     )
   });
 
-  const basketItems = baskets.map((item, index) => {
-    return (
-      <Tooltip key={index} {...tooltipStyle} content={i18n.language == "en" ? item.tooltip[1] : item.tooltip[0]}>
-        <div>
-          <BasketItems href={item.href} Icon={item.icon} number={item.number} />
-        </div>
-      </Tooltip>
-    )
-  });
+  const basketItems = baskets.map((item, index) => <BasketItems key={index} item={item} />);
+
+  const getUserProfile = async () => {
+    const info = await GetProfileInfo()
+    dispatch(setInfoAction(info))
+  }
+
+  useEffect(() => {
+    const token = getItem("token")
+    if (!token) return
+    getUserProfile()
+  }, [location])
 
   return (
     <Navbar
@@ -65,16 +73,11 @@ const Header = () => {
         <MediaQuery minWidth={"1285px"}>
           <SearchInput />
         </MediaQuery>
-        <MediaQuery maxWidth={"1284px"}>
-          <div onClick={() => { setVisibleSearch(true) }} className="cursor-pointer">
-            <SearchBtn />
-          </div>
-          <SearchModal setVisible={setVisibleSearch} visible={visibleSearch} />
-        </MediaQuery>
-        <MediaQuery minWidth={"768px"}>
-          {basketItems}
-        </MediaQuery>
-        <Button href={"/authorize/login"} disableArrow={'hidden'} vType={'link'} vStyle={"yellow"} style={'shadow-none !pt-2 !pb-2'} text={'Login'} />
+        <HeaderButtons
+          setVisibleSearch={setVisibleSearch}
+          visibleSearch={visibleSearch}
+          basketItems={basketItems}
+        />
       </div>
     </Navbar>
   )
