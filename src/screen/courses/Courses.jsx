@@ -1,4 +1,4 @@
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox, SortBoxHolder } from "../../components/common"
+import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox, SortBoxHolder, NotFound_Pic } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
 import { useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
@@ -52,7 +52,7 @@ const Courses = () => {
         return GetAllCourseByPagination(filterObj_Courses)
     }
     // Query Object
-    const { data: coursesData, refetch : refetchCourses, isLoading } = useQuery("GetCourses", GetCourses);
+    const { data: coursesData, refetch: refetchCourses, isLoading } = useQuery("GetCourses", GetCourses);
     const filterSide = <FilterSide_Courses
         setQuery={setQuery}
         setListTech={setListTech}
@@ -73,6 +73,7 @@ const Courses = () => {
 
     const [comparisonId, setComparisonId] = useState([])
     // Handling the course item before and after loading the data from the api
+    console.log(coursesData)
     const RenderCourse = () => {
         if (isLoading || isLoading === undefined) {
             return (
@@ -141,6 +142,9 @@ const Courses = () => {
                             <SortBox setState={setSortCal} options={sortOptionCal} placeholder={["نزولی", "Descending"]} />
                         </SortBoxHolder>
                     </SectionTop>
+                    {coursesData?.length == 0 &&
+                        <NotFound_Pic text={"course_NotFound"}/>
+                    }
                     <PaginateHolderItems style="justify-center">
                         <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, coursesData) }} pageCount={calculatePageCount(coursesData ?? [], currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
