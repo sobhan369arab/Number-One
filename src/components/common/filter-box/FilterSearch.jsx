@@ -7,10 +7,11 @@ export const variantPlaceHolder = {
     "Shop": "PlaceHolder_Shop"
 }
 
-const FilterSearch = ({ variant, setQuery, Style }) => {
+const FilterSearch = ({ variant, setQuery, Style,refetch }) => {
     const { t } = useTranslation();
 
     const SetFilterQuery = (e) => {
+        refetch();
         if (e.target.value !== "") {
             setQuery(e.target.value);
         }

@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react"
-import { InstructorFilter, LevelFilter, TypeFilter } from "../../../core/constants/Filters/Filters"
+import { getAllTeachers, GetCourseLevel, GetCourseType, GetTechnologies } from "../../../core/services/api/GetData";
 import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch, FilterStars } from "../../common/filter-box"
-import GetTechnologies from "../../../core/services/api/GetData/GetTechnologies";
-import getAllTeachers from "../../../core/services/api/GetData/GetAllTeachers";
-import GetCourseType from "../../../core/services/api/GetData/GetCourseType";
-import GetCourseLevel from "../../../core/services/api/GetData/GetCourseLevel";
+import { useQuery } from "react-query";
 
 const FilterSide_Courses = ({
   setQuery,
@@ -15,63 +11,49 @@ const FilterSide_Courses = ({
   // SetRating,
   setPriceDown,
   setPriceUp,
-  setTechCount
+  setTechCount,
+  refetch
 }) => {
 
-  // State filters
-  const [categoryData, setCategoryData] = useState([]);
-  const [typeData, setTypeData] = useState([]);
-  const [levelData, setLevelData] = useState([]);
-  const [teacherData, setTeacherData] = useState([]);
-
-  // Getting filter data from api
-  const getFiltersData = async (api, setState) => {
-
-    const result = await api;
-
-    setState(result)
-  }
-
-  useEffect(() => {
-    getFiltersData(GetTechnologies(), setCategoryData),
-      getFiltersData(GetCourseType(), setTypeData),
-      getFiltersData(GetCourseLevel(), setLevelData),
-      getFiltersData(getAllTeachers(), setTeacherData)
-  }, [])
-
-
+  const { data: techData, refetch: refetch_Teach } = useQuery("getTech", GetTechnologies)
+  const { data: typeData, refetch: refetch_Type } = useQuery("getType", GetCourseType)
+  const { data: levelData, refetch: refetch_Level } = useQuery("getLevel", GetCourseLevel)
+  const { data: teacherData, refetch: refetch_Teacher } = useQuery("getTeacher", getAllTeachers)
+  // Radio input data
+  const radioInput = [
+    { title: "type", setInputID: SetTypeId, inputData: typeData },
+    { title: "level", setInputID: SetLevelId, inputData: levelData },
+    { title: "instructor", setInputID: setTeacherId, inputData: teacherData },
+  ]
+  console.log(techData)
   return (
     <div className="h-fit lg:w-72">
-      <FilterSearch variant="Courses" setQuery={setQuery} />
+      <FilterSearch variant="Courses" setQuery={setQuery} refetch={refetch} />
       <FilterCheckBox
-        labelArray={categoryData}
+        labelArray={techData}
         title={"category"}
         SetFilteredData={setListTech}
         setTechCount={setTechCount}
+        refetch={refetch}
       />
-      <FilterRadio
-        title={"type"}
-        setInputID={SetTypeId}
-        inputData={typeData}
-      />
-      <FilterRadio
-        title={"level"}
-        setInputID={SetLevelId}
-        inputData={levelData}
-      />
-      <FilterRadio
-        title={"instructor"}
-        setInputID={setTeacherId}
-        inputData={teacherData}
-      />
+      {radioInput.map((filterBox, index) => (
+        <FilterRadio
+          key={index}
+          title={filterBox.title}
+          setInputID={filterBox.setInputID}
+          inputData={filterBox.inputData}
+          refetch={refetch}
+        />
+      ))}
       <FilterStars
         title={"rating"}
-        // SetRating={SetRating}
+      // SetRating={SetRating}
       />
       <FilterRange
         title={"price"}
         setPriceDown={setPriceDown}
         setPriceUp={setPriceUp}
+        refetch={refetch}
       />
     </div>
   )

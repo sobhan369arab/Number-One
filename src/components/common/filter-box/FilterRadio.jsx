@@ -5,10 +5,12 @@ const FilterRadio = ({
   title,
   setInputID,
   inputData,
+  refetch,
 }) => {
   const { t, i18n } = useTranslation();
   const [checkedData, SetCheckedData] = useState(false);
   const handleChange = (item) => {
+    refetch();
     setInputID(item.id == undefined ? item.teacherId : item.id);
     SetCheckedData(true);
   }
@@ -24,6 +26,7 @@ const FilterRadio = ({
           onClick={() => {
             setInputID("");
             SetCheckedData(false);
+            // refetch();
           }}
         >
           {t('removeFilters')}

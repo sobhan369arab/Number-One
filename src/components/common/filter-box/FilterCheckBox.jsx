@@ -5,9 +5,10 @@ const FilterCheckBox = ({
   title,
   labelArray,
   SetFilteredData,
-  setTechCount
+  setTechCount,
+  refetch
 }) => {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
   useEffect(() => {
   }, [labelArray])
 
@@ -16,6 +17,7 @@ const FilterCheckBox = ({
 
   // Checkbox filtering function
   const selectBtn = (e, item) => {
+    refetch();
     item.id.toString();
     if (e.target.checked) {
       item.active = true
@@ -55,13 +57,14 @@ const FilterCheckBox = ({
             SetFilteredData(null);
             SetCheckedData(false);
             setTechCount(null);
+            // refetch();
           }}
         >
           {t('removeFilters')}
 
         </button>
       </div>
-      {labelArray.length != 0 && labelArray.map((item, index) => (
+      {labelArray && labelArray.map((item, index) => (
         <div
           onChange={(e) => selectBtn(e, item)}
           key={index}

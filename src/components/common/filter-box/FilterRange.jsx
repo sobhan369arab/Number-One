@@ -7,11 +7,13 @@ const FilterRange = ({
   title,
   setPriceDown,
   setPriceUp,
+  refetch
 
 }) => {
   const { t } = useTranslation();
   const [value, setValue] = useState([0, 1000000000]);
   const handleInput = (event) => {
+    refetch()
     setValue(event)
     setPriceDown(event[0])
     setPriceUp(event[1]);

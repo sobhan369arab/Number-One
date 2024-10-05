@@ -1,6 +1,6 @@
 import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox, SortBoxHolder } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useTranslation } from "react-i18next"
 import Course from "../../components/pages/course/Course"
@@ -9,8 +9,8 @@ import { CloseIcon } from "../../core/icon"
 import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
-import GetAllCourseByPagination from "../../core/services/api/GetData/GetAllCourses"
 import { useQuery } from "react-query"
+import { GetAllCourseByPagination } from "../../core/services/api/GetData"
 
 const Courses = () => {
     const { t } = useTranslation();
@@ -47,6 +47,12 @@ const Courses = () => {
         PageNumber: 1,
         RowsOfPage: 10000
     };
+    console.log(filterObj_Courses)
+    const GetCourses = () => {
+        return GetAllCourseByPagination(filterObj_Courses)
+    }
+    // Query Object
+    const { data: coursesData, refetch : refetchCourses, isLoading } = useQuery("GetCourses", GetCourses);
     const filterSide = <FilterSide_Courses
         setQuery={setQuery}
         setListTech={setListTech}
@@ -57,26 +63,21 @@ const Courses = () => {
         setPriceDown={setPriceDown}
         setPriceUp={setPriceUp}
         setTechCount={setTechCount}
+        refetch={refetchCourses}
     />
-    // Query Object
-    const { data: coursesData, refetch, isLoading } = useQuery("GetCourses", GetAllCourseByPagination);
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
     const currentItems = coursesData?.slice(itemOffset, endOffset);
 
-    useEffect(() => { refetch; }, []);
-    useEffect(() => {
-        refetch;
-    }, [Query, ListTech, TechCount, typeId, levelId, instructorId, sortCal, sortType, priceDown, priceUp]);
     const [comparisonId, setComparisonId] = useState([])
     // Handling the course item before and after loading the data from the api
     const RenderCourse = () => {
         if (isLoading || isLoading === undefined) {
             return (
                 AllData.map((item, index) => (
-                    <Course key={index} isLoaded={isLoading ?? true} />
+                    <Course key={index} isLoaded={isLoading} />
                 ))
             )
         }
@@ -84,7 +85,7 @@ const Courses = () => {
             return (
                 currentItems.map((item, index) => (
                     <Course key={index}
-                        isLoaded={isLoading ?? true}
+                        isLoaded={isLoading}
                         id={index}
                         title={item.title}
                         images={item.tumbImageAddress}
