@@ -4,8 +4,8 @@ import { FavoriteBtn } from "../../common"
 import CourseCenterBody from "./CourseCenterBody"
 import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
-import {Skeleton } from "@nextui-org/react";
-import { useState } from "react"
+import { Skeleton } from "@nextui-org/react";
+import NotFoundImg from "../../../assets/images/image-not-found.png"
 
 const Course = ({
     isLoaded,
@@ -32,7 +32,7 @@ const Course = ({
                     {/* course Images */}
                     <Link to={`/CourseDetails/${id}`}>
                         <Skeleton isLoaded={!isLoaded} className="h-44 rounded-lg">
-                            <img src={images} className="w-full h-44 shadow-xl rounded-md" />
+                            <img src={images ?? NotFoundImg} className="w-full h-44 shadow-xl rounded-md" />
                         </Skeleton>
                     </Link >
 
