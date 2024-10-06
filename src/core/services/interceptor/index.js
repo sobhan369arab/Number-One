@@ -12,9 +12,9 @@ const onSuccess = (response) => {
 };
 
 const onError = (error) => {
-  if (error.response.status >= 404 && error.response.status < 500) {
-    alert("Client Error:", error.response.status);
-  }
+  // if (error.response.status >= 404 && error.response.status < 500) {
+  //   alert("Client Error:", error.response.status);
+  // }
   return Promise.reject(error);
 };
 
