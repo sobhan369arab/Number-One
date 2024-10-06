@@ -1,22 +1,26 @@
 import { Link } from "react-router-dom"
-import BlogHeader from "./BlogHeader"
 import CenterBox from "./CenterBox"
 import DownBox from "./DownBox"
+import { Skeleton } from "@nextui-org/react"
 
-const BlogCard = ({
-    id,
-    title,
-    images,
-    category,
-    date,
-    like,
-    disLike,
-    bio,
-    view,
-}) => {
+const BlogCard = ({ item, isLoading }) => {
+    const {
+        id,
+        title,
+        currentImageAddressTumb: images,
+        newsCatregoryName: category,
+        updateDate: date,
+        currentView: view,
+        miniDescribe: bio,
+        currentLikeCount,
+        currentDissLikeCount,
+    } = item;
+
     return (
         <div className="border border-LightGrayish p-5 grid-item w-[300px] rounded-lg hover:shadow-lg duration-200 relative m-auto">
-            <BlogHeader images={images} id={id} />
+            <Skeleton  isLoaded={!isLoading} className="rounded-xl">
+                <img src={images} className="rounded-xl max-w-[258px] min-w-[258px] h-[224px]" />
+            </Skeleton>
             <div className="w-full">
                 <Link to={`/BlogDetails/${id}`}>
                     <CenterBox
@@ -24,12 +28,14 @@ const BlogCard = ({
                         category={category}
                         date={date}
                         bio={bio}
+                        isLoading={isLoading}
                     />
                 </Link >
                 <DownBox
-                    like={like}
-                    disLike={disLike}
+                    like={currentLikeCount}
+                    disLike={currentDissLikeCount}
                     view={view}
+                    isLoading={isLoading}
                 />
             </div>
         </div>

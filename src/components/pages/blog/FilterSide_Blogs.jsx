@@ -1,17 +1,22 @@
-import { CategoryFilter } from "../../../core/constants/Filters/Filters"
-import { FilterCheckBox, FilterSearch } from "../../common/filter-box"
+import { useQuery } from "@tanstack/react-query"
+import { FilterRadio, FilterSearch } from "../../common/filter-box"
+import GetListNewsCategory from "../../../core/services/api/GetData/GetListNewsCategory"
+import { setNewsCategoryId, setQuery } from "../../../redux/slices/filter-box-slices/FilterBlog"
 
-const FilterSide_Blogs = ({setQuery,SetCategoryData}) => {
-
-
+const FilterSide_Blogs = () => {
+    const { data: newsCategory } = useQuery({
+        queryKey: ['GET_NEW_CATEGORY'],
+        queryFn: GetListNewsCategory,
+    })
 
     return (
         <div className='h-fit lg:w-72'>
-            <FilterSearch variant="Blogs" setQuery={setQuery} />
-            <FilterCheckBox
-                labelArray={CategoryFilter}
+            <FilterSearch setQuery={setQuery} variant="Blogs" />
+            <FilterRadio
                 title={"category"}
-            SetFilteredData={SetCategoryData}
+                setInputID={setNewsCategoryId}
+                inputData={newsCategory}
+                titleKey={"categoryName"}
             />
         </div>
     )
