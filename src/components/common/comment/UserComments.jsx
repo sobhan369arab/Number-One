@@ -1,20 +1,41 @@
-import userImg from '../../../assets/images/courses/course1.png'
 import { DownSection, TopSection } from './comment-item'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import ReplayComments from './ReplayComments';
-const UserComments = ({ uid, title, describe }) => {
+const UserComments = ({ userInfo }) => {
   const { t } = useTranslation()
   const [replayComment, setReplayComment] = useState([]);
   const [replayStatus, setReplayStatus] = useState(false);
-  console.log(replayComment)
+
+  const {
+    pictureAddress,
+    id: userId,
+    title,
+    describe,
+    likeCount,
+    dissLikeCount,
+    replyCount,
+    inserDate
+  } = userInfo
+
   return (
     <>
       <div className="border-t-2 border-LightGrayish py-4 flex max-md:mx-1 gap-4">
-        <img src={userImg} alt={"user-img" + uid} className='sm:w-24 w-16 sm:h-24 h-16 rounded-full' />
+        <img src={pictureAddress} alt="" className='sm:min-w-24 sm:w-24 w-16 sm:h-24 h-16 rounded-full bg-red-600' />
         <div className='w-full'>
-          <TopSection title={title} describe={describe} />
-          <DownSection ArrayLength={replayComment.length} setReplayComment={setReplayComment} replayStatus={replayStatus} setReplayStatus={setReplayStatus} />
+          <TopSection
+            title={title}
+            describe={describe}
+            date={inserDate}
+          />
+          <DownSection
+            ArrayLength={replyCount}
+            setReplayComment={setReplayComment}
+            replayStatus={replayStatus}
+            setReplayStatus={setReplayStatus}
+            like={likeCount}
+            disLike={dissLikeCount}
+          />
         </div>
       </div>
       <div className={`${replayStatus ? "h-auto" : "h-0 overflow-hidden"} duration-250`}>
