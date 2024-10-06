@@ -8,7 +8,7 @@ export const sortOptionType = [
   { id: 3, value: "Rate", label: "Popularity" },
 ];
 export const sortOptionMostType = [
-  { id: 1, value: "Rate", label: "MostPopular" },
-  { id: 2, value: "New", label: "Latest" },
-  { id: 3, value: "visited", label: "MostVisited" },
+  { id: 1, value: "currentRate", label: "MostPopular" },
+  { id: 2, value: "updateDate", label: "Latest" },
+  { id: 3, value: "currentView", label: "MostVisited" },
 ];
