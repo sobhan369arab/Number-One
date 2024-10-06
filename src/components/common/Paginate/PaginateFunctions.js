@@ -1,11 +1,10 @@
 export const handlePageClick = (event, numberOfItem, setItemOffset, data) => {
-  const newOffset = (event.selected * numberOfItem) % data.length;
+  console.log(event)
+  const newOffset = (event.selected * numberOfItem) % data;
   setItemOffset(newOffset);
 };
 
-export const calculatePageCount = (data, numberOfItem) => {
-  if (data.length <= numberOfItem) return;
-
-  const pageCount = Math.ceil(data.length / numberOfItem);
+export const calculatePageCount = (dataLength, numberOfItem) => {
+  const pageCount = Math.ceil(dataLength / numberOfItem);
   return pageCount;
 };
