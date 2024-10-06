@@ -49,12 +49,15 @@ const Courses = () => {
         PageNumber: 1,
         RowsOfPage: 10000
     };
-    console.log(filterObj_Courses)
-    const GetCourses = () => {
-        return GetAllCourseByPagination(filterObj_Courses)
-    }
+
     // Query Object
-    const { data: coursesData, refetch: refetchCourses, isLoading } = useQuery("GetCourses", GetCourses);
+    const GetCourses = useQuery({
+        queryKey: ["GetCourses", filterObj_Courses],
+        queryFn: async () => {
+            return await GetAllCourseByPagination(filterObj_Courses);
+        },
+        refetchOnWindowFocus: false
+    });
     const filterSide = <FilterSide_Courses
         setQuery={setQuery}
         setListTech={setListTech}
@@ -65,22 +68,21 @@ const Courses = () => {
         setPriceDown={setPriceDown}
         setPriceUp={setPriceUp}
         setTechCount={setTechCount}
-        refetch={refetchCourses}
+        refetch={GetCourses.refetch}
     />
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + currentCourse;
-    const currentItems = coursesData?.slice(itemOffset, endOffset);
+    const currentItems = GetCourses.data?.slice(itemOffset, endOffset);
 
     const [comparisonId, setComparisonId] = useState([])
     // Handling the course item before and after loading the data from the api
-    console.log(coursesData)
     const RenderCourse = () => {
-        if (isLoading || isLoading === undefined) {
+        if (GetCourses.isLoading) {
             return (
                 AllData.map((item, index) => (
-                    <Course key={index} isLoaded={isLoading} />
+                    <Course key={index} isLoaded={GetCourses.isLoading} />
                 ))
             )
         }
@@ -88,7 +90,7 @@ const Courses = () => {
             return (
                 currentItems.map((item, index) => (
                     <Course key={index}
-                        isLoaded={isLoading}
+                        isLoaded={GetCourses.isLoading}
                         id={index}
                         title={item.title}
                         images={item.tumbImageAddress}
@@ -139,8 +141,8 @@ const Courses = () => {
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        AllData={coursesData}
-                        FilteredData={coursesData}
+                        AllData={GetCourses.data}
+                        FilteredData={GetCourses.data}
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
@@ -148,11 +150,11 @@ const Courses = () => {
                             <SortBox setState={setSortCal} options={sortOptionCal} placeholder={["نزولی", "Descending"]} />
                         </SortBoxHolder>
                     </SectionTop>
-                    {coursesData?.length == 0 &&
+                    {GetCourses.data?.length == 0 &&
                         <NotFound_Pic text={"course_NotFound"} />
                     }
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, coursesData) }} pageCount={calculatePageCount(coursesData ?? [], currentCourse)}>
+                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, GetCourses.data) }} pageCount={calculatePageCount(GetCourses.data ?? [], currentCourse)}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                 {RenderCourse()}
                             </div>

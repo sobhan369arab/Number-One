@@ -19,15 +19,11 @@ const App = () => {
       <NextUIProvider>
         <QueryClientProvider client={queryClient}>
           <main dir={i18n.language === 'fa' ? 'rtl' : 'ltr'} className={`bg-MainBg  ${i18n.language === 'fa' ? 'font-IranSans' : 'font-Pop_Med'}`}>
+            <ToastAlert />
             <RouterProvider router={routerPublic} />
             <BottomNav />
           </main>
         </QueryClientProvider>
-        <main dir={i18n.language === 'fa' ? 'rtl' : 'ltr'} className={`bg-MainBg  ${i18n.language === 'fa' ? 'font-IranSans' : 'font-Pop_Med'}`}>
-          <ToastAlert />
-          <RouterProvider router={routerPublic} />
-          <BottomNav />
-        </main>
       </NextUIProvider>
     </Provider>
   )

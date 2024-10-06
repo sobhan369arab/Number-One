@@ -6,7 +6,7 @@ const FilterCheckBox = ({
   labelArray,
   SetFilteredData,
   setTechCount,
-  refetch
+  refetch,
 }) => {
   const { t} = useTranslation();
   useEffect(() => {
@@ -57,7 +57,6 @@ const FilterCheckBox = ({
             SetFilteredData(null);
             SetCheckedData(false);
             setTechCount(null);
-            // refetch();
           }}
         >
           {t('removeFilters')}

@@ -80,6 +80,6 @@ export {
   CommentSection,
   SortBoxHolder,
   SearchModal,
-  NotFound_Pic
+  NotFound_Pic,
   ToastAlert,
 };
