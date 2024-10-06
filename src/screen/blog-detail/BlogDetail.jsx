@@ -6,34 +6,60 @@ import OverView_Details from "../../components/common/OverView_Details";
 import { useTranslation } from "react-i18next";
 import { CommentSection, ToLike } from "../../components/common";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
+import { useQuery } from "@tanstack/react-query";
+import GetBlogWithId from "../../core/services/api/GetData/GetBlogWithId";
 
 const BlogDetail = () => {
     const { t } = useTranslation();
     const { id } = useParams();
-    const blogSelected = Blogs_data.find(blog => blog.id == id)
+    // const blogSelected
+
+    const { data, isSuccess } = useQuery({
+        queryKey: ['GET_BLOG_DETAILS'],
+        queryFn: async () => { return await GetBlogWithId(id) }
+    })
+
+    if (isSuccess) {
+        console.log(data.detailsNewsDto)
+    }
+
+    const {
+        title,
+        currentImageAddress,
+        newsCatregoryName,
+        updateDate,
+        currentView,
+        commentsCount,
+        googleDescribe,
+        miniDescribe,
+        currentLikeCount,
+        currentDissLikeCount,
+        newsCatregoryId
+    } = isSuccess && data.detailsNewsDto
+
     return (
         <>
-            <TitleSection title={blogSelected.title} >
+            <TitleSection title={title} >
                 <BreadCrumb href={'/Blog'} text="BlogSection" />
-                <BreadCrumb type="Div" text={blogSelected.title} />
+                <BreadCrumb type="Div" text={title} />
             </TitleSection>
-            <div className="main-container lg:flex lg:flex-row-reverse  gap-7">
-                <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
-                    <BlogPic image={blogSelected.img} />
+            <div className="main-container lg:flex lg:flex-row-reverse gap-7 my-28">
+                <div className="lg:w-[915px] sm:w-full mobile:w-full mx-auto">
+                    <img src={currentImageAddress} className="h-[420px] w-full rounded-xl" />
                     <DetailsSection
-                        category={blogSelected.category}
-                        date={blogSelected.date}
-                        view={blogSelected.view}
-                        studyTime={blogSelected.studyTime}
-                        commentsNumber={blogSelected.commentsNumber}
+                        category={newsCatregoryName}
+                        date={updateDate && updateDate.slice(0, 10)}
+                        view={currentView}
+                        studyTime={5}
+                        commentsNumber={commentsCount}
                     />
                     <BlogBiography
-                        title={blogSelected.title}
-                        bio={blogSelected.bio}
+                        title={title}
+                        bio={googleDescribe}
                     />
                     <OverView_Details
-                        training={blogSelected.bio}
-                        MajorElements={blogSelected.MajorElements}
+                        training={miniDescribe}
+                        MajorElements={["", "", "", ""]}
                         Class={"hidden"}
                         variant={'blog_event'}
                         titleLearning={'LearnBlog'}
@@ -42,12 +68,12 @@ const BlogDetail = () => {
                     <div className="border-y-2 my-7 py-5">
                         <div className="flex gap-8 w-fit max-sm:m-auto">
                             <p className="text-DarkBlue">{t('blogFavorite')}</p>
-                            <ToLike likeNumber={blogSelected.like} disLikeNumber={blogSelected.disLike} numberStatus="hidden" />
+                            <ToLike likeNumber={currentLikeCount} disLikeNumber={currentDissLikeCount} numberStatus="hidden" />
                         </div>
                     </div>
-                    <CommentSection />
+                    <CommentSection blogId={id} />
                 </div>
-                <RelatedBlogs category={blogSelected.category} />
+                <RelatedBlogs category={newsCatregoryId} />
             </div>
         </>
     )
