@@ -1,3 +1,4 @@
+import { Skeleton } from "@nextui-org/react"
 import { DateIcon } from "../../../core/icon"
 import { Label } from "../../common"
 
@@ -6,20 +7,29 @@ const CenterBox = ({
   category,
   date,
   bio,
+  isLoading
 }) => {
-  const newDate = date.split("T")
+  const newDate = date && date.slice(0, 10)
 
   return (
     <div className="my-2 pb-2  cursor-pointer">
-      <h1 className="text-lg line-clamp-1 text-DarkBlue">{title}</h1>
+      <Skeleton isLoaded={!isLoading}>
+        <h1 className="text-lg line-clamp-1 text-DarkBlue">{title}</h1>
+      </Skeleton>
       <div className="flex justify-between my-2">
-        <Label variant={'bgBlue'} text={category} style='text-xs whitespace-nowrap cursor-default' />
-        <div className='flex gap-2'>
-          <DateIcon height={18} width={15} fill="#555555" />
-          <h1 className="line-clamp-1 mediumStyle_text">{newDate[0]}</h1>
-        </div>
+        <Skeleton isLoaded={!isLoading}>
+          <Label variant={'bgBlue'} text={category} style='text-xs whitespace-nowrap cursor-default' />
+        </Skeleton>
+        <Skeleton isLoaded={!isLoading}>
+          <div className='flex gap-2'>
+            <DateIcon height={18} width={15} fill="#555555" />
+            <h1 className="line-clamp-1 mediumStyle_text">{newDate}</h1>
+          </div>
+        </Skeleton>
       </div>
-      <h1 className="line-clamp-2 text-gray-500 text-sm mt-3 blog-bio h-10">{bio}</h1>
+      <Skeleton isLoaded={!isLoading}>
+        <p className="line-clamp-2 text-gray-500 text-sm mt-3 blog-bio h-10">{bio}</p>
+      </Skeleton>
     </div>
   )
 }

@@ -4,16 +4,25 @@ import { useTranslation } from "react-i18next";
 import { NextUIProvider } from "@nextui-org/react";
 import { Provider } from "react-redux";
 import store from "../redux/store";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { BottomNav, ToastAlert } from "../components/common";
 import 'react-toastify/dist/ReactToastify.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const App = () => {
   // const [isLogin, setLogin] = useState(false);
   // const router = createBrowserRouter(isLogin ? routerPublic : routerPublic);
-  const queryClient = new QueryClient();
   const { i18n } = useTranslation()
   const notify = () => toast.success("Wow so easy !");
+
+  // Create a client
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false
+      }
+    }
+  })
+
   return (
     <Provider store={store}>
       <NextUIProvider>

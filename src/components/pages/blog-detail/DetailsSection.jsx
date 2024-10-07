@@ -14,7 +14,7 @@ const DetailsSection = ({
 
     const firstDetails = [
         { text: date, icon: <DateIcon fill="#5751E1" height={18} width={18} /> },
-        { text: view, icon: <BsEyeFill color="#5751E1" /> },
+        { text: view, icon: <BsEyeFill color="#5751E1" className="w-4 h-4" /> },
     ]
     const lastDetails = [
         { text: 'studyTime', count: studyTime, icon: <BsClock color="#5751E1" /> },

@@ -7,7 +7,15 @@ import AddReplay_Comment from "../AddReplay_Comment"
 import { useState } from "react"
 import { IoIosArrowDown } from "react-icons/io"
 
-const DownSection = ({ ArrayLength, setReplayComment, replayStatus, setReplayStatus, Style }) => {
+const DownSection = ({
+  ArrayLength,
+  setReplayComment,
+  replayStatus,
+  setReplayStatus,
+  Style,
+  like,
+  disLike
+}) => {
   const { t } = useTranslation();
   const [testArray, setTestArray] = useState([]);
 
@@ -38,7 +46,7 @@ const DownSection = ({ ArrayLength, setReplayComment, replayStatus, setReplaySta
         }
       </div>
       <div className='h-fit'>
-        <ToLike likeNumber={0} disLikeNumber={0} />
+        <ToLike likeNumber={like} disLikeNumber={disLike} />
       </div>
     </div>
   )

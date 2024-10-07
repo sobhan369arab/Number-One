@@ -37,15 +37,7 @@ const LastBlogs = () => {
           {blogList.map(item => (
             <SwiperSlide key={item.id}>
               <BlogCard
-                id={item.id}
-                title={item.title}
-                images={item.addUserProfileImage}
-                category={item.newsCatregoryName}
-                date={item.updateDate}
-                like={item.currentLikeCount}
-                disLike={item.currentDissLikeCount}
-                view={item.currentView}
-                bio={item.miniDescribe}
+                item={item}
               />
             </SwiperSlide>
           ))}

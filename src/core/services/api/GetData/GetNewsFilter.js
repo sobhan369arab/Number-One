@@ -1,11 +1,8 @@
 import http from "../../interceptor";
 
- const GetNewsFilterPage = (apiParams) => {
-  try {
-    const response = http.get("/News", { params: apiParams });
-    return response;
-  } catch (error) {
-    return [];
-  }
+const GetNewsFilterPage = async (apiParams) => {
+  const response = await http.get("/News", { params: apiParams });
+  return response;
 };
-export default GetNewsFilterPage
+
+export default GetNewsFilterPage;
