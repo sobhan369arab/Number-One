@@ -9,31 +9,29 @@ const FilterSide_Courses = ({
   SetTypeId,
   SetLevelId,
   setTeacherId,
-  // SetRating,
   setPriceDown,
   setPriceUp,
   setTechCount,
-  refetch
 }) => {
-  const { data: techData } = useQuery("getTech", GetTechnologies)
-  const { data: typeData } = useQuery("getType", GetCourseType)
-  const { data: levelData } = useQuery("getLevel", GetCourseLevel)
-  const { data: teacherData } = useQuery("getTeacher", getAllTeachers)
+  const { data: techData, remove: removeTech } = useQuery("getTech", GetTechnologies)
+  const { data: typeData, remove: removeType } = useQuery("getType", GetCourseType)
+  const { data: levelData, remove: removeLevel } = useQuery("getLevel", GetCourseLevel)
+  const { data: teacherData, remove: removeTeachers } = useQuery("getTeacher", getAllTeachers)
   // Radio input data
   const radioInput = [
-    { title: "type", setInputID: SetTypeId, inputData: typeData },
-    { title: "level", setInputID: SetLevelId, inputData: levelData },
-    { title: "instructor", setInputID: setTeacherId, inputData: teacherData },
+    { title: "type", setInputID: SetTypeId, inputData: typeData, resetFilters: removeType },
+    { title: "level", setInputID: SetLevelId, inputData: levelData, resetFilters: removeLevel },
+    { title: "instructor", setInputID: setTeacherId, inputData: teacherData, resetFilters: removeTeachers },
   ]
   return (
     <div className="h-fit lg:w-72">
-      <FilterSearch variant="Courses" setQuery={setQuery} refetch={refetch} />
+      <FilterSearch variant="Courses" setQuery={setQuery}/>
       <FilterCheckBox
         labelArray={techData}
         title={"category"}
         SetFilteredData={setListTech}
         setTechCount={setTechCount}
-        refetch={refetch}
+        removeTech={removeTech}
       />
       {radioInput.map((filterBox, index) => (
         <FilterRadio
@@ -41,18 +39,13 @@ const FilterSide_Courses = ({
           title={filterBox.title}
           setInputID={filterBox.setInputID}
           inputData={filterBox.inputData}
-          refetch={refetch}
+          resetFilters={filterBox.resetFilters}
         />
       ))}
-      <FilterStars
-        title={"rating"}
-      // SetRating={SetRating}
-      />
       <FilterRange
         title={"price"}
         setPriceDown={setPriceDown}
         setPriceUp={setPriceUp}
-        refetch={refetch}
       />
     </div>
   )

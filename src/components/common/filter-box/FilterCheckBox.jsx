@@ -6,7 +6,7 @@ const FilterCheckBox = ({
   labelArray,
   SetFilteredData,
   setTechCount,
-  refetch,
+  removeTech,
 }) => {
   const { t} = useTranslation();
   useEffect(() => {
@@ -17,7 +17,6 @@ const FilterCheckBox = ({
 
   // Checkbox filtering function
   const selectBtn = (e, item) => {
-    refetch();
     item.id.toString();
     if (e.target.checked) {
       item.active = true
@@ -43,7 +42,6 @@ const FilterCheckBox = ({
 
   }
 
-
   return (
     <div className="filter-box max-l">
       <div className="flex justify-between">
@@ -57,6 +55,7 @@ const FilterCheckBox = ({
             SetFilteredData(null);
             SetCheckedData(false);
             setTechCount(null);
+            removeTech();
           }}
         >
           {t('removeFilters')}

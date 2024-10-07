@@ -31,7 +31,6 @@ const Courses = () => {
     const [instructorId, SetInstructorId] = useState(null);
     const [levelId, SetLevelId] = useState(undefined);
     const [typeId, SetTypeId] = useState(undefined);
-    // const [rating, SetRating] = useState(0);
     const [priceDown, setPriceDown] = useState(0);
     const [priceUp, setPriceUp] = useState(1000000);
     const [showGrid, setShowGrid] = useState(false);
@@ -64,11 +63,9 @@ const Courses = () => {
         SetTypeId={SetTypeId}
         SetLevelId={SetLevelId}
         setTeacherId={SetInstructorId}
-        // SetRating={SetRating}
         setPriceDown={setPriceDown}
         setPriceUp={setPriceUp}
         setTechCount={setTechCount}
-        refetch={GetCourses.refetch}
     />
     // Paginate
     const currentCourse = isTabletOrMobile ? 6 : 12;

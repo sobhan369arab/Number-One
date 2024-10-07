@@ -20,12 +20,12 @@ const CourseTopBody = ({
       <div className='flex items-center justify-between my-2 '>
         <div className={`flex gap-1 ${location.search === '?V=1' ? "w-40" : ""}  ${category?.length > 2 ? "scrollBehavior" : ""}`}>
           {categoryList?.map((categoryBox, index) => (
-            <Skeleton isLoaded={!isLoaded} className="pb-1 rounded-lg">
+            <Skeleton key={index} isLoaded={!isLoaded} className="pb-1 rounded-lg">
               <Label key={index} variant={'bgTextGray'} text={categoryBox} style='text-xs whitespace-nowrap ' />
             </Skeleton>
           ))}
         </div>
-        <Skeleton isLoaded={!isLoaded} className="rounded-lg">
+        <Skeleton isLoaded={!isLoaded} className="rounded-lg w-8">
           <div className="flex gap-1 items-baseline">
             <StarIcon />
             <span className="text-gray-500 text-sm">{score}</span>

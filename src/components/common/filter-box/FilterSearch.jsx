@@ -7,11 +7,10 @@ export const variantPlaceHolder = {
     "Shop": "PlaceHolder_Shop"
 }
 
-const FilterSearch = ({ variant, setQuery, Style,refetch }) => {
+const FilterSearch = ({ variant, setQuery, Style}) => {
     const { t } = useTranslation();
 
     const SetFilterQuery = (e) => {
-        refetch();
         if (e.target.value !== "") {
             setQuery(e.target.value);
         }
@@ -19,7 +18,6 @@ const FilterSearch = ({ variant, setQuery, Style,refetch }) => {
             setQuery(undefined);
         }
     }
-
     return (
         <div className={`flex items-center p-3 bg-LightGray rounded-lg mb-5 ${Style}`}>
             <input type="text" onChange={(e) => SetFilterQuery(e)} placeholder={t(variantPlaceHolder?.[variant])} className="text-sm w-11/12 bg-transparent outline-none" />
