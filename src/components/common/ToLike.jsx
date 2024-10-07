@@ -17,22 +17,22 @@ const ToLike = ({
     numberStatus,
     Id,
     variant,
+    refetch,
 }) => {
     const UserInfo = useSelector(state => state.UserInfo.info)
 
     // like & disLike function
-    const handleToLike = (courseId,userLikeId, api, status, Delete) => {
-        console.log(courseId)
+    const handleToLike = (courseId, userLikeId, api, status, Delete) => {
         if (!UserInfo) {
             alert('لطفا لاگین کنید')
         }
         else {
             if (status) {
-                Delete(userLikeId)
+                Delete(userLikeId, refetch)
             }
             else {
+                api(courseId, refetch);
             }
-            api(courseId);
         }
     }
     return (
@@ -48,42 +48,4 @@ const ToLike = ({
         </div>
     )
 }
-
-
-
-
-
-// const [like, setLike] = useState(false);
-// const [disLike, setDisLike] = useState(false);
-// const [LikeCount, setLikeCount] = useState(likeNumber);
-// const [dislikeCount, setDisLikeCount] = useState(disLikeNumber);
-
-// console.log(LikeCount, dislikeCount)
-
-// const handleLike = () => {
-//     setLike(!like);
-//     if (like === false) {
-//         setLikeCount(LikeCount + 1)
-//         if (disLike === true) {
-//             setDisLikeCount(dislikeCount - 1)
-//             setDisLike(false)
-//         }
-//     }
-//     else {
-//         setLikeCount(LikeCount - 1)
-//     }
-// }
-// const handleDisLike = () => {
-//     setDisLike(!disLike);
-//     if (disLike === false) {
-//         setDisLikeCount(dislikeCount + 1)
-//         if (like === true) {
-//             setLikeCount(LikeCount - 1)
-//             setLike(false)
-//         }
-//     }
-//     else {
-//         setDisLikeCount(dislikeCount - 1)
-//     }
-// }
 export default ToLike

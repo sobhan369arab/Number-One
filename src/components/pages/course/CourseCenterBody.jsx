@@ -12,7 +12,8 @@ const CourseCenterBody = ({
     LikeStatus,
     DissLikeStatus,
     Id,
-    isLoaded
+    isLoaded,
+    refetch,
 }) => {
 
     const Data = [
@@ -43,6 +44,7 @@ const CourseCenterBody = ({
                         LikeStatus={LikeStatus}
                         DissLikeStatus={DissLikeStatus}
                         Id={Id}
+                        refetch={refetch}
                     />
                 </Skeleton>
             </div>

@@ -49,15 +49,15 @@ const Courses = () => {
         PageNumber: 1,
         RowsOfPage: 10000
     };
-
     // Query Object
     const GetCourses = useQuery({
-        queryKey: ["GetCourses", filterObj_Courses],
+        queryKey: ["GetCourses", filterObj_Courses,],
         queryFn: async () => {
             return await GetAllCourseByPagination(filterObj_Courses);
         },
         refetchOnWindowFocus: false
     });
+
     const filterSide = <FilterSide_Courses
         setQuery={setQuery}
         setListTech={setListTech}
@@ -91,6 +91,7 @@ const Courses = () => {
                 currentItems.map((item, index) => (
                     <Course key={index}
                         isLoaded={GetCourses.isLoading}
+                        refetch={GetCourses.refetch}
                         id={item.courseId}
                         title={item.title}
                         images={item.tumbImageAddress}
@@ -101,7 +102,7 @@ const Courses = () => {
                         price={item.cost}
                         date={item.lastUpdate}
                         studentsNumber={0}
-                        userLikeId={item.userLikeId}
+                        userLikeId={item.userLikedId}
                         like={item.likeCount}
                         disLike={item.dissLikeCount}
                         LikeStatus={item.userIsLiked}

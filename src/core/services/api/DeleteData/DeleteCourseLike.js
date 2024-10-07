@@ -1,24 +1,22 @@
+import { toast } from "react-toastify";
 import Http from "../../interceptor";
 import onFormData from "../FormData";
 
-const DeleteCourseLike = async (ParamsId) => {
-  alert()
+const DeleteCourseLike = async (ParamsId, refetch) => {
   try {
     const obj = {
       CourseLikeId: ParamsId,
     };
-
     const dataObj = onFormData(obj);
-
     const result = await Http.delete(`/Course/DeleteCourseLike`, {
       data: dataObj,
       headers: { "Content-Type": "multipart/form-data" },
     });
-    console.log(result);
     if (result.success) {
-      alert("yes");
+      toast.success("نظر شما برداشته شد");
+      refetch();
     } else {
-      alert("no");
+      toast.error("لطفا دوباره تلاش کنید");
     }
   } catch (error) {
     console.log(error);

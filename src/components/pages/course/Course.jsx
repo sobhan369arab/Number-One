@@ -9,6 +9,7 @@ import NotFoundImg from "../../../assets/images/image-not-found.png"
 
 const Course = ({
     isLoaded,
+    refetch,
     id,
     title,
     images,
@@ -65,6 +66,7 @@ const Course = ({
                         DissLikeStatus={DissLikeStatus}
                         Id={id}
                         isLoaded={isLoaded}
+                        refetch={refetch}
                     />
                     <CourseDownBody
                         price={price}
