@@ -19,8 +19,11 @@ const Course = ({
     price,
     date,
     studentsNumber,
+    userLikeId,
     like,
     disLike,
+    LikeStatus,
+    DissLikeStatus,
     bio,
     comparisonId,
     setComparisonId
@@ -55,8 +58,12 @@ const Course = ({
                         instructor={instructor}
                         studentsNumber={studentsNumber}
                         level={level}
+                        userLikeId={userLikeId}
                         like={like}
                         disLike={disLike}
+                        LikeStatus={LikeStatus}
+                        DissLikeStatus={DissLikeStatus}
+                        Id={id}
                         isLoaded={isLoaded}
                     />
                     <CourseDownBody

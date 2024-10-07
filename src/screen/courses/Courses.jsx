@@ -91,7 +91,7 @@ const Courses = () => {
                 currentItems.map((item, index) => (
                     <Course key={index}
                         isLoaded={GetCourses.isLoading}
-                        id={index}
+                        id={item.courseId}
                         title={item.title}
                         images={item.tumbImageAddress}
                         instructor={item.teacherName}
@@ -101,8 +101,11 @@ const Courses = () => {
                         price={item.cost}
                         date={item.lastUpdate}
                         studentsNumber={0}
+                        userLikeId={item.userLikeId}
                         like={item.likeCount}
                         disLike={item.dissLikeCount}
+                        LikeStatus={item.userIsLiked}
+                        DissLikeStatus={item.currentUserDissLike}
                         bio={item.describe}
                         comparisonId={comparisonId}
                         setComparisonId={setComparisonId}

@@ -149,6 +149,11 @@ i18n.use(initReactI18next)
                     Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها",
                     // NotFound
                     course_NotFound: "دوره ای یافت نشد",
+                    // toast Messages
+                    tryAgain: 'please try again',
+                    courseLike: 'The desired course has been liked successfully', courseDeleteLike: 'Like course has been removed',
+                    courseDisLike: 'The desired course has been disLiked successfully', courseDeleteLike: 'disLike course has been removed',
+
                 },
             },
             en: {
@@ -291,6 +296,10 @@ i18n.use(initReactI18next)
                     Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",
                     // NotFound
                     course_NotFound: "Course not found",
+                    // toast Messages
+                    tryAgain: 'دوباره تلاش کنید',
+                    courseLike: 'لایک دوره مورد نظر با موفقیت انجام شد', courseDeleteLike: 'لایک دوره برداشته شد',
+                    courseDisLike: ' دیس لایک دوره مورد نظر با موفقیت انجام شد', courseDeleteLike: ' دیس لایک دوره برداشته شد',
                 },
             },
         },

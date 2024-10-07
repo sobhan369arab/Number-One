@@ -6,8 +6,12 @@ const CourseCenterBody = ({
     instructor,
     studentsNumber,
     level,
+    userLikeId,
     like,
     disLike,
+    LikeStatus,
+    DissLikeStatus,
+    Id,
     isLoaded
 }) => {
 
@@ -32,8 +36,13 @@ const CourseCenterBody = ({
             <div className="flex items-center gap-1 justify-end">
                 <Skeleton isLoaded={!isLoaded} className="rounded-lg">
                     <ToLike
+                        variant={'course'}
+                        userLikeId={userLikeId}
                         likeNumber={like}
                         disLikeNumber={disLike}
+                        LikeStatus={LikeStatus}
+                        DissLikeStatus={DissLikeStatus}
+                        Id={Id}
                     />
                 </Skeleton>
             </div>
