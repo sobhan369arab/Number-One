@@ -15,7 +15,7 @@ export default {
         mobileMenu: { "0%": { width: 0 }, "100%": { width: "308px" } },
       },
       animation: {
-        mobileMenu: 'mobileMenu 0.2s',
+        mobileMenu: "mobileMenu 0.2s",
       },
       backgroundImage: {
         heroSection: "url('./src/assets/images/hero_section_landing.jpg')",
@@ -31,6 +31,7 @@ export default {
         IranSans: ["Iran-Sans"],
         Pop_Med: ["Pop-Medium"],
         Sahel: ['"Pop-Medium"', '"Sahel"'],
+        Number: ['"Mitra"', '"Pop-Medium"'],
       },
       screens: {},
     },

@@ -21,6 +21,11 @@ body {
     font-family: "Pop-Medium";
     src: url(./assets/fonts/Poppins/poppins.medium.ttf);
   }
+
+  @font-face {
+    font-family: Mitra;
+    src: url(./assets/fonts/Mitra.ttf);
+  }
 }
 
 @layer components {
