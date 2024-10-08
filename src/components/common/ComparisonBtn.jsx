@@ -6,7 +6,9 @@ import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
 import { Skeleton, Tooltip } from "@nextui-org/react"
 import { useTranslation } from "react-i18next"
 
-const ComparisonBtn = ({ isLoading, CourseId, comparisonId, setComparisonId }) => {
+const ComparisonBtn = ({ isLoading, CourseId }) => {
+  const [comparisonId, setComparisonId] = useState([])
+
   const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
   const [selectBtn, setSelectBtn] = useState(false)
   const navigate = useNavigate()

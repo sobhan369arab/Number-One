@@ -3,7 +3,7 @@ import CenterBox from "./CenterBox"
 import DownBox from "./DownBox"
 import { Skeleton } from "@nextui-org/react"
 
-const BlogCard = ({ item, isLoading }) => {
+const BlogCard = ({ item, isLoading ,refetch}) => {
     const {
         id,
         title,

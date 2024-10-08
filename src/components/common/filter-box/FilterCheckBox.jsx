@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux";
 
 const FilterCheckBox = ({
   title,
   labelArray,
   SetFilteredData,
   setTechCount,
-  removeTech,
+  refetch,
+  isRefetching
 }) => {
-  const { t} = useTranslation();
-  useEffect(() => {
-  }, [labelArray])
+  const { t } = useTranslation();
 
+  const Dispatch = useDispatch();
 
   const [checkedData, SetCheckedData] = useState(false);
 
@@ -30,14 +31,14 @@ const FilterCheckBox = ({
 
 
     if (activeButton.length === 0) {
-      SetFilteredData(null);
-      setTechCount(null);
+      Dispatch(SetFilteredData(null))
+      Dispatch(setTechCount(null))
       SetCheckedData(false);
     }
     else {
       console.log(activeButton)
-      SetFilteredData(ButtonId.toString());
-      setTechCount(1);
+      Dispatch(SetFilteredData(ButtonId.toString()));
+      Dispatch(setTechCount(1));
     }
 
   }
@@ -52,10 +53,10 @@ const FilterCheckBox = ({
              ${checkedData === false ? "hidden" : ""}`
           }
           onClick={() => {
-            SetFilteredData(null);
+            Dispatch(SetFilteredData(null))
             SetCheckedData(false);
-            setTechCount(null);
-            removeTech();
+            Dispatch(setTechCount(null))
+            refetch()
           }}
         >
           {t('removeFilters')}
@@ -68,7 +69,7 @@ const FilterCheckBox = ({
           key={index}
           className="text-sm flex items-center gap-2 mediumStyle_text w-fit mt-1"
         >
-          <input type="checkbox" id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none " />
+          <input type="checkbox" checked={isRefetching ? false : null} id={title + index} name={title} className="w-4 h-4 rounded-[4px] checked:bg-[url('../icons/true.PNG')] bg-cover checked:border-none border border-gray-500 bg-white dark:bg-gray-950 appearance-none " />
           <label className="cursor-pointer" htmlFor={title + index}>{item.techName}</label>
         </div>
       ))}

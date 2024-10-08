@@ -40,6 +40,7 @@ import BottomNav from "./bottom-nav/BottomNav.jsx";
 import SearchModal from "./searchBox/SearchModal.jsx"
 import NotFound_Pic from "./NotFound_Pic.jsx";
 import ToastAlert from "./ToastAlert.jsx";
+import RenderItemsList from "./RenderItemsList.jsx";
 
 export {
   Button,
@@ -82,4 +83,5 @@ export {
   SearchModal,
   NotFound_Pic,
   ToastAlert,
+  RenderItemsList,
 };

@@ -3,6 +3,7 @@ import { Slider } from "@nextui-org/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SeparationPrice } from "../../../core/utility/SeparationPrice/SeparationPrice";
+import { useDispatch } from "react-redux";
 const FilterRange = ({
   title,
   setPriceDown,
@@ -10,11 +11,12 @@ const FilterRange = ({
 
 }) => {
   const { t } = useTranslation();
+  const Dispatch = useDispatch();
   const [value, setValue] = useState([0, 1000000000]);
   const handleInput = (event) => {
     setValue(event)
-    setPriceDown(event[0])
-    setPriceUp(event[1]);
+    Dispatch(setPriceDown(event[0]))
+    Dispatch(setPriceUp(event[1]))
   };
   return (
     <div className="filter-box relative">

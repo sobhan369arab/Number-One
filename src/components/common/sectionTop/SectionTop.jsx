@@ -7,6 +7,7 @@ const SectionTop = ({
     children
 }) => {
     const { t } = useTranslation();
+    console.log(lengthAllData)
     return (
         <div className="sm:flex mobile:block gap-4 justify-between items-center pb-2">
             <div className="mediumStyle_text text-sm text-center flex gap-x-2">

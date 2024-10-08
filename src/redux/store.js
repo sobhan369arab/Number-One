@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { StepStatus, CartData, DarkMode, UserInfo, FilterBlog } from "./slices";
+import { StepStatus, CartData, DarkMode, UserInfo, FilterBlog, FilterCourses } from "./slices";
 
 const store = configureStore({
   reducer: {
@@ -8,6 +8,7 @@ const store = configureStore({
     DarkMode,
     UserInfo,
     FilterBlog,
+    FilterCourses
   },
 });
 

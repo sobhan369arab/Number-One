@@ -1,126 +1,61 @@
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, CreateModal, SectionTop, SortBox, SortBoxHolder, NotFound_Pic } from "../../components/common"
+import { PaginatedItems, PaginateHolderItems, CreateModal, SectionTop, SortBox, SortBoxHolder, RenderItemsList, ChangeView } from "../../components/common"
 import MediaQuery, { useMediaQuery } from "react-responsive"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import { useTranslation } from "react-i18next"
 import Course from "../../components/pages/course/Course"
-import { useDisclosure, Button, Tooltip } from "@nextui-org/react"
+import { useDisclosure, Tooltip } from "@nextui-org/react"
 import { CloseIcon } from "../../core/icon"
 import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
-import { useQuery } from "react-query"
+import { useQuery } from "@tanstack/react-query"
 import { GetAllCourseByPagination } from "../../core/services/api/GetData"
 import { IoFilter } from "react-icons/io5"
 import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
+import { useDispatch, useSelector } from "react-redux"
+import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
+    const filterObj_Courses = useSelector(state => state.FilterCourses)
+    const Dispatch = useDispatch();
+
+    // MediaQueries
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 640px)' });
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' });
 
     // Modal
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const [AllData, SetAllData] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}]);
-    const [Query, setQuery] = useState(undefined);
-    const [ListTech, setListTech] = useState(null);
-    const [TechCount, setTechCount] = useState(undefined);
-    const [sortCal, setSortCal] = useState("DESC");
-    const [sortType, setSortType] = useState("Active");
-    const [instructorId, SetInstructorId] = useState(null);
-    const [levelId, SetLevelId] = useState(undefined);
-    const [typeId, SetTypeId] = useState(undefined);
-    const [priceDown, setPriceDown] = useState(0);
-    const [priceUp, setPriceUp] = useState(1000000);
+    // View
+    const skeletonData = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
     const [showGrid, setShowGrid] = useState(false);
-    const filterObj_Courses = {
-        SortingCol: sortType,
-        SortType: sortCal,
-        Query: Query,
-        CostUp: priceUp,
-        CostDown: priceDown,
-        TechCount: TechCount,
-        ListTech: ListTech,
-        courseLevelId: levelId,
-        CourseTypeId: typeId,
-        TeacherId: instructorId,
-        PageNumber: 1,
-        RowsOfPage: 10000
-    };
+
+    // Paginate
+    const currentCourse = isTabletOrMobile ? 6 : 12;
+    useEffect(() => { Dispatch(setRowsOfPage(currentCourse)) }, [currentCourse])
+
     // Query Object
-    const GetCourses = useQuery({
-        queryKey: ["GetCourses", filterObj_Courses,],
+    const { data: coursesData, isSuccess, isError, isLoading, refetch } = useQuery({
+        queryKey: ["GET_COURSES", filterObj_Courses],
         queryFn: async () => {
             return await GetAllCourseByPagination(filterObj_Courses);
         },
-        refetchOnWindowFocus: false
     });
-
-    const filterSide = <FilterSide_Courses
-        setQuery={setQuery}
-        setListTech={setListTech}
-        SetTypeId={SetTypeId}
-        SetLevelId={SetLevelId}
-        setTeacherId={SetInstructorId}
-        setPriceDown={setPriceDown}
-        setPriceUp={setPriceUp}
-        setTechCount={setTechCount}
-    />
-    // Paginate
-    const currentCourse = isTabletOrMobile ? 6 : 12;
-    const [itemOffset, setItemOffset] = useState(0);
-    const endOffset = itemOffset + currentCourse;
-    const currentItems = GetCourses.data?.slice(itemOffset, endOffset);
-
-    const [comparisonId, setComparisonId] = useState([])
-    // Handling the course item before and after loading the data from the api
-    const RenderCourse = () => {
-        if (GetCourses.isLoading) {
-            return (
-                AllData.map((item, index) => (
-                    <Course key={index} isLoaded={GetCourses.isLoading} />
-                ))
-            )
-        }
-        else {
-            return (
-                currentItems.map((item, index) => (
-                    <Course key={index}
-                        isLoaded={GetCourses.isLoading}
-                        refetch={GetCourses.refetch}
-                        id={item.courseId}
-                        title={item.title}
-                        images={item.tumbImageAddress}
-                        instructor={item.teacherName}
-                        score={item.courseRate}
-                        category={item.technologyList}
-                        level={item.levelName}
-                        price={item.cost}
-                        date={item.lastUpdate}
-                        studentsNumber={0}
-                        userLikeId={item.userLikedId}
-                        like={item.likeCount}
-                        disLike={item.dissLikeCount}
-                        LikeStatus={item.userIsLiked}
-                        DissLikeStatus={item.currentUserDissLike}
-                        bio={item.describe}
-                        comparisonId={comparisonId}
-                        setComparisonId={setComparisonId}
-                    />
-                ))
-            )
-        }
-    }
+    const { data: coursesLength, isSuccess: coursesLengthFinished } = useQuery({
+        queryKey: ['GET_COURSES_LENGTH'],
+        queryFn: GetAllCourseByPagination,
+    })
+    // const [comparisonId, setComparisonId] = useState([])
+    console.log(filterObj_Courses)
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
                 <BreadCrumb type="Div" text={'CoursesTitle'} />
             </TitleSection>
             <div className="main-container flex gap-7">
-                <MediaQuery minWidth={"1050px"}>
-                    {filterSide}
-                </MediaQuery>
+                <MediaQuery minWidth={"1050px"}><FilterSide_Courses /></MediaQuery>
                 <div className="lg:w-[87%] sm:w-full mobile:w-full mx-auto">
                     <MediaQuery maxWidth={"1049px"}>
                         <Tooltip {...tooltipStyle} content={i18n.language == "en" ? "ّFilters" : "فیلتر ها"}>
@@ -128,36 +63,37 @@ const Courses = () => {
                                 <IoFilter color="#fff" />
                             </div>
                         </Tooltip>
-                        <CreateModal
-                            isOpen={isOpen}
-                            onClose={onClose}
-                            header={t('filters')}
-                            size="xl"
-                            headerStyle="flex flex-col gap-1 text-white"
-                        >
+                        <CreateModal isOpen={isOpen} onClose={onClose} header={t('filters')} size="xl" headerStyle="flex flex-col gap-1 text-white">
                             <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
                                 <CloseIcon />
                             </div>
-                            {filterSide}
+                            <FilterSide_Courses />
                         </CreateModal>
                     </MediaQuery>
                     <SectionTop
-                        AllData={GetCourses.data}
-                        FilteredData={GetCourses.data}
+                        lengthAllData={coursesLengthFinished && coursesLength.totalCount}
+                        lengthFilteredData={isSuccess && coursesData.courseFilterDtos.length}
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
                             <SortBox setState={setSortType} options={sortOptionType} placeholder={["محبوبیت", "Popularity"]} />
                             <SortBox setState={setSortCal} options={sortOptionCal} placeholder={["نزولی", "Descending"]} />
                         </SortBoxHolder>
+                        <ChangeView setShowGrid={setShowGrid} />
                     </SectionTop>
-                    {GetCourses.data?.length == 0 &&
-                        <NotFound_Pic text={"course_NotFound"} />
-                    }
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems handlePageClick={(event) => { handlePageClick(event, currentCourse, setItemOffset, GetCourses.data) }} pageCount={calculatePageCount(GetCourses.data ?? [], currentCourse)}>
+                        <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData.totalCount} currentDataInOnePage={currentCourse}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                                {RenderCourse()}
+                                <RenderItemsList
+                                    RenderComponent={Course}
+                                    isLoading={isLoading}
+                                    isSuccess={isSuccess}
+                                    isError={isError}
+                                    originalData={isSuccess && coursesData.courseFilterDtos}
+                                    skeletonData={skeletonData}
+                                    notFoundText={'course_NotFound'}
+                                    refetchData={refetch}
+                                />
                             </div>
                         </PaginatedItems>
                     </PaginateHolderItems>

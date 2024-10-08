@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import store from "../redux/store";
 import { BottomNav, ToastAlert } from "../components/common";
 import 'react-toastify/dist/ReactToastify.css';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const App = () => {
   // const [isLogin, setLogin] = useState(false);

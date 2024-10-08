@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { BlogCard, FilterSide_Blogs, RenderBlogList } from "../../components/pages/blog"
+import { BlogCard, FilterSide_Blogs} from "../../components/pages/blog"
 import TitleSection from "../../components/partials/title-section/TitleSection"
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { Button, useDisclosure } from "@nextui-org/react";
-import { ChangeView, CreateModal, PaginatedItems, PaginateHolderItems, SectionTop, SortBox, SortBoxHolder } from "../../components/common";
+import { ChangeView, CreateModal, PaginatedItems, PaginateHolderItems, RenderItemsList, SectionTop, SortBox, SortBoxHolder } from "../../components/common";
 import { CloseIcon } from "../../core/icon";
 import { useTranslation } from "react-i18next";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
@@ -42,6 +42,7 @@ const Blog = () => {
     queryKey: ['GET_BLOG-LENGTH'],
     queryFn: GetNewsFilterPage,
   })
+  console.log(blogData)
 
   return (
     <>
@@ -73,13 +74,14 @@ const Blog = () => {
           <PaginateHolderItems style="justify-center">
             <PaginatedItems setPage={setPageNumber} currentData={isSuccess && blogData.totalCount} currentDataInOnePage={currentBlog}>
               <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
-                <RenderBlogList
+                <RenderItemsList
                   RenderComponent={BlogCard}
                   isLoading={isLoading}
                   isSuccess={isSuccess}
                   isError={isError}
                   originalData={isSuccess && blogData.news}
                   skeletonData={skeletonData}
+                  notFoundText={'blog_NotFound'}
                 />
               </div>
             </PaginatedItems>
