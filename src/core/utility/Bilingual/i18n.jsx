@@ -145,7 +145,7 @@ i18n.use(initReactI18next)
                     OurTestimonialsDesc: "نظرات کاربران ما نشان‌دهنده کیفیت بالای خدمات و محصولات ماست و ما همواره به بازخوردهای آنان گوش می‌دهیم تا تجربه بهتری را ارائه دهیم.",
                     // SortOptions 
                     Descending: "نزولی", Ascending: "صعودی", ActiveCourses: "دوره های فعال", Price: "قیمت", 
-                    Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها",
+                    Popularity: "محبوبیت", MostPopular: "محبوب ترین ها", Latest: "جدید ترین ها", MostVisited: "پربازدیدترین ها", Active: "دوره های فعال"
                 },
             },
             en: {
@@ -285,7 +285,7 @@ i18n.use(initReactI18next)
                     OurTestimonialsDesc: "The opinions of our users show the high quality of our services and products, and we always listen to their feedback to provide a better experience.",
                     // SortOptions 
                     Descending: "Descending", Ascending: "Ascending", ActiveCourses: "Active Courses", Price: "Price", 
-                    Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",
+                    Popularity: "Popularity", MostPopular: "Most Popular", Latest: "Latest", MostVisited: "Most Visited",  Active: "Active Courses"
                 },
             },
         },

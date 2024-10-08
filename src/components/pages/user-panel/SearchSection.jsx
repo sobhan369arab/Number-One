@@ -1,18 +1,27 @@
+import { SearchInput, SortBox } from "../../common"
+import { setQuery, setSortingCol } from "../../../redux/slices/userPanel-filter-slices/MyCourses"
+import { sortOptionPanelMyCourses } from "../../../core/constants/sorts/Sort"
 import { useTranslation } from "react-i18next"
-import { SearchInput } from "../../common"
 
 const SearchSection = () => {
-    const options = [
-        { value: "جدیدترین", text: ["جدیدترین", "Newest"] },
-        { value: "قدیمی ترین", text: ["قدیمی ترین", "Oldest"] },
-    ]
     const { i18n } = useTranslation()
+
     return (
         <div className='w-full flex justify-between'>
-            <SearchInput maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
-            <select className='w-40 cursor-pointer h-full rounded-full relative shadow-inner px-8 border border-LightGrayish text-DarkBlue bg-MainBg'>
-                {options.map((obj, index) => <option key={index} value={obj.value}>{i18n.language == "en" ? obj.text[1] : obj.text[0]}</option>)}
-            </select>
+            <SearchInput setQuery={setQuery} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
+            <SortBox
+                radius="full"
+                setState={setSortingCol}
+                options={sortOptionPanelMyCourses}
+                placeholder="انتخاب کنید"
+                classNames={{
+                    base: "!w-auto",
+                    trigger: "bg-transparent border border-LightGrayish hover:!bg-transparent duration-500 h-[47px] w-[180px]",
+                    selectorIcon: "stroke-[#5751E1]",
+                    value: `border-LightGrayish`,
+                    listboxWrapper: `font-IranSans ${i18n.language != "en" && "select_dir"}`
+                }}
+            />
         </div>
     )
 }
