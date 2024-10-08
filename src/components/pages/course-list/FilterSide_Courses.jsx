@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { getAllTeachers, GetCourseLevel, GetCourseType, GetTechnologies } from "../../../core/services/api/GetData";
-import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch, FilterStars } from "../../common/filter-box"
+import { FilterCheckBox, FilterRadio, FilterRange, FilterSearch} from "../../common/filter-box"
 import { useQuery } from "react-query";
 
 const FilterSide_Courses = ({
