@@ -50,8 +50,8 @@ const CourseDetail = () => {
 
     const DetailsCourse = [
         { titleDetail: "level", countDetail: courseLevelName, iconDetail: <LevelIcon/> },
-        { titleDetail: "startTime", countDetail: endT, iconDetail: <FaHourglassStart className="rotate-180" color="gray"/> },
-        { titleDetail: "endTime", countDetail: startT, iconDetail: <FaHourglassStart color="gray"/>  },
+        { titleDetail: "startTime", countDetail: endT, iconDetail: <FaHourglassStart color="gray"/> },
+        { titleDetail: "endTime", countDetail: startT, iconDetail: <FaHourglassStart className="rotate-180" color="gray"/>  },
         { titleDetail: "capacity", countDetail: capacity, iconDetail: <FaUsers color="gray" />},
         { titleDetail: "Registrants", countDetail: currentRegistrants, iconDetail: <FaRegIdCard color="gray"/> },
         { titleDetail: "statusCourse", countDetail: courseStatusName, iconDetail: <SiStatuspage color="gray" />}
@@ -77,7 +77,7 @@ const CourseDetail = () => {
                         NumberStudents={currentRegistrants}
                         Score={currentRate}
                         category={techs}
-                        differentDetail={startTime}
+                        differentDetail={startT}
                         variant={"course-detail"}
                     />
                     <MediaQuery maxWidth={'1024px'}>

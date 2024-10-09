@@ -25,14 +25,16 @@ const Title_details = ({
     differentDetail,
     variant,
 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     return (
         <div className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
             <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center ">
                 {/* Category Box */}
-                {category?.map((item, index) => (
-                    <Label key={index} variant={categoryItems_variant?.[variant]} text={item} style=' py-1 px-8 text-sm hover:scale-110 duration-200 ' />
-                ))}
+                <div className="flex gap-2 max-sm:mx-auto">
+                    {category?.map((item, index) => (
+                        <Label key={index} variant={categoryItems_variant?.[variant]} text={item} style=' py-1 px-8 text-sm hover:scale-110 duration-200 ' />
+                    ))}
+                </div>
                 {/* Score Box */}
                 <div className="flex gap-1 max-sm:mx-auto max-sm:mt-2">
                     <StarIcon />
@@ -50,7 +52,7 @@ const Title_details = ({
                 <div className="flex w-fit gap-5 max-sm:mx-auto max-sm:mt-3">
                     <div className="flex items-center mediumStyle_text">
                         {icon_variant?.[variant]}
-                        <span className="mx-1">{t(differentDetail)}</span>
+                        <span dir={i18n.language === 'fa' ? 'ltr' : 'rtl'} className="mx-1">{differentDetail}</span>
                     </div>
                     .
                     <div className="flex items-center mediumStyle_text">
