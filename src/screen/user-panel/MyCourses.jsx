@@ -25,7 +25,7 @@ const MyCourses = () => {
         <div className='w-full flex flex-wrap h-fit -mt-8'>
             <SearchSection />
             <PaginateHolderItems style="justify-center">
-                <PaginatedItems currentData={isSuccess && data.totalCount} currentDataInOnePage={8} setPage={setPageNumber}  >
+                <PaginatedItems currentData={isSuccess && data.totalCount} currentDataInOnePage={8} setPage={setPageNumber} >
                     <div className='overflow-x-auto lg:overflow-x-hidden h-[590px] w-full'>
                         <Table sectionHeader={headerTable} style="border-t border-LightGrayish mt-3 pt-5">
                             <RenderItemsList
