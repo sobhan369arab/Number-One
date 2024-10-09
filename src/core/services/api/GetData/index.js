@@ -6,6 +6,7 @@ import GetLandingReports from "./GetLandingReports";
 import GetNewsFilterPage from "./GetNewsFilter";
 import GetTechnologies from "./GetTechnologies";
 import GetCourseDetails from "./GetCourseDetails";
+import GetCoursesComments from "./GetCoursesComments";
 export {
   GetAllCourseByPagination,
   getAllTeachers,
@@ -15,4 +16,5 @@ export {
   GetNewsFilterPage,
   GetTechnologies,
   GetCourseDetails,
+  GetCoursesComments
 };

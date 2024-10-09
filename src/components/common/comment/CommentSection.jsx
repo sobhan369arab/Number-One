@@ -2,18 +2,12 @@ import { useState } from "react"
 import YourComments from "./YourComments"
 import { useTranslation } from "react-i18next";
 import UserComments from "./UserComments";
-import { useQuery } from "@tanstack/react-query";
-import GetNewsComments from "../../../core/services/api/GetData/GetNewsComments";
 
-const CommentSection = ({ blogId }) => {
+const CommentSection = ({data,isSuccess }) => {
+  console.log(data)
   const { t } = useTranslation();
   const [comments, setComments] = useState([]);
   const [viewMore, setViewMore] = useState(false);
-
-  const { data, isSuccess } = useQuery({
-    queryKey: ['GET_COMMENTS_LIST'],
-    queryFn: () => { return GetNewsComments(blogId) }
-  })
 
   return (
     <div className="my-3">

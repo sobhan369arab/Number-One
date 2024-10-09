@@ -8,6 +8,7 @@ import { CommentSection, ToLike } from "../../components/common";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
 import GetBlogWithId from "../../core/services/api/GetData/GetBlogWithId";
+import GetNewsComments from "../../core/services/api/GetData/GetNewsComments";
 
 const BlogDetail = () => {
     const { t } = useTranslation();
@@ -19,9 +20,12 @@ const BlogDetail = () => {
         queryFn: async () => { return await GetBlogWithId(id) }
     })
 
-    if (isSuccess) {
-        console.log(data.detailsNewsDto)
-    }
+    // Comment call api with react Query
+    const { data: commentData, isSuccess: commentSuccess } = useQuery({
+        queryKey: ['GET_COMMENTS_BLOG'],
+        queryFn: () => { return GetNewsComments(id) }
+    })
+
 
     const {
         title,
@@ -71,9 +75,9 @@ const BlogDetail = () => {
                             <ToLike likeNumber={currentLikeCount} disLikeNumber={currentDissLikeCount} numberStatus="hidden" />
                         </div>
                     </div>
-                    <CommentSection blogId={id} />
+                    <CommentSection data={commentData} isSuccess={commentSuccess}/>
                 </div>
-                <RelatedBlogs category={newsCatregoryId} />
+                <RelatedBlogs category={newsCatregoryId}/>
             </div>
         </>
     )

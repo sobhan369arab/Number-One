@@ -5,17 +5,19 @@ import { CommentSection, OverView_Details } from "../../common";
 const TabPanel = ({
     overView,
     training,
-    MajorElements
+    MajorElements,
+    commentData,
+    commentSuccess
 }) => {
     return (
         <div>
             <Details_Tabs>
                 <Tab label="Overview">
-                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements} Class={'block'}  ElementClass={'hidden'} titleOverView={'CourseOverView'} titleLearning={'LearnCourse'} variant={"course"} />
+                    <OverView_Details overView={overView} training={training} MajorElements={MajorElements} Class={'block'} ElementClass={'hidden'} titleOverView={'CourseOverView'} titleLearning={'LearnCourse'} variant={"course"} />
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
                 <Tab label="Instructor">Instructor </Tab>
-                <Tab label="User comments"><CommentSection/></Tab>
+                <Tab label="User comments"><CommentSection data={commentData} isSuccess={commentSuccess} /></Tab>
             </Details_Tabs>
         </div>
     )

@@ -1,33 +1,26 @@
 import { useParams } from "react-router-dom"
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { DetailsBox, Title_details } from "../../components/common";
-import { LevelIcon} from "../../core/icon";
+import { LevelIcon } from "../../core/icon";
 import { TabPanel } from "../../components/pages/course-detail";
 import MediaQuery from "react-responsive";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
-import { GetCourseDetails } from "../../core/services/api/GetData";
+import { GetCourseDetails, GetCoursesComments } from "../../core/services/api/GetData";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import ChangeMoment from "../../core/utility/moment/ChangeMoment";
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 
-
-
 const CourseDetail = () => {
     const { id } = useParams();
-    console.log(id)
     const { data: courseDetails, isSuccess } = useQuery({
         queryKey: 'GET_COURSE_DETAILS',
         queryFn: async () => {
             return await GetCourseDetails(id);
         }
     })
-    // if (isSuccess) {
-    console.log(courseDetails)
-    // }
-
     const {
         title,
         imageAddress,
@@ -49,12 +42,12 @@ const CourseDetail = () => {
     const endT = ChangeMoment(endTime?.split("T"));
 
     const DetailsCourse = [
-        { titleDetail: "level", countDetail: courseLevelName, iconDetail: <LevelIcon/> },
-        { titleDetail: "startTime", countDetail: endT, iconDetail: <FaHourglassStart color="gray"/> },
-        { titleDetail: "endTime", countDetail: startT, iconDetail: <FaHourglassStart className="rotate-180" color="gray"/>  },
-        { titleDetail: "capacity", countDetail: capacity, iconDetail: <FaUsers color="gray" />},
-        { titleDetail: "Registrants", countDetail: currentRegistrants, iconDetail: <FaRegIdCard color="gray"/> },
-        { titleDetail: "statusCourse", countDetail: courseStatusName, iconDetail: <SiStatuspage color="gray" />}
+        { titleDetail: "level", countDetail: courseLevelName, iconDetail: <LevelIcon /> },
+        { titleDetail: "startTime", countDetail: endT, iconDetail: <FaHourglassStart color="gray" /> },
+        { titleDetail: "endTime", countDetail: startT, iconDetail: <FaHourglassStart className="rotate-180" color="gray" /> },
+        { titleDetail: "capacity", countDetail: capacity, iconDetail: <FaUsers color="gray" /> },
+        { titleDetail: "Registrants", countDetail: currentRegistrants, iconDetail: <FaRegIdCard color="gray" /> },
+        { titleDetail: "statusCourse", countDetail: courseStatusName, iconDetail: <SiStatuspage color="gray" /> }
     ]
     // Handling the image data sent from the api
     const handleImg = () => {
@@ -62,6 +55,14 @@ const CourseDetail = () => {
         else return imageAddress
     }
 
+    // Comment call api with react Query
+    const { data: commentData, isSuccess: commentSuccess } = useQuery({
+        queryKey: ['GET_COMMENTS_COURSE'],
+        queryFn: () => { return GetCoursesComments(id) }
+    })
+    // if(commentSuccess){
+    console.log(commentData)
+    // }
     return (
         <>
             <TitleSection title={title}>
@@ -92,10 +93,12 @@ const CourseDetail = () => {
                             priceInfo={"CoursePrice"}
                         />
                     </MediaQuery>
-                    <TabPanel
-                        overView={describe}
-                        training={miniDescribe}
-                        MajorElements={["", "", "", ""]}
+                    <TabPanel 
+                    overView={describe} 
+                    training={miniDescribe} 
+                    MajorElements={["", "", "", ""]} 
+                    commentData={commentData}
+                    commentSuccess={commentSuccess}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
@@ -109,10 +112,8 @@ const CourseDetail = () => {
                     />
                 </MediaQuery>
             </div>
-
         </>
     )
-    // }
 }
 
 export default CourseDetail
