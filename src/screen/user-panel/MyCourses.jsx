@@ -1,11 +1,10 @@
 import { SearchSection, Table, TableItem } from '../../components/pages/user-panel'
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount } from '../../components/common'
+import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, RenderItemsList } from '../../components/common'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useQuery } from '@tanstack/react-query'
 import GetMyCourses from '../../core/services/api/GetData/GetMyCourses'
 import { setPageNumber } from '../../redux/slices/userPanel-filter-slices/MyCourses'
-import { RenderBlogList } from '../../components/pages/blog'
 
 const MyCourses = () => {
     const headerTable = [
@@ -29,7 +28,7 @@ const MyCourses = () => {
                 <PaginatedItems currentData={isSuccess && data.totalCount} currentDataInOnePage={8} setPage={setPageNumber}  >
                     <div className='overflow-x-auto lg:overflow-x-hidden h-[590px] w-full'>
                         <Table sectionHeader={headerTable} style="border-t border-LightGrayish mt-3 pt-5">
-                            <RenderBlogList
+                            <RenderItemsList
                                 RenderComponent={TableItem}
                                 isLoading={isLoading}
                                 isSuccess={isSuccess}

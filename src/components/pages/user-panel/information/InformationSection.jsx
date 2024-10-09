@@ -39,6 +39,7 @@ const InformationSection = ({ styleSection, section, map = false }) => {
         ]
     }
     const { i18n } = useTranslation()
+    console.log(initialState?.[section])
     return (
         <ul className={`w-full md:w-1/2 mobile:px-4 px-12 py-5 flex flex-wrap gap-y-5 lg:gap-y-10 relative ${styleSection}`}>
             {initialState?.[section].map((obj, index) => <FieldSection key={index} fieldTitle={obj.title} descriptionTitle={obj.description} />)}
