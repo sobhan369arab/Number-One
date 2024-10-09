@@ -30,7 +30,7 @@ const Title_details = ({
         <div className={`my-4 py-4  ${boxTitle_variant?.[variant]}`}>
             <div className=" flex max-sm:justify-between flex-wrap gap-2 items-center ">
                 {/* Category Box */}
-                {category.map((item, index) => (
+                {category?.map((item, index) => (
                     <Label key={index} variant={categoryItems_variant?.[variant]} text={item} style=' py-1 px-8 text-sm hover:scale-110 duration-200 ' />
                 ))}
                 {/* Score Box */}

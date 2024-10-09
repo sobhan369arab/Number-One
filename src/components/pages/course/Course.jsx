@@ -26,6 +26,7 @@ const Course = ({ isLoading, refetch, item }) => {
         currentUserDissLike: DissLikeStatus,
         describe: bio
     } = item;
+    // console.log(images)
     return (
         <>
             <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200 relative  group/item">

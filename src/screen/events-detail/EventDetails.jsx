@@ -51,7 +51,7 @@ const EventDetails = () => {
         <DetailsBox
           variant="event-detail"
           price={SelectedEvents.price}
-          Detail={DetailsEvent}
+          // Detail={DetailsEvent}
           arrowColor={"#fff"}
           colorButton={"purple"}
           btnText={"Join"}

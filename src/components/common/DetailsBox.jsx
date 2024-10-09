@@ -52,7 +52,7 @@ const DetailsBox = ({
       {/* details Information*/}
       <div className="my-2 w-full">
         <h1 className="text-DarkBlue">{t(detailInfoVariant?.[variant])}:</h1>
-        {Detail.map((item, index) => (
+        {Detail?.map((item, index) => (
           <div key={index} className="w-full py-2 flex items-center border-b">
             <item.iconDetail width={17} height={17} />
             <div className="w-full text-sm">
