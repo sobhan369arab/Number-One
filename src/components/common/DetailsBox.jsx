@@ -54,10 +54,10 @@ const DetailsBox = ({
         <h1 className="text-DarkBlue">{t(detailInfoVariant?.[variant])}:</h1>
         {Detail?.map((item, index) => (
           <div key={index} className="w-full py-2 flex items-center border-b">
-            <item.iconDetail width={17} height={17} />
+            {item.iconDetail}
             <div className="w-full text-sm">
-              <span className="float-start mx-3 text-GrayishPurple">{t(item.titleDetail)}</span>
-              <span className="float-end text-gray-400">{item.countDetail}</span>
+              <span className="float-start mx-3 text-GrayishPurple  mt-0.5">{t(item.titleDetail)}</span>
+              <span dir={i18n.language=== 'fa'?'ltr':'rtl'} className="float-start h-5 text-gray-400">{item.countDetail}</span>
             </div>
           </div>
         ))}

@@ -1,13 +1,17 @@
 import { useParams } from "react-router-dom"
 import TitleSection from "../../components/partials/title-section/TitleSection";
 import { DetailsBox, Title_details } from "../../components/common";
-import { LevelIcon, MenuIcon, QuizzesIcon, TimeIcon, TopicsIcon, TotalIcon } from "../../core/icon";
+import { LevelIcon} from "../../core/icon";
 import { TabPanel } from "../../components/pages/course-detail";
 import MediaQuery from "react-responsive";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
 import { GetCourseDetails } from "../../core/services/api/GetData";
 import NotFoundImg from "../../assets/images/image-not-found.png"
+import ChangeMoment from "../../core/utility/moment/ChangeMoment";
+import { FaHourglassStart, FaUsers } from "react-icons/fa6";
+import { SiStatuspage } from "react-icons/si";
+import { FaRegIdCard } from "react-icons/fa";
 
 
 
@@ -41,19 +45,18 @@ const CourseDetail = () => {
         miniDescribe,
     } = isSuccess && courseDetails
 
-    if (isSuccess) {
-        console.log(miniDescribe)
-    }
+    const startT = ChangeMoment(startTime?.split("T"));
+    const endT = ChangeMoment(endTime?.split("T"));
 
     const DetailsCourse = [
-        { titleDetail: "level", countDetail: courseLevelName, iconDetail: LevelIcon },
-        { titleDetail: "duration", countDetail: startTime, iconDetail: TimeIcon },
-        { titleDetail: "lessons", countDetail: endTime, iconDetail: TopicsIcon },
-        { titleDetail: "EventQuizzes", countDetail: capacity, iconDetail: QuizzesIcon },
-        { titleDetail: "graduation", countDetail: currentRegistrants, iconDetail: TotalIcon },
-        { titleDetail: "type", countDetail: courseStatusName, iconDetail: MenuIcon }
+        { titleDetail: "level", countDetail: courseLevelName, iconDetail: <LevelIcon/> },
+        { titleDetail: "startTime", countDetail: endT, iconDetail: <FaHourglassStart className="rotate-180" color="gray"/> },
+        { titleDetail: "endTime", countDetail: startT, iconDetail: <FaHourglassStart color="gray"/>  },
+        { titleDetail: "capacity", countDetail: capacity, iconDetail: <FaUsers color="gray" />},
+        { titleDetail: "Registrants", countDetail: currentRegistrants, iconDetail: <FaRegIdCard color="gray"/> },
+        { titleDetail: "statusCourse", countDetail: courseStatusName, iconDetail: <SiStatuspage color="gray" />}
     ]
-
+    // Handling the image data sent from the api
     const handleImg = () => {
         if (imageAddress == null || imageAddress === 'testimg') return NotFoundImg
         else return imageAddress

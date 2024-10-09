@@ -98,8 +98,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "آموزش جاوا اسکریپت با خیال پردازی", EventDate: "14تیر، 1403", EventCity1: "توکیو",
                     EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
-                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', graduation: 'فارغ التحصیلی',
-                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها',
+                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', Registrants: 'ثبت نام شده ها',
+                    EventTopics: 'موضوعات', capacity: 'ظرفیت', EventCertifications: 'گواهینامه ها', endTime: 'زمان پایان', startTime: 'زمان شروع',statusCourse:'وضعیت دوره',
                     EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "از طریق تماس با ما راحت باشید اگر ترجیح می دهید توییتر یا فیس بوک!",
@@ -240,8 +240,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "Learning JavaScript With Imagination", EventDate: "25 June, 2024", EventCity1: "Tokyo",
                     EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
-                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
-                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons',
+                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', Registrants: 'Registrants',
+                    EventTopics: 'Topics', capacity: 'Capacity', EventCertifications: 'Certifications', endTime: 'End Time', startTime: 'Start Time',statusCourse:'Course Status',
                     EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Feel free to contact us through Twitter or Facebook if you prefer!",
