@@ -47,8 +47,7 @@ const Courses = () => {
         queryKey: ['GET_COURSES_LENGTH'],
         queryFn: GetAllCourseByPagination,
     })
-    // const [comparisonId, setComparisonId] = useState([])
-    console.log(filterObj_Courses)
+    console.log(coursesData)
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -72,7 +71,7 @@ const Courses = () => {
                     </MediaQuery>
                     <SectionTop
                         lengthAllData={coursesLengthFinished && coursesLength.totalCount}
-                        lengthFilteredData={isSuccess && coursesData.courseFilterDtos.length}
+                        lengthFilteredData={isSuccess && coursesData.totalCount}
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
@@ -82,14 +81,14 @@ const Courses = () => {
                         <ChangeView setShowGrid={setShowGrid} />
                     </SectionTop>
                     <PaginateHolderItems style="justify-center">
-                        <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData.totalCount} currentDataInOnePage={currentCourse}>
+                        <PaginatedItems setPage={setPageNumber} currentData={isSuccess && coursesData?.totalCount} currentDataInOnePage={currentCourse}>
                             <div className={`flex flex-wrap relative gap-x-1 justify-around gap-y-5 w-full m-auto my-2 ${showGrid && isTabletOrLapTop ? "grid-list" : ""}`}>
                                 <RenderItemsList
                                     RenderComponent={Course}
                                     isLoading={isLoading}
                                     isSuccess={isSuccess}
                                     isError={isError}
-                                    originalData={isSuccess && coursesData.courseFilterDtos}
+                                    originalData={isSuccess && coursesData?.courseFilterDtos}
                                     skeletonData={skeletonData}
                                     notFoundText={'course_NotFound'}
                                     refetchData={refetch}

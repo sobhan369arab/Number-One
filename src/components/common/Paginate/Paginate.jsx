@@ -6,11 +6,12 @@ function PaginatedItems({ children, currentData, currentDataInOnePage, setPage }
     const dispatch = useDispatch()
 
     // Create buttons
-    console.log(currentData.length)
     const pageCount = calculatePageCount(currentData, currentDataInOnePage);
-    console.log(pageCount)
     // Selected button
-    const handlePageChange = (event) => dispatch(setPage(++event.selected))
+    const handlePageChange = (event) => {
+        dispatch(setPage(++event.selected));
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
 
     return (
         <>

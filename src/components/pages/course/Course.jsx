@@ -38,7 +38,7 @@ const Course = ({ isLoading, refetch, item }) => {
                     </Link >
 
                     <div className="flex justify-center gap-8 my-3">
-                        <ComparisonBtn isLoading={isLoading} CourseId={id}/>
+                        <ComparisonBtn isLoading={isLoading} CourseId={id} />
                         <FavoriteBtn isLoading={isLoading} variantStyle="card" />
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Course = ({ isLoading, refetch, item }) => {
                         DissLikeStatus={DissLikeStatus}
                         Id={id}
                         isLoaded={isLoading}
-                        refetch={refetch}
+                        refetch={refetch && refetch}
                     />
                     <CourseDownBody
                         price={price}
