@@ -23,7 +23,7 @@ const Favorites = () => {
                 <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
                     <div className="overflow-x-auto h-[666px]">
                         <Table sectionHeader={headerTable}>
-                            {currentItems.map((item, index) => <TableItem key={index} object={item} variant="favorites" />)}
+                            {currentItems.map((item, index) => <TableItem key={index} item={item} variant="favorites" />)}
                         </Table>
                     </div>
                 </PaginatedItems>
