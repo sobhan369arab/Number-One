@@ -1,8 +1,8 @@
 import * as yup from "yup";
 
 export const ChangePasswordWithToken = yup.object().shape({
-  currentPassword: yup.string().required("این فیلد الزامیست!"),
-  password: yup
+  oldPassword: yup.string().required("این فیلد الزامیست!"),
+  newPassword: yup
     .string()
     .required("این فیلد الزامیست!")
     .notOneOf(
@@ -13,7 +13,7 @@ export const ChangePasswordWithToken = yup.object().shape({
   repeatPassword: yup
     .string()
     .required("این فیلد الزامیست!")
-    .oneOf([yup.ref("password")], "این فیلد باید با رمز عبور یکسان باشد!"),
+    .oneOf([yup.ref("newPassword")], "این فیلد باید با رمز عبور یکسان باشد!"),
 });
 
 export const EmailValidation = yup.object().shape({

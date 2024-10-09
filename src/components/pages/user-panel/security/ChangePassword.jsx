@@ -2,20 +2,30 @@ import { useTranslation } from 'react-i18next'
 import { SaveIcon } from '../../../../core/icon'
 import { FormInput, FormHolder, Button } from '../../../common'
 import { ChangePasswordWithToken } from '../../../../core/validations/validations'
+import { useMutation } from '@tanstack/react-query'
+import ChangeUserPassword from '../../../../core/services/api/PostData/ChangePassword'
 
 const ChangePassword = () => {
-    const { t, i18n } = useTranslation()
+    const { i18n } = useTranslation()
     const fields = [
-        { id: 1, certificate: "currentPassword", sectionName: ["رمز عبور فعلی", "Current password"], dir: "ltr", },
-        { id: 2, certificate: "password", sectionName: ["رمز عبور", "Password"], dir: "ltr", },
+        { id: 1, certificate: "oldPassword", sectionName: ["رمز عبور فعلی", "Current password"], dir: "ltr", },
+        { id: 2, certificate: "newPassword", sectionName: ["رمز عبور", "Password"], dir: "ltr", },
         { id: 3, certificate: "repeatPassword", sectionName: ["تکرار رمز عبور", "Repeat password"], dir: "ltr", },
     ]
-    const initialValues = { currentPassword: "", password: "", repeatPassword: "" }
+    const initialValues = { oldPassword: "", newPassword: "", repeatPassword: "" }
+
+    const { mutate } = useMutation({
+        mutationKey: ['CHANGE_PASSWORD'],
+        mutationFn: (event) => {
+            return ChangeUserPassword({ oldPassword: event.oldPassword, newPassword: event.newPassword })
+        }
+    })
+
     return (
         <FormHolder
             style="w-full flex flex-wrap justify-evenly my-6"
             initialValues={initialValues}
-            onSubmit={(event) => { console.log(event) }}
+            onSubmit={(event) => { mutate(event) }}
             validations={ChangePasswordWithToken}
         >
             <div className='w-full flex gap-x-20 gap-y-8 lg:gap-x-10 justify-center flex-wrap lg:flex-nowrap'>
