@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Select, SelectItem } from '@nextui-org/react';
 import { useDispatch } from 'react-redux';
 
-const SortBox = ({ options, placeholder, setState }) => {
+const SortBox = ({ options, placeholder, setState, ...props }) => {
     const [selectedOption, SetSelectedOption] = useState(null);
     const dispatch = useDispatch()
 
@@ -32,6 +32,7 @@ const SortBox = ({ options, placeholder, setState }) => {
                 value: `${i18n.language != "en" ? "border-l" : "border-r"} border-LightGrayish`,
                 listboxWrapper: `font-IranSans ${i18n.language != "en" && "select_dir"}`
             }}
+            {...props}
         >
             {(options) => <SelectItem>{i18n.language === 'fa' ? options.label[0] : options.label[1]}</SelectItem>}
         </Select>

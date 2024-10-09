@@ -1,27 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BasketIcon, HatIcon, NotificationIcon } from '../../core/icon'
 import { LatestBlogs, UserCourseStatus, UserCoursesSection, CreateCourse } from '../../components/pages/user-panel'
 import { CircularProgress } from "@nextui-org/react";
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useQuery } from '@tanstack/react-query';
+import GetNewsFilterPage from '../../core/services/api/GetData/GetNewsFilter';
+import GetMyCoursesReserve from '../../core/services/api/GetData/GetMyCoursesReserve';
+import GetMyCourses from '../../core/services/api/GetData/GetMyCourses';
+import GetCoursesTop from '../../core/services/api/GetData/GetCoursesTop.js';
 
 const Dashboard = () => {
-  const progressAmount = 60
+  const [progressAmount, setProgressAmount] = useState(0)
+  const userInfo = useSelector(state => state.UserInfo.info)
   const { t } = useTranslation()
-  const lastBlogs = [
-    { id: 1, name: "دوره آموزش جامع از پایه تا پیشرفته  Next.js منتشر شد.", date: "۱۴۰۴ / ۱۱ / ۳۰" },
-    { id: 2, name: "تخفیف ویژه دوره ری اکت را از دست ندهید .", date: "۱۴۰۴ / ۱۱ / ۲۵" },
-    { id: 3, name: "دوره آموزش  tailwind  به روز شد.", date: "۱۴۰۴ / ۱۱ / ۲۳" },
-  ]
-  const currentCourse = [
-    { name: "آموزش Tailwind css", teacher: "مهدی اصغری", date: "چهارشنبه ها . ۱۷:۳۰" },
-    { name: "آموزش کار با API", teacher: "محسن اسفندیاری", date: "" },
-  ]
+
+  useEffect(() => {
+    if (!userInfo) return
+    setProgressAmount(userInfo.profileCompletionPercentage)
+  }, [progressAmount])
+
+  const { data: lastBlogs, isSuccess } = useQuery({
+    queryKey: ['GET_LAST_BLOGS'],
+    queryFn: () => { return GetNewsFilterPage({ PageNumber: 1, RowsOfPage: 10, SortingCol: "updateDate" }) }
+  })
+
+  const myReserveCourse = useQuery({
+    queryKey: ['MY_RESERVE_COURSE_LIST'],
+    queryFn: GetMyCoursesReserve
+  })
+
+  const myCourseList = useQuery({
+    queryKey: ['MY_COURSE_LIST'],
+    queryFn: () => { return GetMyCourses({ PageNumber: 1, RowsOfPage: 1 }) }
+  })
+
+  const suggestionCourseList = useQuery({
+    queryKey: ['SUGGESTION_COURSE_LIST'],
+    queryFn: () => { return GetCoursesTop(2) }
+  })
+
   return (
     <div className='w-full h-fit flex flex-wrap lg:px-10'>
       <div className='w-full h-fit flex gap-y-20 flex-wrap lg:flex-nowrap justify-evenly lg:justify-between'>
         <div className='w-full md:w-1/2 order-2 md:order-none flex flex-wrap sm:flex-nowrap md:flex-wrap lg:flex-nowrap justify-center sm:justify-between lg:justify-start gap-8'>
-          <UserCourseStatus Icon={HatIcon} amount={4} description={t("participateInCourse")} />
-          <UserCourseStatus Icon={BasketIcon} amount={2} description={t("reservationInCourse")} />
+          <UserCourseStatus Icon={HatIcon} amount={myCourseList.isSuccess && myCourseList.data.totalCount} description={t("participateInCourse")} />
+          <UserCourseStatus Icon={BasketIcon} amount={myReserveCourse.isSuccess && myReserveCourse.data.length} description={t("reservationInCourse")} />
         </div>
         <div className='w-[300px] h-20 lg:mb-0 mb-32 flex flex-wrap lg:flex-nowrap gap-4 items-center justify-center lg:justify-end'>
           {progressAmount < 80 ?
@@ -46,15 +70,31 @@ const Dashboard = () => {
         </div>
         <h1 className='boldStyle_text w-full text-xl text-center sm:text-start'>{t("latestNewsAndBlogs")}</h1>
         <div className='w-full h-fit flex flex-wrap mediumStyle_text gap-y-3'>
-          {lastBlogs.map(obj => <LatestBlogs key={obj.id} name={obj.name} date={obj.date} />)}
+          {isSuccess && lastBlogs.news.slice(0, 3).map(obj => <LatestBlogs key={obj.id} name={obj.title} date={obj.updateDate.slice(0, 10)} id={obj.id} />)}
         </div>
       </div>
       <div className='w-full border-t border-neutral-200 dark:border-gray-400/30 py-8 mt-8 flex flex-wrap lg:flex-nowrap gap-x-14 gap-y-10 lg:gap-y-0'>
         <UserCoursesSection sectionName={t("currentCourses")}>
-          {currentCourse.map((item, index) => <CreateCourse key={index} date={item.date} nameCourse={item.name} teacher={item.teacher} />)}
+          {myCourseList.isSuccess && myCourseList.data.listOfMyCourses.map((item, index) => (
+            <CreateCourse
+              key={index}
+              picture={item.tumbImageAddress}
+              price={item.cost}
+              teacher={item.fullName}
+              title={item.courseTitle}
+            />
+          ))}
         </UserCoursesSection>
-        <UserCoursesSection sectionName={t("suggestedCourses")}>
-          {currentCourse.map((item, index) => <CreateCourse key={index} date={item.date} nameCourse={item.name} teacher={item.teacher} />)}
+        <UserCoursesSection href={"/course?V=1"} sectionName={t("suggestedCourses")}>
+          {suggestionCourseList.isSuccess && suggestionCourseList.data.map((item, index) => (
+            <CreateCourse
+              key={index}
+              picture={item.tumbImageAddress}
+              price={item.cost}
+              teacher={item.teacherName}
+              title={item.title}
+            />
+          ))}
         </UserCoursesSection>
       </div>
     </div>

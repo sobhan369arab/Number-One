@@ -12,3 +12,8 @@ export const sortOptionMostType = [
   { id: 2, value: "updateDate", label: "Latest" },
   { id: 3, value: "currentView", label: "MostVisited" },
 ];
+
+export const sortOptionPanelMyCourses = [
+  { id: 1, value: "lastUpdate", label: "Latest" },
+  { id: 2, value: "isActive", label: "Active" },
+]
