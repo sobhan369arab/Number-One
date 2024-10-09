@@ -47,7 +47,7 @@ const Courses = () => {
         queryKey: ['GET_COURSES_LENGTH'],
         queryFn: GetAllCourseByPagination,
     })
-    console.log(coursesData)
+    console.log(filterObj_Courses)
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -75,8 +75,8 @@ const Courses = () => {
                         setShowGrid={setShowGrid}
                     >
                         <SortBoxHolder>
-                            <SortBox setState={setSortType} options={sortOptionType} placeholder={["محبوبیت", "Popularity"]} />
-                            <SortBox setState={setSortCal} options={sortOptionCal} placeholder={["نزولی", "Descending"]} />
+                            <SortBox setState={setSortCal} options={sortOptionType} placeholder={["محبوبیت", "Popularity"]} />
+                            <SortBox setState={setSortType} options={sortOptionCal} placeholder={["نزولی", "Descending"]} />
                         </SortBoxHolder>
                         <ChangeView setShowGrid={setShowGrid} />
                     </SectionTop>

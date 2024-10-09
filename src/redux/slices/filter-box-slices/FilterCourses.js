@@ -32,7 +32,7 @@ const FilterCourses = createSlice({
       state.SortingCol = action.payload;
     },
     setSortType(state, action) {
-      state.sortType = action.payload;
+      state.SortType = action.payload;
     },
     setInstructorId(state, action) {
       state.TeacherId = action.payload;

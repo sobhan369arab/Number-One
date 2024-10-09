@@ -10,7 +10,7 @@ const SectionTop = ({
     console.log(lengthAllData)
     return (
         <div className="sm:flex mobile:block gap-4 justify-between items-center pb-2">
-            <div className="mediumStyle_text text-sm text-center flex gap-x-2">
+            <div className="mediumStyle_text text-sm  mx-auto w-fit text-center flex gap-x-2">
                 <span>{t('show')}</span>
                 <span className="text-blue-600">{lengthFilteredData}</span>
                 <span>{t('result')}</span>

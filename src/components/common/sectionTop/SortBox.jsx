@@ -9,7 +9,9 @@ const SortBox = ({ options, placeholder, setState }) => {
     const dispatch = useDispatch()
 
     const handleChange = (selected) => {
+        console.log(selected)
         let findKey = options.find(obj => obj.id == selected)
+        console.log(findKey)
         SetSelectedOption(findKey)
         dispatch(setState(findKey.value))
     }
