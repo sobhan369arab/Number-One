@@ -2,20 +2,22 @@ import { DownSection, TopSection } from './comment-item'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import ReplayComments from './ReplayComments';
-const UserComments = ({ userInfo }) => {
+const UserComments = ({ userInfo,refetch }) => {
   const { t } = useTranslation()
   const [replayComment, setReplayComment] = useState([]);
   const [replayStatus, setReplayStatus] = useState(false);
 
   const {
     pictureAddress,
-    id: userId,
+    id,
     title,
     describe,
     likeCount,
-    dissLikeCount,
+    disslikeCount,
     replyCount,
-    inserDate
+    inserDate,
+    accept,
+    currentUserLikeId,
   } = userInfo
 
   return (
@@ -34,7 +36,11 @@ const UserComments = ({ userInfo }) => {
             replayStatus={replayStatus}
             setReplayStatus={setReplayStatus}
             like={likeCount}
-            disLike={dissLikeCount}
+            disLike={disslikeCount}
+            LikeStatus={accept}
+            userLikeId={currentUserLikeId}
+            id={id}
+            refetch={refetch}
           />
         </div>
       </div>

@@ -7,7 +7,8 @@ const TabPanel = ({
     training,
     MajorElements,
     commentData,
-    commentSuccess
+    commentSuccess,
+    refetch,
 }) => {
     return (
         <div>
@@ -17,7 +18,7 @@ const TabPanel = ({
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
                 <Tab label="Instructor">Instructor </Tab>
-                <Tab label="User comments"><CommentSection data={commentData} isSuccess={commentSuccess} /></Tab>
+                <Tab label="User comments"><CommentSection data={commentData} isSuccess={commentSuccess} refetch={refetch}/></Tab>
             </Details_Tabs>
         </div>
     )

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { BiDislike, BiLike, BiSolidDislike, BiSolidLike } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import { AddCourseDisLike, AddCourseLike } from "../../core/services/api/PostData";
-import { DeleteCourseLike } from "../../core/services/api/DeleteData";
+import { AddCourseCommentLike, AddCourseDisLike, AddCourseLike, CourseCommentDisLike } from "../../core/services/api/PostData";
+import { DeleteCourseCommentLike, DeleteCourseLike } from "../../core/services/api/DeleteData";
 
 const ApiVariant = {
-    'course': [AddCourseLike, AddCourseDisLike, DeleteCourseLike]
+    'course': [AddCourseLike, AddCourseDisLike, DeleteCourseLike],
+    'courseComment': [AddCourseCommentLike, CourseCommentDisLike, DeleteCourseCommentLike]
 }
 
 const ToLike = ({
@@ -13,14 +14,13 @@ const ToLike = ({
     likeNumber,
     disLikeNumber,
     LikeStatus,
-    DissLikeStatus,
+    DissLikeStatus = false,
     numberStatus,
     Id,
     variant,
     refetch,
 }) => {
     const UserInfo = useSelector(state => state.UserInfo.info)
-
     // like & disLike function
     const handleToLike = (courseId, userLikeId, api, status, Delete) => {
         if (!UserInfo) {
@@ -30,7 +30,7 @@ const ToLike = ({
             if (status) {
                 Delete(userLikeId, refetch)
             }
-            else {
+            else {  
                 api(courseId, refetch);
             }
         }

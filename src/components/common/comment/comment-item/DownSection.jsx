@@ -14,7 +14,11 @@ const DownSection = ({
   setReplayStatus,
   Style,
   like,
-  disLike
+  disLike,
+  LikeStatus,
+  userLikeId,
+  id,
+  refetch,
 }) => {
   const { t } = useTranslation();
   const [testArray, setTestArray] = useState([]);
@@ -46,7 +50,15 @@ const DownSection = ({
         }
       </div>
       <div className='h-fit'>
-        <ToLike likeNumber={like} disLikeNumber={disLike} />
+        <ToLike
+          userLikeId={userLikeId}
+          likeNumber={like}
+          disLikeNumber={disLike}
+          LikeStatus={LikeStatus}
+          Id={id}
+          variant={'courseComment'}
+          refetch={refetch}
+        />
       </div>
     </div>
   )

@@ -56,7 +56,7 @@ const CourseDetail = () => {
     }
 
     // Comment call api with react Query
-    const { data: commentData, isSuccess: commentSuccess } = useQuery({
+    const { data: commentData, isSuccess: commentSuccess ,refetch : refetchComment } = useQuery({
         queryKey: ['GET_COMMENTS_COURSE'],
         queryFn: () => { return GetCoursesComments(id) }
     })
@@ -99,6 +99,7 @@ const CourseDetail = () => {
                     MajorElements={["", "", "", ""]} 
                     commentData={commentData}
                     commentSuccess={commentSuccess}
+                    refetch={refetchComment}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
