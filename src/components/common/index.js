@@ -37,10 +37,11 @@ import CommentSection from "./comment/CommentSection.jsx";
 import HowToStart from "./howToStart.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import BottomNav from "./bottom-nav/BottomNav.jsx";
-import SearchModal from "./searchBox/SearchModal.jsx"
+import SearchModal from "./searchBox/SearchModal.jsx";
 import NotFound_Pic from "./NotFound_Pic.jsx";
 import ToastAlert from "./ToastAlert.jsx";
 import RenderItemsList from "./RenderItemsList.jsx";
+import RenderItemsSlider from "./RenderItemsSlider.jsx";
 
 export {
   Button,
@@ -84,4 +85,5 @@ export {
   NotFound_Pic,
   ToastAlert,
   RenderItemsList,
+  RenderItemsSlider,
 };
