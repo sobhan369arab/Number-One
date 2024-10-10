@@ -3,34 +3,29 @@ import Button from "../Button"
 import FormHolder from "../Form/FormHolder"
 import FormInput from "../Form/FormInput"
 import { useTranslation } from "react-i18next";
-import { CommentValid } from "../../../core/validations/validations";
+import { useSelector } from "react-redux";
 
-const AddReplay_Comment = ({testArray ,setTestArray, setReplayComment }) => {
-  const {t} = useTranslation();
+
+const AddReplay_Comment = ({ courseId, commentId, replayComment }) => {
+  const { t } = useTranslation();
+  const userInfo = useSelector(state => state.UserInfo.info)
 
   const addReplayComment = (values) => {
-    alert()
-    // Test
-    const formData = { describe: values.description };
-    console.log(formData)
-
-    setTestArray([...testArray, formData]);
-
+    if (!userInfo) {
+      alert('لطفا لاگین کنید')
+    }
+    else {
+      replayComment(values, commentId, courseId)
+    }
   }
 
-  useEffect(() => {
-    console.log(testArray)
-    if (testArray.length !== 0) {
-      setReplayComment(testArray)
-    }
-  }, [testArray])
 
   return (
     <div>
       <FormHolder
         initialValues={{ description: '' }}
         onSubmit={(values) => { addReplayComment(values) }}
-        // validations={CommentValid}
+      // validations={CommentValid}
       >
         <FormInput
           type={"text"}

@@ -99,6 +99,7 @@ const CourseDetail = () => {
                     MajorElements={["", "", "", ""]} 
                     commentData={commentData}
                     commentSuccess={commentSuccess}
+                    Id={id}
                     refetch={refetchComment}
                     />
                 </div>

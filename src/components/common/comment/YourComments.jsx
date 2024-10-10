@@ -4,41 +4,50 @@ import FormInput from "../Form/FormInput";
 import Button from "../Button";
 import { useEffect, useState } from "react";
 import { CommentValid } from "../../../core/validations/validations";
+import { useSelector } from "react-redux";
+import Http from '../../../core/services/interceptor'
+import { AcceptCourseComment } from "../../../core/services/api/PostData";
 
-const YourComments = ({ comments, setComments }) => {
+
+
+const YourComments = ({ comments, setComments, apiFunction, Id, refetch }) => {
+
   const { t, } = useTranslation();
-  const [testArray, setTestArray] = useState([]);
+
+  const userInfo = useSelector(state => state.UserInfo.info)
 
   // Providing field information
   const fields = [
     { id: 1, sectionName: 'titleComment', certificate: "title", type: "text", variant: "simple", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg py-2 bg-whiteBlack h-auto mt-0.5' },
     { id: 2, sectionName: 'descComment', certificate: "description", type: "text", variant: "area", errorStyle: "text-end !bg-transparent", fieldStyle: 'rounded-lg pb-28 bg-whiteBlack h-auto line-clamp-4 mt-0.5' }
   ]
+  // const handleAccept = async () => {
+  //   let formData = new FormData();
+  //   formData.append("CommentCourseId", Id);
+  //   console.log(formData)
 
-  const addComment = (values) => {
-    alert()
+  //   try {
+  //     const response = await Http.post("/Course/AcceptCourseComment", formData);
+  //     alert('ok')
+  //     // console.log(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-    // Test
-    const formData = { title: values.title, describe: values.description };
-    console.log(formData)
-
-    setTestArray([...testArray, formData]);
-
+  const handleApi = (Id, values, refetch) => {
+    if (!userInfo) alert('لطفا لاگین کنید')
+    else apiFunction(Id, values, refetch)
   }
-
-  useEffect(() => {
-    if (testArray.length !== 0) {
-      setComments(testArray)
-    }
-  }, [testArray])
 
 
   return (
     <div className="px-7 py-4 bg-grayCustom rounded-lg bg-LightLavender border-LightGrayish">
+      <button onClick={() => AcceptCourseComment(Id)} className="p-6 bg-red-700">Accept </button>
       <h1 className="boldStyle_text text-2xl">{t('sendComment')}</h1>
       <FormHolder
         initialValues={{ title: '', description: '' }}
-        onSubmit={(values) => { addComment(values) }}
+        onSubmit={(values) => { handleApi(Id, values, refetch) }}
         validations={CommentValid}
         style={'w-full mt-4'}
       >

@@ -22,7 +22,7 @@ const ToLike = ({
 }) => {
     const UserInfo = useSelector(state => state.UserInfo.info)
     // like & disLike function
-    const handleToLike = (courseId, userLikeId, api, status, Delete) => {
+    const handleToLike = (id, userLikeId, api, status, Delete) => {
         if (!UserInfo) {
             alert('لطفا لاگین کنید')
         }
@@ -31,7 +31,7 @@ const ToLike = ({
                 Delete(userLikeId, refetch)
             }
             else {  
-                api(courseId, refetch);
+                api(id, refetch);
             }
         }
     }

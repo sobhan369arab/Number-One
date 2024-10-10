@@ -2,9 +2,9 @@ import { DownSection, TopSection } from './comment-item'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import ReplayComments from './ReplayComments';
-const UserComments = ({ userInfo,refetch }) => {
+const UserComments = ({ userInfo,replayComment,refetch ,courseId}) => {
   const { t } = useTranslation()
-  const [replayComment, setReplayComment] = useState([]);
+  // const [replayComment, setReplayComment] = useState([]);
   const [replayStatus, setReplayStatus] = useState(false);
 
   const {
@@ -20,6 +20,7 @@ const UserComments = ({ userInfo,refetch }) => {
     currentUserLikeId,
   } = userInfo
 
+  {console.log(userInfo)}
   return (
     <>
       <div className="border-t-2 border-LightGrayish py-4 flex max-md:mx-1 gap-4">
@@ -32,24 +33,24 @@ const UserComments = ({ userInfo,refetch }) => {
           />
           <DownSection
             ArrayLength={replyCount}
-            setReplayComment={setReplayComment}
             replayStatus={replayStatus}
-            setReplayStatus={setReplayStatus}
             like={likeCount}
             disLike={disslikeCount}
             LikeStatus={accept}
             userLikeId={currentUserLikeId}
-            id={id}
+            replayComment={replayComment}
+            courseId={courseId}
+            commentId={id}
             refetch={refetch}
           />
         </div>
       </div>
       <div className={`${replayStatus ? "h-auto" : "h-0 overflow-hidden"} duration-250`}>
-        {replayComment.length !== 0 && replayComment.map((item, index) => {
-          return (
-            <ReplayComments key={index} describe={item.describe} />
-          )
-        })}
+        {/* {replayComment.length !== 0 && replayComment.map((item, index) => { */}
+          {/* return ( */}
+            <ReplayComments />
+          {/* ) */}
+        {/* })} */}
       </div>
     </>
   )

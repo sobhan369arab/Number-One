@@ -1,6 +1,7 @@
 import Details_Tabs from "./Details_Tabs"
 import Tab from "./Tab";
 import { CommentSection, OverView_Details } from "../../common";
+import { AddCourseComment, AddReplyCourseComment } from "../../../core/services/api/PostData";
 
 const TabPanel = ({
     overView,
@@ -8,6 +9,7 @@ const TabPanel = ({
     MajorElements,
     commentData,
     commentSuccess,
+    Id,
     refetch,
 }) => {
     return (
@@ -18,7 +20,7 @@ const TabPanel = ({
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
                 <Tab label="Instructor">Instructor </Tab>
-                <Tab label="User comments"><CommentSection data={commentData} isSuccess={commentSuccess} refetch={refetch}/></Tab>
+                <Tab label="User comments"><CommentSection Id={Id} replayComment={AddReplyCourseComment} apiFunction={AddCourseComment} data={commentData} isSuccess={commentSuccess} refetch={refetch}/></Tab>
             </Details_Tabs>
         </div>
     )

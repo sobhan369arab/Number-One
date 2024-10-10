@@ -9,7 +9,7 @@ const ReplayComments = ({ describe }) => {
             <div dir={i18n.language === 'fa'? "rtl":'ltr'} className="flex gap-4 w-11/12">
                 <img src={userImg} className='sm:w-24 w-16 sm:h-24 h-16  rounded-full' />
                 <div className='w-full'>
-                    <TopSection Style={'hidden'} describe={describe} />
+                    <TopSection Style={'hidden'} describe={describe && describe} />
                     <DownSection Style={'!hidden'} />
                 </div>
             </div>

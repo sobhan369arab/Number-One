@@ -9,7 +9,6 @@ import { IoIosArrowDown } from "react-icons/io"
 
 const DownSection = ({
   ArrayLength,
-  setReplayComment,
   replayStatus,
   setReplayStatus,
   Style,
@@ -17,11 +16,13 @@ const DownSection = ({
   disLike,
   LikeStatus,
   userLikeId,
-  id,
+  replayComment,
+  courseId,
+  commentId,
   refetch,
 }) => {
   const { t } = useTranslation();
-  const [testArray, setTestArray] = useState([]);
+  // const [testArray, setTestArray] = useState([]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -40,7 +41,7 @@ const DownSection = ({
           <div onClick={onClose} className="closeButton_modal bg-neutral-200/65 top-2 left-2">
             <CloseIcon />
           </div>
-          <AddReplay_Comment testArray={testArray} setTestArray={setTestArray} setReplayComment={setReplayComment} />
+          <AddReplay_Comment courseId={courseId} commentId={commentId} replayComment={replayComment}/>
         </CreateModal>
         {ArrayLength !== 0 &&
           <button onClick={() => setReplayStatus(!replayStatus)} className="bg-LavenderMist py-1 px-3 mt-3 sm:mt-0 text-gray-500 flex gap-2 items-center rounded-lg text-sm">
@@ -55,7 +56,7 @@ const DownSection = ({
           likeNumber={like}
           disLikeNumber={disLike}
           LikeStatus={LikeStatus}
-          Id={id}
+          Id={commentId}
           variant={'courseComment'}
           refetch={refetch}
         />

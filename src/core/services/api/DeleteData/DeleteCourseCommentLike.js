@@ -5,15 +5,14 @@ import onFormData from "../FormData";
 const DeleteCourseCommentLike = async (ParamsId, refetch) => {
   console.log(ParamsId);
   try {
-    // const obj = {
-    //   CourseLikeId: ParamsId,
-    // };
-    // const dataObj = onFormData(obj);
-    const result = await Http.delete(
-      `/Course/DeleteCourseCommentLike?CourseCommandId=${ParamsId}`
-    );
-    //   data: dataObj,
-    //   headers: { "Content-Type": "multipart/form-data" },
+    const obj = {
+      CourseCommandId: ParamsId,
+    };
+    const dataObj = onFormData(obj);
+    console.log(dataObj.CourseCommandId)
+    const result = await Http.delete(`/Course/DeleteCourseCommentLike`, {
+      data: dataObj,
+    });
 
     if (result.success) {
       toast.success("نظر شما برداشته شد");
