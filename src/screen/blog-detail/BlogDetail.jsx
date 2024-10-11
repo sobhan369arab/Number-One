@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import { Blogs_data } from "../../core/constants/blogs/blogs-data";
-import { BlogBiography, BlogPic, DetailsSection, RelatedBlogs } from "../../components/pages/blog-detail";
+import { BlogBiography, DetailsSection } from "../../components/pages/blog-detail";
 import OverView_Details from "../../components/common/OverView_Details";
 import { useTranslation } from "react-i18next";
-import { CommentSection, ToLike } from "../../components/common";
+import { CommentSection, RelatedItems, ToLike } from "../../components/common";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
 import GetBlogWithId from "../../core/services/api/GetData/GetBlogWithId";
 import GetNewsComments from "../../core/services/api/GetData/GetNewsComments";
+import { GetNewsFilterPage } from "../../core/services/api/GetData";
+import { BlogCard } from "../../components/pages/blog";
 
 const BlogDetail = () => {
     const { t } = useTranslation();
     const { id } = useParams();
-    // const blogSelected
 
     const { data, isSuccess } = useQuery({
         queryKey: ['GET_BLOG_DETAILS'],
@@ -40,6 +40,7 @@ const BlogDetail = () => {
         currentDissLikeCount,
         newsCatregoryId
     } = isSuccess && data.detailsNewsDto
+    console.log(newsCatregoryId)
 
     return (
         <>
@@ -75,9 +76,15 @@ const BlogDetail = () => {
                             <ToLike likeNumber={currentLikeCount} disLikeNumber={currentDissLikeCount} numberStatus="hidden" />
                         </div>
                     </div>
-                    <CommentSection data={commentData} isSuccess={commentSuccess}/>
+                    <CommentSection data={commentData} isSuccess={commentSuccess} />
                 </div>
-                <RelatedBlogs category={newsCatregoryId}/>
+                <RelatedItems 
+                category={newsCatregoryId} 
+                params={{ newsCatregoryId: newsCatregoryId }}  
+                apiFunction={GetNewsFilterPage}
+                variant={'news'}
+                RenderItem={BlogCard}
+                />
             </div>
         </>
     )

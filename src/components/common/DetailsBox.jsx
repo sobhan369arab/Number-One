@@ -11,7 +11,7 @@ import { UnitPrice } from "../../core/utility/SeparationPrice/SeparationPrice";
 
 export const detailVariant = {
   "event-detail": "lg:absolute lg:w-64 top-96",
-  "course-detail": "lg:w-80 mb-8",
+  "course-detail": "lg:w-72 mb-8",
 }
 export const detailInfoVariant = {
   "event-detail": "EventInfo",

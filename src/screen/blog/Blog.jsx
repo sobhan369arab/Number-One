@@ -42,7 +42,6 @@ const Blog = () => {
     queryKey: ['GET_BLOG-LENGTH'],
     queryFn: GetNewsFilterPage,
   })
-  console.log(blogData)
 
   return (
     <>

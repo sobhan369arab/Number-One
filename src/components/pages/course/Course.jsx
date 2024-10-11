@@ -29,7 +29,7 @@ const Course = ({ isLoading, refetch, item }) => {
     // console.log(images)
     return (
         <>
-            <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200 relative  group/item">
+            <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
                 <div className="w-full h-44 course-height-img mx-auto  rounded-lg">
                     {/* course Images */}
                     <Link to={`/CourseDetails/${id}`}>

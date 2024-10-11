@@ -1,17 +1,18 @@
 import { useParams } from "react-router-dom"
 import TitleSection from "../../components/partials/title-section/TitleSection";
-import { DetailsBox, Title_details } from "../../components/common";
+import { DetailsBox, RelatedItems, Title_details } from "../../components/common";
 import { LevelIcon } from "../../core/icon";
 import { TabPanel } from "../../components/pages/course-detail";
 import MediaQuery from "react-responsive";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
-import { GetCourseDetails, GetCoursesComments } from "../../core/services/api/GetData";
+import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetTechnologies } from "../../core/services/api/GetData";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import ChangeMoment from "../../core/utility/moment/ChangeMoment";
 import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
+import Course from "../../components/pages/course/Course";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -56,21 +57,42 @@ const CourseDetail = () => {
     }
 
     // Comment call api with react Query
-    const { data: commentData, isSuccess: commentSuccess ,refetch : refetchComment } = useQuery({
+    const { data: commentData, isSuccess: commentSuccess, refetch: refetchComment } = useQuery({
         queryKey: ['GET_COMMENTS_COURSE'],
         queryFn: () => { return GetCoursesComments(id) }
     })
     // if(commentSuccess){
-    console.log(commentData)
-    // }
+    const { data: teachData } = useQuery({
+        queryKey: ['GET_TECHNOLOGIES'],
+        queryFn: () => { return GetTechnologies() }
+    })
+
+    const detailsBox = <DetailsBox
+        variant="course-detail"
+        price={cost}
+        Detail={DetailsCourse}
+        arrowColor={"#000"}
+        colorButton={"yellow"}
+        btnText={"signUpCourse"}
+    />
+
+    const listTech = [];
+    if (techs) {
+        for (const element of techs) {
+            const teachObj = teachData?.find(tech => tech.techName == element);
+            listTech.push(teachObj?.id);
+        }
+    }
+
+
     return (
         <>
             <TitleSection title={title}>
                 <BreadCrumb href={'/courses'} text={'CoursesTitle'} />
                 <BreadCrumb type="Div" text={title} />
             </TitleSection>
-            <div className="main-container lg:flex lg: flex-row-reverse gap-9">
-                <div className="w-full">
+            <div className="main-container lg:flex flex-row-reverse gap-6 px-1">
+                <div className="lg:w-3/4  mx-auto sm:w-full">
                     <img src={handleImg()} alt="course-img" className='w-full h-96 rounded-xl' />
                     <Title_details
                         title={title}
@@ -82,36 +104,27 @@ const CourseDetail = () => {
                         variant={"course-detail"}
                     />
                     <MediaQuery maxWidth={'1024px'}>
-                        <DetailsBox
-                            variant="course-detail"
-                            price={cost}
-                            Detail={DetailsCourse}
-                            arrowColor={"#000"}
-                            colorButton={"yellow"}
-                            btnText={"signUpCourse"}
-                            detailInfo={"CourseInfo"}
-                            priceInfo={"CoursePrice"}
-                        />
+                        {detailsBox}
                     </MediaQuery>
-                    <TabPanel 
-                    overView={describe} 
-                    training={miniDescribe} 
-                    MajorElements={["", "", "", ""]} 
-                    commentData={commentData}
-                    commentSuccess={commentSuccess}
-                    Id={id}
-                    refetch={refetchComment}
+                    <TabPanel
+                        overView={describe}
+                        training={miniDescribe}
+                        MajorElements={["", "", "", ""]}
+                        commentData={commentData}
+                        commentSuccess={commentSuccess}
+                        Id={id}
+                        refetch={refetchComment}
+                    />
+                    <RelatedItems
+                        category={techs}
+                        params={listTech?.length > 0 && { TechCount: 1, ListTech: listTech.toString() }}
+                        apiFunction={GetAllCourseByPagination}
+                        variant={'courseFilterDtos'}
+                        RenderItem={Course}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>
-                    <DetailsBox
-                        variant="course-detail"
-                        price={cost}
-                        Detail={DetailsCourse}
-                        arrowColor={"#000"}
-                        colorButton={"yellow"}
-                        btnText={"signUpCourse"}
-                    />
+                    {detailsBox}
                 </MediaQuery>
             </div>
         </>

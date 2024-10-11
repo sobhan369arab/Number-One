@@ -129,7 +129,7 @@ i18n.use(initReactI18next)
                     descComment: 'توضیحات بیشتر', comment_text: 'متن خود را وارد کنید', ConfirmComment: 'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
                     commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',
                     // Related titles
-                    Related: 'مرتبط', Blogs: 'اخبار',
+                    Related: 'مرتبط', Blogs: 'اخبار',Courses:'دوره های',
                     // Cart
                     cartTitle: "سبد خرید", cartTotalSum: "جمع کل", cartInfo: "اطلاعات", cartButton: "اقدام به پرداخت", clearBtn: "خالی کردن سبد", numberOfItemsInCart: "تعداد آیتم ها",
                     // About
@@ -271,7 +271,7 @@ i18n.use(initReactI18next)
                     descComment: 'More details', comment_text: 'Enter your text', ConfirmComment: 'Your comment will be registered after approval by the admin!',
                     commentAnswer: 'Answer', viewAnswers: 'View Answers',
                     // Related titles
-                    Related: 'Related', Blogs: 'Blogs',
+                    Related: 'Related', Blogs: 'Blogs',Courses:'Courses',
                     // Cart
                     cartTitle: "Cart", cartTotalSum: "Total sum", cartInfo: "Information", cartButton: "Proceed to pay", clearBtn: "Clear Cart", numberOfItemsInCart: "Number of items",
                     // About

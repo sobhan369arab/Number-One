@@ -41,6 +41,7 @@ import SearchModal from "./searchBox/SearchModal.jsx"
 import NotFound_Pic from "./NotFound_Pic.jsx";
 import ToastAlert from "./ToastAlert.jsx";
 import RenderItemsList from "./RenderItemsList.jsx";
+import RelatedItems from "./RelatedItems.jsx";
 
 export {
   Button,
@@ -84,4 +85,5 @@ export {
   NotFound_Pic,
   ToastAlert,
   RenderItemsList,
+  RelatedItems,
 };
