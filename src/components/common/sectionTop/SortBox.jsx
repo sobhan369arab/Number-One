@@ -8,9 +8,7 @@ const SortBox = ({ options, placeholder, setState, ...props }) => {
     const [selectedOption, SetSelectedOption] = useState(null);
     const dispatch = useDispatch()
 
-    console.log(options)
     const handleChange = (selected) => {
-        console.log(selected)
         var findKey = options.find(obj => obj.id == selected)
         console.log(findKey)
         SetSelectedOption(findKey)

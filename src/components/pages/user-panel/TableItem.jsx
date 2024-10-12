@@ -59,7 +59,7 @@ const TableItem = ({ item, variant, isLoading, action, keyVariant, navigateToPag
             width: "25",
             actions: [
                 { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { Navigate(navigateToPage.concat(item?.[paramsId])) } },
-                { Icon: TrashCan, tooltip: ["حذف", "Delete"] },
+                { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.favoriteId) } },
             ]
         }
     }
