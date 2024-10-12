@@ -6,12 +6,9 @@ import { setQuery, setSortingCol } from "../../redux/slices/userPanel-filter-sli
 import { useSelector } from "react-redux"
 
 const Favorites = () => {
-
     const sortState = useSelector(state => state.MyFavorite);
-    console.log(sortState.Query)
 
     const skeletonData = [{}, {}, {}, {}, {}, {}]
-
     const headerTable = [
         { text: ["عنوان", "Title"] },
         { text: ["دسته بندی", "Category"] },
@@ -33,23 +30,24 @@ const Favorites = () => {
         }
     })
 
-    
-
     // Item object keys
     const courseKey = ['courseTitle', 'typeName', 'lastUpdate', 'teacheName']
     const blogKey = ['title', 'currentLikeCount', 'updateDate', 'currentView']
+
+    // handle search filter for myFavorite Items
+    const myFavoriteData = sortState.sortingCol === 'courses' ? myCoursesData?.favoriteCourseDto
+        : myBlogData?.myFavoriteNews;
+    const title = sortState.sortingCol === 'courses' ? courseKey[0] : blogKey[0];
+    const filteredData = myFavoriteData?.filter(item => item?.[title].indexOf(sortState.Query) != -1);
 
     const data = [
         { id: 1, courseName: "آموزش Tailwind css", category: "دوره آموزشی", date: "۱۴۰۴/۰۳/۰۲ , ۱۶:۲۷", author: "دکتر محمدحسین بحر العلومی" },
         { id: 2, courseName: "آموزش کامل کار با Figma", category: "اخبار و مقالات", date: "۱۴۰۴/۰۲/۰۸ , ۱۵:۲۸", author: "محمد رضا ساداتی" },
         { id: 3, courseName: "آموزش NextJs", category: "دوره آموزشی", date: "۱۴۰۴/۰۲/۰۸ , ۱۵:۲۸", author: "دکتر محمدحسین بحر العلومی" },
     ]
-    // const [itemOffset, setItemOffset] = useState(0);
-    // const endOffset = itemOffset + 8;
-    // const currentItems = data.slice(itemOffset, endOffset);
     return (
         <div className="w-full flex flex-wrap h-fit -mt-8">
-            <SearchSection setState={setSortingCol} setQuery={setQuery}/>
+            <SearchSection setState={setSortingCol} setQuery={setQuery} />
             <PaginateHolderItems style="justify-center h-[666px] border-t-2 border-gray-100 mt-4 pt-2">
                 <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
                     <div className="overflow-x-auto h-[666px] lg:overflow-x-hidden">
@@ -59,9 +57,7 @@ const Favorites = () => {
                                 isLoading={sortState.sortingCol === 'courses' ? courseLoading : blogLoading}
                                 isSuccess={sortState.sortingCol === 'courses' ? courseSuccess : blogSuccess}
                                 isError={sortState.sortingCol === 'courses' ? courseError : blogError}
-                                originalData={sortState.sortingCol === 'courses' ? courseSuccess && myCoursesData?.favoriteCourseDto
-                                    : blogSuccess && myBlogData?.myFavoriteNews
-                                }
+                                originalData={sortState.Query !== undefined ? filteredData : myFavoriteData}
                                 skeletonData={skeletonData}
                                 notFoundText={sortState.sortingCol === 'courses' ? 'course_NotFound' : 'blog_NotFound'}
                                 refetchData={sortState.sortingCol === 'courses' ? courseRefetch : blogRefetch}

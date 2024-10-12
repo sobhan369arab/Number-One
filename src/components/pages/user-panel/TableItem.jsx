@@ -6,7 +6,6 @@ import { UnitPrice } from "../../../core/utility/SeparationPrice/SeparationPrice
 import ChangeMoment from "../../../core/utility/moment/ChangeMoment"
 
 const TableItem = ({ item, variant, isLoading, action, keyVariant }) => {
-    console.log(keyVariant)
     const { i18n } = useTranslation()
     const differentSection = {
         myCourses: {
