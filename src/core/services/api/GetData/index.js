@@ -5,6 +5,8 @@ import GetCourseType from "./GetCourseType";
 import GetLandingReports from "./GetLandingReports";
 import GetNewsFilterPage from "./GetNewsFilter";
 import GetTechnologies from "./GetTechnologies";
+import GetMyFavoriteCourses from "./GetMyFavoriteCourses";
+import GetMyFavoriteBlogs from "./GetMyFavoriteBlogs";
 export {
   GetAllCourseByPagination,
   getAllTeachers,
@@ -13,4 +15,6 @@ export {
   GetLandingReports,
   GetNewsFilterPage,
   GetTechnologies,
+  GetMyFavoriteCourses,
+  GetMyFavoriteBlogs,
 };
