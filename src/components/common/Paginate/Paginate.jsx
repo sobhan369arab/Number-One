@@ -1,16 +1,21 @@
 import ReactPaginate from 'react-paginate';
-import { calculatePageCount } from './PaginateFunctions';
 import { useDispatch } from 'react-redux';
 
-function PaginatedItems({ children, currentData, currentDataInOnePage, setPage }) {
+function PaginatedItems({ children, currentData, currentDataInOnePage, setPage, setState }) {
     const dispatch = useDispatch()
 
     // Create buttons
-    const pageCount = calculatePageCount(currentData, currentDataInOnePage);
+    const pageCount = Math.ceil(currentData / currentDataInOnePage);
+
     // Selected button
     const handlePageChange = (event) => {
-        dispatch(setPage(++event.selected));
-        window.scrollTo({ top: 0, behavior: "smooth" })
+        if (setPage) {
+            dispatch(setPage(++event.selected));
+        } else {
+            const newOffset = (event.selected * currentDataInOnePage) % currentData;
+            setState(newOffset);
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     return (

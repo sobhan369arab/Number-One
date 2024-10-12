@@ -4,8 +4,9 @@ import { Skeleton, Tooltip } from "@nextui-org/react"
 import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 import { UnitPrice } from "../../../core/utility/SeparationPrice/SeparationPrice"
 import ChangeMoment from "../../../core/utility/moment/ChangeMoment"
+import ChangeTime from "../../../core/utility/time/ChangeTime"
 
-const TableItem = ({ item, variant, isLoading, action }) => {
+const TableItem = ({ item, variant, isLoading, action, id }) => {
     const { i18n } = useTranslation()
     const differentSection = {
         myCourses: {
@@ -35,16 +36,17 @@ const TableItem = ({ item, variant, isLoading, action }) => {
             ]
         },
         myViews: {
+            id: ++id,
             sections: [
-                { section: item.courseName },
-                { section: item.category },
-                { section: item.date, dir: "ltr" },
-                { section: i18n.language == "en" ? (item.status ? "Confirmed" : "Waiting") : (item.status ? "تایید شده" : "در انتظار تایید"), color: item.status ? "#128E5A" : "#DE5204" },
+                { section: item.courseTitle },
+                { section: item.title },
+                { section: i18n.language == "en" ? (item.accept ? "Confirmed" : "Waiting") : (item.accept ? "تایید شده" : "در انتظار تایید"), color: item.accept ? "#128E5A" : "#DE5204" },
+                { section: [ChangeMoment(item.insertDate), " , ", ChangeTime(item.insertDate)], dir: "ltr" },
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
-                { Icon: TrashCan, tooltip: ["حذف", "Delete"] },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { alert('Details') } },
+                { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.reserveId) }, accept: item.accept },
             ]
         },
         favorites: {
@@ -65,9 +67,16 @@ const TableItem = ({ item, variant, isLoading, action }) => {
     return (
         <tr className="min-w-[830px] w-full h-fit text-center text-sm flex items-center odd:bg-[#C8C1ED]/30 dark:odd:bg-[#C8C1ED]/10 justify-around p-1.5 rounded-lg shadow-md hover:shadow-xl duration-200">
             <Skeleton isLoaded={!isLoading}>
-                <td className="min-w-8 w-8 h-8 rounded-full bg-VioletBlue ml-2 overflow-hidden">
-                    <img src={differentSection?.[variant].pic} className="w-full h-full" alt="" />
-                </td>
+                {differentSection?.[variant].pic ? (
+                    <td className="min-w-8 w-8 h-8 rounded-full bg-VioletBlue ml-2 overflow-hidden">
+                        <img src={differentSection?.[variant].pic} className="w-full h-full" alt="" />
+                    </td>
+                ) : (
+                    <td className="min-w-8 w-8 h-8 flex gap-x-1 flex-row-reverse items-center text-DarkBlue text-lg">
+                        <span>#</span>
+                        <span className="font-Number text-xl">{differentSection?.[variant].id}</span>
+                    </td>
+                )}
             </Skeleton>
             {differentSection?.[variant].sections.map((item, index) => (
                 <Skeleton style={{ width: differentSection?.[variant].width + "%" }} isLoaded={!isLoading} key={index}>
