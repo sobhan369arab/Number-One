@@ -4,9 +4,11 @@ import { Skeleton, Tooltip } from "@nextui-org/react"
 import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 import { UnitPrice } from "../../../core/utility/SeparationPrice/SeparationPrice"
 import ChangeMoment from "../../../core/utility/moment/ChangeMoment"
+import { useNavigate } from "react-router-dom"
 import ChangeTime from "../../../core/utility/time/ChangeTime"
 
-const TableItem = ({ item, variant, isLoading, action, id }) => {
+const TableItem = ({ item, variant, isLoading, action, keyVariant, navigateToPage, paramsId }) => {
+    const Navigate = useNavigate();
     const { i18n } = useTranslation()
     const differentSection = {
         myCourses: {
@@ -51,15 +53,15 @@ const TableItem = ({ item, variant, isLoading, action, id }) => {
         },
         favorites: {
             sections: [
-                { section: item.courseName },
-                { section: item.category },
-                { section: item.date, dir: "ltr" },
-                { section: item.author },
+                { section: item?.[keyVariant && keyVariant[0]] },
+                { section: item?.[keyVariant && keyVariant[1]] },
+                { section: item?.[keyVariant && keyVariant[2]]?.replace("T", " , "), dir: "ltr" },
+                { section: item?.[keyVariant && keyVariant[3]] },
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"] },
-                { Icon: TrashCan, tooltip: ["حذف", "Delete"] },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { Navigate(navigateToPage.concat(item?.[paramsId])) } },
+                { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.favoriteId) } },
             ]
         }
     }

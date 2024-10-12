@@ -7,6 +7,7 @@ import {
   FilterBlog,
   FilterCourses,
   MyCourses,
+  MyFavorite,
 } from "./slices";
 
 const store = configureStore({
@@ -18,6 +19,7 @@ const store = configureStore({
     FilterBlog,
     FilterCourses,
     MyCourses,
+    MyFavorite,
   },
 });
 

@@ -1,6 +1,5 @@
 import { SearchInput, SortBox } from "../../common"
 import { useTranslation } from "react-i18next"
-
 const SearchSection = ({ sortItem, defaultKey, setState, query }) => {
     const { i18n } = useTranslation()
 
