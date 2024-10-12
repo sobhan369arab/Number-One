@@ -5,7 +5,8 @@ import tooltipStyle from "../../../core/constants/tooltip-style/tooltip"
 import { UnitPrice } from "../../../core/utility/SeparationPrice/SeparationPrice"
 import ChangeMoment from "../../../core/utility/moment/ChangeMoment"
 
-const TableItem = ({ item, variant, isLoading, action }) => {
+const TableItem = ({ item, variant, isLoading, action, keyVariant }) => {
+    console.log(keyVariant)
     const { i18n } = useTranslation()
     const differentSection = {
         myCourses: {
@@ -49,10 +50,10 @@ const TableItem = ({ item, variant, isLoading, action }) => {
         },
         favorites: {
             sections: [
-                { section: item.courseName },
-                { section: item.category },
-                { section: item.date, dir: "ltr" },
-                { section: item.author },
+                { section: item?.[keyVariant && keyVariant[0]] },
+                { section: item?.[keyVariant && keyVariant[1]] },
+                { section: item?.[keyVariant && keyVariant[2]], dir: "ltr" },
+                { section: item?.[keyVariant && keyVariant[3]] },
             ],
             width: "25",
             actions: [

@@ -8,9 +8,10 @@ const SortBox = ({ options, placeholder, setState, ...props }) => {
     const [selectedOption, SetSelectedOption] = useState(null);
     const dispatch = useDispatch()
 
+    console.log(options)
     const handleChange = (selected) => {
         console.log(selected)
-        let findKey = options.find(obj => obj.id == selected)
+        var findKey = options.find(obj => obj.id == selected)
         console.log(findKey)
         SetSelectedOption(findKey)
         dispatch(setState(findKey.value))
@@ -34,7 +35,7 @@ const SortBox = ({ options, placeholder, setState, ...props }) => {
             }}
             {...props}
         >
-            {(options) => <SelectItem>{i18n.language === 'fa' ? options.label[0] : options.label[1]}</SelectItem>}
+            {(selectedOption) => <SelectItem>{i18n.language === 'fa' ? selectedOption.label[0] : selectedOption.label[1]}</SelectItem>}
         </Select>
     )
 }

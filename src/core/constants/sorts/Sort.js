@@ -17,3 +17,7 @@ export const sortOptionPanelMyCourses = [
   { id: 1, value: "lastUpdate", label: "Latest" },
   { id: 2, value: "isActive", label: "Active" },
 ]
+export const sortOptionPanelDuel = [
+  { id: 1, value: "courses", label: ["دوره ها" ,"Courses"] },
+  { id: 2, value: "blogs", label: ["وبلاگ ها","Blogs"] },
+]
