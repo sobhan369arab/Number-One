@@ -1,9 +1,9 @@
 import { SearchInput, SortBox } from "../../common"
-import { setQuery} from "../../../redux/slices/userPanel-filter-slices/MyCourses"
+// import { setQuery} from "../../../redux/slices/userPanel-filter-slices/MyCourses"
 import { sortOptionPanelDuel} from "../../../core/constants/sorts/Sort"
 import { useTranslation } from "react-i18next"
 
-const SearchSection = ({setState}) => {
+const SearchSection = ({setState,setQuery}) => {
     const { i18n } = useTranslation()
 
     return (

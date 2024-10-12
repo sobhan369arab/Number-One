@@ -5,6 +5,7 @@ import UserInfo from "./UserInfo";
 import FilterBlog from "./filter-box-slices/FilterBlog";
 import FilterCourses from "./filter-box-slices/FilterCourses";
 import MyCourses from "./userPanel-filter-slices/MyCourses";
+import MyFavorite from "./userPanel-filter-slices/MyFavorite"
 
 export {
   StepStatus,
@@ -14,4 +15,5 @@ export {
   FilterBlog,
   FilterCourses,
   MyCourses,
+  MyFavorite,
 };

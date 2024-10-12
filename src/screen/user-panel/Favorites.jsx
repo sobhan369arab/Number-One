@@ -2,13 +2,14 @@ import { SearchSection, Table, TableItem } from "../../components/pages/user-pan
 import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, RenderItemsList } from "../../components/common"
 import { useQuery } from "@tanstack/react-query"
 import { GetMyFavoriteBlogs, GetMyFavoriteCourses } from "../../core/services/api/GetData"
-import { useState } from "react"
+import { setQuery, setSortingCol } from "../../redux/slices/userPanel-filter-slices/MyFavorite"
+import { useSelector } from "react-redux"
 
 const Favorites = () => {
 
-    const [sortingCol, setSortingCol] = useState('courses')
+    const sortState = useSelector(state => state.MyFavorite);
+    console.log(sortState.Query)
 
-    console.log(sortingCol)
     const skeletonData = [{}, {}, {}, {}, {}, {}]
 
     const headerTable = [
@@ -24,7 +25,6 @@ const Favorites = () => {
             return GetMyFavoriteCourses();
         }
     })
-    console.log(myCoursesData?.favoriteCourseDto)
 
     const { data: myBlogData, isLoading: blogLoading, isSuccess: blogSuccess, isError: blogError, refetch: blogRefetch } = useQuery({
         queryKey: ["GET_MY_BLOGS"],
@@ -32,6 +32,8 @@ const Favorites = () => {
             return GetMyFavoriteBlogs();
         }
     })
+
+    
 
     // Item object keys
     const courseKey = ['courseTitle', 'typeName', 'lastUpdate', 'teacheName']
@@ -47,24 +49,24 @@ const Favorites = () => {
     // const currentItems = data.slice(itemOffset, endOffset);
     return (
         <div className="w-full flex flex-wrap h-fit -mt-8">
-            <SearchSection setState={setSortingCol} />
+            <SearchSection setState={setSortingCol} setQuery={setQuery}/>
             <PaginateHolderItems style="justify-center h-[666px] border-t-2 border-gray-100 mt-4 pt-2">
                 <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, data) }} pageCount={calculatePageCount(data, 8)}>
                     <div className="overflow-x-auto h-[666px] lg:overflow-x-hidden">
                         <Table sectionHeader={headerTable}>
                             <RenderItemsList
                                 RenderComponent={TableItem}
-                                isLoading={sortingCol === 'courses' ? courseLoading : blogLoading}
-                                isSuccess={sortingCol === 'courses' ? courseSuccess : blogSuccess}
-                                isError={sortingCol === 'courses' ? courseError : blogError}
-                                originalData={sortingCol === 'courses' ? courseSuccess && myCoursesData?.favoriteCourseDto
+                                isLoading={sortState.sortingCol === 'courses' ? courseLoading : blogLoading}
+                                isSuccess={sortState.sortingCol === 'courses' ? courseSuccess : blogSuccess}
+                                isError={sortState.sortingCol === 'courses' ? courseError : blogError}
+                                originalData={sortState.sortingCol === 'courses' ? courseSuccess && myCoursesData?.favoriteCourseDto
                                     : blogSuccess && myBlogData?.myFavoriteNews
                                 }
                                 skeletonData={skeletonData}
-                                notFoundText={sortingCol === 'courses' ? 'course_NotFound' : 'blog_NotFound'}
-                                refetchData={sortingCol === 'courses' ? courseRefetch : blogRefetch}
+                                notFoundText={sortState.sortingCol === 'courses' ? 'course_NotFound' : 'blog_NotFound'}
+                                refetchData={sortState.sortingCol === 'courses' ? courseRefetch : blogRefetch}
                                 variant={'favorites'}
-                                keyVariant={sortingCol === 'courses' ? courseKey : blogKey}
+                                keyVariant={sortState.sortingCol === 'courses' ? courseKey : blogKey}
                             />
                         </Table>
                     </div>
