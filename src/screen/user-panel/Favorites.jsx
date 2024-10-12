@@ -6,6 +6,7 @@ import { setQuery, setSortingCol } from "../../redux/slices/userPanel-filter-sli
 import { useSelector } from "react-redux"
 import { blogKey, courseKey, headerTableBlogs, headerTableCourses } from "../../core/constants/user-panel/HeaderTable"
 import { DeleteBlogFavorite, DeleteCourseFavorite } from "../../core/services/api/DeleteData"
+import { sortOptionChooseList } from "../../core/constants/sorts/Sort"
 
 const Favorites = () => {
 
@@ -39,33 +40,38 @@ const Favorites = () => {
     })
 
     // handle search filter for myFavorite Items
-    const myFavoriteData = FavoriteState.sortingCol === 'courses' ? myCoursesData?.favoriteCourseDto
+    const myFavoriteData = FavoriteState.sortingCol === 'course' ? myCoursesData?.favoriteCourseDto
         : myBlogData?.myFavoriteNews;
-    const title = FavoriteState.sortingCol === 'courses' ? courseKey[0] : blogKey[0];
+    const title = FavoriteState.sortingCol === 'course' ? courseKey[0] : blogKey[0];
     const filteredData = myFavoriteData?.filter(item => item?.[title].indexOf(FavoriteState.Query) != -1);
 
+    const favoriteCoursesStatus = FavoriteState.sortingCol === 'course';
+    // params Object
+    const params = {
+        RenderComponent: TableItem,
+        skeletonData: skeletonData,
+        notFoundText: favoriteCoursesStatus ? 'course_NotFound' : 'blog_NotFound',
+        refetchData: favoriteCoursesStatus ? courseRefetch : blogRefetch,
+        variant: 'favorites',
+        action: favoriteCoursesStatus ? courseMutate : blogMutate,
+        keyVariant: favoriteCoursesStatus ? courseKey : blogKey,
+        navigateToPage: favoriteCoursesStatus ? '/CourseDetails/' : '/BlogDetails/',
+        id: favoriteCoursesStatus ? 'courseId' : 'newsId'
+    }
 
     return (
         <div className="w-full flex flex-wrap h-fit -mt-8">
-            <SearchSection setState={setSortingCol} setQuery={setQuery} />
-            <PaginateHolderItems style="justify-center h-[666px] border-t-2 border-gray-100 mt-4 pt-2">
+            <SearchSection sortItem={sortOptionChooseList} defaultKey={1} setState={setSortingCol} query={setQuery} />
+            <PaginateHolderItems style="justify-center h-[666px] border-t-2 border-gray-100 mt-3 pt-4">
                 <PaginatedItems handlePageClick={(event) => { handlePageClick(event, 8, setItemOffset, myFavoriteData) }} pageCount={calculatePageCount(myFavoriteData, 8)}>
                     <div className="overflow-x-auto h-[666px] w-full lg:overflow-x-hidden">
-                        <Table sectionHeader={FavoriteState.sortingCol === 'courses' ? headerTableCourses : headerTableBlogs}>
+                        <Table sectionHeader={favoriteCoursesStatus ? headerTableCourses : headerTableBlogs} itemsWidth="23">
                             <RenderItemsList
-                                RenderComponent={TableItem}
-                                isLoading={FavoriteState.sortingCol === 'courses' ? courseLoading : blogLoading}
-                                isSuccess={FavoriteState.sortingCol === 'courses' ? courseSuccess : blogSuccess}
-                                isError={FavoriteState.sortingCol === 'courses' ? courseError : blogError}
+                                isLoading={favoriteCoursesStatus ? courseLoading : blogLoading}
+                                isSuccess={FavoriteState.sortingCol === 'course' ? courseSuccess : blogSuccess}
+                                isError={favoriteCoursesStatus ? courseError : blogError}
                                 originalData={FavoriteState.Query !== undefined ? filteredData : myFavoriteData}
-                                skeletonData={skeletonData}
-                                notFoundText={FavoriteState.sortingCol === 'courses' ? 'course_NotFound' : 'blog_NotFound'}
-                                refetchData={FavoriteState.sortingCol === 'courses' ? courseRefetch : blogRefetch}
-                                variant={'favorites'}
-                                action={FavoriteState.sortingCol === 'courses' ? courseMutate : blogMutate}
-                                keyVariant={FavoriteState.sortingCol === 'courses' ? courseKey : blogKey}
-                                navigateToPage={FavoriteState.sortingCol === 'courses' ? '/CourseDetails/' : '/BlogDetails/'}
-                                paramsId={FavoriteState.sortingCol === 'courses' ? 'courseId' : 'newsId'}
+                                {...params}
                             />
                         </Table>
                     </div>

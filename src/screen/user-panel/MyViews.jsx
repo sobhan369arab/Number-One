@@ -64,7 +64,7 @@ const MyViews = () => {
                                         isError={courseError}
                                         isLoading={courseLoading}
                                         isSuccess={courseSuccess}
-                                        originalData={courseSuccess && courseViews.myCommentsDtos.slice(itemOffset, endOffset)}
+                                        originalData={courseSuccess && courseViews.myCommentsDtos?.slice(itemOffset, endOffset)}
                                         {...params}
                                     />
                                 ) : (
@@ -72,7 +72,7 @@ const MyViews = () => {
                                         isError={blogError}
                                         isLoading={blogLoading}
                                         isSuccess={blogSuccess}
-                                        originalData={blogSuccess && blogViews.myNewsCommetDtos.slice(itemOffset, endOffset)}
+                                        originalData={blogSuccess && blogViews.myNewsCommetDtos?.slice(itemOffset, endOffset)}
                                         {...params}
                                     />
                                 )

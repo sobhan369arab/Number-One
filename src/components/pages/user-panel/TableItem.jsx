@@ -7,7 +7,7 @@ import ChangeMoment from "../../../core/utility/moment/ChangeMoment"
 import { useNavigate } from "react-router-dom"
 import ChangeTime from "../../../core/utility/time/ChangeTime"
 
-const TableItem = ({ item, variant, isLoading, action, keyVariant, navigateToPage, paramsId }) => {
+const TableItem = ({ item, variant, isLoading, action, keyVariant, navigateToPage, id }) => {
     const Navigate = useNavigate();
     const { i18n } = useTranslation()
     const differentSection = {
@@ -53,14 +53,14 @@ const TableItem = ({ item, variant, isLoading, action, keyVariant, navigateToPag
         },
         favorites: {
             sections: [
-                { section: item?.[keyVariant && keyVariant[0]] },
-                { section: item?.[keyVariant && keyVariant[1]] },
-                { section: item?.[keyVariant && keyVariant[2]]?.replace("T", " , "), dir: "ltr" },
-                { section: item?.[keyVariant && keyVariant[3]] },
+                { section: item?.[keyVariant?.[0]] },
+                { section: item?.[keyVariant?.[1]] },
+                { section: [ChangeMoment(item?.[(keyVariant?.[2])]), " , ", ChangeTime(item?.[(keyVariant?.[2])])], dir: "ltr" },
+                { section: item?.[keyVariant?.[3]] },
             ],
             width: "25",
             actions: [
-                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { Navigate(navigateToPage.concat(item?.[paramsId])) } },
+                { Icon: EyeIcon, tooltip: ["جزئیات", "Details"], function: () => { Navigate(navigateToPage.concat(item?.[id])) } },
                 { Icon: TrashCan, tooltip: ["حذف", "Delete"], function: () => { action(item.favoriteId) } },
             ]
         }
