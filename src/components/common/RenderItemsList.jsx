@@ -8,7 +8,7 @@ const RenderItemsList = ({ isLoading, skeletonData, originalData, RenderComponen
         return <NotFound_Pic text={notFoundText} />
     }
     else if (isSuccess) {
-        return originalData?.map((item, index) => <RenderComponent key={index} item={item} isLoading={isLoading} refetch={refetchData} {...props} />)
+        return originalData?.map((item, index) => <RenderComponent key={index} item={item} isLoading={isLoading} refetch={refetchData} id={index} {...props} />)
     } else if (isError) {
         return <NotFound_Pic text={notFoundText} />
     }
