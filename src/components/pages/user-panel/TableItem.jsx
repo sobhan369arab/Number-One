@@ -67,7 +67,7 @@ const TableItem = ({ item, variant, isLoading, action, id }) => {
     return (
         <tr className="min-w-[830px] w-full h-fit text-center text-sm flex items-center odd:bg-[#C8C1ED]/30 dark:odd:bg-[#C8C1ED]/10 justify-around p-1.5 rounded-lg shadow-md hover:shadow-xl duration-200">
             <Skeleton isLoaded={!isLoading}>
-                {differentSection?.[variant].pic ? (
+                {!differentSection?.[variant].id ? (
                     <td className="min-w-8 w-8 h-8 rounded-full bg-VioletBlue ml-2 overflow-hidden">
                         <img src={differentSection?.[variant].pic} className="w-full h-full" alt="" />
                     </td>
