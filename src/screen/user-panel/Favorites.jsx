@@ -52,6 +52,8 @@ const Favorites = () => {
                                 refetchData={sortState.sortingCol === 'courses' ? courseRefetch : blogRefetch}
                                 variant={'favorites'}
                                 keyVariant={sortState.sortingCol === 'courses' ? courseKey : blogKey}
+                                navigateToPage={sortState.sortingCol === 'courses' ? '/CourseDetails/' : '/BlogDetails/'}
+                                paramsId={sortState.sortingCol === 'courses' ? 'courseId' : 'newsId'}
                             />
                         </Table>
                     </div>
