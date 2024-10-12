@@ -6,6 +6,7 @@ import { UnitPrice } from "../../../core/utility/SeparationPrice/SeparationPrice
 import ChangeMoment from "../../../core/utility/moment/ChangeMoment"
 
 const TableItem = ({ item, variant, isLoading, action, keyVariant }) => {
+    const dateInfo = keyVariant
     const { i18n } = useTranslation()
     const differentSection = {
         myCourses: {
@@ -51,7 +52,7 @@ const TableItem = ({ item, variant, isLoading, action, keyVariant }) => {
             sections: [
                 { section: item?.[keyVariant && keyVariant[0]] },
                 { section: item?.[keyVariant && keyVariant[1]] },
-                { section: item?.[keyVariant && keyVariant[2]], dir: "ltr" },
+                { section: item?.[keyVariant && keyVariant[2]]?.replace("T"," , "), dir: "ltr" },
                 { section: item?.[keyVariant && keyVariant[3]] },
             ],
             width: "25",
