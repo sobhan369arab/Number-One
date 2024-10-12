@@ -25,11 +25,11 @@ const Reserved = () => {
 
     return (
         <div className="w-full flex flex-wrap h-fit -mt-8">
-            <SearchSection />
+            {/* <SearchSection /> */}
             <PaginateHolderItems style="justify-center">
                 <PaginatedItems currentData={isSuccess && data.length} currentDataInOnePage={8} setPage={1} >
                     <div className='overflow-x-auto lg:overflow-x-hidden w-full h-[590px]'>
-                        <Table sectionHeader={headerTable} style="border-t border-LightGrayish mt-3 pt-5">
+                        <Table sectionHeader={headerTable} itemsWidth="33" style="border-t border-LightGrayish mt-3 pt-5">
                             <RenderItemsList
                                 RenderComponent={TableItem}
                                 isLoading={isLoading}

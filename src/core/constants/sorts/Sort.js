@@ -1,9 +1,9 @@
 export const sortOptionCal = [
   { id: 1, value: "DESC", label: ["نزولی", "Descending"] },
-  { id: 2, value: "ASC", label: ["صعودی", "Ascending"]},
+  { id: 2, value: "ASC", label: ["صعودی", "Ascending"] },
 ];
 export const sortOptionType = [
-  { id: 1, value: "Active", label:["دوره های فعال", "ActiveCourses"] },
+  { id: 1, value: "Active", label: ["دوره های فعال", "ActiveCourses"] },
   { id: 2, value: "cost", label: ["قیمت", "Price"] },
   { id: 3, value: "courseRate", label: ["محبوبیت", "Popularity"] },
 ];
@@ -16,8 +16,9 @@ export const sortOptionMostType = [
 export const sortOptionPanelMyCourses = [
   { id: 1, value: "lastUpdate", label: "Latest" },
   { id: 2, value: "isActive", label: "Active" },
-]
-export const sortOptionPanelDuel = [
-  { id: 1, value: "courses", label: ["دوره ها" ,"Courses"] },
-  { id: 2, value: "blogs", label: ["وبلاگ ها","Blogs"] },
-]
+];
+
+export const sortOptionChooseList = [
+  { id: 1, value: "course", label: ["دوره های آموزشی", "Course"] },
+  { id: 2, value: "blog", label: ["وبلاگ", "Blog"] },
+];

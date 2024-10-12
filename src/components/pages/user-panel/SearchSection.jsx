@@ -1,19 +1,18 @@
 import { SearchInput, SortBox } from "../../common"
-// import { setQuery} from "../../../redux/slices/userPanel-filter-slices/MyCourses"
-import { sortOptionPanelDuel} from "../../../core/constants/sorts/Sort"
 import { useTranslation } from "react-i18next"
-
-const SearchSection = ({setState,setQuery}) => {
+const SearchSection = ({ sortItem, defaultKey, setState, query }) => {
     const { i18n } = useTranslation()
 
     return (
         <div className='w-full flex justify-between'>
-            <SearchInput setQuery={setQuery} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
+            <SearchInput setQuery={query} maxResponsiveValue={709} minResponsiveValue={710} showSearchFilter={false} inputStyle="py-2.5 w-72 lg:w-[400px]" />
             <SortBox
                 radius="full"
+                aria-label="select"
                 setState={setState}
-                options={sortOptionPanelDuel}
-                placeholder={["دوره ها","Courses"]}
+                options={sortItem}
+                placeholder={["انتخاب کنید", "Choose"]}
+                defaultKey={defaultKey}
                 classNames={{
                     base: "!w-auto",
                     trigger: "bg-transparent border border-LightGrayish hover:!bg-transparent duration-500 h-[47px] w-[180px]",

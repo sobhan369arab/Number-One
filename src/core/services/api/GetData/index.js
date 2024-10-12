@@ -7,6 +7,9 @@ import GetNewsFilterPage from "./GetNewsFilter";
 import GetTechnologies from "./GetTechnologies";
 import GetMyFavoriteCourses from "./GetMyFavoriteCourses";
 import GetMyFavoriteBlogs from "./GetMyFavoriteBlogs";
+import GetMyCourseViews from "./GetMyCourseViews";
+import GetMyBlogViews from "./GetMyBlogViews";
+
 export {
   GetAllCourseByPagination,
   getAllTeachers,
@@ -17,4 +20,6 @@ export {
   GetTechnologies,
   GetMyFavoriteCourses,
   GetMyFavoriteBlogs,
+  GetMyCourseViews,
+  GetMyBlogViews,
 };
