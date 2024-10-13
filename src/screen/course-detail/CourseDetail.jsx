@@ -76,6 +76,7 @@ const CourseDetail = () => {
         btnText={"signUpCourse"}
     />
 
+    // Find related courses based on technology
     const listTech = [];
     if (techs) {
         for (const element of techs) {
@@ -83,7 +84,6 @@ const CourseDetail = () => {
             listTech.push(teachObj?.id);
         }
     }
-
 
     return (
         <>
