@@ -6,6 +6,7 @@ import AddCourseComment from "./Comments/AddCourseComment";
 import AcceptCourseComment from "./Comments/AcceptCourseComment";
 import AddReplyCourseComment from "./Comments/ReplayCourseComment";
 import AddCourseFavorite from "./AddCourseFavorite";
+import AddCourseReserve from "./AddCourseReserve";
 export {
   AddCourseDisLike,
   AddCourseLike,
@@ -15,4 +16,5 @@ export {
   AcceptCourseComment,
   AddReplyCourseComment,
   AddCourseFavorite,
+  AddCourseReserve,
 };

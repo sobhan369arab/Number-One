@@ -5,7 +5,7 @@ import { LevelIcon } from "../../core/icon";
 import { TabPanel } from "../../components/pages/course-detail";
 import MediaQuery from "react-responsive";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { GetAllCourseByPagination, GetCourseDetails, GetCoursesComments, GetTechnologies } from "../../core/services/api/GetData";
 import NotFoundImg from "../../assets/images/image-not-found.png"
 import ChangeMoment from "../../core/utility/moment/ChangeMoment";
@@ -13,6 +13,7 @@ import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 import Course from "../../components/pages/course/Course";
+import { AddCourseReserve } from "../../core/services/api/PostData";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -23,6 +24,7 @@ const CourseDetail = () => {
         }
     })
     const {
+        courseId,
         title,
         imageAddress,
         courseLevelName,
@@ -37,6 +39,7 @@ const CourseDetail = () => {
         cost,
         describe,
         miniDescribe,
+        isCourseReseve,
     } = isSuccess && courseDetails
 
     const startT = ChangeMoment(startTime?.split("T"));
@@ -67,6 +70,14 @@ const CourseDetail = () => {
         queryFn: () => { return GetTechnologies() }
     })
 
+    // Add Course Reserve in The Basket 
+    const { mutate } = useMutation({
+        mutationKey: "ADD_COURSE_RESERVE",
+        mutationFn: () => { return AddCourseReserve(courseId) }
+    })
+
+    // Course Reserve Params
+    const params = { actionReserve: mutate, reserveStatus: isCourseReseve }
     const detailsBox = <DetailsBox
         variant="course-detail"
         price={cost}
@@ -74,6 +85,7 @@ const CourseDetail = () => {
         arrowColor={"#000"}
         colorButton={"yellow"}
         btnText={"signUpCourse"}
+        {...params}
     />
 
     // Find related courses based on technology
