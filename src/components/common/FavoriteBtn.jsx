@@ -5,14 +5,16 @@ import { Skeleton, Tooltip } from "@nextui-org/react";
 import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
 import { useTranslation } from "react-i18next";
 
-const FavoriteBtn = ({ isLoading, variantStyle }) => {
+const FavoriteBtn = ({ isLoading, variantStyle, userFavorite, action, Id }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
-    const [isClick, setClick] = useState(false);
+    const [isClick, setClick] = useState(false)
+
+
     const variant = {
         card: (
             <Skeleton isLoaded={!isLoading} className={`rounded-lg ${location.search === '?V=2' && isTabletOrLapTop ? "" : "absolute left-6 top-6"}`}>
-                <div onClick={() => setClick(!isClick)} className={`w-[35px] h-[35px] flex justify-center items-center cursor-pointer favorite-btn bg-LightLavender rounded-xl`}>
-                    {isClick ? <CheckedHeartIcon width="25px" height="25px" /> : <UnCheckedHeartIcon width="25px" height="25px" fill="#555555" />}
+                <div onClick={() => userFavorite === false ? action(Id) : null} className={`w-[35px] h-[35px] flex justify-center items-center cursor-pointer favorite-btn bg-LightLavender rounded-xl`}>
+                    {userFavorite ? <CheckedHeartIcon width="25px" height="25px" /> : <UnCheckedHeartIcon width="25px" height="25px" fill="#555555" />}
                 </div>
             </Skeleton>
         ),

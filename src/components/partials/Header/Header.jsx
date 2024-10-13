@@ -20,12 +20,13 @@ const Header = () => {
   const [visibleMenu, setVisibleMenu] = useState(false)
   const { i18n } = useTranslation();
   const cartLength = useSelector(state => state.CartData.value.length)
+  const userInfo = useSelector(state => state.UserInfo.info)
   const dispatch = useDispatch()
   const location = useLocation()
 
   const baskets = [
     { icon: CartIcon, number: cartLength, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-    { icon: FavoriteIcon, number: 0, href: "", tooltip: ["لیست علاقه مندی", "Favorite List"] },
+    { icon: FavoriteIcon, number: 0, href: userInfo !== false && "/userPanel/favorites", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
   const menuItems = menuItem.map((item, index) => {

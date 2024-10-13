@@ -9,12 +9,13 @@ import { CloseIcon } from "../../core/icon"
 import { sortOptionCal, sortOptionType } from "../../core/constants/sorts/Sort";
 import { FilterSide_Courses } from "../../components/pages/course-list"
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb"
-import { useQuery } from "@tanstack/react-query"
+import { useMutation, useQuery } from "@tanstack/react-query"
 import { GetAllCourseByPagination } from "../../core/services/api/GetData"
 import { IoFilter } from "react-icons/io5"
 import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
 import { useDispatch, useSelector } from "react-redux"
 import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
+import { AddCourseFavorite } from "../../core/services/api/PostData"
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -47,7 +48,14 @@ const Courses = () => {
         queryKey: ['GET_COURSES_LENGTH'],
         queryFn: GetAllCourseByPagination,
     })
-    console.log(filterObj_Courses)
+
+    // Add Course in the Favorite List
+    const { mutate: addFavorite } = useMutation({
+        mutationKey: ["ADD_COURSE_FAVORITE"],
+        mutationFn: (id) => { return AddCourseFavorite(id) },
+        onSuccess: () => { refetch() }
+    })
+
     return (
         <>
             <TitleSection title={'CoursesTitle'} >
@@ -92,6 +100,7 @@ const Courses = () => {
                                     skeletonData={skeletonData}
                                     notFoundText={'course_NotFound'}
                                     refetchData={refetch}
+                                    addFavoriteAction={addFavorite}
                                 />
                             </div>
                         </PaginatedItems>
