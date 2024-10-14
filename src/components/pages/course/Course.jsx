@@ -20,7 +20,7 @@ const Course = ({ isLoading, refetch, item, addFavoriteAction }) => {
         levelName: level,
         cost: price,
         lastUpdate: date,
-        commandCount: studentsNumber,
+        currentRegistrants: studentsNumber,
         userLikedId: userLikeId,
         likeCount: like,
         dissLikeCount: disLike,

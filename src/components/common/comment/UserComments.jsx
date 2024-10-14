@@ -16,11 +16,11 @@ const UserComments = ({ userInfo,replayComment,refetch ,courseId}) => {
     disslikeCount,
     replyCount,
     inserDate,
-    accept,
+    currentUserEmotion,
     currentUserLikeId,
   } = userInfo
 
-  {console.log(userInfo)}
+  console.log(userInfo)
   return (
     <>
       <div className="border-t-2 border-LightGrayish py-4 flex max-md:mx-1 gap-4">
@@ -36,7 +36,7 @@ const UserComments = ({ userInfo,replayComment,refetch ,courseId}) => {
             replayStatus={replayStatus}
             like={likeCount}
             disLike={disslikeCount}
-            LikeStatus={accept}
+            LikeStatus={currentUserEmotion}
             userLikeId={currentUserLikeId}
             replayComment={replayComment}
             courseId={courseId}

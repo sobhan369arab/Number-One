@@ -21,8 +21,10 @@ const DownSection = ({
   commentId,
   refetch,
 }) => {
+  
   const { t } = useTranslation();
   // const [testArray, setTestArray] = useState([]);
+  console.log(userLikeId)
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
