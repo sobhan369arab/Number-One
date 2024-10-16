@@ -7,7 +7,7 @@ import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
 
-const Course = ({ isLoading, refetch, item }) => {
+const Course = ({ isLoading, refetch, item, addFavoriteAction }) => {
     const {
         courseId: id,
         title,
@@ -18,17 +18,19 @@ const Course = ({ isLoading, refetch, item }) => {
         levelName: level,
         cost: price,
         lastUpdate: date,
-        commandCount: studentsNumber,
+        currentRegistrants: studentsNumber,
         userLikedId: userLikeId,
         likeCount: like,
         dissLikeCount: disLike,
         userIsLiked: LikeStatus,
         currentUserDissLike: DissLikeStatus,
-        describe: bio
+        describe: bio,
+        userFavorite: userFavorite,
     } = item;
+
     return (
         <>
-            <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200 relative  group/item">
+            <div className="border border-LightGrayish p-4 pb-3 grid-item w-[300px] h-[435px] rounded-lg hover:shadow-lg duration-200  m-auto relative  group/item">
                 <div className="w-full h-44 course-height-img mx-auto  rounded-lg">
                     {/* course Images */}
                     <Link to={`/CourseDetails/${id}`}>
@@ -39,7 +41,7 @@ const Course = ({ isLoading, refetch, item }) => {
 
                     <div className="flex justify-center gap-8 my-3">
                         <ComparisonBtn isLoading={isLoading} CourseId={id} />
-                        <FavoriteBtn isLoading={isLoading} variantStyle="card" />
+                        <FavoriteBtn isLoading={isLoading} variantStyle="card" userFavorite={userFavorite} action={addFavoriteAction} Id={id} />
                     </div>
                 </div>
                 <div to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">

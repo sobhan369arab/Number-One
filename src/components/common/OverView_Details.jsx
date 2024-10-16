@@ -34,7 +34,7 @@ const OverView_Details = ({
                     <img src={event3} alt="event Icon" className={`h-56 max-md:mx-auto ${ElementClass}`} />
                     <div>
                         <h1 className={`boldStyle_text lg:w-96 ${ElementClass}`}>{t('EventElements')}</h1>
-                        {MajorElements.map((item, index) => (
+                        {MajorElements?.map((item, index) => (
                             <OptionParts
                                 key={index}
                                 text={item}

@@ -8,10 +8,12 @@ import {
 } from "../../core/icon";
 import { Button, CreateSocialMediaItems } from ".";
 import { UnitPrice } from "../../core/utility/SeparationPrice/SeparationPrice";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 export const detailVariant = {
   "event-detail": "lg:absolute lg:w-64 top-96",
-  "course-detail": "lg:w-64 mb-8",
+  "course-detail": "lg:w-72 mb-8",
 }
 export const detailInfoVariant = {
   "event-detail": "EventInfo",
@@ -31,8 +33,26 @@ const DetailsBox = ({
   arrowColor,
   colorButton,
   btnText,
-  shareBox = true
+  shareBox = true,
+  actionReserve,
+  reserveStatus,
 }) => {
+  const userInfo = useSelector(state => state.UserInfo.info);
+
+  // Add course reserve function
+  const itemReserve = () => {
+    if (userInfo) {
+      console.log(reserveStatus) 
+      if (reserveStatus == 1) {
+        toast.error('دوره مورد نظر قبلا رزرو شده')
+      }
+      else {
+        actionReserve();
+      }
+    }
+    else { alert('لطفا لاگین کنید!') }
+  }
+
   const { t, i18n } = useTranslation();
   const AppIcons = [
     <FacebookIcon />,
@@ -52,12 +72,12 @@ const DetailsBox = ({
       {/* details Information*/}
       <div className="my-2 w-full">
         <h1 className="text-DarkBlue">{t(detailInfoVariant?.[variant])}:</h1>
-        {Detail.map((item, index) => (
+        {Detail?.map((item, index) => (
           <div key={index} className="w-full py-2 flex items-center border-b">
-            <item.iconDetail width={17} height={17} />
+            {item.iconDetail}
             <div className="w-full text-sm">
-              <span className="float-start mx-3 text-GrayishPurple">{t(item.titleDetail)}</span>
-              <span className="float-end text-gray-400">{item.countDetail}</span>
+              <span className="float-start mx-3 text-GrayishPurple  mt-0.5">{t(item.titleDetail)}</span>
+              <span dir={i18n.language === 'fa' ? 'ltr' : 'rtl'} className="float-start h-5 text-gray-400">{item.countDetail}</span>
             </div>
           </div>
         ))}
@@ -78,7 +98,7 @@ const DetailsBox = ({
           </div>
         )}
       </div>
-      <Button arrowColor={arrowColor} vType={"button"} vStyle={colorButton} text={btnText} style="mb-2 mt-6 border-2 border-black" />
+      <Button isClick={itemReserve} arrowColor={arrowColor} vType={"button"} vStyle={colorButton} text={btnText} style="mb-2 mt-6 border-2 border-black" />
     </div>
   )
 }

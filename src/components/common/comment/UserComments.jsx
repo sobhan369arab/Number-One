@@ -1,22 +1,51 @@
 import { DownSection, TopSection } from './comment-item'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import ReplayComments from './ReplayComments';
-const UserComments = ({ userInfo }) => {
+import { useQuery } from '@tanstack/react-query';
+import { GetReplayCourseComment } from '../../../core/services/api/GetData';
+const UserComments = ({ commentData, variant, replayComment, refetch, courseId }) => {
   const { t } = useTranslation()
-  const [replayComment, setReplayComment] = useState([]);
+  // const [replayComment, setReplayComment] = useState([]);
   const [replayStatus, setReplayStatus] = useState(false);
+  const [replayCourse, setReplayCourse] = useState([]);
+  const [reload, setReload] = useState(false);
 
   const {
     pictureAddress,
-    id: userId,
+    id,
     title,
     describe,
     likeCount,
-    dissLikeCount,
-    replyCount,
-    inserDate
-  } = userInfo
+    disslikeCount,
+    currentUserEmotion,
+    currentUserLikeId,
+    insertDate,
+    author,
+  } = commentData
+
+  // const { data: replay ,refetch : refetchCourse} = useQuery({
+  //   queryKey: ["GET_REPLAY_COURSE_COMMENT"],
+  //   queryFn: async () => { return await GetReplayCourseComment(courseId, id) }
+  // })
+  const refetchCallReplay = () => {
+    alert()
+    setReload(!reload)
+  }
+
+  const CallReplayApi = async () => {
+    const res = await GetReplayCourseComment(courseId, id);
+    setReplayCourse(res);
+  };
+
+  useEffect(() => {
+    CallReplayApi()
+  }, [])
+
+
+  const dataVariant = {
+    'course': replayCourse,
+  }
 
   return (
     <>
@@ -26,24 +55,32 @@ const UserComments = ({ userInfo }) => {
           <TopSection
             title={title}
             describe={describe}
-            date={inserDate}
+            date={insertDate}
+            name={author}
           />
           <DownSection
-            ArrayLength={replyCount}
-            setReplayComment={setReplayComment}
+            ArrayLength={replayCourse?.length}
             replayStatus={replayStatus}
             setReplayStatus={setReplayStatus}
             like={likeCount}
-            disLike={dissLikeCount}
+            disLike={disslikeCount}
+            LikeStatus={currentUserEmotion}
+            userLikeId={currentUserLikeId}
+            replayComment={replayComment}
+            courseId={courseId}
+            commentId={id}
+            refetch={refetch}
           />
         </div>
       </div>
-      <div className={`${replayStatus ? "h-auto" : "h-0 overflow-hidden"} duration-250`}>
-        {replayComment.length !== 0 && replayComment.map((item, index) => {
-          return (
-            <ReplayComments key={index} describe={item.describe} />
-          )
-        })}
+      <div>
+        {replayStatus ? (
+          dataVariant?.[variant]?.map((item, index) => {
+            return (
+              <ReplayComments key={index} item={item} refetch={refetch} />
+            )
+          })
+        ) : null}
       </div>
     </>
   )

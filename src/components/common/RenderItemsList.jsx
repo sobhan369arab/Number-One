@@ -1,8 +1,8 @@
 import NotFound_Pic from "./NotFound_Pic"
-
-const RenderItemsList = ({ isLoading, skeletonData, originalData, RenderComponent, isSuccess, isError, notFoundText, refetchData, ...props }) => {
+const RenderItemsList = ({ isLoading, skeletonData, originalData, RenderComponent, isSuccess, isError, notFoundText, refetchData , ...props}) => {
     if (isLoading) {
-        return skeletonData.map((item, index) => <RenderComponent key={index} item={item} isLoading={isLoading} {...props} />)
+        return skeletonData.map((item, index) => <RenderComponent key={index} item={item} isLoading={isLoading} {...props}/>)
+
     }
     else if (originalData?.length == 0) {
         return <NotFound_Pic text={notFoundText} />

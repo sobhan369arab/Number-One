@@ -98,8 +98,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "آموزش جاوا اسکریپت با خیال پردازی", EventDate: "14تیر، 1403", EventCity1: "توکیو",
                     EventTitle2: " ایجاد آینده از طریق فناوری Aewe", EventCity2: "نیویورک",
-                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', graduation: 'فارغ التحصیلی',
-                    EventTopics: 'موضوعات', EventQuizzes: 'آزمون ها', EventCertifications: 'گواهینامه ها', duration: 'مدت زمان', lessons: 'درس ها',
+                    EventPrice: 'هزینه رویداد', EventInfo: 'اطلاعات رویداد', eventDate: 'تاریخ', StartTime: 'زمان شروع', Registrants: 'ثبت نام شده ها',
+                    EventTopics: 'موضوعات', capacity: 'ظرفیت', EventCertifications: 'گواهینامه ها', endTime: 'زمان پایان', startTime: 'زمان شروع',statusCourse:'وضعیت دوره',
                     EventTotalSeat: 'صندلی کل', Payment: 'پرداخت امن:', ShareCourse: 'این دوره را به اشتراک بگذارید:',
                     //Instructors-Details page
                     sideBarTitle: "تماس سریع", sideBarBtn: "فرستادن پیام", sideBarDesc: "از طریق تماس با ما راحت باشید اگر ترجیح می دهید توییتر یا فیس بوک!",
@@ -119,7 +119,7 @@ i18n.use(initReactI18next)
                     descComparison: 'با مقایسه کردن دوره های آموزشی باهم دیگه میتونی دوره مناسب خودتو پیدا کنی!',
                     // course Details
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
-                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',
+                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',CourseFavorite:'آیا از این دوره راضی بودید؟',
                     // Dashboard
                     exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTip: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.",
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های من:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
@@ -127,9 +127,10 @@ i18n.use(initReactI18next)
                     // Comments
                     comment: 'نظر', user_comment: 'نظرات کاربران', sendComment: 'ارسال نظر', titleComment: 'عنوان پیام',
                     descComment: 'توضیحات بیشتر', comment_text: 'متن خود را وارد کنید', ConfirmComment: 'نظر شما پس از تأیید توسط ادمین ثبت خواهد شد!',
-                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',
+                    commentAnswer: 'پاسخ', viewAnswers: 'مشاهده پاسخ ها',viewMore:'مشاهده بیشتر +',viewLess:'مشاهده کمتر -',
+                    notFoundComment:'نظری وجود ندارد',
                     // Related titles
-                    Related: 'مرتبط', Blogs: 'اخبار',
+                    Related: 'مرتبط', Blogs: 'اخبار',Courses:'دوره های',
                     // Cart
                     cartTitle: "سبد خرید", cartTotalSum: "جمع کل", cartInfo: "اطلاعات", cartButton: "اقدام به پرداخت", clearBtn: "خالی کردن سبد", numberOfItemsInCart: "تعداد آیتم ها",
                     // About
@@ -240,8 +241,8 @@ i18n.use(initReactI18next)
                     // EventsPage
                     EventTitle1: "Learning JavaScript With Imagination", EventDate: "25 June, 2024", EventCity1: "Tokyo",
                     EventTitle2: "Aewe Creating Futures Through Technology", EventCity2: "New Work",
-                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', graduation: 'graduation',
-                    EventTopics: 'Topics', EventQuizzes: 'Quizzes', EventCertifications: 'Certifications', duration: 'duration', lessons: 'lessons',
+                    EventPrice: 'Event Fee', EventInfo: 'Event Infomation', eventDate: 'Date', StartTime: 'Start Time', Registrants: 'Registrants',
+                    EventTopics: 'Topics', capacity: 'Capacity', EventCertifications: 'Certifications', endTime: 'End Time', startTime: 'Start Time',statusCourse:'Course Status',
                     EventTotalSeat: 'Total Seat', Payment: 'Secure Payment:', ShareCourse: 'Share this course:',
                     //Instructors-Details page
                     sideBarTitle: "Quick Contact", sideBarBtn: "Send Message", sideBarDesc: "Feel free to contact us through Twitter or Facebook if you prefer!",
@@ -261,7 +262,7 @@ i18n.use(initReactI18next)
                     descComparison: 'By comparing training courses, you can find the right course for you!',
                     // course Details
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
-                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',
+                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',CourseFavorite:'What will I learn in this course?',
                     // Dashboard
                     exitFromAccount: "Exit", welcome: "welcome", progressTip: "To participate in the courses, you must complete at least 80% of your profile.",
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "My Courses:", suggestedCourses: "Suggested Courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",
@@ -269,9 +270,10 @@ i18n.use(initReactI18next)
                     // Comments
                     comment: 'Comment', user_comment: 'User Comments', sendComment: 'Submit a comment', titleComment: 'Comment title',
                     descComment: 'More details', comment_text: 'Enter your text', ConfirmComment: 'Your comment will be registered after approval by the admin!',
-                    commentAnswer: 'Answer', viewAnswers: 'View Answers',
+                    commentAnswer: 'Answer', viewAnswers: 'View Answers',viewMore:'View More +',viewLess:'View Less -',
+                    notFoundComment:'There is no comment!',
                     // Related titles
-                    Related: 'Related', Blogs: 'Blogs',
+                    Related: 'Related', Blogs: 'Blogs',Courses:'Courses',
                     // Cart
                     cartTitle: "Cart", cartTotalSum: "Total sum", cartInfo: "Information", cartButton: "Proceed to pay", clearBtn: "Clear Cart", numberOfItemsInCart: "Number of items",
                     // About

@@ -28,7 +28,39 @@ const TopCourses = () => {
         queryKey: ['GET_COURSES', tabValue],
         queryFn: () => { return GetAllCourseByPagination({ TechCount: 1, ListTech: tabValue }) }
     })
+    // if (isSuccess) {
+        const CourseReturn = () => {
+            if (isLoading) {
+                return (
 
+                    skeletonData.map((item, index) => {
+                        <SwiperSlide key={index}>
+                            <Course key={index} item={item} isLoading={isLoading} />
+                        </SwiperSlide>
+                    })
+                )
+            }
+            else if (isSuccess) {
+                return courseData?.courseFilterDtos.map((item, index) => {
+                    <SwiperSlide key={index}>
+                        <Course key={index} item={item} isLoading={isLoading} />
+                    </SwiperSlide>
+                })
+            }
+        }
+    // }
+
+    // const getCourseList = async () => {
+
+    //     const courseData = await GetAllCourseByPagination(apiParams)
+    //     setCourseList(courseData.courseFilterDtos)
+    // }
+
+    // useEffect(() => {
+    //     getCourseList()
+    // }, [tabValue])
+
+    // const [comparisonId, setComparisonId] = useState([])
 
     return (
         <div className={`w-full py-28 lg:px-44 sm:px-16 px-8 flex flex-wrap gap-y-4 justify-center ${theme ? "bg-gradientBackgroundDark" : "bg-gradientBackground"} bg-cover bg-center bg-no-repeat`}>
@@ -40,7 +72,8 @@ const TopCourses = () => {
                 <span className="w-full h-1 bg-LightGrayish rounded-full bottom-0 absolute"></span>
             </div>
             <div className="max-[680px]:w-[300px] w-[110%] mt-5 relative">
-                <SwiperSlider
+                
+                {CourseReturn && CourseReturn}
                     perView={4}
                     Breakpoints={Breakpoints}
                     arrowColor="#fff"

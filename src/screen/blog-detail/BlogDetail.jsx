@@ -1,27 +1,31 @@
 import { useParams } from "react-router-dom"
 import TitleSection from "../../components/partials/title-section/TitleSection"
-import { Blogs_data } from "../../core/constants/blogs/blogs-data";
-import { BlogBiography, BlogPic, DetailsSection, RelatedBlogs } from "../../components/pages/blog-detail";
+import { BlogBiography, DetailsSection } from "../../components/pages/blog-detail";
 import OverView_Details from "../../components/common/OverView_Details";
 import { useTranslation } from "react-i18next";
-import { CommentSection, ToLike } from "../../components/common";
+import { CommentSection, FeedbackSection, RelatedItems, ToLike } from "../../components/common";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
 import GetBlogWithId from "../../core/services/api/GetData/GetBlogWithId";
+import GetNewsComments from "../../core/services/api/GetData/GetNewsComments";
+import { GetNewsFilterPage } from "../../core/services/api/GetData";
+import { BlogCard } from "../../components/pages/blog";
 
 const BlogDetail = () => {
     const { t } = useTranslation();
     const { id } = useParams();
-    // const blogSelected
 
     const { data, isSuccess } = useQuery({
         queryKey: ['GET_BLOG_DETAILS'],
         queryFn: async () => { return await GetBlogWithId(id) }
     })
 
-    if (isSuccess) {
-        console.log(data.detailsNewsDto)
-    }
+    // Comment call api with react Query
+    const { data: commentData, isSuccess: commentSuccess } = useQuery({
+        queryKey: ['GET_COMMENTS_BLOG'],
+        queryFn: () => { return GetNewsComments(id) }
+    })
+
 
     const {
         title,
@@ -36,6 +40,7 @@ const BlogDetail = () => {
         currentDissLikeCount,
         newsCatregoryId
     } = isSuccess && data.detailsNewsDto
+    console.log(newsCatregoryId)
 
     return (
         <>
@@ -65,15 +70,17 @@ const BlogDetail = () => {
                         titleLearning={'LearnBlog'}
                         ElementClass={'hidden'}
                     />
-                    <div className="border-y-2 my-7 py-5">
-                        <div className="flex gap-8 w-fit max-sm:m-auto">
-                            <p className="text-DarkBlue">{t('blogFavorite')}</p>
-                            <ToLike likeNumber={currentLikeCount} disLikeNumber={currentDissLikeCount} numberStatus="hidden" />
-                        </div>
-                    </div>
-                    <CommentSection blogId={id} />
+                  {/* <FeedbackSection/> */}
+
+                    <CommentSection data={commentData} isSuccess={commentSuccess} />
                 </div>
-                <RelatedBlogs category={newsCatregoryId} />
+                <RelatedItems 
+                category={newsCatregoryId} 
+                params={{ newsCatregoryId: newsCatregoryId }}  
+                apiFunction={GetNewsFilterPage}
+                variant={'news'}
+                RenderItem={BlogCard}
+                />
             </div>
         </>
     )
