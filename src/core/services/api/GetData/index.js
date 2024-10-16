@@ -8,6 +8,11 @@ import GetTechnologies from "./GetTechnologies";
 import GetCourseDetails from "./GetCourseDetails";
 import GetCoursesComments from "./GetCoursesComments";
 import GetReplayCourseComment from "./GetReplayCourseComment";
+import GetMyFavoriteCourses from "./GetMyFavoriteCourses";
+import GetMyFavoriteBlogs from "./GetMyFavoriteBlogs";
+import GetMyCourseViews from "./GetMyCourseViews";
+import GetMyBlogViews from "./GetMyBlogViews";
+
 export {
   GetAllCourseByPagination,
   getAllTeachers,
@@ -19,4 +24,8 @@ export {
   GetCourseDetails,
   GetCoursesComments,
   GetReplayCourseComment,
+  GetMyFavoriteCourses,
+  GetMyFavoriteBlogs,
+  GetMyCourseViews,
+  GetMyBlogViews,
 };

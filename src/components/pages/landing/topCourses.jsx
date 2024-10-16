@@ -10,11 +10,8 @@ import { useQuery } from "@tanstack/react-query"
 
 const TopCourses = () => {
     const { t, i18n } = useTranslation()
-    // const [tabs, setTabs] = useState([])
-    // const [courseList, setCourseList] = useState([])
     const theme = useSelector(state => state.DarkMode)
     const [tabValue, setTabValue] = useState(2)
-    const skeletonData = [{}, {}, {}, {}];
 
     const Breakpoints = {
         1024: { spaceBetween: 20, slidesPerView: 4 },
@@ -22,24 +19,14 @@ const TopCourses = () => {
         300: { spaceBetween: 20, slidesPerView: 1 },
     }
 
-    // const getTabs = async () => {
-    //     setTabs(await GetTechnologies())
-    // }
-
-    // useEffect(() => { getTabs() }, [])
-    const { data: tabData } = useQuery({
-        queryKey: 'GET_TABS',
-        queryFn: async () => {
-            return await GetTechnologies();
-        }
+    const { data: tabs, isSuccess: tabIsSuccess } = useQuery({
+        queryKey: ['GET_TABS'],
+        queryFn: GetTechnologies
     })
 
-    const apiParams = { TechCount: 1, ListTech: tabValue }
-    const { data: courseData, isLoading, isSuccess } = useQuery({
-        queryKey: 'GET_COURSES',
-        queryFn: async () => {
-            return await GetAllCourseByPagination(apiParams)
-        }
+    const { data: Courses, isSuccess, isLoading, refetch } = useQuery({
+        queryKey: ['GET_COURSES', tabValue],
+        queryFn: () => { return GetAllCourseByPagination({ TechCount: 1, ListTech: tabValue }) }
     })
     // if (isSuccess) {
         const CourseReturn = () => {
@@ -81,13 +68,12 @@ const TopCourses = () => {
             <h1 className="boldStyle_text w-full text-center">{t("topCoursesTitle")}</h1>
             <p className="mediumStyle_text w-full text-center">{t("topCoursesDescription")}</p>
             <div className="mobile:w-full sm:w-auto flex mobile:justify-evenly justify-center relative mobile:px-0 sm:px-20 mt-10">
-                {tabData && tabData.map(obj => <Tab key={obj.id} setTabValue={setTabValue} value={obj.id} name="landing" title={obj.techName} />)}
+                {tabIsSuccess && tabs.map(obj => <Tab key={obj.id} setTabValue={setTabValue} value={obj.id} name="landing" title={obj.techName} />)}
                 <span className="w-full h-1 bg-LightGrayish rounded-full bottom-0 absolute"></span>
             </div>
             <div className="max-[680px]:w-[300px] w-[110%] mt-5 relative">
                 
                 {CourseReturn && CourseReturn}
-                <SwiperSlider
                     perView={4}
                     Breakpoints={Breakpoints}
                     arrowColor="#fff"
@@ -95,6 +81,11 @@ const TopCourses = () => {
                     buttonSideRight="top-[190px] xl:-right-[60px] sm:right-[20px] hidden sm:flex h-12 z-30 w-12"
                     buttonColor="bg-VioletBlue"
                 >
+                    {isSuccess && Courses.courseFilterDtos.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <Course item={item} isLoading={isLoading} refetch={refetch} />
+                        </SwiperSlide>
+                    ))}
                 </SwiperSlider>
             </div>
         </div>

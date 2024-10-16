@@ -15,7 +15,6 @@ const SwiperSlider = ({ Breakpoints, modules, perView, children, arrowColor, but
                 breakpoints={Breakpoints}
                 dir='rtl'
                 ref={sliderRef}
-                
             >
                 {children}
             </Swiper>

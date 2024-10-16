@@ -1,10 +1,11 @@
 import { SearchSection, Table, TableItem } from '../../components/pages/user-panel'
-import { PaginatedItems, PaginateHolderItems, handlePageClick, calculatePageCount, RenderItemsList } from '../../components/common'
-import { useState } from 'react'
+import { PaginatedItems, PaginateHolderItems, RenderItemsList } from '../../components/common'
 import { useSelector } from 'react-redux'
 import { useQuery } from '@tanstack/react-query'
 import GetMyCourses from '../../core/services/api/GetData/GetMyCourses'
 import { setPageNumber } from '../../redux/slices/userPanel-filter-slices/MyCourses'
+import { sortOptionPanelMyCourses } from '../../core/constants/sorts/Sort'
+import { setQuery, setSortingCol } from "../../redux/slices/userPanel-filter-slices/MyCourses"
 
 const MyCourses = () => {
     const headerTable = [
@@ -23,11 +24,11 @@ const MyCourses = () => {
 
     return (
         <div className='w-full flex flex-wrap h-fit -mt-8'>
-            <SearchSection />
+            <SearchSection sortItem={sortOptionPanelMyCourses} setState={setSortingCol} query={setQuery} />
             <PaginateHolderItems style="justify-center">
-                <PaginatedItems currentData={isSuccess && data.totalCount} currentDataInOnePage={8} setPage={setPageNumber}  >
+                <PaginatedItems currentData={isSuccess && data.totalCount} currentDataInOnePage={8} setPage={setPageNumber} >
                     <div className='overflow-x-auto lg:overflow-x-hidden h-[590px] w-full'>
-                        <Table sectionHeader={headerTable} style="border-t border-LightGrayish mt-3 pt-5">
+                        <Table sectionHeader={headerTable} itemsWidth="25" style="border-t border-LightGrayish mt-3 pt-5">
                             <RenderItemsList
                                 RenderComponent={TableItem}
                                 isLoading={isLoading}
