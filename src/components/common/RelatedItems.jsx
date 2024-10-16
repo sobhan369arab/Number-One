@@ -15,14 +15,14 @@ const maxWidthVariant = {
   "news": "1024px"
 }
 
-const RelatedItems = ({ category, params, apiFunction, variant, RenderItem }) => {
+const RelatedItems = ({ category, params, apiFunction, variant, RenderItem,addFavorite,deleteFavorite }) => {
 
 
   const { t, i18n } = useTranslation();
   const apiParams = { PageNumber: 1, RowsOfPage: 4, ...params }
 
 
-  const { data, isSuccess, isLoading } = useQuery({
+  const { data, isSuccess, isLoading, refetch } = useQuery({
     queryKey: ['GET_RELATED_ITEMS', category],
     queryFn: async () => { return await apiFunction(apiParams) },
   })
@@ -77,7 +77,13 @@ const RelatedItems = ({ category, params, apiFunction, variant, RenderItem }) =>
             >
               {isSuccess && data?.[variant]?.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <RenderItem item={item} isLoading={isLoading} />
+                  <RenderItem 
+                  item={item} 
+                  isLoading={isLoading} 
+                  refetch={refetch} 
+                  addFavoriteAction={addFavorite} 
+                  deleteFavoriteAction={deleteFavorite}
+                  />
                 </SwiperSlide>
               ))}
             </SwiperSlider>

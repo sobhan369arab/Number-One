@@ -14,6 +14,7 @@ import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 import Course from "../../components/pages/course/Course";
 import { AddCourseFavorite, AddCourseReserve } from "../../core/services/api/PostData";
+import { DeleteCourseFavorite } from "../../core/services/api/DeleteData";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -30,10 +31,16 @@ const CourseDetail = () => {
         mutationFn: (id) => { return AddCourseFavorite(id) },
         onSuccess: () => { refetch() }
     })
+    // Delete Data with useMutation
+    const { mutate: courseMutate } = useMutation({
+        mutationKey: ['DELETE_COURSE_FAVORITE'],
+        mutationFn: (id) => { return DeleteCourseFavorite(id) },
+        onSuccess: () => { refetch() }
+    })
     const {
         courseId, title, imageAddress, courseLevelName, startTime, endTime, capacity, currentRegistrants, courseStatusName,
         teacherName, currentRate, techs, cost, describe, miniDescribe, isCourseReseve, userLikeId, likeCount, dissLikeCount,
-        currentUserLike, currentUserDissLike, isUserFavorite,
+        currentUserLike, currentUserDissLike, isUserFavorite, userFavoriteId
     } = isSuccess && courseDetails
 
     // to like params
@@ -45,10 +52,12 @@ const CourseDetail = () => {
         LikeStatus: currentUserLike,
         DissLikeStatus: currentUserDissLike,
         Id: id,
+        favoriteId: userFavoriteId,
         refetch: refetch,
         userFavorite: isUserFavorite,
         action: addFavorite,
-        favoriteText:'CourseFavorite',
+        deleteAction: courseMutate,
+        favoriteText: 'CourseFavorite',
     }
 
     const startT = ChangeMoment(startTime?.split("T"));
@@ -144,6 +153,8 @@ const CourseDetail = () => {
                         apiFunction={GetAllCourseByPagination}
                         variant={'courseFilterDtos'}
                         RenderItem={Course}
+                        addFavorite={addFavorite}
+                        deleteFavorite={courseMutate}
                     />
                 </div>
                 <MediaQuery minWidth={'1024px'}>

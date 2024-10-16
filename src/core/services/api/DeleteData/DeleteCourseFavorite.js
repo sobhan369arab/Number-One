@@ -3,6 +3,7 @@ import Http from "../../interceptor";
 import onFormData from "../FormData";
 
 const DeleteCourseFavorite = async (ParamsId) => {
+  console.log(ParamsId)
   try {
     const obj = {
       CourseFavoriteId: ParamsId,

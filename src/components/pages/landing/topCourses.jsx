@@ -29,25 +29,24 @@ const TopCourses = () => {
         queryFn: () => { return GetAllCourseByPagination({ TechCount: 1, ListTech: tabValue }) }
     })
     // if (isSuccess) {
-        const CourseReturn = () => {
-            if (isLoading) {
-                return (
-
-                    skeletonData.map((item, index) => {
-                        <SwiperSlide key={index}>
-                            <Course key={index} item={item} isLoading={isLoading} />
-                        </SwiperSlide>
-                    })
-                )
-            }
-            else if (isSuccess) {
-                return courseData?.courseFilterDtos.map((item, index) => {
+    const CourseReturn = () => {
+        if (isLoading) {
+            return (
+                skeletonData.map((item, index) => {
                     <SwiperSlide key={index}>
                         <Course key={index} item={item} isLoading={isLoading} />
                     </SwiperSlide>
                 })
-            }
+            )
         }
+        else if (isSuccess) {
+            return courseData?.courseFilterDtos.map((item, index) => {
+                <SwiperSlide key={index}>
+                    <Course key={index} item={item} isLoading={isLoading} />
+                </SwiperSlide>
+            })
+        }
+    }
     // }
 
     // const getCourseList = async () => {
@@ -72,8 +71,8 @@ const TopCourses = () => {
                 <span className="w-full h-1 bg-LightGrayish rounded-full bottom-0 absolute"></span>
             </div>
             <div className="max-[680px]:w-[300px] w-[110%] mt-5 relative">
-                
                 {CourseReturn && CourseReturn}
+                <SwiperSlider
                     perView={4}
                     Breakpoints={Breakpoints}
                     arrowColor="#fff"

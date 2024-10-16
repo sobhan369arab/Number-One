@@ -7,9 +7,10 @@ import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
 
-const Course = ({ isLoading, refetch, item, addFavoriteAction }) => {
+const Course = ({ isLoading, refetch, item, addFavoriteAction,deleteFavoriteAction }) => {
     const {
         courseId: id,
+        userFavoriteId,
         title,
         tumbImageAddress: images,
         teacherName: instructor,
@@ -41,7 +42,15 @@ const Course = ({ isLoading, refetch, item, addFavoriteAction }) => {
 
                     <div className="flex justify-center gap-8 my-3">
                         <ComparisonBtn isLoading={isLoading} CourseId={id} />
-                        <FavoriteBtn isLoading={isLoading} variantStyle="card" userFavorite={userFavorite} action={addFavoriteAction} Id={id} />
+                        <FavoriteBtn 
+                        isLoading={isLoading} 
+                        variantStyle="card" 
+                        userFavorite={userFavorite} 
+                        action={addFavoriteAction} 
+                        deleteAction={deleteFavoriteAction}
+                        Id={id} 
+                        favoriteId={userFavoriteId}
+                        />
                     </div>
                 </div>
                 <div to={`/CourseDetails/${id}`} className="py-2 course-body w-full ">

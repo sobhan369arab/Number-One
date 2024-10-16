@@ -26,7 +26,9 @@ const FeedbackSection = ({ params }) => {
                     variantStyle="other"
                     userFavorite={params.userFavorite}
                     action={params.action}
+                    deleteAction={params.deleteAction}
                     Id={params.Id}
+                    favoriteId={params.favoriteId}
                 />
             </div>
         </div>

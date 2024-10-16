@@ -14,19 +14,25 @@ import GetProfileInfo from "../../../core/services/api/GetData/GetProfileInfo"
 import { setInfoAction } from "../../../redux/slices/UserInfo"
 import { getItem } from "../../../core/services/local-storage/LocalStorage"
 import HeaderButtons from "./HeaderButtons"
+import { GetMyFavoriteCourses } from "../../../core/services/api/GetData"
+import { useQuery } from "@tanstack/react-query"
+import GetMyCoursesReserve from "../../../core/services/api/GetData/GetMyCoursesReserve"
 
 const Header = () => {
   const [visibleSearch, setVisibleSearch] = useState(false)
   const [visibleMenu, setVisibleMenu] = useState(false)
   const { i18n } = useTranslation();
-  const cartLength = useSelector(state => state.CartData.value.length)
+  // const cartLength = useSelector(state => state.CartData.value.length)
   const userInfo = useSelector(state => state.UserInfo.info)
   const dispatch = useDispatch()
   const location = useLocation()
 
+  // basket and favoriteBox number
+  const { data: myFavoriteData } = useQuery({ queryKey: ["GET_MY_COURSES"], queryFn: GetMyFavoriteCourses })
+  const { data: myCourseReserve } = useQuery({ queryKey: ['MY_RESERVED_LIST'], queryFn: GetMyCoursesReserve })
   const baskets = [
-    { icon: CartIcon, number: cartLength, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
-    { icon: FavoriteIcon, number: 0, href: userInfo !== false && "/userPanel/favorites", tooltip: ["لیست علاقه مندی", "Favorite List"] },
+    { icon: CartIcon, number: myCourseReserve?.length, href: "/cart", tooltip: ["سبد خرید", "Cart"] },
+    { icon: FavoriteIcon, number: myFavoriteData?.favoriteCourseDto.length, href: userInfo !== false && "/userPanel/favorites", tooltip: ["لیست علاقه مندی", "Favorite List"] },
   ];
 
   const menuItems = menuItem.map((item, index) => {

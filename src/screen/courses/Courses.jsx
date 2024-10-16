@@ -16,6 +16,7 @@ import tooltipStyle from "../../core/constants/tooltip-style/tooltip"
 import { useDispatch, useSelector } from "react-redux"
 import { setPageNumber, setRowsOfPage, setSortCal, setSortType } from "../../redux/slices/filter-box-slices/FilterCourses"
 import { AddCourseFavorite } from "../../core/services/api/PostData"
+import { DeleteCourseFavorite } from "../../core/services/api/DeleteData"
 
 const Courses = () => {
     const { t, i18n } = useTranslation();
@@ -53,6 +54,12 @@ const Courses = () => {
     const { mutate: addFavorite } = useMutation({
         mutationKey: ["ADD_COURSE_FAVORITE"],
         mutationFn: (id) => { return AddCourseFavorite(id) },
+        onSuccess: () => { refetch() }
+    })
+    // Delete Data with useMutation
+    const { mutate: courseMutate } = useMutation({
+        mutationKey: ['DELETE_COURSE_FAVORITE'],
+        mutationFn: (id) => { return DeleteCourseFavorite(id) },
         onSuccess: () => { refetch() }
     })
 
@@ -101,6 +108,7 @@ const Courses = () => {
                                     notFoundText={'course_NotFound'}
                                     refetchData={refetch}
                                     addFavoriteAction={addFavorite}
+                                    deleteFavoriteAction={courseMutate}
                                 />
                             </div>
                         </PaginatedItems>
