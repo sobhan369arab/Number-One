@@ -7,8 +7,6 @@ import { useTranslation } from "react-i18next";
 
 const FavoriteBtn = ({ isLoading, variantStyle, userFavorite, action, Id }) => {
     const isTabletOrLapTop = useMediaQuery({ query: '(min-width: 768px)' })
-    const [isClick, setClick] = useState(false)
-
 
     const variant = {
         card: (
@@ -19,8 +17,8 @@ const FavoriteBtn = ({ isLoading, variantStyle, userFavorite, action, Id }) => {
             </Skeleton>
         ),
         other: (
-            <div onClick={() => setClick(!isClick)} className="bg-LightLavender border-2 border-LightGrayish flex justify-center cursor-pointer items-center rounded-full w-[50px] h-[50px]">
-                {isClick ? <CheckedHeartIcon width="27px" height="27px" /> : <UnCheckedHeartIcon width="23px" height="23px" />}
+            <div onClick={() => userFavorite === false ? action(Id) : null} className="bg-LightLavender border-2 border-LightGrayish flex justify-center cursor-pointer items-center rounded-full w-[50px] h-[50px]">
+                {userFavorite ? <CheckedHeartIcon width="27px" height="27px" /> : <UnCheckedHeartIcon width="23px" height="23px" />}
             </div>
         )
     }

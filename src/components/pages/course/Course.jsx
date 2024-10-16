@@ -6,8 +6,6 @@ import CourseDownBody from "./CourseDownBody"
 import CourseTopBody from "./CourseTopBody"
 import { Skeleton } from "@nextui-org/react";
 import NotFoundImg from "../../../assets/images/image-not-found.png"
-import { useMutation } from "@tanstack/react-query"
-import { AddCourseFavorite } from "../../../core/services/api/PostData"
 
 const Course = ({ isLoading, refetch, item, addFavoriteAction }) => {
     const {

@@ -10,7 +10,7 @@ const AddCourseFavorite = async (ParamsId) => {
       Headers: { "Content-Type": "application/json" }
     });
     if (result.success) {
-      toast.success(" دوره موردنظر به لیست علاقه مندی ها اضافه شد");
+      toast.success(" دوره به لیست علاقه مندی ها اضافه شد");
     } else {
       toast.error("دوباره تلاش کنید");
     }

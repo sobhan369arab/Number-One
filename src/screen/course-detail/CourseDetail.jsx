@@ -13,7 +13,7 @@ import { FaHourglassStart, FaUsers } from "react-icons/fa6";
 import { SiStatuspage } from "react-icons/si";
 import { FaRegIdCard } from "react-icons/fa";
 import Course from "../../components/pages/course/Course";
-import { AddCourseReserve } from "../../core/services/api/PostData";
+import { AddCourseFavorite, AddCourseReserve } from "../../core/services/api/PostData";
 
 const CourseDetail = () => {
     const { id } = useParams();
@@ -23,14 +23,21 @@ const CourseDetail = () => {
             return await GetCourseDetails(id);
         }
     })
+
+    // Add Course in the Favorite List
+    const { mutate: addFavorite } = useMutation({
+        mutationKey: ["ADD_COURSE_FAVORITE"],
+        mutationFn: (id) => { return AddCourseFavorite(id) },
+        onSuccess: () => { refetch() }
+    })
     const {
         courseId, title, imageAddress, courseLevelName, startTime, endTime, capacity, currentRegistrants, courseStatusName,
         teacherName, currentRate, techs, cost, describe, miniDescribe, isCourseReseve, userLikeId, likeCount, dissLikeCount,
-        currentUserLike, currentUserDissLike,
+        currentUserLike, currentUserDissLike, isUserFavorite,
     } = isSuccess && courseDetails
 
     // to like params
-    const likeParams = {
+    const Params = {
         variant: 'courseDetails',
         userLikeId: userLikeId,
         likeNumber: likeCount,
@@ -38,7 +45,9 @@ const CourseDetail = () => {
         LikeStatus: currentUserLike,
         DissLikeStatus: currentUserDissLike,
         Id: id,
-        refetch: refetch
+        refetch: refetch,
+        userFavorite: isUserFavorite,
+        action: addFavorite,
     }
 
     const startT = ChangeMoment(startTime?.split("T"));
@@ -126,7 +135,7 @@ const CourseDetail = () => {
                         Id={id}
                         refetch={refetchComment}
                         variant={'course'}
-                        params={likeParams}
+                        params={Params}
                     />
                     <RelatedItems
                         category={techs}
