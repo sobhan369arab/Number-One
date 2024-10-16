@@ -119,7 +119,7 @@ i18n.use(initReactI18next)
                     descComparison: 'با مقایسه کردن دوره های آموزشی باهم دیگه میتونی دوره مناسب خودتو پیدا کنی!',
                     // course Details
                     CourseOverView: "شرح دوره", LearnCourse: 'در این دوره چه چیزی یاد خواهید گرفت؟',
-                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',
+                    CourseInfo: 'دوره شامل', CoursePrice: 'هزینه دوره',CourseFavorite:'آیا از این دوره راضی بودید؟',
                     // Dashboard
                     exitFromAccount: "خروج از حساب", welcome: "خوش آمدید", progressTip: "برای شرکت در دوره ها باید حداقل ٪ ۸۰ از پروفایل خود را تکمیل کنید.",
                     latestNewsAndBlogs: "جدید ترین اخبار و مقالات", currentCourses: "دوره های من:", suggestedCourses: "دوره های پیشنهادی:", changePassword: "تغییر رمز عبور", twoStep: "تایید ورود دو مرحله ای", emailRecovery: "ایمیل بازیابی",
@@ -262,7 +262,7 @@ i18n.use(initReactI18next)
                     descComparison: 'By comparing training courses, you can find the right course for you!',
                     // course Details
                     CourseOverView: "Course Overview", LearnCourse: 'What will you learn in this course?',
-                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',
+                    CourseInfo: 'Course Information', CoursePrice: 'Course Fee',CourseFavorite:'What will I learn in this course?',
                     // Dashboard
                     exitFromAccount: "Exit", welcome: "welcome", progressTip: "To participate in the courses, you must complete at least 80% of your profile.",
                     latestNewsAndBlogs: "The latest news and Blogs", currentCourses: "My Courses:", suggestedCourses: "Suggested Courses:", changePassword: "Change password", twoStep: "Two-step login verification", emailRecovery: "Email recovery",

@@ -48,6 +48,7 @@ const CourseDetail = () => {
         refetch: refetch,
         userFavorite: isUserFavorite,
         action: addFavorite,
+        favoriteText:'CourseFavorite',
     }
 
     const startT = ChangeMoment(startTime?.split("T"));
@@ -92,7 +93,7 @@ const CourseDetail = () => {
         Detail={DetailsCourse}
         arrowColor={"#000"}
         colorButton={"yellow"}
-        btnText={"signUpCourse"}
+        btnText={"AddToCart"}
         {...params}
     />
 

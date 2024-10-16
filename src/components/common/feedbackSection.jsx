@@ -8,7 +8,7 @@ const FeedbackSection = ({ params }) => {
     return (
         <div className="border-y-2 my-7 py-5 flex items-center max-sm:justify-around gap-5">
             <div className="flex gap-8 w-fit h-fit">
-                <p className="text-DarkBlue">{t('blogFavorite')} </p>
+                <p className="text-DarkBlue">{t(params.favoriteText)} </p>
                 <ToLike
                     userLikeId={params.userLikeId}
                     likeNumber={params.likeNumber}
