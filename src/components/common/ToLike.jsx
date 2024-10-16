@@ -15,19 +15,20 @@ const ToLike = ({
     refetch,
 }) => {
     const UserInfo = useSelector(state => state.UserInfo.info)
-
     // Variants
     const ApiVariant = {
         'course': [AddCourseLike, AddCourseDisLike, DeleteCourseLike],
+        'courseDetails': [AddCourseLike, AddCourseDisLike, DeleteCourseLike],
         'courseComment': [AddCourseCommentLike, CourseCommentDisLike, DeleteCourseCommentLike]
     }
     const statusVariant = {
         'course': { like: LikeStatus == false, disLike: DissLikeStatus == false },
+        'courseDetails': { like: LikeStatus == 0, disLike: DissLikeStatus == 0 },
         'courseComment': { like: LikeStatus !== "LIKED", disLike: LikeStatus !== "DISSLIKED" }
     }
 
     // like & disLike function
-    const handleToLike = (id,api, status, Delete, btnStatus) => {
+    const handleToLike = (id, api, status, Delete, btnStatus) => {
         if (!UserInfo) {
             alert('لطفا لاگین کنید')
         }
@@ -38,6 +39,14 @@ const ToLike = ({
                 }
                 else {
                     Delete(userLikeId, refetch);
+                }
+            }
+            else if (variant === 'courseDetails') {
+                if (status == 1) {
+                    Delete(userLikeId, refetch)
+                }
+                else {
+                    api(id, refetch);
                 }
             }
             else {

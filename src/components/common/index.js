@@ -42,7 +42,7 @@ import NotFound_Pic from "./NotFound_Pic.jsx";
 import ToastAlert from "./ToastAlert.jsx";
 import RenderItemsList from "./RenderItemsList.jsx";
 import RelatedItems from "./RelatedItems.jsx";
-
+import FeedbackSection from "./feedbackSection.jsx";
 export {
   Button,
   LogoGroup,
@@ -86,4 +86,5 @@ export {
   ToastAlert,
   RenderItemsList,
   RelatedItems,
+  FeedbackSection,
 };

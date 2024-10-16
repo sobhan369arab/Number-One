@@ -17,30 +17,29 @@ import { AddCourseReserve } from "../../core/services/api/PostData";
 
 const CourseDetail = () => {
     const { id } = useParams();
-    const { data: courseDetails, isSuccess } = useQuery({
+    const { data: courseDetails, isSuccess, refetch } = useQuery({
         queryKey: ['GET_COURSE_DETAILS'],
         queryFn: async () => {
             return await GetCourseDetails(id);
         }
     })
     const {
-        courseId,
-        title,
-        imageAddress,
-        courseLevelName,
-        startTime,
-        endTime,
-        capacity,
-        currentRegistrants,
-        courseStatusName,
-        teacherName,
-        currentRate,
-        techs,
-        cost,
-        describe,
-        miniDescribe,
-        isCourseReseve,
+        courseId, title, imageAddress, courseLevelName, startTime, endTime, capacity, currentRegistrants, courseStatusName,
+        teacherName, currentRate, techs, cost, describe, miniDescribe, isCourseReseve, userLikeId, likeCount, dissLikeCount,
+        currentUserLike, currentUserDissLike,
     } = isSuccess && courseDetails
+
+    // to like params
+    const likeParams = {
+        variant: 'courseDetails',
+        userLikeId: userLikeId,
+        likeNumber: likeCount,
+        disLikeNumber: dissLikeCount,
+        LikeStatus: currentUserLike,
+        DissLikeStatus: currentUserDissLike,
+        Id: id,
+        refetch: refetch
+    }
 
     const startT = ChangeMoment(startTime?.split("T"));
     const endT = ChangeMoment(endTime?.split("T"));
@@ -127,6 +126,7 @@ const CourseDetail = () => {
                         Id={id}
                         refetch={refetchComment}
                         variant={'course'}
+                        params={likeParams}
                     />
                     <RelatedItems
                         category={techs}

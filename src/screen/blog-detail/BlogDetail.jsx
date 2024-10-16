@@ -3,7 +3,7 @@ import TitleSection from "../../components/partials/title-section/TitleSection"
 import { BlogBiography, DetailsSection } from "../../components/pages/blog-detail";
 import OverView_Details from "../../components/common/OverView_Details";
 import { useTranslation } from "react-i18next";
-import { CommentSection, RelatedItems, ToLike } from "../../components/common";
+import { CommentSection, FeedbackSection, RelatedItems, ToLike } from "../../components/common";
 import BreadCrumb from "../../components/partials/title-section/BreadCrumb";
 import { useQuery } from "@tanstack/react-query";
 import GetBlogWithId from "../../core/services/api/GetData/GetBlogWithId";
@@ -70,12 +70,8 @@ const BlogDetail = () => {
                         titleLearning={'LearnBlog'}
                         ElementClass={'hidden'}
                     />
-                    <div className="border-y-2 my-7 py-5">
-                        <div className="flex gap-8 w-fit max-sm:m-auto">
-                            <p className="text-DarkBlue">{t('blogFavorite')}</p>
-                            <ToLike likeNumber={currentLikeCount} disLikeNumber={currentDissLikeCount} numberStatus="hidden" />
-                        </div>
-                    </div>
+                  {/* <FeedbackSection/> */}
+
                     <CommentSection data={commentData} isSuccess={commentSuccess} />
                 </div>
                 <RelatedItems 

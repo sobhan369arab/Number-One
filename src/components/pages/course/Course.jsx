@@ -29,9 +29,6 @@ const Course = ({ isLoading, refetch, item, addFavoriteAction }) => {
         describe: bio,
         userFavorite: userFavorite,
     } = item;
-    // console.log(images)
-
-
 
     return (
         <>
