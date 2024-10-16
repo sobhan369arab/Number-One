@@ -4,6 +4,7 @@ import onFormData from "../../FormData";
 
 const AcceptCourseComment = async (ParamsId) => {
     console.log(ParamsId)
+    alert('accept')
   const obj = {
     CommentCourseId: ParamsId,
   };

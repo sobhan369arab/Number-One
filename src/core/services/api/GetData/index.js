@@ -7,6 +7,7 @@ import GetNewsFilterPage from "./GetNewsFilter";
 import GetTechnologies from "./GetTechnologies";
 import GetCourseDetails from "./GetCourseDetails";
 import GetCoursesComments from "./GetCoursesComments";
+import GetReplayCourseComment from "./GetReplayCourseComment";
 export {
   GetAllCourseByPagination,
   getAllTeachers,
@@ -16,5 +17,6 @@ export {
   GetNewsFilterPage,
   GetTechnologies,
   GetCourseDetails,
-  GetCoursesComments
+  GetCoursesComments,
+  GetReplayCourseComment,
 };

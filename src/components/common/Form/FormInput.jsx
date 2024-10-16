@@ -20,7 +20,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
             </div>
         ),
         simple: (
-            <Field dir={dir} placeholder={t(placeholder)} type={type} name={certificate} id={certificate} className={`fieldsStyle ${fieldStyle}`} />
+            <Field  dir={dir} placeholder={t(placeholder)} type={type} name={certificate} id={certificate} className={`fieldsStyle ${fieldStyle}`}  aria-label={"simple"} />
         ),
         select: (
             <Field as="select" name={certificate} id={certificate} className="fieldsStyle w-full min-h-10 max-h-40">
@@ -28,7 +28,7 @@ const FormInput = ({ sectionName, certificate, type, options, fullSize, dir, sty
             </Field>
         ),
         area: (
-            <Field as="textarea" placeholder={t(placeholder)} name={certificate} id={certificate} className={`fieldsStyle w-full min-h-10 max-h-64 h-36 ${fieldStyle}`} />
+            <Field as="textarea" placeholder={t(placeholder)} name={certificate} id={certificate} className={`fieldsStyle w-full min-h-10 max-h-64 h-36 ${fieldStyle}`} aria-label={"simple"} />
         ),
         date: (
             <DatePicker

@@ -18,7 +18,7 @@ import { AddCourseReserve } from "../../core/services/api/PostData";
 const CourseDetail = () => {
     const { id } = useParams();
     const { data: courseDetails, isSuccess } = useQuery({
-        queryKey: 'GET_COURSE_DETAILS',
+        queryKey: ['GET_COURSE_DETAILS'],
         queryFn: async () => {
             return await GetCourseDetails(id);
         }
@@ -72,7 +72,7 @@ const CourseDetail = () => {
 
     // Add Course Reserve in The Basket 
     const { mutate } = useMutation({
-        mutationKey: "ADD_COURSE_RESERVE",
+        mutationKey: ["ADD_COURSE_RESERVE"],
         mutationFn: () => { return AddCourseReserve(courseId) }
     })
 
@@ -126,6 +126,7 @@ const CourseDetail = () => {
                         commentSuccess={commentSuccess}
                         Id={id}
                         refetch={refetchComment}
+                        variant={'course'}
                     />
                     <RelatedItems
                         category={techs}

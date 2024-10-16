@@ -2,7 +2,7 @@ import onFormData from "../../FormData";
 import Http from "../../../interceptor";
 import { toast } from "react-toastify";
 
-const AddReplyCourseComment = async (value, commentId, courseId) => {
+const AddReplyCourseComment = async (value, commentId, courseId,refetch,closeModal) => {
   try {
     const obj = {
       CommentId: commentId,
@@ -16,6 +16,8 @@ const AddReplyCourseComment = async (value, commentId, courseId) => {
 
     if (response.success) {
       toast.success(" ریپلای شما ثبت شد");
+      refetch();
+      closeModal();
     } else {
       toast.error("لطفا متن کامنت را به درستی وارد کنید");
     }

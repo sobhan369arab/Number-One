@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 
-const AddReplay_Comment = ({ courseId, commentId, replayComment }) => {
+const AddReplay_Comment = ({ courseId, commentId, replayComment, refetch, closeModal }) => {
   const { t } = useTranslation();
   const userInfo = useSelector(state => state.UserInfo.info)
 
@@ -15,10 +15,9 @@ const AddReplay_Comment = ({ courseId, commentId, replayComment }) => {
       alert('لطفا لاگین کنید')
     }
     else {
-      replayComment(values, commentId, courseId)
+      replayComment(values, commentId, courseId, refetch, closeModal)
     }
   }
-
 
   return (
     <div>

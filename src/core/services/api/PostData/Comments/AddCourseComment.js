@@ -3,8 +3,6 @@ import Http from "../../../interceptor";
 import onFormData from "../../FormData";
 
 const AddCourseComment = async (CourseId, data, refetch) => {
-  alert();
-  console.log(data);
   try {
     const obj = {
       CourseId: CourseId,
@@ -16,7 +14,7 @@ const AddCourseComment = async (CourseId, data, refetch) => {
 
     const result = await Http.post(`/Course/AddCommentCourse`, formData);
     if (result.success) {
-      toast.success("نظر شما برای بررسی توسط ادمین ارسال شد");
+      toast.success("نظر شما پس از تأیید توسط ادمین ثبت خواهد شد");
       // Accept();
       refetch();
     } else if(result.error) {

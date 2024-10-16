@@ -11,6 +11,7 @@ const TabPanel = ({
     commentSuccess,
     Id,
     refetch,
+    variant
 }) => {
     return (
         <div>
@@ -19,8 +20,7 @@ const TabPanel = ({
                     <OverView_Details overView={overView} training={training} MajorElements={MajorElements} Class={'block'} ElementClass={'hidden'} titleOverView={'CourseOverView'} titleLearning={'LearnCourse'} variant={"course"} />
                 </Tab>
                 <Tab label="Study program">Study program </Tab>
-                <Tab label="Instructor">Instructor </Tab>
-                <Tab label="User comments"><CommentSection Id={Id} replayComment={AddReplyCourseComment} apiFunction={AddCourseComment} data={commentData} isSuccess={commentSuccess} refetch={refetch}/></Tab>
+                <Tab label="User comments"><CommentSection Id={Id} variant={variant} replayComment={AddReplyCourseComment} apiFunction={AddCourseComment} data={commentData} isSuccess={commentSuccess} refetch={refetch}/></Tab>
             </Details_Tabs>
         </div>
     )

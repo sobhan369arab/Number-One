@@ -9,7 +9,7 @@ const AddCourseReserve = async (ParamsId) => {
       Headers: { "Content-Type": "application/json" },
     });
     if (result.success) {
-      toast.success("دوره موردنظر به سبد خرید اضافه شد");
+      toast.success("دوره به سبد خرید اضافه شد");
     } else {
       toast.error("دوباره تلاش کنید");
     }
